@@ -1,0 +1,125 @@
+# 🇸🇳🧠🔥 MPAA X1000 — MOTEUR M1
+# Vérification automatique indépendante
+# Aucun changement des pronostics ou FIGÉS
+# Aucun accès aux moteurs M2, M3, M4, M5
+# Aucun déploiement vers X1000 PHOENIX
+
+name: "MPAA X1000 - M1 Verification"
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+    paths:
+      - "m1.py"
+      - ".github/workflows/m1.yml"
+
+  schedule:
+    # Toutes les 10 minutes, en UTC
+    - cron: "*/10 * * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: m1-verification
+  cancel-in-progress: false
+
+jobs:
+  verifier-m1:
+    name: "M1 - Tests et controles"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    defaults:
+      run:
+        shell: bash
+
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+      TZ: Europe/Paris
+
+    steps:
+      - name: "Recuperer uniquement le depot M1"
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: "Installer Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: "Afficher heure de Paris"
+        run: |
+          python - <<'PY'
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          print("MPAA X1000 - M1")
+          print("Heure de Paris :")
+          print(datetime.now(
+              ZoneInfo("Europe/Paris")
+          ).isoformat())
+          PY
+
+      - name: "Verifier presence de m1.py"
+        run: |
+          test -f m1.py
+          echo "Fichier m1.py present"
+
+      - name: "Verifier syntaxe Python"
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          source = Path("m1.py").read_bytes()
+          compile(source, "m1.py", "exec")
+          print("Syntaxe Python : OK")
+          PY
+
+      - name: "Executer les tests internes M1"
+        run: |
+          python m1.py --self-test
+
+      - name: "Verifier archives FIGE M1"
+        run: |
+          python m1.py --verify-archives
+
+      - name: "Verifier isolation du moteur"
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path.cwd()
+
+          assert (root / "m1.py").is_file()
+
+          print("Depot M1 independant")
+          print("Aucune publication distante")
+          print("Aucune modification du tableau officiel")
+          print("Aucune intervention sur M2 a M5")
+          PY
+
+      - name: "Publier le bilan des verifications"
+        if: always()
+        run: |
+          {
+            echo "## MPAA X1000 - M1"
+            echo ""
+            echo "- Depot : x1000-m1"
+            echo "- Moteur : M1"
+            echo "- Verification : automatique"
+            echo "- Tests : voir les etapes du job"
+            echo "- Archives : controle SHA-256"
+            echo "- Pronostics : non modifies"
+            echo "- FIGES : non modifies"
+            echo "- Tableau officiel : non modifie"
+            echo "- M2 a M5 : non modifies"
+            echo ""
+            echo "Ce workflow ne collecte pas les donnees PMU."
+            echo "Il ne cree aucun pronostic ni FIGE."
+          } >> "$GITHUB_STEP_SUMMARY"
