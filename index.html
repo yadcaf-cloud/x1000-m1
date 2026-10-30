@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09151d">
+<title>🇸🇳🧠🔥 X1000 M1 — Moteur indépendant</title>
+
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #09151d;
+  --panel: #122630;
+  --border: #31505a;
+  --text: #eef5f3;
+  --muted: #a7bac0;
+  --green: #79dca6;
+  --gold: #e9c66b;
+  --blue: #9bd7ff;
+  --red: #ff9e9e;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, Arial, sans-serif;
+}
+header {
+  background: #10252e;
+  border-bottom: 2px solid var(--gold);
+  padding: 24px 16px;
+}
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 16px;
+}
+h1 { margin: 0 0 10px; font-size: 1.7rem; }
+h2 { color: var(--gold); font-size: 1.15rem; }
+p { line-height: 1.5; }
+.muted { color: var(--muted); }
+.ok { color: var(--green); }
+.warn { color: var(--gold); }
+.bad { color: var(--red); }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+nav a { color: var(--blue); text-decoration: none; }
+a { color: var(--blue); }
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0 18px;
+}
+button {
+  background: #24785b;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 12px;
+}
+.card, section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 15px;
+}
+.count {
+  color: var(--green);
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.status {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+.scroll { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+th { color: var(--gold); }
+select {
+  width: 100%;
+  max-width: 500px;
+  padding: 11px;
+  margin: 8px 0 14px;
+  background: #091923;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: white;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <h1>🇸🇳🧠🔥 X1000 M1</h1>
+    <strong>Intelligence hippique — Moteur M1 indépendant</strong>
+    <p class="muted">
+      Courses PMU physiquement disputées en France.
+      Décisions autonomes M1, FIGÉs historiques et audits.
+    </p>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#courses">Courses</a>
+      <a href="#partants">Partants</a>
+      <a href="#decisions">Décisions M1</a>
+      <a href="#figes">FIGÉs</a>
+      <a href="#audits">Audits</a>
+      <a href="#diagnostic">Diagnostic</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" id="accueil">
+
+  <div class="toolbar">
+    <span>Heure de Paris :
+      <strong id="heureParis">—</strong>
+    </span>
+    <button id="actualiser" type="button">Actualiser</button>
+  </div>
+
+  <div id="etatGlobal" class="status warn">
+    Chargement des données M1...
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      Courses françaises
+      <div class="count" id="nbCourses">—</div>
+    </div>
+    <div class="card">
+      Partants
+      <div class="count" id="nbPartants">—</div>
+    </div>
+    <div class="card">
+      Non-partants
+      <div class="count" id="nbNP">—</div>
+    </div>
+    <div class="card">
+      Décisions M1
+      <div class="count" id="nbDecisions">—</div>
+    </div>
+    <div class="card">
+      FIGÉs
+      <div class="count" id="nbFiges">—</div>
+    </div>
+    <div class="card">
+      Audits
+      <div class="count" id="nbAudits">—</div>
+    </div>
+  </div>
+
+  <section id="courses">
+    <h2>Courses françaises publiées</h2>
+    <div class="scroll" id="tableCourses"></div>
+  </section>
+
+  <section id="partants">
+    <h2>Partants et non-partants</h2>
+    <label for="choixCourse">Choisir une course :</label>
+    <select id="choixCourse"></select>
+    <div class="scroll" id="tablePartants"></div>
+  </section>
+
+  <section id="decisions">
+    <h2>Tableau indépendant des décisions M1</h2>
+    <p class="muted">
+      Aucun classement inventé. Seules les sélections réellement
+      publiées par M1 sont affichées.
+    </p>
+    <div class="scroll" id="tableDecisions"></div>
+  </section>
+
+  <section id="figes">
+    <h2>FIGÉs historiques M1</h2>
+    <p class="muted">
+      Les versions historiques doivent être conservées.
+      Une nouvelle version ne doit pas écraser la précédente.
+    </p>
+    <div class="scroll" id="tableFiges"></div>
+  </section>
+
+  <section id="audits">
+    <h2>Audits après course</h2>
+    <div class="scroll" id="tableAudits"></div>
+  </section>
+
+  <section id="diagnostic">
+    <h2>Diagnostic technique M1</h2>
+    <div id="rapportTechnique">Vérification en attente.</div>
+    <p class="muted">
+      GitHub Pages est un hébergement statique.
+      Ce site n'exécute pas directement m1.py et ne certifie
+      pas automatiquement les résultats officiels.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  🇸🇳🧠🔥 X1000 M1 — Indépendance sportive et technique.
+  <p>Aucun pronostic ne garantit un gain.</p>
+</footer>
+
+<script>
+"use strict";
+
+const $ = id => document.getElementById(id);
+
+const state = {
+  courses: [],
+  selections: [],
+  figes: [],
+  audits: [],
+  errors: [],
+  loaded: {}
+};
+
+function escapeHTML(value) {
+  return String(value ?? "—").replace(/[&<>"']/g, c => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[c]);
+}
+
+function heureParis() {
+  $("heureParis").textContent =
+    new Intl.DateTimeFormat("fr-FR", {
+      timeZone: "Europe/Paris",
+      dateStyle: "full",
+      timeStyle: "medium"
+    }).format(new Date());
+}
+
+function formatDate(value) {
+  if (!value) return "—";
+  const date = new Date(value);
+  if (isNaN(date.getTime())) return "Date invalide";
+  return new Intl.DateTimeFormat("fr-FR", {
+    timeZone: "Europe/Paris",
+    dateStyle: "short",
+    timeStyle: "short"
+  }).format(date);
+}
+
+function classement(value) {
+  return Array.isArray(value) ? value.join(" - ") : "—";
+}
+
+function table(rows, columns) {
+  if (!rows.length) {
+    return '<p class="muted">Aucune donnée publiée.</p>';
+  }
+
+  const head = columns.map(col =>
+    "<th>" + escapeHTML(col[0]) + "</th>"
+  ).join("");
+
+  const body = rows.map(row =>
+    "<tr>" + columns.map(col =>
+      "<td>" + escapeHTML(col[1](row)) + "</td>"
+    ).join("") + "</tr>"
+  ).join("");
+
+  return "<table><thead><tr>" + head +
+    "</tr></thead><tbody>" + body +
+    "</tbody></table>";
+}
+
+async function chargerJSON(name) {
+  const url = "data/" + name + ".json?t=" + Date.now();
+  const response = await fetch(url, { cache: "no-store" });
+
+  if (!response.ok) {
+    throw new Error(name + ".json : HTTP " + response.status);
+  }
+
+  const data = await response.json();
+
+  if (!Array.isArray(data)) {
+    throw new Error(name + ".json : liste JSON attendue");
+  }
+
+  return data;
+}
+
+function afficherCourses() {
+  $("tableCourses").innerHTML = table(state.courses, [
+    ["Course", x => x.id],
+    ["Hippodrome", x => x.hippodrome],
+    ["Départ Paris", x => formatDate(x.depart)],
+    ["Partants", x => (x.partants || []).filter(p => !p.non_partant).length],
+    ["NP", x => (x.partants || []).filter(p => p.non_partant).length]
+  ]);
+}
+
+function afficherPartants() {
+  const select = $("choixCourse");
+  const previous = select.value;
+
+  select.innerHTML = "";
+
+  if (!state.courses.length) {
+    select.innerHTML = '<option value="">Aucune course publiée</option>';
+    $("tablePartants").innerHTML =
+      '<p class="muted">Aucun partant disponible.</p>';
+    return;
+  }
+
+  state.courses.forEach(course => {
+    const option = document.createElement("option");
+    option.value = course.id;
+    option.textContent =
+      course.id + " — " + (course.hippodrome || "Hippodrome non renseigné");
+    select.appendChild(option);
+  });
+
+  if (state.courses.some(c => c.id === previous)) {
+    select.value = previous;
+  }
+
+  afficherPartantsCourse();
+}
+
+function afficherPartantsCourse() {
+  const course = state.courses.find(c =>
+    c.id === $("choixCourse").value
+  );
+
+  const partants = course && Array.isArray(course.partants)
+    ? course.partants
+    : [];
+
+  $("tablePartants").innerHTML = table(partants, [
+    ["N°", p => p.numero],
+    ["Cheval", p => p.nom],
+    ["Statut", p => p.non_partant ? "NON-PARTANT" : "Partant"],
+    ["Jockey / Driver", p => p.jockey || p.driver],
+    ["Entraîneur", p => p.entraineur],
+    ["Musique", p => p.musique]
+  ]);
+}
+
+function afficherDecisions() {
+  $("tableDecisions").innerHTML = table(state.selections, [
+    ["Course", x => x.course_id],
+    ["Gagnant espéré", x => x.classement?.[0]],
+    ["Meilleur placé", x => x.classement?.[1]],
+    ["Ordre espéré", x => classement(x.classement)],
+    ["Pari envisagé", x => x.pari_envisage
+      ? x.pari_envisage.formule + " : " +
+        classement(x.pari_envisage.numeros)
+      : "Non renseigné"],
+    ["Statut", x => x.statut],
+    ["Heure Paris", x => formatDate(x.cree_a)]
+  ]);
+}
+
+function afficherFiges() {
+  $("tableFiges").innerHTML = table(state.figes, [
+    ["Course", x => x.course_id],
+    ["Version", x => x.version],
+    ["Classement", x => classement(x.classement)],
+    ["Pari", x => x.pari
+      ? x.pari.formule + " : " + classement(x.pari.numeros)
+      : "—"],
+    ["FIGÉ à", x => formatDate(x.fige_a)],
+    ["Statut", x => x.statut],
+    ["SHA-256", x => x.sha256]
+  ]);
+}
+
+function afficherAudits() {
+  $("tableAudits").innerHTML = table(state.audits, [
+    ["Course", x => x.course_id],
+    ["Version", x => x.version],
+    ["Arrivée déclarée", x => classement(x.arrivee)],
+    ["Top 5 détectés", x => x.top5_detectes],
+    ["Ordre exact", x => x.ordre_exact === true ? "Oui" : "Non"],
+    ["Source déclarée", x => x.source_officielle],
+    ["Heure audit", x => formatDate(x.audite_a)]
+  ]);
+}
+
+function afficherCompteurs() {
+  const partants = state.courses.flatMap(c =>
+    Array.isArray(c.partants) ? c.partants : []
+  );
+
+  $("nbCourses").textContent = state.courses.length;
+  $("nbPartants").textContent =
+    partants.filter(p => !p.non_partant).length;
+  $("nbNP").textContent =
+    partants.filter(p => p.non_partant === true).length;
+  $("nbDecisions").textContent = state.selections.length;
+  $("nbFiges").textContent = state.figes.length;
+  $("nbAudits").textContent = state.audits.length;
+}
+
+function afficherDiagnostic() {
+  const files = ["courses", "selections", "figes", "audits"];
+
+  const lignes = files.map(name => {
+    const ok = state.loaded[name] === true;
+    return "<p class='" + (ok ? "ok" : "bad") + "'>" +
+      escapeHTML(name + ".json : " +
+        (ok ? "chargé" : "indisponible ou invalide")) +
+      "</p>";
+  });
+
+  if (state.errors.length) {
+    lignes.push(
+      "<p class='bad'>" +
+      escapeHTML(state.errors.join(" | ")) +
+      "</p>"
+    );
+  }
+
+  lignes.push(
+    "<p class='muted'>Contrôle de lecture uniquement. " +
+    "L'intégrité cryptographique des FIGÉs et les sources " +
+    "officielles doivent être vérifiées séparément.</p>"
+  );
+
+  $("rapportTechnique").innerHTML = lignes.join("");
+}
+
+async function actualiser() {
+  $("etatGlobal").className = "status warn";
+  $("etatGlobal").textContent = "Actualisation des données M1...";
+
+  state.errors = [];
+  state.loaded = {};
+
+  const names = ["courses", "selections", "figes", "audits"];
+
+  await Promise.all(names.map(async name => {
+    try {
+      state[name] = await chargerJSON(name);
+      state.loaded[name] = true;
+    } catch (error) {
+      state[name] = [];
+      state.loaded[name] = false;
+      state.errors.push(error.message);
+    }
+  }));
+
+  state.courses = state.courses.filter(c =>
+    c && c.localisation_france_verifiee === true
+  );
+
+  state.selections = state.selections.filter(s =>
+    s && s.moteur === "M1"
+  );
+
+  state.figes = state.figes.filter(f =>
+    f && f.moteur === "M1"
+  );
+
+  state.audits = state.audits.filter(a =>
+    a && (!a.moteur || a.moteur === "M1")
+  );
+
+  state.courses.sort((a, b) =>
+    new Date(a.depart) - new Date(b.depart)
+  );
+
+  afficherCompteurs();
+  afficherCourses();
+  afficherPartants();
+  afficherDecisions();
+  afficherFiges();
+  afficherAudits();
+  afficherDiagnostic();
+
+  if (state.errors.length) {
+    $("etatGlobal").className = "status bad";
+    $("etatGlobal").textContent =
+      "Chargement partiel ou impossible : consultez le diagnostic.";
+  } else {
+    $("etatGlobal").className = "status ok";
+    $("etatGlobal").textContent =
+      "Données M1 chargées — " +
+      new Intl.DateTimeFormat("fr-FR", {
+        timeZone: "Europe/Paris",
+        dateStyle: "short",
+        timeStyle: "medium"
+      }).format(new Date());
+  }
+}
+
+$("actualiser").addEventListener("click", actualiser);
+$("choixCourse").addEventListener("change", afficherPartantsCourse);
+
+heureParis();
+setInterval(heureParis, 1000);
+
+actualiser();
+setInterval(actualiser, 300000);
+</script>
+
+</body>
+</html>
