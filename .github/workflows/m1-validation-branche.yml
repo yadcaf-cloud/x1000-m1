@@ -1,18 +1,25 @@
 # 🇸🇳🧠🔥 X1000 M1
-# VALIDATION SECURISEE UNIFIEE - VERSION 3.2
+# VALIDATION SECURISEE UNIFIEE - VERSION 3.3
 #
 # Depot : yadcaf-cloud/x1000-m1
 # Branche : feature/m1-autonomie-securisee-20261031
 #
-# - Tests sans publication
-# - Collecte PMU reelle dans une copie isolee
-# - Importation M1 dans la copie uniquement
-# - Verification des JSON et des archives FIGE
-# - Protection SHA256 avant et apres les tests
-# - Aucun push, pronostic, FIGE ou deploiement
-# - Aucune intervention sur M2, M3, M4, M5
+# Correction : courses.json : liste attendue
+# Conversion uniquement dans la copie temporaire.
+#
+# PROTECTIONS
+# - Depot original en lecture seule
+# - Aucun push ni deploiement
+# - Aucune modification du tableau officiel
+# - Aucune decision sportive automatique
+# - Aucun pronostic ou FIGE cree
+# - Archives FIGE conservees et controlees
+# - Collecte PMU reelle, France verifiee
+# - Aucune donnee hippique inventee
+# - Aucun acces aux moteurs M2 a M5
+# - Controle SHA256 initial et final
 
-name: "X1000 M1 - Validation securisee unifiee"
+name: "X1000 M1 - Validation securisee unifiee 3.3"
 
 on:
   workflow_dispatch:
@@ -35,7 +42,7 @@ concurrency:
 
 jobs:
   validation:
-    name: "M1 - Tests et importation isoles"
+    name: "M1 - Validation et importation isolees"
     if: github.ref == 'refs/heads/feature/m1-autonomie-securisee-20261031'
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -51,18 +58,18 @@ jobs:
       M1_AUTO_ANALYZE: "false"
 
     steps:
-      - name: Recuperer la branche
+      - name: Recuperer la branche securisee
         uses: actions/checkout@v4
         with:
           persist-credentials: false
           fetch-depth: 1
 
-      - name: Installer Python
+      - name: Installer Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Verifier structure et integrite initiale
+      - name: Verifier la structure initiale
         run: |
           set -euo pipefail
 
@@ -75,6 +82,12 @@ jobs:
           test ! -L data
 
           test -z "$(git status --porcelain --untracked-files=all)"
+
+          echo "Structure initiale OK"
+
+      - name: Enregistrer empreintes SHA256
+        run: |
+          set -euo pipefail
 
           python - <<'PY'
           import hashlib
@@ -109,10 +122,10 @@ jobs:
                               )
 
                           elif stat.S_ISREG(mode):
-                              digest = hashlib.sha256(
+                              sha = hashlib.sha256(
                                   p.read_bytes()
                               ).hexdigest()
-                              result[key] = "FILE:" + digest
+                              result[key] = "FILE:" + sha
 
                           else:
                               result[key] = "SPECIAL"
@@ -125,10 +138,10 @@ jobs:
               encoding="utf-8"
           )
 
-          print("Empreintes initiales enregistrees")
+          print("SHA256 initial enregistre")
           PY
 
-      - name: Valider syntaxe et JSON sans ecriture
+      - name: Verifier Python et JSON stricts
         run: |
           set -euo pipefail
 
@@ -142,18 +155,16 @@ jobs:
                   name,
                   "exec"
               )
-              print("Syntaxe OK:", name)
+              print("Python OK:", name)
 
           def pairs(items):
               result = {}
-
               for key, value in items:
                   if key in result:
                       raise ValueError(
                           "Cle JSON dupliquee: " + key
                       )
                   result[key] = value
-
               return result
 
           def constant(value):
@@ -161,17 +172,15 @@ jobs:
                   "Constante JSON interdite: " + value
               )
 
-          for path in sorted(
-              Path("data").rglob("*.json")
-          ):
+          for path in sorted(Path("data").rglob("*.json")):
               if path.is_symlink():
                   raise ValueError(
                       "Lien symbolique interdit: " + str(path)
                   )
 
-              with path.open(encoding="utf-8") as f:
+              with path.open(encoding="utf-8") as stream:
                   json.load(
-                      f,
+                      stream,
                       object_pairs_hook=pairs,
                       parse_constant=constant
                   )
@@ -179,7 +188,7 @@ jobs:
               print("JSON OK:", path)
           PY
 
-      - name: Creer une copie isolee
+      - name: Creer copie temporaire isolee
         id: preparation
         run: |
           set -euo pipefail
@@ -190,14 +199,102 @@ jobs:
           cp m1.py pmu_engine.py "$WORKDIR/"
           cp -a data "$WORKDIR/data"
 
+          # Eviter toute reutilisation d'une ancienne collecte.
           rm -f \
             "$WORKDIR/data/collecte_m1_pmu.json" \
             "$WORKDIR/data/diagnostic_collecte_m1.json" \
             "$WORKDIR/data/import_diagnostic.json"
 
-          echo "Copie temporaire prete"
+          echo "Copie temporaire creee"
+          echo "Depot original intact"
 
-      - name: Tester moteurs et archives
+      - name: Corriger courses.json dans la copie
+        working-directory: ${{ steps.preparation.outputs.path }}
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import m1
+
+          path = Path("data/courses.json")
+
+          if path.is_symlink():
+              raise SystemExit(
+                  "Lien symbolique courses.json interdit"
+              )
+
+          if not path.exists():
+              path.write_text(
+                  "[]\n",
+                  encoding="utf-8"
+              )
+              print("Base M1 absente : liste vide initialisee")
+              raise SystemExit(0)
+
+          data = m1.load_json(
+              path.read_text(encoding="utf-8")
+          )
+
+          if isinstance(data, list):
+              courses = data
+              print("Format liste deja compatible")
+
+          elif isinstance(data, dict):
+              courses = data.get("courses")
+
+              if not isinstance(courses, list):
+                  raise SystemExit(
+                      "courses.json : courses[] invalide"
+                  )
+
+              print(
+                  "Conversion objet vers liste dans la copie"
+              )
+
+          else:
+              raise SystemExit(
+                  "courses.json : format incompatible"
+              )
+
+          ids = set()
+          normalized = []
+
+          for raw in courses:
+              try:
+                  course = m1.normalize_course(raw)
+              except (ValueError, TypeError, KeyError) as exc:
+                  raise SystemExit(
+                      "Course existante invalide: " + str(exc)
+                  )
+
+              cid = course["id"]
+
+              if cid in ids:
+                  raise SystemExit(
+                      "Course existante dupliquee: " + cid
+                  )
+
+              ids.add(cid)
+              normalized.append(course)
+
+          # Ecriture autorisee dans la copie uniquement.
+          path.write_text(
+              json.dumps(
+                  normalized,
+                  ensure_ascii=False,
+                  indent=2,
+                  allow_nan=False
+              ) + "\n",
+              encoding="utf-8"
+          )
+
+          print("Base M1 compatible")
+          print("Courses conservees:", len(normalized))
+          PY
+
+      - name: Tester M1 et collecteur PMU
         working-directory: ${{ steps.preparation.outputs.path }}
         run: |
           set -euo pipefail
@@ -206,7 +303,9 @@ jobs:
           python m1.py --self-test
           python m1.py --verify-archives
 
-      - name: Collecter les courses PMU
+          echo "Tests M1 et PMU OK"
+
+      - name: Collecter les courses PMU reelles
         id: collecte
         working-directory: ${{ steps.preparation.outputs.path }}
         run: |
@@ -215,21 +314,12 @@ jobs:
           python pmu_engine.py
           code=$?
 
-          if [ "$code" -eq 0 ]; then
-            echo "etat=complete" >> "$GITHUB_OUTPUT"
-
-          elif [ "$code" -eq 2 ]; then
-            echo "etat=partielle" >> "$GITHUB_OUTPUT"
-            echo "::warning::Collecte PMU partielle"
-
-          else
+          if [ "$code" -ne 0 ] && [ "$code" -ne 2 ]; then
             if python - <<'PY'
           import json
           from pathlib import Path
 
-          path = Path(
-              "data/diagnostic_collecte_m1.json"
-          )
+          path = Path("data/diagnostic_collecte_m1.json")
 
           if not path.is_file():
               raise SystemExit(1)
@@ -250,15 +340,22 @@ jobs:
           PY
             then
               echo "etat=aucune_course" >> "$GITHUB_OUTPUT"
-              echo "::notice::Aucune course verifiee"
-            else
-              echo "etat=echec" >> "$GITHUB_OUTPUT"
-              echo "::error::Echec collecte PMU"
-              exit 1
+              echo "::notice::Aucune course francaise verifiee"
+              exit 0
             fi
+
+            echo "::error::Echec collecte PMU"
+            exit 1
           fi
 
-      - name: Verifier fraicheur et coherence
+          if [ "$code" -eq 2 ]; then
+            echo "etat=partielle" >> "$GITHUB_OUTPUT"
+            echo "::warning::Collecte PMU partielle"
+          else
+            echo "etat=complete" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Controler fraicheur et coherence
         id: controle
         if: steps.collecte.outputs.etat == 'complete' || steps.collecte.outputs.etat == 'partielle'
         working-directory: ${{ steps.preparation.outputs.path }}
@@ -273,9 +370,10 @@ jobs:
           from zoneinfo import ZoneInfo
 
           def lire(name):
-              path = Path("data") / name
               return json.loads(
-                  path.read_text(encoding="utf-8")
+                  (Path("data") / name).read_text(
+                      encoding="utf-8"
+                  )
               )
 
           data = lire("collecte_m1_pmu.json")
@@ -290,18 +388,16 @@ jobs:
           for field in ("date", "collecte_a", "statut"):
               if data.get(field) != diag.get(field):
                   raise SystemExit(
-                      "Incoherence: " + field
+                      "Incoherence collecte: " + field
                   )
 
           if data.get("statut") not in ("OK", "PARTIEL"):
-              raise SystemExit("Statut inexploitable")
+              raise SystemExit("Statut collecte inexploitable")
 
           courses = data.get("courses")
 
           if not isinstance(courses, list) or not courses:
-              raise SystemExit(
-                  "Aucune course a importer"
-              )
+              raise SystemExit("Aucune course exploitable")
 
           stamp = dt.datetime.fromisoformat(
               data["collecte_a"].replace("Z", "+00:00")
@@ -311,11 +407,7 @@ jobs:
               stamp.tzinfo is None
               or stamp.utcoffset() is None
           ):
-              raise SystemExit(
-                  "Horodatage sans fuseau"
-              )
-
-          paris = ZoneInfo("Europe/Paris")
+              raise SystemExit("Horodatage sans fuseau")
 
           age = (
               dt.datetime.now(dt.timezone.utc)
@@ -324,15 +416,15 @@ jobs:
 
           if not -300 <= age <= 1200:
               raise SystemExit(
-                  "Collecte non recente"
+                  "Collecte trop ancienne ou future"
               )
+
+          paris = ZoneInfo("Europe/Paris")
 
           if data.get("date") != (
               stamp.astimezone(paris).date().isoformat()
           ):
-              raise SystemExit(
-                  "Date incoherente"
-              )
+              raise SystemExit("Date de collecte incoherente")
 
           pattern = re.compile(
               r"^\d{4}-\d{2}-\d{2}-R[1-9]\d*-C[1-9]\d*$"
@@ -346,13 +438,11 @@ jobs:
 
               cid = course.get("id")
 
-              if not isinstance(cid, str):
-                  raise SystemExit("ID absent")
-
-              if not pattern.fullmatch(cid):
-                  raise SystemExit(
-                      "Identifiant invalide: " + cid
-                  )
+              if (
+                  not isinstance(cid, str)
+                  or not pattern.fullmatch(cid)
+              ):
+                  raise SystemExit("Identifiant course invalide")
 
               if cid in ids:
                   raise SystemExit(
@@ -361,11 +451,39 @@ jobs:
 
               ids.add(cid)
 
-          print("Courses controlees:", len(courses))
+              if course.get(
+                  "localisation_france_verifiee"
+              ) is not True:
+                  raise SystemExit(
+                      "Localisation France non verifiee"
+                  )
+
+              depart = dt.datetime.fromisoformat(
+                  course["depart"].replace("Z", "+00:00")
+              )
+
+              if (
+                  depart.tzinfo is None
+                  or depart.utcoffset() is None
+              ):
+                  raise SystemExit(
+                      "Depart sans fuseau"
+                  )
+
+              if (
+                  depart.astimezone(paris).date().isoformat()
+                  != cid[:10]
+              ):
+                  raise SystemExit(
+                      "Date de course incoherente"
+                  )
+
+          print("Fraicheur OK")
           print("Age collecte:", round(age), "secondes")
+          print("Courses verifiees:", len(courses))
           PY
 
-      - name: Importer uniquement dans la copie
+      - name: Importer M1 dans la copie uniquement
         id: importation
         if: steps.controle.outcome == 'success'
         working-directory: ${{ steps.preparation.outputs.path }}
@@ -380,6 +498,7 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
+          import m1
 
           path = Path("data/import_diagnostic.json")
 
@@ -409,11 +528,46 @@ jobs:
                   "Compteurs import invalides"
               )
 
+          courses = m1.records("courses.json")
+          ids = [c["id"] for c in courses]
+
+          if len(ids) != len(set(ids)):
+              raise SystemExit(
+                  "Doublons dans la base M1"
+              )
+
+          if data.get("total_courses") != len(courses):
+              raise SystemExit(
+                  "Total courses incoherent"
+              )
+
           print("Importees:", imported)
           print("Rejetees:", len(rejected))
+          print("Total base M1:", len(courses))
+
+          for item in rejected:
+              print("Rejet:", json.dumps(
+                  item, ensure_ascii=False
+              ))
+
+          if imported == 0:
+              print(
+                  "::warning::Aucune course importee"
+              )
           PY
 
-      - name: Verifier integrite finale
+      - name: Verifier archives FIGE apres importation
+        if: steps.importation.outcome == 'success'
+        working-directory: ${{ steps.preparation.outputs.path }}
+        run: |
+          set -euo pipefail
+
+          python m1.py --verify-archives
+
+          echo "Archives FIGE controlees"
+          echo "Aucun FIGE cree par le workflow"
+
+      - name: Verifier integrite finale du depot
         if: always()
         run: |
           set -euo pipefail
@@ -461,10 +615,10 @@ jobs:
                           )
 
                       elif stat.S_ISREG(mode):
-                          digest = hashlib.sha256(
+                          sha = hashlib.sha256(
                               p.read_bytes()
                           ).hexdigest()
-                          after[key] = "FILE:" + digest
+                          after[key] = "FILE:" + sha
 
                       else:
                           after[key] = "SPECIAL"
@@ -498,9 +652,10 @@ jobs:
           PY
 
           test -z "$(git status --porcelain --untracked-files=all)"
-          echo "Depot intact"
 
-      - name: Rapport final
+          echo "Depot original intact"
+
+      - name: Rapport final de validation
         if: always()
         env:
           RESULTAT: ${{ job.status }}
@@ -509,7 +664,7 @@ jobs:
           IMPORT: ${{ steps.importation.outcome }}
         run: |
           {
-            echo "## X1000 M1 - Validation 3.2"
+            echo "## 🇸🇳🧠🔥 X1000 M1 - Validation 3.3"
             echo ""
             echo "- Branche: $GITHUB_REF_NAME"
             echo "- Commit: $GITHUB_SHA"
@@ -517,8 +672,11 @@ jobs:
             echo "- Collecte: ${COLLECTE:-non executee}"
             echo "- Controle: ${CONTROLE:-non execute}"
             echo "- Importation: ${IMPORT:-non executee}"
+            echo "- Correction courses.json: copie uniquement"
+            echo "- Depot original: lecture seule"
             echo "- Publication: aucune"
-            echo "- Pronostics/FIGEs: aucune creation demandee"
-            echo "- Analyse sportive autonome: non activee"
-            echo "- Depot: lecture seule"
+            echo "- Pronostics automatiques: aucun"
+            echo "- FIGEs crees: aucun"
+            echo "- Analyse sportive autonome: desactivee"
+            echo "- Moteurs M2-M5: non concernes"
           } >> "$GITHUB_STEP_SUMMARY"
