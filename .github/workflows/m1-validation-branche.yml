@@ -1,0 +1,515 @@
+# 🇸🇳🧠🔥 X1000 M1
+# VALIDATION SECURISEE - VERSION 2.0
+#
+# Depot : yadcaf-cloud/x1000-m1
+#
+# REGLES :
+# - Branche de travail uniquement
+# - Aucun push vers main
+# - Aucun pronostic genere
+# - Aucun FIGE cree ou modifie
+# - Aucun audit sportif genere
+# - Aucun deploiement PHOENIX
+# - Aucun acces a M2, M3, M4 ou M5
+# - Aucune donnee hippique inventee
+#
+# Ce workflow ne modifie aucun fichier suivi.
+
+name: "X1000 M1 - Validation branche securisee"
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - "feature/m1-autonomie-securisee-20261031"
+    paths:
+      - "m1.py"
+      - "pmu_engine.py"
+      - "index.html"
+      - "data/**"
+      - ".github/workflows/m1-validation-branche.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: m1-validation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validation:
+    name: "M1 - Diagnostic protege"
+
+    if: >-
+      github.ref ==
+      'refs/heads/feature/m1-autonomie-securisee-20261031'
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    defaults:
+      run:
+        shell: bash
+
+    env:
+      TZ: Europe/Paris
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+      M1_AUTO_ANALYZE: "false"
+
+    steps:
+
+      - name: Recuperer la branche
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verifier la structure
+        run: |
+          set -euo pipefail
+
+          for file in \
+            m1.py \
+            pmu_engine.py \
+            index.html \
+            data/collecte_m1_pmu.json \
+            data/diagnostic_collecte_m1.json \
+            data/courses.json
+          do
+            if [ ! -f "$file" ] || [ -L "$file" ]; then
+              echo "ERREUR: fichier absent ou lien: $file"
+              exit 1
+            fi
+
+            echo "OK: $file"
+          done
+
+          test -d data
+          test ! -L data
+
+      - name: Enregistrer les empreintes initiales
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          import stat
+          from pathlib import Path
+
+          def snapshot():
+              result = {}
+
+              def scan(folder):
+                  with os.scandir(folder) as entries:
+                      for entry in entries:
+                          path = Path(entry.path)
+                          name = path.as_posix()
+
+                          if name == ".git":
+                              continue
+
+                          mode = entry.stat(
+                              follow_symlinks=False
+                          ).st_mode
+
+                          if stat.S_ISDIR(mode):
+                              result[name] = "DIR"
+                              scan(path)
+
+                          elif stat.S_ISLNK(mode):
+                              result[name] = (
+                                  "LINK:" + os.readlink(path)
+                              )
+
+                          elif stat.S_ISREG(mode):
+                              result[name] = (
+                                  "FILE:" +
+                                  hashlib.sha256(
+                                      path.read_bytes()
+                                  ).hexdigest()
+                              )
+
+                          else:
+                              result[name] = (
+                                  "SPECIAL:" + str(mode)
+                              )
+
+              scan(Path("."))
+              return result
+
+          Path("/tmp/m1-validation-before.json").write_text(
+              json.dumps(snapshot(), sort_keys=True),
+              encoding="utf-8"
+          )
+
+          print("Empreintes initiales enregistrees")
+          PY
+
+      - name: Verifier syntaxe Python
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          from pathlib import Path
+
+          for filename in (
+              "m1.py",
+              "pmu_engine.py"
+          ):
+              compile(
+                  Path(filename).read_bytes(),
+                  filename,
+                  "exec"
+              )
+
+              print("SYNTAXE OK:", filename)
+          PY
+
+      - name: Verifier tous les JSON
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          def pairs(items):
+              result = {}
+
+              for key, value in items:
+                  if key in result:
+                      raise ValueError(
+                          "Cle JSON dupliquee: " + key
+                      )
+                  result[key] = value
+
+              return result
+
+          def constant(value):
+              raise ValueError(
+                  "Constante JSON interdite: " + value
+              )
+
+          paths = sorted(
+              Path("data").rglob("*.json")
+          )
+
+          if not paths:
+              raise SystemExit(
+                  "ERREUR: aucun JSON dans data/"
+              )
+
+          for path in paths:
+              if path.is_symlink():
+                  raise SystemExit(
+                      "Lien symbolique interdit: " + str(path)
+                  )
+
+              with path.open(encoding="utf-8") as stream:
+                  json.load(
+                      stream,
+                      object_pairs_hook=pairs,
+                      parse_constant=constant
+                  )
+
+              print("JSON OK:", path)
+
+          print("Total JSON controles:", len(paths))
+          PY
+
+      - name: Verifier la collecte PMU
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import datetime as dt
+          import json
+          import re
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          PARIS = ZoneInfo("Europe/Paris")
+
+          collecte = json.loads(
+              Path("data/collecte_m1_pmu.json")
+              .read_text(encoding="utf-8")
+          )
+
+          diagnostic = json.loads(
+              Path("data/diagnostic_collecte_m1.json")
+              .read_text(encoding="utf-8")
+          )
+
+          if not isinstance(collecte, dict):
+              raise SystemExit(
+                  "Collecte: objet attendu"
+              )
+
+          courses = collecte.get("courses")
+
+          if not isinstance(courses, list):
+              raise SystemExit(
+                  "Collecte: courses[] absent"
+              )
+
+          ids = set()
+          pattern = re.compile(
+              r"^\d{4}-\d{2}-\d{2}-R[1-9]\d*-C[1-9]\d*$"
+          )
+
+          for course in courses:
+              if not isinstance(course, dict):
+                  raise SystemExit(
+                      "Course invalide"
+                  )
+
+              cid = course.get("id")
+
+              if not isinstance(cid, str):
+                  raise SystemExit(
+                      "Identifiant de course absent"
+                  )
+
+              if not pattern.fullmatch(cid):
+                  raise SystemExit(
+                      "Identifiant invalide: " + cid
+                  )
+
+              if cid in ids:
+                  raise SystemExit(
+                      "Course dupliquee: " + cid
+                  )
+
+              ids.add(cid)
+
+          if not isinstance(diagnostic, dict):
+              raise SystemExit(
+                  "Diagnostic invalide"
+              )
+
+          stamp = diagnostic.get("collecte_a")
+
+          if not isinstance(stamp, str):
+              raise SystemExit(
+                  "Horodatage collecte absent"
+              )
+
+          moment = dt.datetime.fromisoformat(
+              stamp.replace("Z", "+00:00")
+          )
+
+          if (
+              moment.tzinfo is None
+              or moment.utcoffset() is None
+          ):
+              raise SystemExit(
+                  "Fuseau horaire absent"
+              )
+
+          age = (
+              dt.datetime.now(dt.timezone.utc)
+              - moment.astimezone(dt.timezone.utc)
+          ).total_seconds()
+
+          print("Courses:", len(courses))
+          print("Collecte Paris:", moment.astimezone(PARIS))
+          print("Age secondes:", round(age))
+          print("Statut:", diagnostic.get("statut"))
+
+          if age < -300:
+              raise SystemExit(
+                  "Horodatage dans le futur"
+              )
+
+          if age > 1800:
+              print(
+                  "ATTENTION: collecte ancienne "
+                  "(plus de 30 minutes)"
+              )
+
+          if not courses:
+              print(
+                  "ATTENTION: aucune course disponible"
+              )
+          PY
+
+      - name: Verifier compatibilite base M1
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("data/courses.json")
+
+          base = json.loads(
+              path.read_text(encoding="utf-8")
+          )
+
+          if isinstance(base, list):
+              print("OK: base M1 au format liste")
+
+          elif isinstance(base, dict):
+              print(
+                  "ATTENTION: base au format objet"
+              )
+
+              print(
+                  "Import M1 non encore active"
+              )
+
+              print(
+                  "Conversion a preparer separement"
+              )
+
+          else:
+              raise SystemExit(
+                  "ERREUR: format base M1 inconnu"
+              )
+
+          print("Aucune conversion effectuee")
+          PY
+
+      - name: Tester collecteur PMU
+        run: |
+          set -euo pipefail
+          python pmu_engine.py --self-test
+
+      - name: Tester moteur M1
+        run: |
+          set -euo pipefail
+          python m1.py --self-test
+
+      - name: Verifier archives FIGE
+        run: |
+          set -euo pipefail
+          python m1.py --verify-archives
+
+      - name: Verifier integrite finale
+        if: always()
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          import stat
+          from pathlib import Path
+
+          before_path = Path(
+              "/tmp/m1-validation-before.json"
+          )
+
+          if not before_path.is_file():
+              raise SystemExit(
+                  "ERREUR: empreinte initiale absente"
+              )
+
+          before = json.loads(
+              before_path.read_text(encoding="utf-8")
+          )
+
+          after = {}
+
+          def scan(folder):
+              with os.scandir(folder) as entries:
+                  for entry in entries:
+                      path = Path(entry.path)
+                      name = path.as_posix()
+
+                      if name == ".git":
+                          continue
+
+                      mode = entry.stat(
+                          follow_symlinks=False
+                      ).st_mode
+
+                      if stat.S_ISDIR(mode):
+                          after[name] = "DIR"
+                          scan(path)
+
+                      elif stat.S_ISLNK(mode):
+                          after[name] = (
+                              "LINK:" + os.readlink(path)
+                          )
+
+                      elif stat.S_ISREG(mode):
+                          after[name] = (
+                              "FILE:" +
+                              hashlib.sha256(
+                                  path.read_bytes()
+                              ).hexdigest()
+                          )
+
+                      else:
+                          after[name] = (
+                              "SPECIAL:" + str(mode)
+                          )
+
+          scan(Path("."))
+
+          if before != after:
+              added = sorted(
+                  after.keys() - before.keys()
+              )
+
+              removed = sorted(
+                  before.keys() - after.keys()
+              )
+
+              changed = sorted(
+                  key
+                  for key in before.keys() & after.keys()
+                  if before[key] != after[key]
+              )
+
+              print("Ajoutes:", added)
+              print("Supprimes:", removed)
+              print("Modifies:", changed)
+
+              raise SystemExit(
+                  "ERREUR: integrite des fichiers"
+              )
+
+          print("INTEGRITE OK")
+          print("Aucun fichier de travail modifie")
+          PY
+
+          if [ -n "$(git status --porcelain --untracked-files=all)" ]; then
+            git status --short
+            exit 1
+          fi
+
+          echo "DEPOT INCHANGE"
+
+      - name: Rapport final
+        if: always()
+        env:
+          RESULTAT: ${{ job.status }}
+        run: |
+          {
+            echo "## X1000 M1 - Validation securisee"
+            echo ""
+            echo "- Branche: ${GITHUB_REF_NAME}"
+            echo "- Resultat: ${RESULTAT}"
+            echo "- Permissions Git: lecture seule"
+            echo "- Aucun push vers main"
+            echo "- Aucune publication"
+            echo "- Aucune analyse automatique lancee"
+            echo "- Aucun FIGE genere volontairement"
+            echo "- Aucune modification autorisee"
+            echo "- Aucun deploiement PHOENIX"
+            echo ""
+            echo "Les etapes doivent etre vertes"
+            echo "avant tout nouveau deploiement."
+          } >> "$GITHUB_STEP_SUMMARY"
