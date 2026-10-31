@@ -1,19 +1,16 @@
 # 🇸🇳🧠🔥 X1000 M1
-# VALIDATION SECURISEE UNIFIEE - VERSION 3.1
+# VALIDATION SECURISEE UNIFIEE - VERSION 3.2
 #
-# DEPOT : yadcaf-cloud/x1000-m1
+# Depot : yadcaf-cloud/x1000-m1
+# Branche : feature/m1-autonomie-securisee-20261031
 #
-# - Branche securisee uniquement
-# - Tests sans modification du depot
-# - Collecte PMU dans une copie temporaire
-# - Importation M1 isolee
-# - Verification JSON et FIGE
-# - Controle SHA256 des fichiers suivis
-# - Aucun push ni deploiement
-# - Aucun pronostic ou FIGE genere
-# - Aucun acces aux moteurs M2-M5
-#
-# L'analyse sportive autonome reste distincte.
+# - Tests sans publication
+# - Collecte PMU reelle dans une copie isolee
+# - Importation M1 dans la copie uniquement
+# - Verification des JSON et des archives FIGE
+# - Protection SHA256 avant et apres les tests
+# - Aucun push, pronostic, FIGE ou deploiement
+# - Aucune intervention sur M2, M3, M4, M5
 
 name: "X1000 M1 - Validation securisee unifiee"
 
@@ -38,7 +35,7 @@ concurrency:
 
 jobs:
   validation:
-    name: "M1 - Diagnostic protege"
+    name: "M1 - Tests et importation isoles"
     if: github.ref == 'refs/heads/feature/m1-autonomie-securisee-20261031'
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -65,22 +62,17 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Verifier les fichiers
+      - name: Verifier structure et integrite initiale
         run: |
           set -euo pipefail
 
           for file in m1.py pmu_engine.py index.html; do
             test -f "$file"
             test ! -L "$file"
-            echo "OK: $file"
           done
 
           test -d data
           test ! -L data
-
-      - name: Enregistrer integrite initiale
-        run: |
-          set -euo pipefail
 
           test -z "$(git status --porcelain --untracked-files=all)"
 
@@ -97,51 +89,51 @@ jobs:
               def walk(folder):
                   with os.scandir(folder) as entries:
                       for entry in entries:
-                          path = Path(entry.path)
-                          name = path.as_posix()
+                          p = Path(entry.path)
 
-                          if path.parts[0] == ".git":
+                          if p.parts[0] == ".git":
                               continue
 
+                          key = p.as_posix()
                           mode = entry.stat(
                               follow_symlinks=False
                           ).st_mode
 
                           if stat.S_ISDIR(mode):
-                              result[name] = "DIR"
-                              walk(path)
+                              result[key] = "DIR"
+                              walk(p)
 
                           elif stat.S_ISLNK(mode):
-                              result[name] = (
-                                  "LINK:" + os.readlink(path)
+                              result[key] = (
+                                  "LINK:" + os.readlink(p)
                               )
 
                           elif stat.S_ISREG(mode):
                               digest = hashlib.sha256(
-                                  path.read_bytes()
+                                  p.read_bytes()
                               ).hexdigest()
-
-                              result[name] = "FILE:" + digest
+                              result[key] = "FILE:" + digest
 
                           else:
-                              result[name] = "SPECIAL"
+                              result[key] = "SPECIAL"
 
               walk(Path("."))
               return result
 
-          Path("/tmp/m1-before.json").write_text(
+          Path("/tmp/m1-initial.json").write_text(
               json.dumps(snapshot(), sort_keys=True),
               encoding="utf-8"
           )
 
-          print("Empreintes SHA256 enregistrees")
+          print("Empreintes initiales enregistrees")
           PY
 
-      - name: Verifier syntaxe Python
+      - name: Valider syntaxe et JSON sans ecriture
         run: |
           set -euo pipefail
 
           python - <<'PY'
+          import json
           from pathlib import Path
 
           for name in ("m1.py", "pmu_engine.py"):
@@ -150,16 +142,7 @@ jobs:
                   name,
                   "exec"
               )
-              print("SYNTAXE OK:", name)
-          PY
-
-      - name: Verifier les JSON existants
-        run: |
-          set -euo pipefail
-
-          python - <<'PY'
-          import json
-          from pathlib import Path
+              print("Syntaxe OK:", name)
 
           def pairs(items):
               result = {}
@@ -178,12 +161,12 @@ jobs:
                   "Constante JSON interdite: " + value
               )
 
-          paths = sorted(Path("data").rglob("*.json"))
-
-          for path in paths:
+          for path in sorted(
+              Path("data").rglob("*.json")
+          ):
               if path.is_symlink():
-                  raise SystemExit(
-                      "Lien symbolique interdit"
+                  raise ValueError(
+                      "Lien symbolique interdit: " + str(path)
                   )
 
               with path.open(encoding="utf-8") as f:
@@ -194,19 +177,9 @@ jobs:
                   )
 
               print("JSON OK:", path)
-
-          print("Total controles:", len(paths))
           PY
 
-      - name: Tester les moteurs
-        run: |
-          set -euo pipefail
-
-          python pmu_engine.py --self-test
-          python m1.py --self-test
-          python m1.py --verify-archives
-
-      - name: Preparer copie temporaire
+      - name: Creer une copie isolee
         id: preparation
         run: |
           set -euo pipefail
@@ -215,9 +188,7 @@ jobs:
           echo "path=$WORKDIR" >> "$GITHUB_OUTPUT"
 
           cp m1.py pmu_engine.py "$WORKDIR/"
-
-          mkdir -p "$WORKDIR/data"
-          cp -a data/. "$WORKDIR/data/"
+          cp -a data "$WORKDIR/data"
 
           rm -f \
             "$WORKDIR/data/collecte_m1_pmu.json" \
@@ -225,6 +196,15 @@ jobs:
             "$WORKDIR/data/import_diagnostic.json"
 
           echo "Copie temporaire prete"
+
+      - name: Tester moteurs et archives
+        working-directory: ${{ steps.preparation.outputs.path }}
+        run: |
+          set -euo pipefail
+
+          python pmu_engine.py --self-test
+          python m1.py --self-test
+          python m1.py --verify-archives
 
       - name: Collecter les courses PMU
         id: collecte
@@ -240,38 +220,45 @@ jobs:
 
           elif [ "$code" -eq 2 ]; then
             echo "etat=partielle" >> "$GITHUB_OUTPUT"
-            echo "::warning::Collecte partielle"
+            echo "::warning::Collecte PMU partielle"
 
           else
-            python - <<'PY'
+            if python - <<'PY'
           import json
           from pathlib import Path
 
-          p = Path("data/diagnostic_collecte_m1.json")
-          statut = ""
+          path = Path(
+              "data/diagnostic_collecte_m1.json"
+          )
 
-          if p.is_file():
-              try:
-                  d = json.loads(p.read_text(encoding="utf-8"))
-                  statut = d.get("statut", "")
-              except (ValueError, OSError):
-                  pass
+          if not path.is_file():
+              raise SystemExit(1)
 
-          if statut == "AUCUNE_COURSE_VERIFIEE":
-              print("Aucune course verifiee")
-          else:
-              raise SystemExit("Collecte PMU en echec")
+          try:
+              data = json.loads(
+                  path.read_text(encoding="utf-8")
+              )
+          except (ValueError, OSError):
+              raise SystemExit(1)
+
+          if (
+              not isinstance(data, dict)
+              or data.get("statut")
+              != "AUCUNE_COURSE_VERIFIEE"
+          ):
+              raise SystemExit(1)
           PY
-
-            if [ "$?" -eq 0 ]; then
+            then
               echo "etat=aucune_course" >> "$GITHUB_OUTPUT"
+              echo "::notice::Aucune course verifiee"
             else
               echo "etat=echec" >> "$GITHUB_OUTPUT"
+              echo "::error::Echec collecte PMU"
               exit 1
             fi
           fi
 
-      - name: Controler la collecte recue
+      - name: Verifier fraicheur et coherence
         id: controle
         if: steps.collecte.outputs.etat == 'complete' || steps.collecte.outputs.etat == 'partielle'
         working-directory: ${{ steps.preparation.outputs.path }}
@@ -284,8 +271,6 @@ jobs:
           import re
           from pathlib import Path
           from zoneinfo import ZoneInfo
-
-          paris = ZoneInfo("Europe/Paris")
 
           def lire(name):
               path = Path("data") / name
@@ -302,40 +287,52 @@ jobs:
           if not isinstance(diag, dict):
               raise SystemExit("Diagnostic invalide")
 
+          for field in ("date", "collecte_a", "statut"):
+              if data.get(field) != diag.get(field):
+                  raise SystemExit(
+                      "Incoherence: " + field
+                  )
+
           if data.get("statut") not in ("OK", "PARTIEL"):
-              raise SystemExit("Statut invalide")
-
-          if data.get("statut") != diag.get("statut"):
-              raise SystemExit("Statuts contradictoires")
-
-          if data.get("date") != diag.get("date"):
-              raise SystemExit("Dates contradictoires")
-
-          if data.get("collecte_a") != diag.get("collecte_a"):
-              raise SystemExit("Horodatages contradictoires")
+              raise SystemExit("Statut inexploitable")
 
           courses = data.get("courses")
 
-          if not isinstance(courses, list):
-              raise SystemExit("Courses absentes")
+          if not isinstance(courses, list) or not courses:
+              raise SystemExit(
+                  "Aucune course a importer"
+              )
 
           stamp = dt.datetime.fromisoformat(
               data["collecte_a"].replace("Z", "+00:00")
           )
 
-          if stamp.tzinfo is None:
-              raise SystemExit("Fuseau absent")
+          if (
+              stamp.tzinfo is None
+              or stamp.utcoffset() is None
+          ):
+              raise SystemExit(
+                  "Horodatage sans fuseau"
+              )
 
-          now = dt.datetime.now(paris)
-          moment = stamp.astimezone(paris)
+          paris = ZoneInfo("Europe/Paris")
 
-          age = (now - moment).total_seconds()
+          age = (
+              dt.datetime.now(dt.timezone.utc)
+              - stamp.astimezone(dt.timezone.utc)
+          ).total_seconds()
 
-          if age < -300 or age > 1200:
-              raise SystemExit("Collecte non recente")
+          if not -300 <= age <= 1200:
+              raise SystemExit(
+                  "Collecte non recente"
+              )
 
-          if data.get("date") != moment.date().isoformat():
-              raise SystemExit("Date incoherente")
+          if data.get("date") != (
+              stamp.astimezone(paris).date().isoformat()
+          ):
+              raise SystemExit(
+                  "Date incoherente"
+              )
 
           pattern = re.compile(
               r"^\d{4}-\d{2}-\d{2}-R[1-9]\d*-C[1-9]\d*$"
@@ -353,19 +350,22 @@ jobs:
                   raise SystemExit("ID absent")
 
               if not pattern.fullmatch(cid):
-                  raise SystemExit("ID invalide: " + cid)
+                  raise SystemExit(
+                      "Identifiant invalide: " + cid
+                  )
 
               if cid in ids:
-                  raise SystemExit("Doublon: " + cid)
+                  raise SystemExit(
+                      "Course dupliquee: " + cid
+                  )
 
               ids.add(cid)
 
-          print("Courses:", len(courses))
-          print("Age secondes:", round(age))
-          print("Statut:", data["statut"])
+          print("Courses controlees:", len(courses))
+          print("Age collecte:", round(age), "secondes")
           PY
 
-      - name: Tester importation isolee
+      - name: Importer uniquement dans la copie
         id: importation
         if: steps.controle.outcome == 'success'
         working-directory: ${{ steps.preparation.outputs.path }}
@@ -384,26 +384,33 @@ jobs:
           path = Path("data/import_diagnostic.json")
 
           if not path.is_file():
-              raise SystemExit("Diagnostic import absent")
+              raise SystemExit(
+                  "Diagnostic import absent"
+              )
 
-          report = json.loads(
+          data = json.loads(
               path.read_text(encoding="utf-8")
           )
 
-          imported = report.get("importees")
-          rejected = report.get("rejetees")
+          if not isinstance(data, dict):
+              raise SystemExit(
+                  "Diagnostic import invalide"
+              )
 
-          if type(imported) is not int or imported < 0:
-              raise SystemExit("Compteur invalide")
+          imported = data.get("importees")
+          rejected = data.get("rejetees")
 
-          if not isinstance(rejected, list):
-              raise SystemExit("Rejets invalides")
+          if (
+              type(imported) is not int
+              or imported < 0
+              or not isinstance(rejected, list)
+          ):
+              raise SystemExit(
+                  "Compteurs import invalides"
+              )
 
           print("Importees:", imported)
           print("Rejetees:", len(rejected))
-
-          for item in rejected:
-              print("REJET:", item)
           PY
 
       - name: Verifier integrite finale
@@ -418,7 +425,7 @@ jobs:
           import stat
           from pathlib import Path
 
-          path = Path("/tmp/m1-before.json")
+          path = Path("/tmp/m1-initial.json")
 
           if not path.is_file():
               raise SystemExit(
@@ -434,41 +441,44 @@ jobs:
           def walk(folder):
               with os.scandir(folder) as entries:
                   for entry in entries:
-                      path = Path(entry.path)
-                      name = path.as_posix()
+                      p = Path(entry.path)
 
-                      if path.parts[0] == ".git":
+                      if p.parts[0] == ".git":
                           continue
 
+                      key = p.as_posix()
                       mode = entry.stat(
                           follow_symlinks=False
                       ).st_mode
 
                       if stat.S_ISDIR(mode):
-                          after[name] = "DIR"
-                          walk(path)
+                          after[key] = "DIR"
+                          walk(p)
 
                       elif stat.S_ISLNK(mode):
-                          after[name] = (
-                              "LINK:" + os.readlink(path)
+                          after[key] = (
+                              "LINK:" + os.readlink(p)
                           )
 
                       elif stat.S_ISREG(mode):
-                          after[name] = (
-                              "FILE:" +
-                              hashlib.sha256(
-                                  path.read_bytes()
-                              ).hexdigest()
-                          )
+                          digest = hashlib.sha256(
+                              p.read_bytes()
+                          ).hexdigest()
+                          after[key] = "FILE:" + digest
 
                       else:
-                          after[name] = "SPECIAL"
+                          after[key] = "SPECIAL"
 
           walk(Path("."))
 
           if before != after:
-              added = sorted(after.keys() - before.keys())
-              removed = sorted(before.keys() - after.keys())
+              added = sorted(
+                  after.keys() - before.keys()
+              )
+
+              removed = sorted(
+                  before.keys() - after.keys()
+              )
 
               changed = sorted(
                   key
@@ -480,17 +490,15 @@ jobs:
               print("Supprimes:", removed)
               print("Modifies:", changed)
 
-              raise SystemExit("Integrite violee")
+              raise SystemExit(
+                  "Integrite SHA256 violee"
+              )
 
-          print("SHA256 OK")
+          print("Integrite SHA256 OK")
           PY
 
-          if [ -n "$(git status --porcelain --untracked-files=all)" ]; then
-            git status --short
-            exit 1
-          fi
-
-          echo "DEPOT INCHANGE"
+          test -z "$(git status --porcelain --untracked-files=all)"
+          echo "Depot intact"
 
       - name: Rapport final
         if: always()
@@ -501,7 +509,7 @@ jobs:
           IMPORT: ${{ steps.importation.outcome }}
         run: |
           {
-            echo "## X1000 M1 - Validation 3.1"
+            echo "## X1000 M1 - Validation 3.2"
             echo ""
             echo "- Branche: $GITHUB_REF_NAME"
             echo "- Commit: $GITHUB_SHA"
@@ -509,12 +517,8 @@ jobs:
             echo "- Collecte: ${COLLECTE:-non executee}"
             echo "- Controle: ${CONTROLE:-non execute}"
             echo "- Importation: ${IMPORT:-non executee}"
-            echo "- Git: lecture seule"
-            echo "- Aucun push"
-            echo "- Aucune publication"
-            echo "- Aucun pronostic genere"
-            echo "- Aucun FIGE publie"
-            echo "- Archives verifiees"
-            echo "- Analyse sportive non activee"
-            echo "- Aucun deploiement PHOENIX"
+            echo "- Publication: aucune"
+            echo "- Pronostics/FIGEs: aucune creation demandee"
+            echo "- Analyse sportive autonome: non activee"
+            echo "- Depot: lecture seule"
           } >> "$GITHUB_STEP_SUMMARY"
