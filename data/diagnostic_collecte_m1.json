@@ -1,13 +1,17 @@
 {
-  "version": "M1-PMU-COLLECTE-1.0",
+  "version": "M1-PMU-COLLECTE-2.0",
   "date": "2026-10-31",
-  "collecte_a": "2026-10-31T03:46:55.612195+01:00",
+  "collecte_a": "2026-10-31T04:05:11.717959+01:00",
   "statut": "OK",
   "statistiques": {
     "reunions_recues": 9,
+    "reunions_francaises_verifiees": 7,
+    "courses_prevues": 62,
     "courses": 62,
     "chevaux": 816,
-    "non_partants": 4
+    "partants": 812,
+    "non_partants": 4,
+    "erreurs": 0
   },
   "erreurs": [],
   "avertissements": [
