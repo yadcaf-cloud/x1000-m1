@@ -1,25 +1,15 @@
-# 🇸🇳🧠🔥 MPAA X1000 — M1
-# WORKFLOW UNIQUE ET PROTEGE
-#
-# Depot : yadcaf-cloud/x1000-m1
-#
-# Collecte PMU France toutes les 10 minutes.
-# Aucune analyse sportive automatique.
-# Aucun pronostic, pari ou FIGE genere.
-#
-# PUBLICATIONS EXCLUSIVES :
+# MPAA X1000 M1 - Collecte officielle protegee
+# Publications exclusives :
 # data/collecte_m1_pmu.json
 # data/diagnostic_collecte_m1.json
 #
-# Aucun acces a M2-M5.
-# Aucun deploiement vers X1000 PHOENIX.
-# Aucun push force.
+# Aucun pronostic, pari, FIGE ou deploiement.
+# Aucun acces M2-M5. Aucun push force.
 
-name: "MPAA X1000 - M1 Unifie et Protege"
+name: "MPAA X1000 - M1 Unifie Protege V2.1"
 
 on:
   workflow_dispatch:
-
   push:
     branches:
       - main
@@ -27,9 +17,8 @@ on:
       - "m1.py"
       - "pmu_engine.py"
       - ".github/workflows/m1.yml"
-
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "3,13,23,33,43,53 * * * *"
 
 permissions:
   contents: write
@@ -39,10 +28,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  moteur-m1:
-    name: "M1 - Collecte et controles proteges"
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+  collecte:
+    name: "M1 - Collecte PMU France protegee"
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
 
     defaults:
       run:
@@ -59,35 +49,42 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: true
+          persist-credentials: false
 
       - name: "Installer Python"
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: "Verifier le depot et les programmes"
+      - name: "Verifier fichiers et syntaxe"
         run: |
           set -euo pipefail
 
+          test "$M1_AUTO_ANALYZE" = "false"
           test -f m1.py
           test -f pmu_engine.py
-
-          test -z "$(git status --porcelain --untracked-files=all)"
+          test -d data
 
           python - <<'PY'
+          import ast
           from pathlib import Path
 
           for name in ("m1.py", "pmu_engine.py"):
-              compile(
-                  Path(name).read_bytes(),
-                  name,
-                  "exec"
+              ast.parse(
+                  Path(name).read_text(
+                      encoding="utf-8-sig"
+                  ),
+                  filename=name
               )
-              print(name, "syntaxe OK")
+              print("Syntaxe OK :", name)
           PY
 
-      - name: "Enregistrer les fichiers proteges"
+          test -z "$(
+            git status --porcelain \
+              --untracked-files=all
+          )"
+
+      - name: "Enregistrer empreintes protegees"
         run: |
           set -euo pipefail
 
@@ -95,7 +92,7 @@ jobs:
           import hashlib
           import json
           import os
-          import stat
+          import subprocess
           from pathlib import Path
 
           allowed = {
@@ -103,85 +100,78 @@ jobs:
               "data/diagnostic_collecte_m1.json"
           }
 
-          def snapshot():
-              result = {}
+          raw = subprocess.check_output(
+              ["git", "ls-files", "-z"]
+          )
 
-              def scan(folder):
-                  with os.scandir(folder) as entries:
-                      for entry in entries:
-                          path = Path(entry.path)
-                          name = path.as_posix()
+          snapshot = {}
 
-                          if name == ".git" or name in allowed:
-                              continue
+          for item in raw.split(b"\0"):
+              if not item:
+                  continue
 
-                          mode = entry.stat(
-                              follow_symlinks=False
-                          ).st_mode
+              name = os.fsdecode(item)
+              path = Path(name)
 
-                          if stat.S_ISDIR(mode):
-                              result[name] = "DIR"
-                              scan(path)
+              if path.is_symlink() or not path.is_file():
+                  raise SystemExit(
+                      "Fichier suivi non regulier : " + name
+                  )
 
-                          elif stat.S_ISLNK(mode):
-                              result[name] = (
-                                  "LINK:" + os.readlink(path)
-                              )
+              if name not in allowed:
+                  snapshot[name] = hashlib.sha256(
+                      path.read_bytes()
+                  ).hexdigest()
 
-                          elif stat.S_ISREG(mode):
-                              result[name] = (
-                                  "FILE:" +
-                                  hashlib.sha256(
-                                      path.read_bytes()
-                                  ).hexdigest()
-                              )
+          output = (
+              Path(os.environ["RUNNER_TEMP"])
+              / "m1-protection.json"
+          )
 
-                          else:
-                              result[name] = (
-                                  "SPECIAL:" + str(mode)
-                              )
-
-              scan(Path("."))
-              return result
-
-          Path("/tmp/m1-protection.json").write_text(
-              json.dumps(snapshot(), sort_keys=True),
+          output.write_text(
+              json.dumps(snapshot, sort_keys=True),
               encoding="utf-8"
           )
 
-          print("Etat initial protege")
+          print("Fichiers proteges :", len(snapshot))
           PY
 
-      - name: "Tester les programmes M1"
+      - name: "Tester M1 et les archives"
         run: |
           set -euo pipefail
-
-          test "$M1_AUTO_ANALYZE" = "false"
 
           python pmu_engine.py --self-test
           python m1.py --self-test
           python m1.py --verify-archives
 
-          echo "Tests M1 termines"
+          echo "Autotests termines"
 
-      - name: "Collecter les donnees PMU France"
+      - name: "Collecter PMU France"
         id: collecte
         run: |
           set -euo pipefail
 
           python - <<'PY'
-          from datetime import datetime, timezone
+          import datetime as dt
+          import os
           from pathlib import Path
 
-          Path("/tmp/m1-start").write_text(
-              datetime.now(timezone.utc).isoformat(),
+          path = (
+              Path(os.environ["RUNNER_TEMP"])
+              / "m1-start.txt"
+          )
+
+          path.write_text(
+              dt.datetime.now(
+                  dt.timezone.utc
+              ).isoformat(),
               encoding="utf-8"
           )
           PY
 
           python pmu_engine.py
 
-      - name: "Verifier la collecte et les JSON"
+      - name: "Valider les publications JSON"
         id: validation
         run: |
           set -euo pipefail
@@ -189,6 +179,7 @@ jobs:
           python - <<'PY'
           import datetime as dt
           import json
+          import os
           import re
           from pathlib import Path
           from zoneinfo import ZoneInfo
@@ -206,33 +197,59 @@ jobs:
                   fail("Horodatage absent")
 
               try:
-                  d = dt.datetime.fromisoformat(
+                  value = dt.datetime.fromisoformat(
                       value.replace("Z", "+00:00")
                   )
+              except ValueError:
+                  fail("Horodatage incorrect")
 
-                  if d.tzinfo is None:
-                      raise ValueError("Fuseau absent")
+              if (
+                  value.tzinfo is None
+                  or value.utcoffset() is None
+              ):
+                  fail("Fuseau horaire absent")
 
-                  return d.astimezone(UTC)
-
-              except ValueError as exc:
-                  fail("Horodatage invalide : " + str(exc))
+              return value.astimezone(UTC)
 
           def pairs(items):
               result = {}
-
               for key, value in items:
                   if key in result:
-                      fail("Cle JSON dupliquee : " + key)
+                      fail(
+                          "Cle JSON dupliquee : " + key
+                      )
                   result[key] = value
+              return result
+
+          def reject(value):
+              fail(
+                  "Constante JSON interdite : " + value
+              )
+
+          def lire(path):
+              if path.is_symlink() or not path.is_file():
+                  fail("Fichier absent : " + str(path))
+
+              try:
+                  result = json.loads(
+                      path.read_text(
+                          encoding="utf-8-sig"
+                      ),
+                      object_pairs_hook=pairs,
+                      parse_constant=reject
+                  )
+              except (OSError, ValueError) as exc:
+                  fail(str(path) + " : " + str(exc))
+
+              if not isinstance(result, dict):
+                  fail("Objet JSON attendu")
 
               return result
 
-          def constant(value):
-              fail("Constante JSON interdite : " + value)
+          temp = Path(os.environ["RUNNER_TEMP"])
 
           start = stamp(
-              Path("/tmp/m1-start")
+              (temp / "m1-start.txt")
               .read_text(encoding="utf-8")
               .strip()
           )
@@ -243,62 +260,59 @@ jobs:
           if start.astimezone(PARIS).date() != today:
               fail("Collecte traversant minuit Paris")
 
-          objects = {}
-
-          for filename in (
+          names = (
               "collecte_m1_pmu.json",
               "diagnostic_collecte_m1.json"
-          ):
-              path = Path("data") / filename
+          )
 
-              if not path.is_file() or path.is_symlink():
-                  fail(filename + " absent ou lien")
+          objects = {}
+
+          for name in names:
+              path = Path("data") / name
+              obj = lire(path)
 
               modified = dt.datetime.fromtimestamp(
                   path.stat().st_mtime,
                   tz=UTC
               )
 
-              if modified < start - dt.timedelta(seconds=2):
-                  fail(filename + " non actualise")
+              if modified < start - dt.timedelta(
+                  seconds=2
+              ):
+                  fail(name + " non actualise")
 
-              if modified > now + dt.timedelta(seconds=60):
-                  fail(filename + " date future")
-
-              try:
-                  obj = json.loads(
-                      path.read_text(encoding="utf-8"),
-                      object_pairs_hook=pairs,
-                      parse_constant=constant
-                  )
-
-              except (OSError, ValueError) as exc:
-                  fail(filename + " : " + str(exc))
-
-              if not isinstance(obj, dict):
-                  fail(filename + " : objet attendu")
+              if modified > now + dt.timedelta(
+                  seconds=60
+              ):
+                  fail(name + " date future")
 
               if obj.get("date") != today.isoformat():
-                  fail(filename + " : date incorrecte")
+                  fail(name + " hors date Paris")
 
               if obj.get("statut") != "OK":
-                  fail(filename + " : collecte non OK")
+                  fail(name + " : statut non OK")
 
-              if obj.get("erreurs"):
-                  fail(filename + " : erreurs presentes")
+              if obj.get("erreurs") != []:
+                  fail(name + " : erreurs presentes")
 
-              when = stamp(obj.get("collecte_a"))
+              collected = stamp(
+                  obj.get("collecte_a")
+              )
 
-              if when < start - dt.timedelta(seconds=60):
-                  fail(filename + " : collecte ancienne")
+              if collected < start - dt.timedelta(
+                  seconds=60
+              ):
+                  fail(name + " collecte ancienne")
 
-              if when > now + dt.timedelta(seconds=60):
-                  fail(filename + " : collecte future")
+              if collected > now + dt.timedelta(
+                  seconds=60
+              ):
+                  fail(name + " collecte future")
 
-              objects[filename] = obj
+              objects[name] = obj
 
-          data = objects["collecte_m1_pmu.json"]
-          diag = objects["diagnostic_collecte_m1.json"]
+          data = objects[names[0]]
+          diag = objects[names[1]]
 
           if stamp(data["collecte_a"]) != stamp(
               diag["collecte_a"]
@@ -307,120 +321,155 @@ jobs:
 
           stats = data.get("statistiques")
 
-          if not isinstance(stats, dict):
-              fail("Statistiques absentes")
-
-          if stats != diag.get("statistiques"):
-              fail("Statistiques differentes")
+          if (
+              not isinstance(stats, dict)
+              or stats != diag.get("statistiques")
+          ):
+              fail("Statistiques incoherentes")
 
           courses = data.get("courses")
 
-          if not isinstance(courses, list) or not courses:
-              fail("Aucune course verifiee")
+          if (
+              not isinstance(courses, list)
+              or not courses
+          ):
+              fail("Aucune course valide")
 
           ids = set()
           total_chevaux = 0
           total_partants = 0
           total_np = 0
 
+          pattern = (
+              r"\d{4}-\d{2}-\d{2}"
+              r"-R[1-9]\d*-C[1-9]\d*"
+          )
+
           for course in courses:
               if not isinstance(course, dict):
-                  fail("Course invalide")
+                  fail("Course non structuree")
 
               cid = course.get("id")
 
               if (
                   not isinstance(cid, str)
-                  or not re.fullmatch(
-                      r"\d{4}-\d{2}-\d{2}-R[1-9]\d*-C[1-9]\d*",
-                      cid
-                  )
+                  or not re.fullmatch(pattern, cid)
                   or cid in ids
+                  or not cid.startswith(
+                      today.isoformat() + "-"
+                  )
               ):
-                  fail("ID course invalide ou duplique")
+                  fail("Identifiant invalide ou double")
 
               ids.add(cid)
-
-              if cid[:10] != today.isoformat():
-                  fail(cid + " : date incorrecte")
 
               if course.get(
                   "localisation_france_verifiee"
               ) is not True:
-                  fail(cid + " : France non verifiee")
+                  fail(cid + " France non verifiee")
 
-              depart = stamp(course.get("depart"))
+              depart = stamp(
+                  course.get("depart")
+              )
 
-              if depart.astimezone(PARIS).date() != today:
-                  fail(cid + " : depart hors date")
+              if depart.astimezone(
+                  PARIS
+              ).date() != today:
+                  fail(cid + " depart hors date")
 
-              chevaux = course.get("partants")
+              horses = course.get("partants")
 
-              if not isinstance(chevaux, list) or not chevaux:
-                  fail(cid + " : chevaux absents")
+              if (
+                  not isinstance(horses, list)
+                  or not horses
+              ):
+                  fail(cid + " chevaux absents")
 
-              numeros = set()
-              np = set()
+              numbers = set()
+              non_runners = set()
 
-              for cheval in chevaux:
-                  if not isinstance(cheval, dict):
-                      fail(cid + " : cheval invalide")
+              for horse in horses:
+                  if not isinstance(horse, dict):
+                      fail(cid + " cheval invalide")
 
-                  numero = cheval.get("numero")
-
-                  if (
-                      type(numero) is not int
-                      or numero <= 0
-                      or numero in numeros
-                  ):
-                      fail(cid + " : numero invalide")
-
-                  numeros.add(numero)
-
-                  nom = cheval.get("nom")
+                  number = horse.get("numero")
 
                   if (
-                      not isinstance(nom, str)
-                      or not nom.strip()
+                      type(number) is not int
+                      or number <= 0
+                      or number in numbers
                   ):
-                      fail(cid + " : nom invalide")
+                      fail(cid + " numero invalide")
+
+                  numbers.add(number)
+
+                  name = horse.get("nom")
+
+                  if (
+                      not isinstance(name, str)
+                      or not name.strip()
+                  ):
+                      fail(cid + " nom invalide")
 
                   if type(
-                      cheval.get("non_partant")
+                      horse.get("non_partant")
                   ) is not bool:
-                      fail(cid + " : NP invalide")
+                      fail(cid + " NP invalide")
 
-                  if cheval["non_partant"]:
-                      np.add(numero)
+                  if horse["non_partant"]:
+                      non_runners.add(number)
 
-              declared = course.get("non_partants")
-
-              if not isinstance(declared, list):
-                  fail(cid + " : NP absents")
-
-              if any(
-                  type(n) is not int
-                  for n in declared
-              ):
-                  fail(cid + " : numero NP invalide")
+              declared = course.get(
+                  "non_partants"
+              )
 
               if (
-                  len(declared) != len(set(declared))
-                  or set(declared) != np
+                  not isinstance(declared, list)
+                  or any(
+                      type(n) is not int
+                      for n in declared
+                  )
+                  or len(declared)
+                  != len(set(declared))
+                  or set(declared) != non_runners
               ):
-                  fail(cid + " : NP incoherents")
+                  fail(cid + " NP incoherents")
 
-              actifs = len(numeros) - len(np)
+              active = (
+                  len(numbers) - len(non_runners)
+              )
 
               if (
-                  type(course.get("nombre_partants")) is not int
-                  or course["nombre_partants"] != actifs
+                  type(
+                      course.get("nombre_partants")
+                  ) is not int
+                  or course["nombre_partants"]
+                  != active
               ):
-                  fail(cid + " : total partants incorrect")
+                  fail(
+                      cid + " nombre_partants invalide"
+                  )
 
-              total_chevaux += len(numeros)
-              total_partants += actifs
-              total_np += len(np)
+              total_chevaux += len(numbers)
+              total_partants += active
+              total_np += len(non_runners)
+
+          expected = {
+              "courses": len(courses),
+              "chevaux": total_chevaux,
+              "partants": total_partants,
+              "non_partants": total_np,
+              "erreurs": 0
+          }
+
+          for key, value in expected.items():
+              if (
+                  type(stats.get(key)) is not int
+                  or stats[key] != value
+              ):
+                  fail(
+                      "Statistique incorrecte : " + key
+                  )
 
           print("COLLECTE VALIDEE")
           print("Courses :", len(courses))
@@ -429,7 +478,7 @@ jobs:
           print("Non-partants :", total_np)
           PY
 
-      - name: "Verifier archives et fichiers proteges"
+      - name: "Verifier les fichiers proteges"
         id: protection
         run: |
           set -euo pipefail
@@ -440,7 +489,6 @@ jobs:
           import hashlib
           import json
           import os
-          import stat
           import subprocess
           from pathlib import Path
 
@@ -449,73 +497,47 @@ jobs:
               "data/diagnostic_collecte_m1.json"
           }
 
-          initial = json.loads(
-              Path("/tmp/m1-protection.json")
-              .read_text(encoding="utf-8")
+          snapshot = (
+              Path(os.environ["RUNNER_TEMP"])
+              / "m1-protection.json"
           )
 
-          def snapshot():
-              result = {}
+          initial = json.loads(
+              snapshot.read_text(
+                  encoding="utf-8"
+              )
+          )
 
-              def scan(folder):
-                  with os.scandir(folder) as entries:
-                      for entry in entries:
-                          path = Path(entry.path)
-                          name = path.as_posix()
+          current = {}
 
-                          if name == ".git" or name in allowed:
-                              continue
+          raw = subprocess.check_output(
+              ["git", "ls-files", "-z"]
+          )
 
-                          mode = entry.stat(
-                              follow_symlinks=False
-                          ).st_mode
+          for item in raw.split(b"\0"):
+              if not item:
+                  continue
 
-                          if stat.S_ISDIR(mode):
-                              result[name] = "DIR"
-                              scan(path)
+              name = os.fsdecode(item)
+              path = Path(name)
 
-                          elif stat.S_ISLNK(mode):
-                              result[name] = (
-                                  "LINK:" + os.readlink(path)
-                              )
+              if (
+                  path.is_symlink()
+                  or not path.is_file()
+              ):
+                  raise SystemExit(
+                      "Fichier non regulier : " + name
+                  )
 
-                          elif stat.S_ISREG(mode):
-                              result[name] = (
-                                  "FILE:" +
-                                  hashlib.sha256(
-                                      path.read_bytes()
-                                  ).hexdigest()
-                              )
-
-                          else:
-                              result[name] = (
-                                  "SPECIAL:" + str(mode)
-                              )
-
-              scan(Path("."))
-              return result
-
-          current = snapshot()
+              if name not in allowed:
+                  current[name] = hashlib.sha256(
+                      path.read_bytes()
+                  ).hexdigest()
 
           if current != initial:
-              changed = sorted(
-                  name
-                  for name in set(initial) | set(current)
-                  if initial.get(name) != current.get(name)
-              )
-
               raise SystemExit(
-                  "FICHIERS PROTEGES MODIFIES : "
-                  + ", ".join(changed)
+                  "Fichiers proteges modifies"
               )
-
-          for filename in allowed:
-              path = Path(filename)
-
-              if not path.is_file() or path.is_symlink():
-                  raise SystemExit(
-                      "JSON absent ou lien : " + filename
-                  )
 
           raw = subprocess.check_output([
               "git",
@@ -525,49 +547,57 @@ jobs:
               "--untracked-files=all"
           ])
 
-          for entry in filter(None, raw.split(b"\0")):
-              status = entry[:2].decode("ascii")
-              name = entry[3:].decode("utf-8")
+          parts = [
+              p for p in raw.split(b"\0") if p
+          ]
+
+          for part in parts:
+              status = part[:2].decode("ascii")
+              name = os.fsdecode(part[3:])
 
               if (
                   status not in (
-                      " M", "M ", "MM", "??", "A "
+                      " M", "M ", "MM", "??"
                   )
                   or name not in allowed
               ):
                   raise SystemExit(
-                      "Operation Git interdite : "
-                      + repr((status, name))
+                      "Modification interdite : " + name
                   )
 
-          print("Protection des fichiers validee")
+          print("Fichiers proteges intacts")
           PY
 
-      - name: "Publier uniquement les JSON valides"
+      - name: "Publier les deux JSON seulement"
         id: publication
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
 
-          git config user.name "github-actions[bot]"
+          test -n "$GH_TOKEN"
+
+          git config user.name \
+            "github-actions[bot]"
+
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
 
-          mkdir -p /tmp/m1-publication
+          # Verifier que main n'a pas change
+          # depuis le checkout.
 
-          cp -- \
-            data/collecte_m1_pmu.json \
-            /tmp/m1-publication/
+          git -c \
+            http.extraheader="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)" \
+            fetch origin main
 
-          cp -- \
-            data/diagnostic_collecte_m1.json \
-            /tmp/m1-publication/
+          if test "$(git rev-parse HEAD)" != \
+            "$(git rev-parse origin/main)"; then
+            echo "::error::main a change"
+            echo "Publication refusee sans reset"
+            exit 1
+          fi
 
-          for tentative in 1 2 3 4 5; do
-            echo "Tentative ${tentative}/5"
-
-            git fetch origin main
-
-            python - <<'PY'
+          python - <<'PY'
           import datetime as dt
           import json
           import subprocess
@@ -579,24 +609,25 @@ jobs:
           )
 
           def stamp(value):
-              if not isinstance(value, str):
-                  raise ValueError("Horodatage absent")
-
               d = dt.datetime.fromisoformat(
                   value.replace("Z", "+00:00")
               )
-
-              if d.tzinfo is None:
-                  raise ValueError("Fuseau absent")
-
-              return d.astimezone(dt.timezone.utc)
+              if (
+                  d.tzinfo is None
+                  or d.utcoffset() is None
+              ):
+                  raise ValueError(
+                      "Horodatage sans fuseau"
+                  )
+              return d.astimezone(
+                  dt.timezone.utc
+              )
 
           for name in files:
               local = json.loads(
-                  (
-                      Path("/tmp/m1-publication")
-                      / Path(name).name
-                  ).read_text(encoding="utf-8")
+                  Path(name).read_text(
+                      encoding="utf-8-sig"
+                  )
               )
 
               remote = subprocess.run(
@@ -611,51 +642,25 @@ jobs:
               if remote.returncode != 0:
                   continue
 
-              try:
-                  other = json.loads(remote.stdout)
+              other = json.loads(remote.stdout)
 
-                  if stamp(other["collecte_a"]) >= stamp(
-                      local["collecte_a"]
-                  ):
-                      raise SystemExit(
-                          "Publication distante aussi recente "
-                          "ou plus recente : " + name
-                      )
-
-              except (
-                  ValueError,
-                  KeyError,
-                  TypeError,
-                  AttributeError
-              ) as exc:
+              if stamp(other["collecte_a"]) > stamp(
+                  local["collecte_a"]
+              ):
                   raise SystemExit(
-                      "JSON distant non verifiable : "
-                      + name + " : " + str(exc)
+                      "Collecte distante plus recente : "
+                      + name
                   )
 
-          print("Fraicheur distante controlee")
+          print("Fraicheur distante verifiee")
           PY
 
-            # Reset local au runner GitHub uniquement.
-            # Aucun push force.
+          git add -- \
+            data/collecte_m1_pmu.json \
+            data/diagnostic_collecte_m1.json
 
-            git reset --hard origin/main
-
-            mkdir -p data
-
-            cp -- \
-              /tmp/m1-publication/collecte_m1_pmu.json \
-              data/collecte_m1_pmu.json
-
-            cp -- \
-              /tmp/m1-publication/diagnostic_collecte_m1.json \
-              data/diagnostic_collecte_m1.json
-
-            git add -- \
-              data/collecte_m1_pmu.json \
-              data/diagnostic_collecte_m1.json
-
-            python - <<'PY'
+          python - <<'PY'
+          import os
           import subprocess
 
           allowed = {
@@ -667,52 +672,38 @@ jobs:
               "git",
               "diff",
               "--cached",
-              "--name-status",
+              "--name-only",
               "-z"
           ])
 
-          parts = list(filter(None, raw.split(b"\0")))
+          changed = {
+              os.fsdecode(p)
+              for p in raw.split(b"\0") if p
+          }
 
-          if len(parts) % 2:
-              raise SystemExit("Index Git invalide")
+          if not changed.issubset(allowed):
+              raise SystemExit(
+                  "Publication non autorisee"
+              )
 
-          for i in range(0, len(parts), 2):
-              status = parts[i]
-              name = parts[i + 1].decode("utf-8")
-
-              if (
-                  status not in (b"A", b"M")
-                  or name not in allowed
-              ):
-                  raise SystemExit(
-                      "Publication interdite : " + name
-                  )
-
-          print("Index Git protege")
+          print("Fichiers publies :", sorted(changed))
           PY
 
-            if git diff --cached --quiet; then
-              echo "Aucun changement a publier"
-              exit 0
-            fi
+          if git diff --cached --quiet; then
+            echo "Aucun changement a publier"
+            exit 0
+          fi
 
-            git commit -m \
-              "M1: collecte PMU France controlee"
+          git commit -m \
+            "M1: collecte PMU France verifiee"
 
-            if git push origin HEAD:main; then
-              echo "PUBLICATION M1 REUSSIE"
-              exit 0
-            fi
+          AUTH="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
 
-            echo "Conflit Git detecte"
+          git -c \
+            "http.extraheader=AUTHORIZATION: basic $AUTH" \
+            push origin HEAD:main
 
-            if [ "$tentative" -lt 5 ]; then
-              sleep 5
-            fi
-          done
-
-          echo "ECHEC DE PUBLICATION"
-          exit 1
+          echo "PUBLICATION REUSSIE"
 
       - name: "Rapport final"
         if: always()
@@ -723,20 +714,18 @@ jobs:
           PUBLICATION: ${{ steps.publication.outcome }}
         run: |
           {
-            echo "## MPAA X1000 - M1"
+            echo "## MPAA X1000 M1 - V2.1"
             echo ""
             echo "- Collecte : ${COLLECTE}"
-            echo "- Validation JSON : ${VALIDATION}"
-            echo "- Protection fichiers : ${PROTECTION}"
+            echo "- Validation : ${VALIDATION}"
+            echo "- Protection : ${PROTECTION}"
             echo "- Publication : ${PUBLICATION}"
             echo ""
-            echo "### Protections"
-            echo "- Autonomie sportive desactivee"
-            echo "- FIGE : verification uniquement"
+            echo "- Publications : deux JSON PMU"
+            echo "- Analyse sportive : desactivee"
             echo "- Aucun pronostic automatique"
+            echo "- Aucun FIGE cree"
             echo "- Aucun push force"
-            echo "- Aucun acces M2-M5"
             echo "- Aucun deploiement PHOENIX"
-            echo "- Collecte programmee : 10 minutes"
-            echo "- GitHub peut retarder les executions"
+            echo "- Frequence : 10 minutes"
           } >> "$GITHUB_STEP_SUMMARY"
