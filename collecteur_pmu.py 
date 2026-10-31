@@ -1,0 +1,694 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+MPAA X1000 - Collecteur PMU M1
+Collecte reelle, sans pronostic fictif.
+Fuseau horaire : Europe/Paris.
+
+Commandes :
+  python collecteur_pmu.py
+  python collecteur_pmu.py --self-test
+  python collecteur_pmu.py --date 2026-10-31
+
+Sorties :
+  courses.json
+  data/courses.json
+  data/diagnostic_collecte.json
+"""
+
+import argparse
+import json
+import os
+import sys
+import time
+import urllib.error
+import urllib.request
+
+from datetime import datetime, date, timezone
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+ROOT = Path(__file__).resolve().parent
+DATA = ROOT / "data"
+PARIS = ZoneInfo("Europe/Paris")
+
+API = os.getenv(
+    "PMU_API_BASE",
+    "https://online.turfinfo.api.pmu.fr/rest/client/7"
+).rstrip("/")
+
+TIMEOUT = 20
+TENTATIVES = 3
+RETRY = {408, 429, 500, 502, 503, 504}
+
+VERSION = "M1-COLLECTEUR-1.0"
+
+
+def maintenant():
+    return datetime.now(PARIS).isoformat(
+        timespec="seconds"
+    )
+
+
+def texte(v):
+    if v is None:
+        return ""
+    return str(v).strip()
+
+
+def entier(v, defaut=0):
+    try:
+        return int(v)
+    except (TypeError, ValueError):
+        return defaut
+
+
+def premier(obj, *cles):
+    if not isinstance(obj, dict):
+        return None
+    for cle in cles:
+        valeur = obj.get(cle)
+        if valeur is not None:
+            return valeur
+    return None
+
+
+def enregistrer(chemin, objet):
+    chemin.parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+    temporaire = chemin.with_name(
+        chemin.name + ".tmp"
+    )
+    with temporaire.open(
+        "w", encoding="utf-8"
+    ) as f:
+        json.dump(
+            objet,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
+        f.write("\n")
+    os.replace(temporaire, chemin)
+
+
+def lire(chemin):
+    try:
+        with chemin.open(
+            "r", encoding="utf-8"
+        ) as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return None
+
+
+def requete(chemin):
+    url = API + chemin
+    derniere = None
+
+    for essai in range(TENTATIVES):
+        try:
+            req = urllib.request.Request(
+                url,
+                headers={
+                    "User-Agent": (
+                        "Mozilla/5.0 X1000-PHOENIX"
+                    ),
+                    "Accept": "application/json"
+                }
+            )
+            with urllib.request.urlopen(
+                req, timeout=TIMEOUT
+            ) as reponse:
+                return json.load(reponse)
+
+        except urllib.error.HTTPError as e:
+            derniere = str(e)
+            if e.code not in RETRY:
+                break
+
+        except (
+            urllib.error.URLError,
+            TimeoutError,
+            ValueError,
+            OSError
+        ) as e:
+            derniere = str(e)
+
+        if essai + 1 < TENTATIVES:
+            time.sleep(1 + essai)
+
+    raise RuntimeError(
+        "Echec PMU " + chemin + " : "
+        + texte(derniere)
+    )
+
+
+def depart_paris(valeur):
+    if valeur is None:
+        return ""
+
+    try:
+        if isinstance(valeur, (int, float)):
+            v = float(valeur)
+            if v > 100000000000:
+                v /= 1000
+            return datetime.fromtimestamp(
+                v, tz=timezone.utc
+            ).astimezone(PARIS).isoformat(
+                timespec="seconds"
+            )
+
+        s = texte(valeur)
+        if s.isdigit():
+            return depart_paris(int(s))
+
+        d = datetime.fromisoformat(
+            s.replace("Z", "+00:00")
+        )
+        if d.tzinfo is None:
+            d = d.replace(tzinfo=PARIS)
+        return d.astimezone(PARIS).isoformat(
+            timespec="seconds"
+        )
+    except (ValueError, OverflowError, OSError):
+        return ""
+
+
+def reunion_francaise(reunion):
+    pays = texte(
+        premier(
+            reunion,
+            "pays",
+            "codePays"
+        )
+    ).upper()
+
+    if pays in ("FR", "FRA", "FRANCE"):
+        return True
+
+    if pays and pays not in (
+        "FR", "FRA", "FRANCE"
+    ):
+        return False
+
+    if reunion.get("estReunionEtrangere") is True:
+        return False
+
+    if reunion.get("estReunionEtrangere") is False:
+        return True
+
+    return None
+
+
+def liste_courses(reunion):
+    return premier(
+        reunion,
+        "courses",
+        "listeCourses"
+    ) or []
+
+
+def liste_participants(objet):
+    if isinstance(objet, list):
+        return objet
+
+    if isinstance(objet, dict):
+        return premier(
+            objet,
+            "participants",
+            "partants"
+        ) or []
+
+    return []
+
+
+def normaliser_partant(p):
+    numero = entier(
+        premier(
+            p,
+            "numPmu",
+            "numero",
+            "num"
+        )
+    )
+
+    nom = texte(
+        premier(
+            p,
+            "nom",
+            "nomCheval"
+        )
+    )
+
+    np = (
+        p.get("nonPartant") is True
+        or texte(
+            p.get("statut")
+        ).upper() in (
+            "NP",
+            "NON_PARTANT",
+            "NON PARTANT"
+        )
+    )
+
+    return {
+        "numero": numero,
+        "nom": nom,
+        "non_partant": np,
+        "statut": (
+            "NON_PARTANT" if np
+            else "PARTANT"
+        ),
+        "musique": texte(
+            premier(
+                p,
+                "musique",
+                "musiqueCheval"
+            )
+        ),
+        "gains": premier(
+            p,
+            "gainCarriere",
+            "gains",
+            "gain"
+        ),
+        "jockey": texte(
+            premier(
+                p,
+                "nomJockey",
+                "jockey"
+            )
+        ),
+        "driver": texte(
+            premier(
+                p,
+                "nomDriver",
+                "driver"
+            )
+        ),
+        "entraineur": texte(
+            premier(
+                p,
+                "nomEntraineur",
+                "entraineur"
+            )
+        ),
+        "age": premier(p, "age"),
+        "sexe": texte(
+            premier(p, "sexe")
+        ),
+        "source": "PMU"
+    }
+
+
+def extraire_reunions(programme):
+    if isinstance(programme, dict):
+        reunions = premier(
+            programme,
+            "programme",
+            "reunions"
+        )
+        if isinstance(reunions, dict):
+            reunions = reunions.get("reunions")
+        if isinstance(reunions, list):
+            return reunions
+    return []
+
+
+def collecter(jour):
+    date_pmu = jour.strftime("%d%m%Y")
+    erreurs = []
+    avertissements = []
+    courses = []
+
+    programme = requete(
+        "/programme/" + date_pmu
+    )
+
+    reunions = extraire_reunions(programme)
+
+    if not reunions:
+        raise RuntimeError(
+            "Aucune reunion exploitable "
+            "dans la reponse PMU."
+        )
+
+    nb_france = 0
+
+    for reunion in reunions:
+        france = reunion_francaise(reunion)
+
+        if france is not True:
+            if france is None:
+                avertissements.append(
+                    "Reunion sans pays verifie : "
+                    + texte(
+                        reunion.get("numOfficiel")
+                    )
+                )
+            continue
+
+        nb_france += 1
+
+        nr = entier(
+            premier(
+                reunion,
+                "numOfficiel",
+                "numReunion"
+            )
+        )
+
+        hippodrome = texte(
+            premier(
+                reunion,
+                "hippodrome",
+                "nomHippodrome"
+            )
+        )
+
+        if isinstance(
+            reunion.get("hippodrome"), dict
+        ):
+            hippodrome = texte(
+                premier(
+                    reunion["hippodrome"],
+                    "libelleLong",
+                    "libelleCourt"
+                )
+            )
+
+        for course in liste_courses(reunion):
+            nc = entier(
+                premier(
+                    course,
+                    "numOrdre",
+                    "numCourse"
+                )
+            )
+
+            if nr <= 0 or nc <= 0:
+                avertissements.append(
+                    "Identifiant de course invalide"
+                )
+                continue
+
+            identifiant = (
+                jour.isoformat()
+                + f"-R{nr}-C{nc}"
+            )
+
+            try:
+                details = requete(
+                    f"/programme/{date_pmu}"
+                    f"/R{nr}/C{nc}/participants"
+                )
+                bruts = liste_participants(details)
+
+                if not isinstance(bruts, list):
+                    raise ValueError(
+                        "Participants non valides"
+                    )
+
+                if not bruts:
+                    avertissements.append(
+                        identifiant
+                        + " : liste vide"
+                    )
+                    continue
+
+                partants = [
+                    normaliser_partant(p)
+                    for p in bruts
+                    if isinstance(p, dict)
+                ]
+
+                partants = [
+                    p for p in partants
+                    if p["numero"] > 0
+                    and p["nom"]
+                ]
+
+                numeros = [
+                    p["numero"] for p in partants
+                ]
+
+                if (
+                    not partants
+                    or len(numeros) != len(set(numeros))
+                ):
+                    raise ValueError(
+                        "Partants invalides ou doublons"
+                    )
+
+                non_partants = [
+                    p["numero"]
+                    for p in partants
+                    if p["non_partant"]
+                ]
+
+                depart = depart_paris(
+                    premier(
+                        course,
+                        "heureDepart",
+                        "heureDepartPrevue"
+                    )
+                )
+
+                courses.append({
+                    "id": identifiant,
+                    "reunion": nr,
+                    "course": nc,
+                    "hippodrome": hippodrome,
+                    "localisation_france_verifiee": True,
+                    "nom": texte(
+                        premier(
+                            course,
+                            "libelle",
+                            "nomCourse"
+                        )
+                    ),
+                    "depart": depart,
+                    "depart_verifie": bool(depart),
+                    "nombre_participants": len(partants),
+                    "nombre_partants": (
+                        len(partants)
+                        - len(non_partants)
+                    ),
+                    "non_partants": non_partants,
+                    "partants": partants,
+                    "source": "PMU",
+                    "collecte_a": maintenant(),
+                    "statut": "PARTANTS_CHARGES"
+                })
+
+            except Exception as e:
+                erreurs.append(
+                    identifiant + " : " + str(e)
+                )
+
+    courses.sort(
+        key=lambda c: (
+            c["depart"] or "9999",
+            c["id"]
+        )
+    )
+
+    return {
+        "version": VERSION,
+        "date": jour.isoformat(),
+        "collecte_a": maintenant(),
+        "source": "PMU",
+        "statut": (
+            "PARTIEL" if erreurs and courses
+            else "OK" if courses
+            else "ECHEC" if erreurs
+            else "AUCUNE_COURSE"
+        ),
+        "courses": courses,
+        "erreurs": erreurs,
+        "avertissements": avertissements,
+        "statistiques": {
+            "reunions_francaises": nb_france,
+            "courses": len(courses),
+            "partants": sum(
+                c["nombre_partants"]
+                for c in courses
+            ),
+            "non_partants": sum(
+                len(c["non_partants"])
+                for c in courses
+            )
+        }
+    }
+
+
+def publier(rapport):
+    DATA.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    diagnostic = {
+        "version": VERSION,
+        "date": rapport["date"],
+        "collecte_a": rapport["collecte_a"],
+        "statut": rapport["statut"],
+        "statistiques": rapport["statistiques"],
+        "erreurs": rapport["erreurs"],
+        "avertissements": rapport["avertissements"]
+    }
+
+    enregistrer(
+        DATA / "diagnostic_collecte.json",
+        diagnostic
+    )
+
+    if not rapport["courses"]:
+        print(
+            "Aucune nouvelle course valide. "
+            "Anciennes donnees conservees."
+        )
+        return False
+
+    chemin = DATA / "courses.json"
+    ancien = lire(chemin)
+
+    # Conserver les courses deja valides
+    # si une nouvelle collecte est partielle.
+    index = {}
+
+    if (
+        isinstance(ancien, dict)
+        and ancien.get("date") == rapport["date"]
+        and isinstance(
+            ancien.get("courses"), list
+        )
+    ):
+        for c in ancien["courses"]:
+            if isinstance(c, dict) and c.get("id"):
+                index[c["id"]] = c
+
+    for c in rapport["courses"]:
+        index[c["id"]] = c
+
+    rapport["courses"] = sorted(
+        index.values(),
+        key=lambda c: (
+            c.get("depart") or "9999",
+            c.get("id") or ""
+        )
+    )
+
+    rapport["statistiques"]["courses"] = len(
+        rapport["courses"]
+    )
+    rapport["statistiques"]["partants"] = sum(
+        c.get("nombre_partants", 0)
+        for c in rapport["courses"]
+    )
+    rapport["statistiques"]["non_partants"] = sum(
+        len(c.get("non_partants", []))
+        for c in rapport["courses"]
+    )
+
+    enregistrer(chemin, rapport)
+    enregistrer(ROOT / "courses.json", rapport)
+
+    # Archive quotidienne de la derniere
+    # publication, sans toucher aux FIGES.
+    enregistrer(
+        DATA / "archives_collecte"
+        / (rapport["date"] + ".json"),
+        rapport
+    )
+
+    return True
+
+
+def self_test():
+    assert entier("12") == 12
+    assert entier("x") == 0
+    assert depart_paris(
+        1793404800000
+    )
+    assert normaliser_partant({
+        "numPmu": 5,
+        "nom": "TEST",
+        "nonPartant": True
+    })["non_partant"] is True
+
+    assert reunion_francaise({
+        "pays": "FR"
+    }) is True
+
+    assert reunion_francaise({
+        "pays": "GB"
+    }) is False
+
+    print("SELF-TEST OK")
+    return 0
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date")
+    parser.add_argument(
+        "--self-test",
+        action="store_true"
+    )
+    args = parser.parse_args()
+
+    if args.self_test:
+        return self_test()
+
+    try:
+        jour = (
+            date.fromisoformat(args.date)
+            if args.date
+            else datetime.now(PARIS).date()
+        )
+
+        rapport = collecter(jour)
+        publication = publier(rapport)
+
+        print(json.dumps({
+            "date": rapport["date"],
+            "statut": rapport["statut"],
+            "courses_collectees": len(
+                rapport["courses"]
+            ),
+            "publication": publication,
+            "erreurs": rapport["erreurs"]
+        }, ensure_ascii=False, indent=2))
+
+        if rapport["statut"] in (
+            "ECHEC", "AUCUNE_COURSE"
+        ):
+            return 1
+
+        return 0
+
+    except Exception as e:
+        DATA.mkdir(
+            parents=True,
+            exist_ok=True
+        )
+        enregistrer(
+            DATA / "diagnostic_collecte.json",
+            {
+                "version": VERSION,
+                "collecte_a": maintenant(),
+                "statut": "ECHEC",
+                "erreur": str(e)
+            }
+        )
+        print("ERREUR :", e, file=sys.stderr)
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
