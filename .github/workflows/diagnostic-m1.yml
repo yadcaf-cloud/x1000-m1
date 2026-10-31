@@ -1,4 +1,4 @@
-name: "X1000 M1 - Pipeline securise V3.4"
+name: "X1000 M1 - Pipeline securise V3.5"
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   validation:
-    name: "M1 - Validation isolee"
+    name: "M1 - Tests et preanalyse isoles"
     if: >-
       github.event_name == 'workflow_dispatch' &&
       github.ref == 'refs/heads/feature/m1-pipeline-securise-20261031'
@@ -36,7 +36,7 @@ jobs:
           persist-credentials: false
           fetch-depth: 1
 
-      - name: "Installer Python"
+      - name: "Installer Python 3.12"
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -178,8 +178,6 @@ jobs:
           cp pmu_engine.py "$TEST_DIR/"
           cp m1_analyse_autonome.py "$TEST_DIR/"
 
-          # Ne pas copier une ancienne collecte.
-          # La collecte doit etre creee par le test.
           test ! -e \
             "$TEST_DIR/data/collecte_m1_pmu.json"
 
@@ -199,7 +197,7 @@ jobs:
 
           echo "Collecte terminee"
 
-      - name: "Verifier collecte fraiche"
+      - name: "Verifier collecte PMU complete"
         run: |
           set -euo pipefail
 
@@ -207,6 +205,7 @@ jobs:
           import datetime as dt
           import json
           import os
+          import re
           from pathlib import Path
           from zoneinfo import ZoneInfo
 
@@ -229,7 +228,7 @@ jobs:
 
               def reject(value):
                   raise ValueError(
-                      "Constante invalide : " + value
+                      "Constante interdite : " + value
                   )
 
               return json.loads(
@@ -245,14 +244,12 @@ jobs:
               "diagnostic_collecte_m1.json"
           )
 
-          if not isinstance(collecte, dict):
+          if not all(
+              isinstance(x, dict)
+              for x in (collecte, diagnostic)
+          ):
               raise ValueError(
-                  "Collecte non structuree"
-              )
-
-          if not isinstance(diagnostic, dict):
-              raise ValueError(
-                  "Diagnostic non structure"
+                  "Objet JSON attendu"
               )
 
           if (
@@ -260,7 +257,7 @@ jobs:
               or diagnostic.get("statut") != "OK"
           ):
               raise ValueError(
-                  "Collecte PMU non validee"
+                  "Collecte non validee"
               )
 
           if (
@@ -268,7 +265,7 @@ jobs:
               or diagnostic.get("erreurs") != []
           ):
               raise ValueError(
-                  "Erreurs PMU presentes"
+                  "Erreurs de collecte presentes"
               )
 
           if (
@@ -277,6 +274,14 @@ jobs:
           ):
               raise ValueError(
                   "Horodatages differents"
+              )
+
+          if (
+              collecte.get("statistiques")
+              != diagnostic.get("statistiques")
+          ):
+              raise ValueError(
+                  "Statistiques incoherentes"
               )
 
           paris = ZoneInfo("Europe/Paris")
@@ -288,7 +293,10 @@ jobs:
               )
           )
 
-          if stamp.tzinfo is None:
+          if (
+              stamp.tzinfo is None
+              or stamp.utcoffset() is None
+          ):
               raise ValueError(
                   "Fuseau horaire absent"
               )
@@ -302,19 +310,14 @@ jobs:
                   "Collecte ancienne ou future"
               )
 
-          if collecte.get("date") != (
-              now.date().isoformat()
+          today = now.date().isoformat()
+
+          if (
+              collecte.get("date") != today
+              or diagnostic.get("date") != today
           ):
               raise ValueError(
                   "Date Paris incoherente"
-              )
-
-          if diagnostic.get("date") != (
-              collecte.get("date")
-          ):
-              raise ValueError(
-                  "Dates collecte et diagnostic "
-                  "differentes"
               )
 
           courses = collecte.get("courses")
@@ -324,10 +327,17 @@ jobs:
               or not courses
           ):
               raise ValueError(
-                  "Aucune course exploitable"
+                  "Aucune course collectee"
               )
 
           ids = set()
+          total_partants = 0
+          total_np = 0
+
+          pattern = (
+              r"\d{4}-\d{2}-\d{2}"
+              r"-R[1-9]\d*-C[1-9]\d*"
+          )
 
           for course in courses:
               if not isinstance(course, dict):
@@ -339,7 +349,9 @@ jobs:
 
               if (
                   not isinstance(cid, str)
+                  or not re.fullmatch(pattern, cid)
                   or cid in ids
+                  or not cid.startswith(today + "-")
               ):
                   raise ValueError(
                       "Identifiant invalide ou double"
@@ -356,43 +368,130 @@ jobs:
                       "France non verifiee : " + cid
                   )
 
-              partants = course.get("partants")
+              depart = dt.datetime.fromisoformat(
+                  course["depart"].replace(
+                      "Z", "+00:00"
+                  )
+              )
 
-              if not isinstance(partants, list):
+              if (
+                  depart.tzinfo is None
+                  or depart.utcoffset() is None
+                  or depart.astimezone(
+                      paris
+                  ).date().isoformat() != today
+              ):
+                  raise ValueError(
+                      "Depart invalide : " + cid
+                  )
+
+              chevaux = course.get("partants")
+
+              if (
+                  not isinstance(chevaux, list)
+                  or not chevaux
+              ):
                   raise ValueError(
                       "Partants invalides : " + cid
                   )
 
               numeros = set()
+              np = set()
 
-              for cheval in partants:
+              for cheval in chevaux:
                   if not isinstance(cheval, dict):
                       raise ValueError(
                           "Cheval non structure"
                       )
 
                   numero = cheval.get("numero")
+                  nom = cheval.get("nom")
 
                   if (
                       type(numero) is not int
                       or numero <= 0
                       or numero in numeros
+                      or not isinstance(nom, str)
+                      or not nom.strip()
                   ):
                       raise ValueError(
-                          "Numero invalide : " + cid
+                          "Cheval invalide : " + cid
                       )
 
                   numeros.add(numero)
 
-                  if type(
-                      cheval.get("non_partant")
-                  ) is not bool:
+                  statut = cheval.get(
+                      "non_partant"
+                  )
+
+                  if type(statut) is not bool:
                       raise ValueError(
                           "Statut NP invalide"
                       )
 
+                  if statut:
+                      np.add(numero)
+
+              declares = course.get(
+                  "non_partants"
+              )
+
+              if (
+                  not isinstance(declares, list)
+                  or any(
+                      type(n) is not int
+                      for n in declares
+                  )
+                  or len(declares) != len(set(declares))
+                  or set(declares) != np
+              ):
+                  raise ValueError(
+                      "NP incoherents : " + cid
+                  )
+
+              actifs = len(numeros) - len(np)
+
+              if (
+                  type(
+                      course.get("nombre_partants")
+                  ) is not int
+                  or course["nombre_partants"]
+                  != actifs
+              ):
+                  raise ValueError(
+                      "Total partants invalide"
+                  )
+
+              total_partants += actifs
+              total_np += len(np)
+
+          stats = collecte.get("statistiques")
+
+          if not isinstance(stats, dict):
+              raise ValueError(
+                  "Statistiques absentes"
+              )
+
+          attendus = {
+              "courses": len(courses),
+              "partants": total_partants,
+              "non_partants": total_np
+          }
+
+          for cle, valeur in attendus.items():
+              if (
+                  type(stats.get(cle)) is not int
+                  or stats[cle] != valeur
+              ):
+                  raise ValueError(
+                      "Statistique incoherente : "
+                      + cle
+                  )
+
           print("Collecte fraiche : OK")
-          print("Courses verifiees :", len(courses))
+          print("Courses :", len(courses))
+          print("Partants :", total_partants)
+          print("Non-partants :", total_np)
           print("Age secondes :", round(age))
           PY
 
@@ -434,22 +533,43 @@ jobs:
                   "Rapport M1 invalide"
               )
 
+          if (
+              report.get("moteur") != "M1"
+              or report.get("statut")
+              != "PREPUBLICATION"
+          ):
+              raise ValueError(
+                  "Rapport non conforme"
+              )
+
+          propositions = report.get(
+              "propositions"
+          )
+
           count = report.get(
               "nombre_propositions"
           )
 
           if (
-              type(count) is not int
+              not isinstance(propositions, list)
+              or type(count) is not int
               or count < 0
+              or count != len(propositions)
           ):
               raise ValueError(
-                  "Compteur M1 invalide"
+                  "Propositions incoherentes"
+              )
+
+          if report.get(
+              "aucune_modification_figes"
+          ) is not True:
+              raise ValueError(
+                  "Protection FIGE non confirmee"
               )
 
           print("Propositions M1 :", count)
-          print("Preanalyse uniquement")
-          print("Aucun FIGE officiel")
-          print("Aucun pronostic publie")
+          print("Preanalyse non officielle")
+          print("Aucun FIGE publie")
           PY
 
       - name: "Verifier integrite du depot"
@@ -475,7 +595,7 @@ jobs:
           COLLECTE_STATUS: ${{ steps.collecte.outcome }}
         run: |
           echo "================================"
-          echo "X1000 M1 - PIPELINE V3.4"
+          echo "X1000 M1 - PIPELINE V3.5"
           echo "================================"
           echo "Job : $JOB_STATUS"
           echo "Collecte : $COLLECTE_STATUS"
