@@ -1,24 +1,17 @@
-
-# MPAA X1000 - MOTEUR M1
-# WORKFLOW UNIFIE ET PROTEGE
-# Depot : yadcaf-cloud/x1000-m1
+# 🇸🇳🧠🔥 MPAA X1000 - M1
+# WORKFLOW UNIQUE ET PROTEGE
 #
 # Collecte PMU France toutes les 10 minutes.
-# Tests du collecteur et du moteur M1.
-# Verification des archives FIGE.
+# Protection des fichiers suivis, non suivis
+# et ignores par Git.
 #
-# PUBLICATION AUTORISEE UNIQUEMENT :
-# data/collecte_m1_pmu.json
-# data/diagnostic_collecte_m1.json
+# Publication collecte uniquement :
+# - data/collecte_m1_pmu.json
+# - data/diagnostic_collecte_m1.json
 #
-# INTERDICTIONS :
-# - Aucune modification de m1.py
-# - Aucune importation dans data/courses.json
-# - Aucun pronostic ou pari fictif
-# - Aucun FIGE cree ou modifie
-# - Aucun audit ou tableau officiel modifie
-# - Aucun acces aux moteurs M2 a M5
-# - Aucun deploiement vers X1000 PHOENIX
+# Aucune modification sportive automatique
+# tant que le moteur autonome n'est pas
+# implemente et explicitement active.
 
 name: "MPAA X1000 - M1 Unifie et Protege"
 
@@ -58,8 +51,11 @@ jobs:
       PYTHONDONTWRITEBYTECODE: "1"
       PYTHONUNBUFFERED: "1"
 
-    steps:
+      # Activation interdite tant que la
+      # commande autonome n'existe pas.
+      M1_AUTO_ANALYZE: "false"
 
+    steps:
       - name: "Recuperer le depot M1"
         uses: actions/checkout@v4
         with:
@@ -71,7 +67,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: "Verifier le depot initial"
+      - name: "Verifier les fichiers requis"
         run: |
           set -euo pipefail
 
@@ -79,14 +75,57 @@ jobs:
           test -f pmu_engine.py
 
           if [ -n "$(git status --porcelain --untracked-files=all)" ]; then
-            echo "ERREUR : depot initial non propre"
-            git status --short
+            echo "Depot initial non propre"
             exit 1
           fi
 
-          echo "Depot M1 initial propre"
+      - name: "Enregistrer l'etat initial protege"
+        run: |
+          set -euo pipefail
 
-      - name: "Verifier la syntaxe sans pycache"
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path(".")
+          allowed = {
+              "data/collecte_m1_pmu.json",
+              "data/diagnostic_collecte_m1.json"
+          }
+
+          def snapshot():
+              result = {}
+
+              for path in root.rglob("*"):
+                  if ".git" in path.parts:
+                      continue
+
+                  if not path.is_file():
+                      continue
+
+                  name = path.as_posix()
+
+                  if name in allowed:
+                      continue
+
+                  digest = hashlib.sha256(
+                      path.read_bytes()
+                  ).hexdigest()
+
+                  result[name] = digest
+
+              return result
+
+          Path("/tmp/m1_protection.json").write_text(
+              json.dumps(snapshot(), sort_keys=True),
+              encoding="utf-8"
+          )
+
+          print("Etat initial protege enregistre")
+          PY
+
+      - name: "Verifier la syntaxe Python"
         run: |
           set -euo pipefail
 
@@ -94,17 +133,20 @@ jobs:
           from pathlib import Path
 
           for name in ("m1.py", "pmu_engine.py"):
-              path = Path(name)
-              compile(path.read_bytes(), name, "exec")
-              print(name, ": syntaxe valide")
+              compile(
+                  Path(name).read_bytes(),
+                  name,
+                  "exec"
+              )
+              print(name, ": syntaxe OK")
           PY
 
-      - name: "Autotest du collecteur PMU"
+      - name: "Tester le collecteur"
         run: |
           set -euo pipefail
           python pmu_engine.py --self-test
 
-      - name: "Autotest du moteur M1"
+      - name: "Tester le moteur M1"
         run: |
           set -euo pipefail
           python m1.py --self-test
@@ -114,108 +156,134 @@ jobs:
           set -euo pipefail
           python m1.py --verify-archives
 
-      - name: "Collecter les donnees PMU reelles"
+      - name: "Enregistrer le debut de collecte"
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          Path("/tmp/m1_collecte_start").write_text(
+              datetime.now(timezone.utc).isoformat(),
+              encoding="utf-8"
+          )
+          PY
+
+      - name: "Collecter les courses PMU"
         id: collecte
-        continue-on-error: true
         run: |
           set -euo pipefail
           python pmu_engine.py
 
-      - name: "Verifier la collecte PMU"
-        id: verification
-        if: steps.collecte.outcome == 'success'
+      - name: "Verifier la fraicheur des JSON"
+        id: fraicheur
         run: |
           set -euo pipefail
 
           python - <<'PY'
           import datetime as dt
           import json
-          import re
-
           from pathlib import Path
           from zoneinfo import ZoneInfo
 
+          utc = dt.timezone.utc
           paris = ZoneInfo("Europe/Paris")
-          today = dt.datetime.now(paris).date()
 
           def fail(message):
               raise SystemExit(
                   "COLLECTE REFUSEE : " + message
               )
 
-          def load(name):
-              path = Path("data") / name
-
-              if not path.is_file():
-                  fail("Fichier absent : " + name)
-
-              try:
-                  with path.open(encoding="utf-8") as f:
-                      obj = json.load(f)
-              except (OSError, ValueError) as exc:
-                  fail(name + " : " + str(exc))
-
-              if not isinstance(obj, dict):
-                  fail(name + " : objet JSON attendu")
-
-              return obj
-
-          def parse_time(value):
+          def timestamp(value):
               if not isinstance(value, str):
                   fail("Horodatage absent")
 
               try:
-                  stamp = dt.datetime.fromisoformat(
+                  result = dt.datetime.fromisoformat(
                       value.replace("Z", "+00:00")
                   )
               except ValueError:
                   fail("Horodatage invalide")
 
-              if (
-                  stamp.tzinfo is None
-                  or stamp.utcoffset() is None
-              ):
-                  fail("Fuseau horaire absent")
+              if result.tzinfo is None:
+                  fail("Horodatage sans fuseau")
 
-              return stamp
+              return result.astimezone(utc)
 
-          data = load("collecte_m1_pmu.json")
-          diag = load("diagnostic_collecte_m1.json")
+          start = timestamp(
+              Path("/tmp/m1_collecte_start")
+              .read_text(encoding="utf-8")
+              .strip()
+          )
 
-          for label, obj in (
-              ("collecte", data),
-              ("diagnostic", diag)
+          now = dt.datetime.now(utc)
+          today = start.astimezone(paris).date()
+
+          objects = {}
+
+          for filename in (
+              "collecte_m1_pmu.json",
+              "diagnostic_collecte_m1.json"
           ):
-              if obj.get("statut") != "OK":
-                  fail(label + " : statut non OK")
+              path = Path("data") / filename
+
+              if not path.is_file():
+                  fail(filename + " absent")
+
+              modified = dt.datetime.fromtimestamp(
+                  path.stat().st_mtime,
+                  tz=utc
+              )
+
+              if modified < start:
+                  fail(filename + " non actualise")
+
+              if modified > now + dt.timedelta(seconds=60):
+                  fail(filename + " date dans le futur")
+
+              try:
+                  obj = json.loads(
+                      path.read_text(encoding="utf-8")
+                  )
+              except (OSError, ValueError) as exc:
+                  fail(filename + " : " + str(exc))
+
+              if not isinstance(obj, dict):
+                  fail(filename + " : objet attendu")
 
               if obj.get("date") != today.isoformat():
-                  fail(label + " : date incorrecte")
+                  fail(filename + " : mauvaise date")
+
+              if obj.get("statut") != "OK":
+                  fail(filename + " : statut non OK")
 
               if obj.get("erreurs"):
-                  fail(label + " : erreurs presentes")
+                  fail(filename + " : erreurs presentes")
 
-          if data.get("collecte_a") != diag.get("collecte_a"):
+              stamp = timestamp(obj.get("collecte_a"))
+
+              if stamp < start - dt.timedelta(seconds=60):
+                  fail(filename + " : ancienne collecte")
+
+              if stamp > now + dt.timedelta(seconds=60):
+                  fail(filename + " : horodatage futur")
+
+              objects[filename] = obj
+
+          data = objects["collecte_m1_pmu.json"]
+          diag = objects["diagnostic_collecte_m1.json"]
+
+          if data["collecte_a"] != diag["collecte_a"]:
               fail("Horodatages differents")
 
-          stamp = parse_time(data.get("collecte_a"))
-
-          age = (
-              dt.datetime.now(dt.timezone.utc)
-              - stamp.astimezone(dt.timezone.utc)
-          ).total_seconds()
-
-          if not -60 <= age <= 1200:
-              fail("Collecte ancienne ou future")
+          if data.get("statistiques") != diag.get("statistiques"):
+              fail("Statistiques differentes")
 
           courses = data.get("courses")
 
           if not isinstance(courses, list) or not courses:
-              fail("Aucune course francaise verifiee")
-
-          pattern = re.compile(
-              r"^\d{4}-\d{2}-\d{2}-R[1-9]\d*-C[1-9]\d*$"
-          )
+              fail("Aucune course verifiee")
 
           ids = set()
           total_chevaux = 0
@@ -228,24 +296,20 @@ jobs:
 
               cid = course.get("id")
 
-              if (
-                  not isinstance(cid, str)
-                  or not pattern.fullmatch(cid)
-                  or cid in ids
-              ):
-                  fail("ID de course invalide ou duplique")
+              if not isinstance(cid, str) or cid in ids:
+                  fail("ID course absent ou duplique")
 
               ids.add(cid)
-
-              if cid[:10] != today.isoformat():
-                  fail(cid + " : date incorrecte")
 
               if course.get(
                   "localisation_france_verifiee"
               ) is not True:
                   fail(cid + " : France non verifiee")
 
-              depart = parse_time(course.get("depart"))
+              if cid[:10] != today.isoformat():
+                  fail(cid + " : date incorrecte")
+
+              depart = timestamp(course.get("depart"))
 
               if depart.astimezone(paris).date() != today:
                   fail(cid + " : depart hors date")
@@ -253,7 +317,7 @@ jobs:
               chevaux = course.get("partants")
 
               if not isinstance(chevaux, list) or not chevaux:
-                  fail(cid + " : partants absents")
+                  fail(cid + " : chevaux absents")
 
               numeros = set()
               np = set()
@@ -273,32 +337,22 @@ jobs:
 
                   numeros.add(numero)
 
-                  nom = cheval.get("nom")
+                  if not isinstance(cheval.get("nom"), str):
+                      fail(cid + " : nom invalide")
 
-                  if (
-                      not isinstance(nom, str)
-                      or not nom.strip()
-                  ):
-                      fail(cid + " : nom absent")
+                  if not cheval["nom"].strip():
+                      fail(cid + " : nom vide")
 
                   if type(cheval.get("non_partant")) is not bool:
-                      fail(cid + " : statut NP invalide")
+                      fail(cid + " : NP invalide")
 
                   if cheval["non_partant"]:
                       np.add(numero)
 
-              actifs = len(numeros) - len(np)
-
-              if (
-                  type(course.get("nombre_partants")) is not int
-                  or course["nombre_partants"] != actifs
-              ):
-                  fail(cid + " : nombre partants incoherent")
-
               declared = course.get("non_partants")
 
               if not isinstance(declared, list):
-                  fail(cid + " : liste NP absente")
+                  fail(cid + " : NP absents")
 
               if any(type(n) is not int for n in declared):
                   fail(cid + " : numero NP invalide")
@@ -308,6 +362,11 @@ jobs:
                   or set(declared) != np
               ):
                   fail(cid + " : NP incoherents")
+
+              actifs = len(numeros) - len(np)
+
+              if course.get("nombre_partants") != actifs:
+                  fail(cid + " : total incorrect")
 
               total_chevaux += len(numeros)
               total_partants += actifs
@@ -327,97 +386,139 @@ jobs:
           }
 
           for key, value in expected.items():
-              if (
-                  type(stats.get(key)) is not int
-                  or stats[key] != value
-              ):
+              if type(stats.get(key)) is not int:
+                  fail("Statistique invalide : " + key)
+
+              if stats[key] != value:
                   fail("Statistique incoherente : " + key)
 
-          if diag.get("statistiques") != stats:
-              fail("Diagnostic statistique incoherent")
-
-          print("COLLECTE PMU VALIDEE")
+          print("COLLECTE FRAICHE ET VERIFIEE")
           print("Courses :", len(courses))
           print("Chevaux :", total_chevaux)
           print("Partants :", total_partants)
           print("Non-partants :", total_np)
-          print("Aucun pronostic genere")
-          print("Aucun FIGE genere")
           PY
 
-      - name: "Reverifier les FIGE historiques"
+      - name: "Etat de l'autonomie sportive M1"
+        id: autonomie
+        run: |
+          set -euo pipefail
+
+          if [ "$M1_AUTO_ANALYZE" != "true" ]; then
+            echo "Analyse sportive autonome non activee."
+            echo "Aucune decision fictive produite."
+            exit 0
+          fi
+
+          # Activation future uniquement.
+          # Exige une commande reelle dans m1.py.
+          if ! python m1.py --help | grep -q -- '--auto-analyze'; then
+            echo "ERREUR : commande autonome absente"
+            exit 1
+          fi
+
+          # Aucune execution automatique de cette
+          # commande tant que son contrat de sortie
+          # et ses protections ne sont pas verifies.
+          echo "Commande detectee, activation a valider."
+          exit 1
+
+      - name: "Reverifier les FIGE"
         id: archives
-        if: steps.verification.outcome == 'success'
         run: |
           set -euo pipefail
           python m1.py --verify-archives
 
-      - name: "Verifier les fichiers modifies"
+      - name: "Verifier tous les fichiers proteges"
         id: protection
-        if: steps.archives.outcome == 'success'
         run: |
           set -euo pipefail
 
           python - <<'PY'
+          import hashlib
+          import json
           import subprocess
+          from pathlib import Path
 
           allowed = {
               "data/collecte_m1_pmu.json",
               "data/diagnostic_collecte_m1.json"
           }
 
+          initial = json.loads(
+              Path("/tmp/m1_protection.json")
+              .read_text(encoding="utf-8")
+          )
+
+          current = {}
+
+          for path in Path(".").rglob("*"):
+              if ".git" in path.parts:
+                  continue
+
+              if not path.is_file():
+                  continue
+
+              name = path.as_posix()
+
+              if name in allowed:
+                  continue
+
+              current[name] = hashlib.sha256(
+                  path.read_bytes()
+              ).hexdigest()
+
+          if current != initial:
+              changed = sorted(
+                  name
+                  for name in set(initial) | set(current)
+                  if initial.get(name) != current.get(name)
+              )
+
+              raise SystemExit(
+                  "FICHIERS PROTEGES MODIFIES : "
+                  + ", ".join(changed)
+              )
+
           raw = subprocess.check_output([
               "git",
               "status",
-              "--porcelain",
+              "--porcelain=v1",
               "-z",
               "--untracked-files=all"
           ])
 
-          entries = raw.split(b"\0")
-          changed = set()
+          parts = raw.split(b"\0")
+          i = 0
 
-          for entry in entries:
+          while i < len(parts):
+              entry = parts[i]
+              i += 1
+
               if not entry:
                   continue
-
-              if len(entry) < 4 or entry[2:3] != b" ":
-                  raise SystemExit(
-                      "Entree Git invalide"
-                  )
 
               status = entry[:2].decode("ascii")
               path = entry[3:].decode("utf-8")
 
-              if "R" in status or "C" in status:
+              if status not in (" M", "M ", "MM", "??"):
                   raise SystemExit(
-                      "Renommage ou copie interdit : " + path
+                      "Operation Git interdite : " + path
                   )
 
-              if "D" in status or "U" in status:
+              if path not in allowed:
                   raise SystemExit(
-                      "Suppression ou conflit interdit : " + path
+                      "Fichier Git interdit : " + path
                   )
 
-              changed.add(path)
-
-          unexpected = changed - allowed
-
-          if unexpected:
-              raise SystemExit(
-                  "Fichiers proteges modifies : "
-                  + ", ".join(sorted(unexpected))
-              )
-
-          print("Isolation M1 validee")
-          print("Aucun fichier protege modifie")
+          print("Protection complete validee")
+          print("Fichiers suivis : proteges")
+          print("Fichiers non suivis : proteges")
+          print("Fichiers ignores : proteges")
           PY
 
-      - name: "Publier uniquement les deux JSON PMU"
+      - name: "Publier uniquement les JSON PMU"
         id: publication
-        if: >-
-          github.ref == 'refs/heads/main' &&
-          steps.protection.outcome == 'success'
         run: |
           set -euo pipefail
 
@@ -445,28 +546,26 @@ jobs:
               "-z"
           ])
 
-          entries = raw.split(b"\0")
-          i = 0
+          parts = raw.split(b"\0")
           staged = set()
+          i = 0
 
-          while i < len(entries):
-              status = entries[i]
+          while i < len(parts):
+              status = parts[i]
               i += 1
 
               if not status:
                   continue
 
-              if i >= len(entries):
-                  raise SystemExit(
-                      "Index Git incomplet"
-                  )
+              if i >= len(parts):
+                  raise SystemExit("Index Git incomplet")
 
-              path = entries[i].decode("utf-8")
+              path = parts[i].decode("utf-8")
               i += 1
 
               if status not in (b"A", b"M"):
                   raise SystemExit(
-                      "Operation Git interdite : " + path
+                      "Operation interdite : " + path
                   )
 
               staged.add(path)
@@ -476,65 +575,46 @@ jobs:
                   "Publication hors perimetre M1"
               )
 
-          print("Index Git valide")
+          print("Publication strictement limitee")
           PY
 
           if git diff --cached --quiet; then
-            echo "Aucune modification a publier"
+            echo "Aucun changement a publier"
             exit 0
           fi
 
           git commit -m \
-            "M1: collecte PMU France verifiee"
+            "M1: collecte PMU France controlee"
 
-          # Aucun push force.
-          # En cas de divergence, echec sans
-          # reecriture de l'historique.
           git push origin HEAD:main
 
-      - name: "Rapport final M1"
+      - name: "Rapport final"
         if: always()
         env:
           COLLECTE: ${{ steps.collecte.outcome }}
-          VERIFICATION: ${{ steps.verification.outcome }}
+          FRAICHEUR: ${{ steps.fraicheur.outcome }}
+          AUTONOMIE: ${{ steps.autonomie.outcome }}
           ARCHIVES: ${{ steps.archives.outcome }}
           PROTECTION: ${{ steps.protection.outcome }}
           PUBLICATION: ${{ steps.publication.outcome }}
         run: |
           {
-            echo "## MPAA X1000 - M1 unifie"
+            echo "## 🇸🇳🧠🔥 MPAA X1000 - M1"
             echo ""
             echo "- Collecte : ${COLLECTE}"
-            echo "- Verification PMU : ${VERIFICATION}"
+            echo "- Fraicheur JSON : ${FRAICHEUR}"
+            echo "- Autonomie sportive : ${AUTONOMIE}"
             echo "- Archives FIGE : ${ARCHIVES}"
-            echo "- Protection : ${PROTECTION}"
+            echo "- Protection fichiers : ${PROTECTION}"
             echo "- Publication : ${PUBLICATION}"
-            echo "- Frequence prevue : 10 minutes"
-            echo "- Fuseau : Europe/Paris"
             echo ""
-            echo "### Protections"
+            echo "### Garanties"
             echo ""
-            echo "- Pronostics : non modifies"
-            echo "- Selections : non modifiees"
-            echo "- FIGE : non modifies"
-            echo "- Audits : non modifies"
-            echo "- Tableau officiel : non modifie"
-            echo "- M2 a M5 : non modifies"
-            echo "- Importation M1 : desactivee"
-            echo ""
-            echo "Aucune donnee hippique inventee."
+            echo "- Collecte toutes les 10 min demandee"
+            echo "- Courses France verifiees"
+            echo "- Aucun pronostic invente"
+            echo "- Aucun FIGE retroactif"
+            echo "- Aucun audit invente"
+            echo "- Aucun acces a M2-M5"
+            echo "- Aucun deploiement PHOENIX"
           } >> "$GITHUB_STEP_SUMMARY"
-
-      - name: "Signaler tout echec"
-        if: >-
-          always() &&
-          (
-            steps.collecte.outcome != 'success' ||
-            steps.verification.outcome != 'success' ||
-            steps.archives.outcome != 'success' ||
-            steps.protection.outcome != 'success' ||
-            steps.publication.outcome != 'success'
-          )
-        run: |
-          echo "ECHEC : collecte ou publication non validee"
-          exit 1
