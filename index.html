@@ -2,239 +2,228 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#09151d">
 <title>🇸🇳🧠🔥 X1000 M1 — Moteur indépendant</title>
-
 <style>
 :root {
-  color-scheme: dark;
-  --bg: #09151d;
-  --panel: #122630;
-  --border: #31505a;
-  --text: #eef5f3;
-  --muted: #a7bac0;
-  --green: #79dca6;
-  --gold: #e9c66b;
-  --blue: #9bd7ff;
-  --red: #ff9e9e;
+  color-scheme:dark;
+  --bg:#09151d;
+  --panel:#122630;
+  --border:#31505a;
+  --text:#eef5f3;
+  --muted:#a7bac0;
+  --green:#79dca6;
+  --gold:#e9c66b;
+  --blue:#9bd7ff;
+  --red:#ff9e9e;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, Arial, sans-serif;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,Arial,sans-serif;
 }
 header {
-  background: #10252e;
-  border-bottom: 2px solid var(--gold);
-  padding: 24px 16px;
+  background:#10252e;
+  border-bottom:2px solid var(--gold);
+  padding:24px 16px;
 }
 .container {
-  max-width: 1150px;
-  margin: auto;
-  padding: 16px;
+  max-width:1150px;
+  margin:auto;
+  padding:16px;
 }
-h1 { margin: 0 0 10px; font-size: 1.7rem; }
-h2 { color: var(--gold); font-size: 1.15rem; }
-p { line-height: 1.5; }
-.muted { color: var(--muted); }
-.ok { color: var(--green); }
-.warn { color: var(--gold); }
-.bad { color: var(--red); }
+h1 {margin:0 0 10px;font-size:1.7rem}
+h2 {color:var(--gold);font-size:1.15rem}
+p {line-height:1.5}
+.muted {color:var(--muted)}
+.ok {color:var(--green)}
+.warn {color:var(--gold)}
+.bad {color:var(--red)}
 nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
 }
-nav a { color: var(--blue); text-decoration: none; }
-a { color: var(--blue); }
+a {color:var(--blue);text-decoration:none}
 .toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin: 12px 0 18px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+  margin:12px 0 18px;
 }
 button {
-  background: #24785b;
-  color: white;
-  border: 0;
-  border-radius: 8px;
-  padding: 11px 16px;
-  font-weight: bold;
-  cursor: pointer;
+  background:#24785b;
+  color:white;
+  border:0;
+  border-radius:8px;
+  padding:11px 16px;
+  font-weight:bold;
+  cursor:pointer;
 }
+button:disabled {opacity:.5;cursor:wait}
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-  gap: 12px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(135px,1fr));
+  gap:12px;
 }
-.card, section {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 15px;
+.card,section {
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+  margin-bottom:15px;
 }
 .count {
-  color: var(--green);
-  font-size: 1.9rem;
-  font-weight: bold;
-  margin-top: 8px;
+  color:var(--green);
+  font-size:1.9rem;
+  font-weight:bold;
+  margin-top:8px;
 }
 .status {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 16px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:12px;
+  margin-bottom:16px;
 }
-.scroll { overflow-x: auto; }
+.scroll {overflow-x:auto}
 table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: .9rem;
+  width:100%;
+  border-collapse:collapse;
+  font-size:.9rem;
 }
-th, td {
-  padding: 10px;
-  text-align: left;
-  vertical-align: top;
-  border-bottom: 1px solid var(--border);
+th,td {
+  padding:10px;
+  text-align:left;
+  vertical-align:top;
+  border-bottom:1px solid var(--border);
 }
-th { color: var(--gold); }
+th {color:var(--gold)}
 select {
-  width: 100%;
-  max-width: 500px;
-  padding: 11px;
-  margin: 8px 0 14px;
-  background: #091923;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: white;
+  width:100%;
+  max-width:500px;
+  padding:11px;
+  margin:8px 0 14px;
+  background:#091923;
+  border:1px solid var(--border);
+  border-radius:8px;
+  color:white;
 }
 footer {
-  text-align: center;
-  color: var(--muted);
-  padding: 24px;
+  text-align:center;
+  color:var(--muted);
+  padding:24px;
 }
+#rapportTechnique p {overflow-wrap:anywhere}
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="container">
-    <h1>🇸🇳🧠🔥 X1000 M1</h1>
-    <strong>Intelligence hippique — Moteur M1 indépendant</strong>
-    <p class="muted">
-      Courses PMU physiquement disputées en France.
-      Décisions autonomes M1, FIGÉs historiques et audits.
-    </p>
-    <nav>
-      <a href="#accueil">Accueil</a>
-      <a href="#courses">Courses</a>
-      <a href="#partants">Partants</a>
-      <a href="#decisions">Décisions M1</a>
-      <a href="#figes">FIGÉs</a>
-      <a href="#audits">Audits</a>
-      <a href="#diagnostic">Diagnostic</a>
-    </nav>
-  </div>
+<div class="container">
+<h1>🇸🇳🧠🔥 X1000 M1</h1>
+<strong>Intelligence hippique — Moteur M1 indépendant</strong>
+<p class="muted">
+Courses PMU physiquement disputées en France.
+Décisions autonomes M1, FIGÉs historiques et audits.
+</p>
+<nav>
+<a href="#accueil">Accueil</a>
+<a href="#courses">Courses</a>
+<a href="#partants">Partants</a>
+<a href="#decisions">Décisions M1</a>
+<a href="#figes">FIGÉs</a>
+<a href="#audits">Audits</a>
+<a href="#diagnostic">Diagnostic</a>
+</nav>
+</div>
 </header>
 
 <main class="container" id="accueil">
 
-  <div class="toolbar">
-    <span>Heure de Paris :
-      <strong id="heureParis">—</strong>
-    </span>
-    <button id="actualiser" type="button">Actualiser</button>
-  </div>
+<div class="toolbar">
+<span>Heure de Paris :
+<strong id="heureParis">—</strong>
+</span>
+<button id="actualiser" type="button">Actualiser</button>
+</div>
 
-  <div id="etatGlobal" class="status warn">
-    Chargement des données M1...
-  </div>
+<div id="etatGlobal" class="status warn"
+role="status" aria-live="polite">
+Chargement des données M1...
+</div>
 
-  <div class="cards">
-    <div class="card">
-      Courses françaises
-      <div class="count" id="nbCourses">—</div>
-    </div>
-    <div class="card">
-      Partants
-      <div class="count" id="nbPartants">—</div>
-    </div>
-    <div class="card">
-      Non-partants
-      <div class="count" id="nbNP">—</div>
-    </div>
-    <div class="card">
-      Décisions M1
-      <div class="count" id="nbDecisions">—</div>
-    </div>
-    <div class="card">
-      FIGÉs
-      <div class="count" id="nbFiges">—</div>
-    </div>
-    <div class="card">
-      Audits
-      <div class="count" id="nbAudits">—</div>
-    </div>
-  </div>
+<div class="cards">
+<div class="card">Courses françaises
+<div class="count" id="nbCourses">—</div></div>
+<div class="card">Partants
+<div class="count" id="nbPartants">—</div></div>
+<div class="card">Non-partants
+<div class="count" id="nbNP">—</div></div>
+<div class="card">Décisions M1
+<div class="count" id="nbDecisions">—</div></div>
+<div class="card">FIGÉs
+<div class="count" id="nbFiges">—</div></div>
+<div class="card">Audits
+<div class="count" id="nbAudits">—</div></div>
+</div>
 
-  <section id="courses">
-    <h2>Courses françaises publiées</h2>
-    <div class="scroll" id="tableCourses"></div>
-  </section>
+<section id="courses">
+<h2>Courses françaises publiées</h2>
+<div class="scroll" id="tableCourses"></div>
+</section>
 
-  <section id="partants">
-    <h2>Partants et non-partants</h2>
-    <label for="choixCourse">Choisir une course :</label>
-    <select id="choixCourse"></select>
-    <div class="scroll" id="tablePartants"></div>
-  </section>
+<section id="partants">
+<h2>Partants et non-partants</h2>
+<label for="choixCourse">Choisir une course :</label>
+<select id="choixCourse"></select>
+<div class="scroll" id="tablePartants"></div>
+</section>
 
-  <section id="decisions">
-    <h2>Tableau indépendant des décisions M1</h2>
-    <p class="muted">
-      Aucun classement inventé. Seules les sélections réellement
-      publiées par M1 sont affichées.
-    </p>
-    <div class="scroll" id="tableDecisions"></div>
-  </section>
+<section id="decisions">
+<h2>Tableau indépendant des décisions M1</h2>
+<p class="muted">
+Aucun classement inventé.
+Seules les sélections explicitement attribuées
+à M1 sont affichées.
+</p>
+<div class="scroll" id="tableDecisions"></div>
+</section>
 
-  <section id="figes">
-    <h2>FIGÉs historiques M1</h2>
-    <p class="muted">
-      Les versions historiques doivent être conservées.
-      Une nouvelle version ne doit pas écraser la précédente.
-    </p>
-    <div class="scroll" id="tableFiges"></div>
-  </section>
+<section id="figes">
+<h2>FIGÉs historiques M1</h2>
+<p class="muted">
+Lecture seule. Les versions historiques doivent
+rester conservées.
+</p>
+<div class="scroll" id="tableFiges"></div>
+</section>
 
-  <section id="audits">
-    <h2>Audits après course</h2>
-    <div class="scroll" id="tableAudits"></div>
-  </section>
+<section id="audits">
+<h2>Audits après course</h2>
+<div class="scroll" id="tableAudits"></div>
+</section>
 
-  <section id="diagnostic">
-    <h2>Diagnostic technique M1</h2>
-    <div id="rapportTechnique">Vérification en attente.</div>
-    <p class="muted">
-      GitHub Pages est un hébergement statique.
-      Ce site n'exécute pas directement m1.py et ne certifie
-      pas automatiquement les résultats officiels.
-    </p>
-  </section>
+<section id="diagnostic">
+<h2>Diagnostic technique M1</h2>
+<div id="rapportTechnique">Vérification en attente.</div>
+<p class="muted">
+GitHub Pages est statique : cette page ne lance pas
+les moteurs Python, ne valide pas cryptographiquement
+les FIGÉs et ne certifie pas les résultats officiels.
+</p>
+</section>
 
 </main>
 
 <footer>
-  🇸🇳🧠🔥 X1000 M1 — Indépendance sportive et technique.
-  <p>Aucun pronostic ne garantit un gain.</p>
+🇸🇳🧠🔥 X1000 M1 — Indépendance sportive et technique.
+<p>Aucun pronostic ne garantit un gain.</p>
 </footer>
 
 <script>
@@ -248,293 +237,525 @@ const state = {
   figes: [],
   audits: [],
   errors: [],
-  loaded: {}
+  loaded: {},
+  sources: {},
+  collecte: null
 };
 
-function escapeHTML(value) {
-  return String(value ?? "—").replace(/[&<>"']/g, c => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[c]);
+let busy = false;
+
+const configs = {
+  courses: [
+    {file:"collecte.json",keys:["courses"]},
+    {file:"publication_courses.json",keys:["courses"]},
+    {file:"courses.json",keys:["courses"]},
+    {file:"courses_verifiees.json",
+     keys:["courses","courses_verifiees"]}
+  ],
+  selections: [
+    {file:"selections.json",keys:["selections"]},
+    {file:"m1_selections.json",keys:["selections"]},
+    {file:"publication_pronostics.json",
+     keys:["pronostics","analyses"]},
+    {file:"pronostics.json",
+     keys:["pronostics","analyses"]}
+  ],
+  figes: [
+    {file:"figes.json",keys:["figes","figés"]},
+    {file:"publication_figes.json",keys:["figes","figés"]}
+  ],
+  audits: [
+    {file:"audits.json",keys:["audits"]},
+    {file:"publication_audits.json",keys:["audits"]}
+  ]
+};
+
+function esc(v) {
+  return String(v ?? "—").replace(/[&<>"']/g,c=>({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  }[c]));
 }
 
-function heureParis() {
-  $("heureParis").textContent =
-    new Intl.DateTimeFormat("fr-FR", {
-      timeZone: "Europe/Paris",
-      dateStyle: "full",
-      timeStyle: "medium"
-    }).format(new Date());
+function nowParis() {
+  return new Intl.DateTimeFormat("fr-FR",{
+    timeZone:"Europe/Paris",
+    dateStyle:"full",
+    timeStyle:"medium"
+  }).format(new Date());
 }
 
-function formatDate(value) {
-  if (!value) return "—";
-  const date = new Date(value);
-  if (isNaN(date.getTime())) return "Date invalide";
-  return new Intl.DateTimeFormat("fr-FR", {
-    timeZone: "Europe/Paris",
-    dateStyle: "short",
-    timeStyle: "short"
-  }).format(date);
+function tick() {
+  $("heureParis").textContent = nowParis();
 }
 
-function classement(value) {
-  return Array.isArray(value) ? value.join(" - ") : "—";
+function dateParis(v) {
+  if(v===null || v===undefined || v==="") return "—";
+  const d = new Date(v);
+  return Number.isNaN(d.getTime())
+    ? "Date invalide"
+    : new Intl.DateTimeFormat("fr-FR",{
+        timeZone:"Europe/Paris",
+        dateStyle:"short",
+        timeStyle:"short"
+      }).format(d);
 }
 
-function table(rows, columns) {
-  if (!rows.length) {
-    return '<p class="muted">Aucune donnée publiée.</p>';
+function arr(v) {
+  return Array.isArray(v) ? v.join(" - ") : "—";
+}
+
+function first(obj,...keys) {
+  for(const k of keys) {
+    if(obj && obj[k]!==undefined &&
+       obj[k]!==null && obj[k]!=="") {
+      return obj[k];
+    }
+  }
+  return null;
+}
+
+function courseId(c) {
+  return first(c,"course_id","id") || "—";
+}
+
+function isNP(p) {
+  return p?.non_partant===true ||
+    p?.nonPartant===true ||
+    ["NON_PARTANT","NONPARTANT","NP","FORFAIT"]
+      .includes(
+        String(p?.statut||"")
+          .toUpperCase()
+          .replace(/[ -]/g,"_")
+      );
+}
+
+function table(rows,cols) {
+  if(!rows.length) {
+    return '<p class="muted">Aucune donnée publiée et vérifiable dans les fichiers chargés.</p>';
   }
 
-  const head = columns.map(col =>
-    "<th>" + escapeHTML(col[0]) + "</th>"
-  ).join("");
-
-  const body = rows.map(row =>
-    "<tr>" + columns.map(col =>
-      "<td>" + escapeHTML(col[1](row)) + "</td>"
-    ).join("") + "</tr>"
-  ).join("");
-
-  return "<table><thead><tr>" + head +
-    "</tr></thead><tbody>" + body +
-    "</tbody></table>";
+  return '<table><thead><tr>' +
+    cols.map(c=>'<th>'+esc(c[0])+'</th>').join('') +
+    '</tr></thead><tbody>' +
+    rows.map(r=>'<tr>' +
+      cols.map(c=>'<td>'+esc(c[1](r))+'</td>').join('') +
+      '</tr>').join('') +
+    '</tbody></table>';
 }
 
-async function chargerJSON(name) {
-  const url = "data/" + name + ".json?t=" + Date.now();
-  const response = await fetch(url, { cache: "no-store" });
+async function fetchJSON(file) {
+  const url = "data/" + file + "?t=" + Date.now();
+  const controller = new AbortController();
+  const timeout = setTimeout(()=>controller.abort(),12000);
 
-  if (!response.ok) {
-    throw new Error(name + ".json : HTTP " + response.status);
+  try {
+    const res = await fetch(url,{
+      cache:"no-store",
+      signal:controller.signal
+    });
+
+    if(!res.ok) {
+      throw new Error("HTTP "+res.status);
+    }
+
+    return await res.json();
+  } finally {
+    clearTimeout(timeout);
   }
-
-  const data = await response.json();
-
-  if (!Array.isArray(data)) {
-    throw new Error(name + ".json : liste JSON attendue");
-  }
-
-  return data;
 }
 
-function afficherCourses() {
-  $("tableCourses").innerHTML = table(state.courses, [
-    ["Course", x => x.id],
-    ["Hippodrome", x => x.hippodrome],
-    ["Départ Paris", x => formatDate(x.depart)],
-    ["Partants", x => (x.partants || []).filter(p => !p.non_partant).length],
-    ["NP", x => (x.partants || []).filter(p => p.non_partant).length]
-  ]);
-}
+function extract(data,keys) {
+  if(Array.isArray(data)) return data;
 
-function afficherPartants() {
-  const select = $("choixCourse");
-  const previous = select.value;
-
-  select.innerHTML = "";
-
-  if (!state.courses.length) {
-    select.innerHTML = '<option value="">Aucune course publiée</option>';
-    $("tablePartants").innerHTML =
-      '<p class="muted">Aucun partant disponible.</p>';
-    return;
+  if(data && typeof data==="object") {
+    for(const k of keys) {
+      if(Array.isArray(data[k])) return data[k];
+    }
   }
 
-  state.courses.forEach(course => {
-    const option = document.createElement("option");
-    option.value = course.id;
-    option.textContent =
-      course.id + " — " + (course.hippodrome || "Hippodrome non renseigné");
-    select.appendChild(option);
-  });
-
-  if (state.courses.some(c => c.id === previous)) {
-    select.value = previous;
-  }
-
-  afficherPartantsCourse();
+  throw new Error("structure JSON incompatible");
 }
 
-function afficherPartantsCourse() {
-  const course = state.courses.find(c =>
-    c.id === $("choixCourse").value
+async function loadKind(kind) {
+  const errors = [];
+
+  for(const spec of configs[kind]) {
+    try {
+      const raw = await fetchJSON(spec.file);
+      const rows = extract(raw,spec.keys);
+
+      state.sources[kind] = spec.file;
+
+      if(kind==="courses") {
+        state.collecte =
+          raw && !Array.isArray(raw) ? raw : null;
+      }
+
+      return rows;
+    } catch(e) {
+      errors.push(spec.file+" ("+e.message+")");
+    }
+  }
+
+  state.errors.push(kind+" : "+errors.join(" ; "));
+  return null;
+}
+
+function onlyM1(x) {
+  return x &&
+    typeof x==="object" &&
+    String(first(x,"moteur","engine")||"")
+      .toUpperCase()==="M1";
+}
+
+function selectionsM1(rows) {
+  const out = [];
+
+  for(const x of rows) {
+    if(onlyM1(x)) {
+      out.push(x);
+      continue;
+    }
+
+    if(x && Array.isArray(x.moteurs)) {
+      for(const m of x.moteurs) {
+        if(onlyM1(m)) {
+          out.push({
+            ...m,
+            course_id:first(m,"course_id")||courseId(x)
+          });
+        }
+      }
+    } else if(
+      x && x.moteurs &&
+      typeof x.moteurs==="object" &&
+      x.moteurs.M1
+    ) {
+      out.push({
+        ...x.moteurs.M1,
+        moteur:"M1",
+        course_id:courseId(x)
+      });
+    }
+  }
+
+  return out;
+}
+
+function rank(x) {
+  return first(
+    x,
+    "classement",
+    "classement_complet",
+    "ordre_espere",
+    "ordre_arrivee_espere",
+    "ranking"
+  ) || [];
+}
+
+function bet(x) {
+  const b = first(
+    x,
+    "pari_envisage",
+    "pari_retenu",
+    "pari"
   );
 
-  const partants = course && Array.isArray(course.partants)
-    ? course.partants
-    : [];
+  if(!b) return "—";
+  if(typeof b==="string") return b;
 
-  $("tablePartants").innerHTML = table(partants, [
-    ["N°", p => p.numero],
-    ["Cheval", p => p.nom],
-    ["Statut", p => p.non_partant ? "NON-PARTANT" : "Partant"],
-    ["Jockey / Driver", p => p.jockey || p.driver],
-    ["Entraîneur", p => p.entraineur],
-    ["Musique", p => p.musique]
-  ]);
+  if(typeof b==="object") {
+    return [
+      b.formule||b.type||"Pari",
+      Array.isArray(b.numeros) ? arr(b.numeros) : ""
+    ].filter(Boolean).join(" : ");
+  }
+
+  return "—";
 }
 
-function afficherDecisions() {
-  $("tableDecisions").innerHTML = table(state.selections, [
-    ["Course", x => x.course_id],
-    ["Gagnant espéré", x => x.classement?.[0]],
-    ["Meilleur placé", x => x.classement?.[1]],
-    ["Ordre espéré", x => classement(x.classement)],
-    ["Pari envisagé", x => x.pari_envisage
-      ? x.pari_envisage.formule + " : " +
-        classement(x.pari_envisage.numeros)
-      : "Non renseigné"],
-    ["Statut", x => x.statut],
-    ["Heure Paris", x => formatDate(x.cree_a)]
-  ]);
-}
+function display() {
+  const courses = state.courses;
 
-function afficherFiges() {
-  $("tableFiges").innerHTML = table(state.figes, [
-    ["Course", x => x.course_id],
-    ["Version", x => x.version],
-    ["Classement", x => classement(x.classement)],
-    ["Pari", x => x.pari
-      ? x.pari.formule + " : " + classement(x.pari.numeros)
-      : "—"],
-    ["FIGÉ à", x => formatDate(x.fige_a)],
-    ["Statut", x => x.statut],
-    ["SHA-256", x => x.sha256]
+  $("tableCourses").innerHTML = table(courses,[
+    ["Course",courseId],
+    ["Hippodrome",x=>x.hippodrome],
+    ["Départ Paris",x=>dateParis(x.depart)],
+    ["Partants",x=>
+      Array.isArray(x.partants)
+        ? x.partants.filter(p=>!isNP(p)).length
+        : first(x,"nombre_partants")??"—"
+    ],
+    ["NP",x=>
+      Array.isArray(x.partants)
+        ? x.partants.filter(isNP).length
+        : Array.isArray(x.non_partants)
+          ? x.non_partants.length : "—"
+    ],
+    ["Statut",x=>x.statut]
   ]);
-}
 
-function afficherAudits() {
-  $("tableAudits").innerHTML = table(state.audits, [
-    ["Course", x => x.course_id],
-    ["Version", x => x.version],
-    ["Arrivée déclarée", x => classement(x.arrivee)],
-    ["Top 5 détectés", x => x.top5_detectes],
-    ["Ordre exact", x => x.ordre_exact === true ? "Oui" : "Non"],
-    ["Source déclarée", x => x.source_officielle],
-    ["Heure audit", x => formatDate(x.audite_a)]
-  ]);
-}
+  const select = $("choixCourse");
+  const old = select.value;
+  select.replaceChildren();
 
-function afficherCompteurs() {
-  const partants = state.courses.flatMap(c =>
+  if(!courses.length) {
+    select.add(new Option("Aucune course publiée",""));
+  } else {
+    for(const c of courses) {
+      select.add(new Option(
+        courseId(c)+" — "+
+        (c.hippodrome||"Hippodrome inconnu"),
+        courseId(c)
+      ));
+    }
+
+    if(courses.some(c=>courseId(c)===old)) {
+      select.value = old;
+    }
+  }
+
+  showPartants();
+
+  $("tableDecisions").innerHTML =
+    table(state.selections,[
+      ["Course",courseId],
+      ["Gagnant espéré",x=>
+        first(x,"gagnant_espere")??rank(x)[0]
+      ],
+      ["Meilleur placé",x=>
+        first(x,"meilleur_place")??rank(x)[1]
+      ],
+      ["Ordre espéré",x=>arr(rank(x))],
+      ["Pari envisagé",bet],
+      ["Statut",x=>
+        first(x,"statut","validation","qualification")
+      ],
+      ["Heure Paris",x=>dateParis(
+        first(x,"cree_a","analyse_a","heure","date")
+      )]
+    ]);
+
+  $("tableFiges").innerHTML =
+    table(state.figes,[
+      ["Course",courseId],
+      ["Version",x=>x.version],
+      ["Classement",x=>arr(rank(x))],
+      ["Pari",bet],
+      ["FIGÉ à",x=>dateParis(
+        first(x,"fige_a","date_fige")
+      )],
+      ["Statut",x=>x.statut],
+      ["SHA-256",x=>x.sha256]
+    ]);
+
+  $("tableAudits").innerHTML =
+    table(state.audits,[
+      ["Course",courseId],
+      ["Version",x=>x.version],
+      ["Arrivée déclarée",x=>arr(
+        first(x,"arrivee_officielle","arrivee")
+      )],
+      ["Top 5 détectés",x=>x.top5_detectes],
+      ["Ordre exact",x=>
+        x.ordre_exact===true ? "Oui" :
+        x.ordre_exact===false ? "Non" : "—"
+      ],
+      ["Source déclarée",x=>first(
+        x,
+        "source_officielle",
+        "source_arrivee",
+        "source_resultat"
+      )],
+      ["Heure audit",x=>dateParis(
+        first(x,"audite_a","date_audit")
+      )]
+    ]);
+
+  const runners = courses.flatMap(c=>
     Array.isArray(c.partants) ? c.partants : []
   );
 
-  $("nbCourses").textContent = state.courses.length;
+  $("nbCourses").textContent = courses.length;
   $("nbPartants").textContent =
-    partants.filter(p => !p.non_partant).length;
+    runners.filter(p=>!isNP(p)).length;
   $("nbNP").textContent =
-    partants.filter(p => p.non_partant === true).length;
-  $("nbDecisions").textContent = state.selections.length;
-  $("nbFiges").textContent = state.figes.length;
-  $("nbAudits").textContent = state.audits.length;
-}
+    runners.filter(isNP).length;
+  $("nbDecisions").textContent =
+    state.selections.length;
+  $("nbFiges").textContent =
+    state.figes.length;
+  $("nbAudits").textContent =
+    state.audits.length;
 
-function afficherDiagnostic() {
-  const files = ["courses", "selections", "figes", "audits"];
+  const lines = Object.keys(configs).map(k=>
+    '<p class="'+(state.loaded[k]?"ok":"bad")+'">'+
+    esc(k+" : "+(
+      state.loaded[k]
+        ? "lu depuis data/"+state.sources[k]
+        : "indisponible ou incompatible"
+    ))+"</p>"
+  );
 
-  const lignes = files.map(name => {
-    const ok = state.loaded[name] === true;
-    return "<p class='" + (ok ? "ok" : "bad") + "'>" +
-      escapeHTML(name + ".json : " +
-        (ok ? "chargé" : "indisponible ou invalide")) +
-      "</p>";
-  });
+  if(state.collecte &&
+     typeof state.collecte==="object") {
+    lines.push(
+      '<p>Collecte : '+
+      esc(state.collecte.statut||"statut non indiqué")+
+      ' — '+
+      esc(dateParis(state.collecte.collecte_a))+
+      '</p>'
+    );
 
-  if (state.errors.length) {
-    lignes.push(
-      "<p class='bad'>" +
-      escapeHTML(state.errors.join(" | ")) +
-      "</p>"
+    if(Array.isArray(state.collecte.erreurs) &&
+       state.collecte.erreurs.length) {
+      lines.push(
+        '<p class="bad">Erreurs source : '+
+        esc(state.collecte.erreurs.join(" | "))+
+        '</p>'
+      );
+    }
+  }
+
+  if(state.errors.length) {
+    lines.push(
+      '<p class="bad">'+
+      esc(state.errors.join(" | "))+
+      '</p>'
     );
   }
 
-  lignes.push(
-    "<p class='muted'>Contrôle de lecture uniquement. " +
-    "L'intégrité cryptographique des FIGÉs et les sources " +
-    "officielles doivent être vérifiées séparément.</p>"
+  lines.push(
+    '<p class="muted">Lecture seule : aucune modification des décisions, pronostics, FIGÉs ou audits. Fichiers manquants et vérification cryptographique à contrôler côté serveur.</p>'
   );
 
-  $("rapportTechnique").innerHTML = lignes.join("");
+  $("rapportTechnique").innerHTML = lines.join("");
 }
 
-async function actualiser() {
+function showPartants() {
+  const c = state.courses.find(x=>
+    courseId(x)===$("choixCourse").value
+  );
+
+  $("tablePartants").innerHTML =
+    table(
+      c && Array.isArray(c.partants) ? c.partants : [],
+      [
+        ["N°",p=>p.numero],
+        ["Cheval",p=>p.nom],
+        ["Statut",p=>
+          isNP(p) ? "NON-PARTANT" : "Partant"
+        ],
+        ["Jockey / Driver",p=>p.jockey||p.driver],
+        ["Entraîneur",p=>p.entraineur],
+        ["Musique",p=>p.musique]
+      ]
+    );
+}
+
+async function refresh() {
+  if(busy) return;
+
+  busy = true;
+  $("actualiser").disabled = true;
   $("etatGlobal").className = "status warn";
-  $("etatGlobal").textContent = "Actualisation des données M1...";
+  $("etatGlobal").textContent =
+    "Actualisation des données M1...";
 
   state.errors = [];
   state.loaded = {};
+  state.sources = {};
+  state.collecte = null;
 
-  const names = ["courses", "selections", "figes", "audits"];
+  try {
+    const names = Object.keys(configs);
+    const values = await Promise.all(
+      names.map(loadKind)
+    );
 
-  await Promise.all(names.map(async name => {
-    try {
-      state[name] = await chargerJSON(name);
-      state.loaded[name] = true;
-    } catch (error) {
-      state[name] = [];
-      state.loaded[name] = false;
-      state.errors.push(error.message);
-    }
-  }));
+    names.forEach((k,i)=>{
+      state.loaded[k] = values[i]!==null;
+      state[k] = values[i]||[];
+    });
 
-  state.courses = state.courses.filter(c =>
-    c && c.localisation_france_verifiee === true
-  );
+    state.courses = state.courses.filter(c=>
+      c && c.localisation_france_verifiee===true
+    );
 
-  state.selections = state.selections.filter(s =>
-    s && s.moteur === "M1"
-  );
+    state.selections =
+      selectionsM1(state.selections);
 
-  state.figes = state.figes.filter(f =>
-    f && f.moteur === "M1"
-  );
+    state.figes =
+      state.figes.filter(onlyM1);
 
-  state.audits = state.audits.filter(a =>
-    a && (!a.moteur || a.moteur === "M1")
-  );
+    state.audits =
+      state.audits.filter(onlyM1);
 
-  state.courses.sort((a, b) =>
-    new Date(a.depart) - new Date(b.depart)
-  );
+    state.courses.sort((a,b)=>
+      new Date(a.depart)-new Date(b.depart)
+    );
 
-  afficherCompteurs();
-  afficherCourses();
-  afficherPartants();
-  afficherDecisions();
-  afficherFiges();
-  afficherAudits();
-  afficherDiagnostic();
+    display();
 
-  if (state.errors.length) {
+    const missing = names.filter(k=>!state.loaded[k]);
+
+    const partial =
+      missing.length ||
+      state.collecte?.statut==="PARTIEL" ||
+      state.collecte?.statut==="ECHEC" ||
+      state.collecte?.statut==="AUCUNE_COURSE";
+
+    const fresh = state.collecte?.collecte_a
+      ? Date.now()-
+        new Date(state.collecte.collecte_a).getTime()
+      : null;
+
+    const stale =
+      fresh!==null &&
+      (
+        !Number.isFinite(fresh) ||
+        fresh>20*60*1000 ||
+        fresh< -60000
+      );
+
+    $("etatGlobal").className =
+      "status "+(
+        missing.includes("courses")
+          ? "bad"
+          : partial||stale ? "warn" : "ok"
+      );
+
+    $("etatGlobal").textContent =
+      missing.includes("courses")
+        ? "Courses indisponibles : consultez le diagnostic."
+        : stale
+          ? "Collecte ancienne ou horodatage incohérent : vérifiez GitHub Actions."
+          : partial
+            ? "Données partielles : consultez le diagnostic."
+            : "Données chargées — "+nowParis();
+
+  } catch(e) {
     $("etatGlobal").className = "status bad";
     $("etatGlobal").textContent =
-      "Chargement partiel ou impossible : consultez le diagnostic.";
-  } else {
-    $("etatGlobal").className = "status ok";
-    $("etatGlobal").textContent =
-      "Données M1 chargées — " +
-      new Intl.DateTimeFormat("fr-FR", {
-        timeZone: "Europe/Paris",
-        dateStyle: "short",
-        timeStyle: "medium"
-      }).format(new Date());
+      "Erreur d'affichage : "+e.message;
+  } finally {
+    busy = false;
+    $("actualiser").disabled = false;
   }
 }
 
-$("actualiser").addEventListener("click", actualiser);
-$("choixCourse").addEventListener("change", afficherPartantsCourse);
+$("actualiser").addEventListener("click",refresh);
+$("choixCourse").addEventListener("change",showPartants);
 
-heureParis();
-setInterval(heureParis, 1000);
+tick();
+setInterval(tick,1000);
 
-actualiser();
-setInterval(actualiser, 300000);
+refresh();
+setInterval(refresh,300000);
 </script>
 
 </body>
