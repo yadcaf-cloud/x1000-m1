@@ -1,0 +1,61 @@
+name: "X1000 PHOENIX - Collecte PMU"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collecte-pmu
+  cancel-in-progress: false
+
+jobs:
+  collecte:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Recuperer le depot
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verifier le collecteur
+        run: |
+          python --version
+          test -f pmu_engine.py
+          python -m py_compile pmu_engine.py
+
+      - name: Tester le moteur PMU
+        run: |
+          python pmu_engine.py --self-test
+
+      - name: Collecter les courses reelles
+        env:
+          TZ: Europe/Paris
+        run: |
+          mkdir -p data
+          python pmu_engine.py
+
+      - name: Publier les donnees
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Aucune modification"
+          else
+            git commit -m "Collecte PMU automatique"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
