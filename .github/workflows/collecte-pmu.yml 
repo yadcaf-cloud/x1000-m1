@@ -2,6 +2,7 @@ name: "X1000 PHOENIX - Collecte PMU"
 
 on:
   workflow_dispatch:
+
   schedule:
     - cron: "*/5 * * * *"
 
@@ -9,53 +10,332 @@ permissions:
   contents: write
 
 concurrency:
-  group: collecte-pmu
+  group: x1000-phoenix-collecte-pmu
   cancel-in-progress: false
 
 jobs:
   collecte:
+    name: "Collecte PMU France"
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
+
+    env:
+      TZ: Europe/Paris
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
 
     steps:
-      - name: Recuperer le depot
+
+      - name: "Recuperer le depot"
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
 
-      - name: Installer Python
+      - name: "Installer Python"
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Verifier le collecteur
+      - name: "Verifier le collecteur"
         run: |
+          set -euo pipefail
+
           python --version
+
           test -f pmu_engine.py
+
           python -m py_compile pmu_engine.py
 
-      - name: Tester le moteur PMU
+      - name: "Tester le collecteur PMU"
         run: |
+          set -euo pipefail
+
           python pmu_engine.py --self-test
 
-      - name: Collecter les courses reelles
-        env:
-          TZ: Europe/Paris
+      - name: "Verifier les archives avant collecte"
         run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          fichiers = [
+              "data/publication_figes.json",
+              "data/figes.json"
+          ]
+
+          for nom in fichiers:
+              chemin = Path(nom)
+
+              if not chemin.exists():
+                  continue
+
+              with chemin.open(encoding="utf-8") as f:
+                  donnees = json.load(f)
+
+              if not isinstance(donnees, (list, dict)):
+                  raise SystemExit(
+                      "Archive JSON invalide : " + nom
+                  )
+
+              print("Archive lisible :", nom)
+
+          print("Controle preliminaire termine")
+          PY
+
+      - name: "Collecter les courses PMU reelles"
+        id: collecte
+        run: |
+          set -euo pipefail
+
           mkdir -p data
+
           python pmu_engine.py
 
-      - name: Publier les donnees
+      - name: "Verifier les donnees produites"
+        id: verification
         run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          base = Path("data")
+
+          candidats = [
+              "collecte.json",
+              "publication_courses.json"
+          ]
+
+          fichiers = [
+              base / nom
+              for nom in candidats
+              if (base / nom).is_file()
+          ]
+
+          if not fichiers:
+              raise SystemExit(
+                  "Aucun fichier de collecte PMU trouve"
+              )
+
+          courses_valides = 0
+
+          for fichier in fichiers:
+              with fichier.open(encoding="utf-8") as f:
+                  donnees = json.load(f)
+
+              if isinstance(donnees, list):
+                  courses = donnees
+
+              elif isinstance(donnees, dict):
+                  courses = donnees.get("courses", [])
+
+                  statut = donnees.get("statut")
+
+                  if statut in ("ECHEC", "ERREUR"):
+                      raise SystemExit(
+                          "Collecte en echec : " + str(fichier)
+                      )
+
+              else:
+                  raise SystemExit(
+                      "Format invalide : " + str(fichier)
+                  )
+
+              if not isinstance(courses, list):
+                  raise SystemExit(
+                      "Liste courses invalide : " + str(fichier)
+                  )
+
+              ids = set()
+
+              for course in courses:
+                  if not isinstance(course, dict):
+                      raise SystemExit(
+                          "Objet course invalide"
+                      )
+
+                  cid = course.get(
+                      "id",
+                      course.get("course_id")
+                  )
+
+                  if not isinstance(cid, str) or not cid:
+                      raise SystemExit(
+                          "Identifiant de course absent"
+                      )
+
+                  if cid in ids:
+                      raise SystemExit(
+                          "Course dupliquee : " + cid
+                      )
+
+                  ids.add(cid)
+
+                  if (
+                      course.get(
+                          "localisation_france_verifiee"
+                      ) is not True
+                  ):
+                      raise SystemExit(
+                          "Course France non verifiee : " + cid
+                      )
+
+                  partants = course.get("partants")
+
+                  if not isinstance(partants, list):
+                      raise SystemExit(
+                          "Partants invalides : " + cid
+                      )
+
+                  numeros = set()
+
+                  for cheval in partants:
+                      if not isinstance(cheval, dict):
+                          raise SystemExit(
+                              "Participant invalide : " + cid
+                          )
+
+                      numero = cheval.get("numero")
+
+                      if (
+                          type(numero) is not int
+                          or numero <= 0
+                          or numero in numeros
+                      ):
+                          raise SystemExit(
+                              "Numero invalide ou duplique : "
+                              + cid
+                          )
+
+                      numeros.add(numero)
+
+                  courses_valides += 1
+
+              print(
+                  fichier.name,
+                  ":",
+                  len(courses),
+                  "courses controlees"
+              )
+
+          print(
+              "TOTAL :",
+              courses_valides,
+              "courses controlees"
+          )
+          PY
+
+      - name: "Controler les fichiers modifies"
+        id: protection
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import subprocess
+
+          autorises = {
+              "data/collecte.json",
+              "data/publication_courses.json",
+              "data/courses_pmu.json",
+              "data/courses_verifiees.json",
+              "data/diagnostic_collecte.json",
+              "data/diagnostic_unifie.json",
+              "data/publication_rapport.json"
+          }
+
+          resultat = subprocess.run(
+              [
+                  "git",
+                  "status",
+                  "--porcelain",
+                  "--untracked-files=all"
+              ],
+              capture_output=True,
+              text=True,
+              check=True
+          )
+
+          interdits = []
+
+          for ligne in resultat.stdout.splitlines():
+              chemin = ligne[3:]
+
+              if chemin not in autorises:
+                  interdits.append(chemin)
+
+          if interdits:
+              raise SystemExit(
+                  "Modification non autorisee : "
+                  + ", ".join(interdits)
+              )
+
+          print(
+              "Protection OK : seules les sorties "
+              "de collecte autorisees ont change"
+          )
+          PY
+
+      - name: "Publier uniquement la collecte PMU"
+        id: publication
+        run: |
+          set -euo pipefail
+
           git config user.name "github-actions[bot]"
+
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/
+          git add -- \
+            data/collecte.json \
+            data/publication_courses.json \
+            data/courses_pmu.json \
+            data/courses_verifiees.json \
+            data/diagnostic_collecte.json \
+            data/diagnostic_unifie.json \
+            data/publication_rapport.json
+
           if git diff --cached --quiet; then
-            echo "Aucune modification"
-          else
-            git commit -m "Collecte PMU automatique"
-            git pull --rebase origin main
-            git push origin HEAD:main
+            echo "Aucune modification de collecte a publier"
+            exit 0
           fi
+
+          echo "Fichiers autorises prepares :"
+
+          git diff --cached --name-only
+
+          git commit -m \
+            "X1000 PHOENIX: collecte PMU automatique"
+
+          git push origin HEAD:main
+
+      - name: "Bilan technique"
+        if: always()
+        env:
+          ETAT_COLLECTE: ${{ steps.collecte.outcome }}
+          ETAT_VERIFICATION: ${{ steps.verification.outcome }}
+          ETAT_PROTECTION: ${{ steps.protection.outcome }}
+          ETAT_PUBLICATION: ${{ steps.publication.outcome }}
+        run: |
+          {
+            echo "## X1000 PHOENIX - Collecte PMU"
+            echo ""
+            echo "- Collecte : ${ETAT_COLLECTE}"
+            echo "- Verification : ${ETAT_VERIFICATION}"
+            echo "- Protection : ${ETAT_PROTECTION}"
+            echo "- Publication : ${ETAT_PUBLICATION}"
+            echo "- Frequence demandee : 5 minutes"
+            echo "- Fuseau horaire : Europe/Paris"
+            echo ""
+            echo "### Protection"
+            echo ""
+            echo "- Pronostics : non publies"
+            echo "- FIGEs : non publies"
+            echo "- Audits : non publies"
+            echo "- Decisions M1-M5 : non publiees"
+            echo ""
+            echo "Les statuts correspondent aux etapes reelles."
+          } >> "$GITHUB_STEP_SUMMARY"
