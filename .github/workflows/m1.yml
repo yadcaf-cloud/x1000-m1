@@ -1,10 +1,23 @@
-# 🇸🇳🧠🔥 MPAA X1000 — MOTEUR M1
-# Vérification automatique indépendante
-# Aucun changement des pronostics ou FIGÉS
-# Aucun accès aux moteurs M2, M3, M4, M5
-# Aucun déploiement vers X1000 PHOENIX
+# 🇸🇳🧠🔥 MPAA X1000 - MOTEUR M1
+# DEPOT : yadcaf-cloud/x1000-m1
+#
+# WORKFLOW UNIFIE ET PROTEGE
+#
+# - Execution programmee toutes les 10 minutes
+# - Collecte PMU si collecteur disponible
+# - Importation de courses reelles verifiees
+# - Controle des partants et non-partants
+# - Verification des archives FIGE
+# - Protection des pronostics historiques
+# - Publication limitee aux donnees autorisees
+# - Aucun acces a M2, M3, M4 ou M5
+# - Aucun deploiement vers X1000 PHOENIX
+#
+# AUCUNE DONNEE HIPPIQUE INVENTEE
+# AUCUN PRONOSTIC FICTIF
+# AUCUN FIGE RETROACTIF
 
-name: "MPAA X1000 - M1 Verification"
+name: "MPAA X1000 - M1 Autonome et Protege"
 
 on:
   workflow_dispatch:
@@ -14,44 +27,58 @@ on:
       - main
     paths:
       - "m1.py"
+      - "pmu_engine.py"
       - ".github/workflows/m1.yml"
 
   schedule:
-    # Toutes les 10 minutes, en UTC
     - cron: "*/10 * * * *"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: m1-verification
+  group: x1000-m1-autonome
   cancel-in-progress: false
 
 jobs:
-  verifier-m1:
-    name: "M1 - Tests et controles"
+  moteur-m1:
+    name: "M1 - Collecte et controles"
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     defaults:
       run:
         shell: bash
 
     env:
+      TZ: Europe/Paris
       PYTHONDONTWRITEBYTECODE: "1"
       PYTHONUNBUFFERED: "1"
-      TZ: Europe/Paris
 
     steps:
-      - name: "Recuperer uniquement le depot M1"
+
+      # ======================================
+      # 1 - RECUPERER LE DEPOT
+      # ======================================
+
+      - name: "Recuperer le depot M1"
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          persist-credentials: true
+          fetch-depth: 1
+
+      # ======================================
+      # 2 - INSTALLER PYTHON
+      # ======================================
 
       - name: "Installer Python"
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      # ======================================
+      # 3 - HEURE DE PARIS
+      # ======================================
 
       - name: "Afficher heure de Paris"
         run: |
@@ -59,67 +86,540 @@ jobs:
           from datetime import datetime
           from zoneinfo import ZoneInfo
 
-          print("MPAA X1000 - M1")
-          print("Heure de Paris :")
-          print(datetime.now(
+          now = datetime.now(
               ZoneInfo("Europe/Paris")
-          ).isoformat())
+          )
+
+          print("MPAA X1000 - M1")
+          print("Heure de Paris :", now.isoformat())
           PY
 
-      - name: "Verifier presence de m1.py"
+      # ======================================
+      # 4 - VERIFIER LE MOTEUR
+      # ======================================
+
+      - name: "Verifier presence de M1"
         run: |
           test -f m1.py
-          echo "Fichier m1.py present"
+          echo "Moteur M1 present"
 
       - name: "Verifier syntaxe Python"
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          source = Path("m1.py").read_bytes()
-          compile(source, "m1.py", "exec")
-          print("Syntaxe Python : OK")
+          for name in ("m1.py", "pmu_engine.py"):
+              path = Path(name)
+
+              if not path.is_file():
+                  continue
+
+              compile(
+                  path.read_bytes(),
+                  name,
+                  "exec"
+              )
+
+              print(name, ": syntaxe OK")
           PY
 
-      - name: "Executer les tests internes M1"
+      # ======================================
+      # 5 - TESTS INTERNES
+      # ======================================
+
+      - name: "Executer les tests M1"
         run: |
           python m1.py --self-test
+
+      # ======================================
+      # 6 - VERIFIER LES FIGES
+      # ======================================
 
       - name: "Verifier archives FIGE M1"
         run: |
           python m1.py --verify-archives
 
-      - name: "Verifier isolation du moteur"
+      # ======================================
+      # 7 - PREPARER LA COLLECTE
+      # ======================================
+
+      - name: "Preparer les donnees temporaires"
         run: |
+          mkdir -p data
+
+          # Supprimer uniquement les sources
+          # temporaires non suivies par Git.
+          # Ne jamais supprimer les archives.
+
           python - <<'PY'
+          import subprocess
           from pathlib import Path
 
-          root = Path.cwd()
+          candidates = [
+              "data/collecte.json",
+              "data/publication_courses.json",
+              "data/courses_verifiees.json"
+          ]
 
-          assert (root / "m1.py").is_file()
+          for name in candidates:
+              path = Path(name)
 
-          print("Depot M1 independant")
-          print("Aucune publication distante")
-          print("Aucune modification du tableau officiel")
-          print("Aucune intervention sur M2 a M5")
+              if not path.is_file():
+                  continue
+
+              result = subprocess.run(
+                  [
+                      "git",
+                      "ls-files",
+                      "--error-unmatch",
+                      "--",
+                      name
+                  ],
+                  capture_output=True
+              )
+
+              if result.returncode != 0:
+                  path.unlink()
+                  print(
+                      "Source temporaire retiree :",
+                      name
+                  )
           PY
 
-      - name: "Publier le bilan des verifications"
+      # ======================================
+      # 8 - COLLECTER LES COURSES
+      # ======================================
+
+      - name: "Collecter les courses PMU"
+        id: collecte
+        run: |
+          if [ -f pmu_engine.py ]; then
+
+            echo "Collecteur PMU detecte"
+
+            python pmu_engine.py
+
+            echo "collecteur=present" \
+              >> "$GITHUB_OUTPUT"
+
+          else
+
+            echo "Collecteur PMU absent"
+            echo "Aucune collecte simulee"
+
+            echo "collecteur=absent" \
+              >> "$GITHUB_OUTPUT"
+
+          fi
+
+      # ======================================
+      # 9 - IMPORTER LES COURSES REELLES
+      # ======================================
+
+      - name: "Importer les courses verifiees"
+        id: importation
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+          from datetime import datetime, timedelta
+          from zoneinfo import ZoneInfo
+
+          candidates = [
+              Path("data/collecte.json"),
+              Path("data/publication_courses.json"),
+              Path("data/courses_verifiees.json")
+          ]
+
+          imported = False
+          paris = ZoneInfo("Europe/Paris")
+          now = datetime.now(paris)
+
+          for path in candidates:
+              if not path.is_file():
+                  continue
+
+              try:
+                  payload = json.loads(
+                      path.read_text(encoding="utf-8")
+                  )
+              except (ValueError, OSError) as exc:
+                  print("Source invalide :", path, exc)
+                  continue
+
+              if isinstance(payload, dict):
+                  if payload.get("statut") in (
+                      "ECHEC",
+                      "AUCUNE_COURSE"
+                  ):
+                      continue
+
+                  courses = payload.get("courses")
+
+              elif isinstance(payload, list):
+                  courses = payload
+
+              else:
+                  continue
+
+              if not isinstance(courses, list):
+                  continue
+
+              if not courses:
+                  continue
+
+              # Controle de fraicheur de la source.
+              # Une source sans date de collecte
+              # n'est pas consideree recente.
+
+              if not isinstance(payload, dict):
+                  print(
+                      "Source sans horodatage global :",
+                      path
+                  )
+                  continue
+
+              stamp = (
+                  payload.get("collecte_a")
+                  or payload.get("date_collecte")
+              )
+
+              if not isinstance(stamp, str):
+                  print(
+                      "Horodatage de collecte absent :",
+                      path
+                  )
+                  continue
+
+              try:
+                  collected = datetime.fromisoformat(
+                      stamp.replace("Z", "+00:00")
+                  )
+
+                  if collected.tzinfo is None:
+                      raise ValueError(
+                          "Fuseau absent"
+                      )
+
+                  age = now - collected.astimezone(paris)
+
+                  if not (
+                      timedelta(minutes=-5)
+                      <= age
+                      <= timedelta(minutes=60)
+                  ):
+                      print(
+                          "Collecte trop ancienne "
+                          "ou date future :",
+                          path
+                      )
+                      continue
+
+              except ValueError as exc:
+                  print(
+                      "Horodatage invalide :",
+                      path,
+                      exc
+                  )
+                  continue
+
+              # M1 controle lui-meme les courses
+              # francaises, les partants et les NP.
+
+              subprocess.run(
+                  [
+                      "python",
+                      "m1.py",
+                      "--import-json",
+                      str(path)
+                  ],
+                  check=True
+              )
+
+              imported = True
+
+              print(
+                  "Importation effectuee depuis :",
+                  path
+              )
+
+              break
+
+          with open(
+              os.environ["GITHUB_OUTPUT"],
+              "a",
+              encoding="utf-8"
+          ) as output:
+              output.write(
+                  "importe=" +
+                  ("true" if imported else "false") +
+                  "\n"
+              )
+
+          if not imported:
+              print(
+                  "Aucune source recente importable"
+              )
+              print(
+                  "Aucune donnee fictive produite"
+              )
+          PY
+
+      # ======================================
+      # 10 - CONTROLER LES COURSES
+      # ======================================
+
+      - name: "Verifier les courses M1"
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          path = Path("data/courses.json")
+
+          if not path.is_file():
+              print("Aucune base de courses M1")
+              raise SystemExit(0)
+
+          courses = json.loads(
+              path.read_text(encoding="utf-8")
+          )
+
+          if not isinstance(courses, list):
+              raise ValueError(
+                  "Base de courses invalide"
+              )
+
+          ids = set()
+          now = datetime.now(
+              ZoneInfo("Europe/Paris")
+          )
+
+          futures = 0
+
+          for course in courses:
+              cid = course["id"]
+
+              if cid in ids:
+                  raise ValueError(
+                      "Course dupliquee : " + cid
+                  )
+
+              ids.add(cid)
+
+              if course.get(
+                  "localisation_france_verifiee"
+              ) is not True:
+                  raise ValueError(
+                      "Localisation France non verifiee"
+                  )
+
+              depart = datetime.fromisoformat(
+                  course["depart"].replace(
+                      "Z", "+00:00"
+                  )
+              )
+
+              if depart.tzinfo is None:
+                  raise ValueError(
+                      "Depart sans fuseau"
+                  )
+
+              if depart > now:
+                  futures += 1
+
+              partants = course.get(
+                  "partants", []
+              )
+
+              numeros = set()
+
+              for cheval in partants:
+                  numero = cheval["numero"]
+
+                  if numero in numeros:
+                      raise ValueError(
+                          "Numero de cheval duplique"
+                      )
+
+                  numeros.add(numero)
+
+                  if type(
+                      cheval.get("non_partant")
+                  ) is not bool:
+                      raise ValueError(
+                          "Statut NP invalide"
+                      )
+
+          print("Courses :", len(courses))
+          print("Courses futures :", futures)
+          PY
+
+      # ======================================
+      # 11 - CONTROLER LES SELECTIONS
+      # ======================================
+
+      - name: "Verifier les selections M1"
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("data/selections.json")
+
+          if not path.is_file():
+              print("Aucune selection M1")
+              raise SystemExit(0)
+
+          selections = json.loads(
+              path.read_text(encoding="utf-8")
+          )
+
+          if not isinstance(selections, list):
+              raise ValueError(
+                  "Selections invalides"
+              )
+
+          print(
+              "Selections M1 :",
+              len(selections)
+          )
+          PY
+
+      # ======================================
+      # 12 - CONTROLE FINAL DES FIGES
+      # ======================================
+
+      - name: "Reverifier les archives FIGE"
+        run: |
+          python m1.py --verify-archives
+
+      # ======================================
+      # 13 - PROTECTION DES FICHIERS
+      # ======================================
+
+      - name: "Verifier isolation et modifications"
+        run: |
+          python - <<'PY'
+          import subprocess
+
+          result = subprocess.run(
+              [
+                  "git",
+                  "status",
+                  "--porcelain",
+                  "--untracked-files=all"
+              ],
+              capture_output=True,
+              text=True,
+              check=True
+          )
+
+          protected = [
+              "m1.py",
+              "index.html",
+              ".github/",
+              "web/",
+              "data/figes.json",
+              "data/selections.json",
+              "data/audits.json"
+          ]
+
+          for line in result.stdout.splitlines():
+              filename = line[3:].strip()
+
+              if " -> " in filename:
+                  filename = filename.split(" -> ")[-1]
+
+              for item in protected:
+                  if (
+                      filename == item
+                      or (
+                          item.endswith("/")
+                          and filename.startswith(item)
+                      )
+                  ):
+                      raise RuntimeError(
+                          "Modification protegee : " +
+                          filename
+                      )
+
+          print("Depot M1 independant")
+          print("Fichiers proteges : OK")
+          print("Aucun deploiement externe")
+          PY
+
+      # ======================================
+      # 14 - PUBLICATION LIMITEE
+      # ======================================
+
+      - name: "Publier les donnees autorisees"
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name \
+            "github-actions[bot]"
+
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for file in \
+            data/courses.json \
+            data/import_diagnostic.json
+          do
+            if [ -f "$file" ]; then
+              git add -- "$file"
+            fi
+          done
+
+          if git diff --cached --quiet; then
+            echo "Aucune donnee a publier"
+            exit 0
+          fi
+
+          git commit -m \
+            "M1: actualisation des courses verifiees"
+
+          git push origin HEAD:main
+
+      # ======================================
+      # 15 - RAPPORT FINAL
+      # ======================================
+
+      - name: "Publier le bilan M1"
         if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          COLLECTEUR: ${{ steps.collecte.outputs.collecteur }}
+          IMPORTATION: ${{ steps.importation.outputs.importe }}
         run: |
           {
             echo "## MPAA X1000 - M1"
             echo ""
             echo "- Depot : x1000-m1"
             echo "- Moteur : M1"
-            echo "- Verification : automatique"
-            echo "- Tests : voir les etapes du job"
-            echo "- Archives : controle SHA-256"
-            echo "- Pronostics : non modifies"
-            echo "- FIGES : non modifies"
+            echo "- Statut : $JOB_STATUS"
+            echo "- Collecteur : ${COLLECTEUR:-non execute}"
+            echo "- Importation : ${IMPORTATION:-non execute}"
+            echo "- Fuseau : Europe/Paris"
+            echo "- Frequence : 10 minutes demandees"
+            echo ""
+            echo "### Protections"
+            echo ""
+            echo "- FIGES historiques : controles"
+            echo "- Selections : non publiees"
             echo "- Tableau officiel : non modifie"
             echo "- M2 a M5 : non modifies"
+            echo "- Aucun pronostic fictif"
+            echo "- Aucun FIGE retroactif"
             echo ""
-            echo "Ce workflow ne collecte pas les donnees PMU."
-            echo "Il ne cree aucun pronostic ni FIGE."
+            echo "### Analyse sportive"
+            echo ""
+            echo "Commande d'analyse autonome"
+            echo "encore necessaire dans m1.py."
+            echo ""
+            echo "Consulter les journaux du job."
           } >> "$GITHUB_STEP_SUMMARY"
