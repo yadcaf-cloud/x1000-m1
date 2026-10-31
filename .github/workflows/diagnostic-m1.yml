@@ -1,0 +1,643 @@
+# 🇸🇳🧠🔥 MPAA X1000 — M1
+# DIAGNOSTIC INDEPENDANT ET PROTEGE
+#
+# Depot : yadcaf-cloud/x1000-m1
+#
+# Lecture seule.
+# Aucune collecte lancee.
+# Aucune analyse ou decision generee.
+# Aucun FIGE cree ou modifie.
+# Aucun audit sportif genere.
+# Aucun changement de M2 a M5.
+# Aucun deploiement vers X1000 PHOENIX.
+
+name: "X1000 M1 - Diagnostic securise"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: x1000-m1-diagnostic
+  cancel-in-progress: false
+
+jobs:
+  diagnostic:
+    name: "Verifier M1 sans modification"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    defaults:
+      run:
+        shell: bash
+
+    env:
+      TZ: Europe/Paris
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+      M1_AUTO_ANALYZE: "false"
+
+    steps:
+      - name: Recuperer le depot
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verifier le depot initial
+        run: |
+          set -euo pipefail
+
+          test -z "$(
+            git status --porcelain --untracked-files=all
+          )"
+
+          test -f index.html
+          test -f m1.py
+          test -f pmu_engine.py
+          test -f .github/workflows/m1.yml
+
+          echo "Structure principale presente"
+
+      - name: Enregistrer empreinte initiale
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          import stat
+          from pathlib import Path
+
+          def snapshot():
+              result = {}
+
+              def scan(folder):
+                  with os.scandir(folder) as entries:
+                      for entry in entries:
+                          path = Path(entry.path)
+                          name = path.as_posix()
+
+                          if name == ".git":
+                              continue
+
+                          mode = entry.stat(
+                              follow_symlinks=False
+                          ).st_mode
+
+                          if stat.S_ISDIR(mode):
+                              result[name] = "DIR"
+                              scan(path)
+
+                          elif stat.S_ISLNK(mode):
+                              result[name] = (
+                                  "LINK:" + os.readlink(path)
+                              )
+
+                          elif stat.S_ISREG(mode):
+                              result[name] = (
+                                  "FILE:" +
+                                  hashlib.sha256(
+                                      path.read_bytes()
+                                  ).hexdigest()
+                              )
+
+                          else:
+                              result[name] = (
+                                  "SPECIAL:" + str(mode)
+                              )
+
+              scan(Path("."))
+              return result
+
+          Path("/tmp/m1-diagnostic-before.json").write_text(
+              json.dumps(snapshot(), sort_keys=True),
+              encoding="utf-8"
+          )
+
+          print("Empreinte initiale enregistree")
+          PY
+
+      - name: Verifier syntaxe Python
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          from pathlib import Path
+
+          for filename in ("m1.py", "pmu_engine.py"):
+              compile(
+                  Path(filename).read_bytes(),
+                  filename,
+                  "exec"
+              )
+              print("SYNTAXE OK:", filename)
+          PY
+
+      - name: Controler les JSON et publications
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import datetime as dt
+          import json
+          import re
+          import sys
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          DATA = Path("data")
+          PARIS = ZoneInfo("Europe/Paris")
+          UTC = dt.timezone.utc
+
+          errors = []
+          warnings = []
+          objects = {}
+
+          def check(condition, message):
+              if condition:
+                  print("OK:", message)
+              else:
+                  errors.append(message)
+                  print("ERREUR:", message)
+
+          def warn(message):
+              warnings.append(message)
+              print("ATTENTION:", message)
+
+          def pairs(items):
+              result = {}
+              for key, value in items:
+                  if key in result:
+                      raise ValueError(
+                          "Cle JSON dupliquee: " + key
+                      )
+                  result[key] = value
+              return result
+
+          def constant(value):
+              raise ValueError(
+                  "Constante JSON interdite: " + value
+              )
+
+          def load(path):
+              return json.loads(
+                  path.read_text(encoding="utf-8"),
+                  object_pairs_hook=pairs,
+                  parse_constant=constant
+              )
+
+          def timestamp(value):
+              if not isinstance(value, str):
+                  raise ValueError("Horodatage absent")
+
+              moment = dt.datetime.fromisoformat(
+                  value.replace("Z", "+00:00")
+              )
+
+              if (
+                  moment.tzinfo is None
+                  or moment.utcoffset() is None
+              ):
+                  raise ValueError("Fuseau absent")
+
+              return moment.astimezone(UTC)
+
+          print("=== FICHIERS JSON ===")
+
+          check(
+              DATA.is_dir() and not DATA.is_symlink(),
+              "Dossier data valide"
+          )
+
+          if DATA.is_dir():
+              for path in sorted(DATA.glob("*.json")):
+                  try:
+                      if path.is_symlink():
+                          raise ValueError(
+                              "Lien symbolique interdit"
+                          )
+
+                      objects[path.name] = load(path)
+                      print("JSON OK:", path.name)
+
+                  except (OSError, ValueError) as exc:
+                      check(
+                          False,
+                          path.name + ": " + str(exc)
+                      )
+
+          print("=== COLLECTE PMU ===")
+
+          collecte = objects.get(
+              "collecte_m1_pmu.json"
+          )
+          diagnostic = objects.get(
+              "diagnostic_collecte_m1.json"
+          )
+
+          if not isinstance(collecte, dict):
+              check(False, "Collecte PMU absente")
+          else:
+              courses = collecte.get("courses")
+
+              check(
+                  isinstance(courses, list),
+                  "Liste des courses valide"
+              )
+
+              now = dt.datetime.now(UTC)
+              today = now.astimezone(PARIS).date()
+
+              check(
+                  collecte.get("date") == today.isoformat(),
+                  "Date de collecte du jour"
+              )
+
+              if collecte.get("statut") != "OK":
+                  warn(
+                      "Collecte non OK: " +
+                      str(collecte.get("statut"))
+                  )
+
+              if collecte.get("erreurs"):
+                  warn("Erreurs signalees par la collecte")
+
+              try:
+                  moment = timestamp(
+                      collecte.get("collecte_a")
+                  )
+
+                  age = (now - moment).total_seconds() / 60
+
+                  print(
+                      "Age collecte (minutes):",
+                      round(age, 1)
+                  )
+
+                  if age < -2:
+                      check(False, "Collecte datee du futur")
+                  elif age > 30:
+                      warn("Collecte ancienne de plus de 30 min")
+
+              except (ValueError, TypeError) as exc:
+                  check(
+                      False,
+                      "Horodatage collecte: " + str(exc)
+                  )
+
+              if isinstance(courses, list):
+                  print("Courses:", len(courses))
+
+                  if not courses:
+                      warn("Aucune course publiee")
+
+                  ids = set()
+                  total_chevaux = 0
+                  total_partants = 0
+                  total_np = 0
+
+                  for course in courses:
+                      if not isinstance(course, dict):
+                          check(False, "Course non objet")
+                          continue
+
+                      cid = course.get("id")
+
+                      valid_id = (
+                          isinstance(cid, str)
+                          and re.fullmatch(
+                              r"\d{4}-\d{2}-\d{2}-R[1-9]\d*-C[1-9]\d*",
+                              cid
+                          ) is not None
+                      )
+
+                      check(
+                          valid_id and cid not in ids,
+                          "ID unique: " + str(cid)
+                      )
+
+                      if valid_id:
+                          ids.add(cid)
+
+                          check(
+                              cid[:10] == today.isoformat(),
+                              "Date course: " + cid
+                          )
+
+                      check(
+                          course.get(
+                              "localisation_france_verifiee"
+                          ) is True,
+                          "France verifiee: " + str(cid)
+                      )
+
+                      try:
+                          depart = timestamp(
+                              course.get("depart")
+                          )
+                          check(
+                              depart.astimezone(
+                                  PARIS
+                              ).date() == today,
+                              "Depart du jour: " + str(cid)
+                          )
+                      except (ValueError, TypeError):
+                          check(
+                              False,
+                              "Depart invalide: " + str(cid)
+                          )
+
+                      chevaux = course.get("partants")
+
+                      if not isinstance(chevaux, list):
+                          check(
+                              False,
+                              "Partants absents: " + str(cid)
+                          )
+                          continue
+
+                      numeros = set()
+                      np = set()
+
+                      for cheval in chevaux:
+                          if not isinstance(cheval, dict):
+                              check(False, "Cheval non objet")
+                              continue
+
+                          numero = cheval.get("numero")
+                          nom = cheval.get("nom")
+                          absent = cheval.get("non_partant")
+
+                          valid_numero = (
+                              type(numero) is int
+                              and numero > 0
+                          )
+
+                          check(
+                              valid_numero
+                              and numero not in numeros,
+                              "Numero unique: " + str(cid)
+                          )
+
+                          if valid_numero:
+                              numeros.add(numero)
+
+                          check(
+                              isinstance(nom, str)
+                              and bool(nom.strip()),
+                              "Nom cheval: " + str(cid)
+                          )
+
+                          check(
+                              type(absent) is bool,
+                              "Statut NP: " + str(cid)
+                          )
+
+                          if absent is True and valid_numero:
+                              np.add(numero)
+
+                      declared = course.get("non_partants")
+
+                      check(
+                          isinstance(declared, list)
+                          and all(
+                              type(n) is int
+                              for n in declared
+                          )
+                          and len(declared) == len(set(declared))
+                          and set(declared) == np,
+                          "Liste NP coherente: " + str(cid)
+                          if isinstance(declared, list)
+                          else "Liste NP absente: " + str(cid)
+                      )
+
+                      actifs = len(numeros) - len(np)
+
+                      check(
+                          type(
+                              course.get("nombre_partants")
+                          ) is int
+                          and course["nombre_partants"] == actifs,
+                          "Total partants: " + str(cid)
+                      )
+
+                      total_chevaux += len(numeros)
+                      total_partants += actifs
+                      total_np += len(np)
+
+                  print("Chevaux:", total_chevaux)
+                  print("Partants:", total_partants)
+                  print("Non-partants:", total_np)
+
+                  stats = collecte.get("statistiques")
+
+                  if isinstance(stats, dict):
+                      for key, expected in (
+                          ("courses", len(courses)),
+                          ("chevaux", total_chevaux),
+                          ("partants", total_partants),
+                          ("non_partants", total_np)
+                      ):
+                          if key in stats:
+                              check(
+                                  stats[key] == expected,
+                                  "Statistique: " + key
+                              )
+                  else:
+                      warn("Statistiques collecte absentes")
+
+          print("=== DIAGNOSTIC COLLECTEUR ===")
+
+          if not isinstance(diagnostic, dict):
+              check(False, "Diagnostic collecte absent")
+          elif isinstance(collecte, dict):
+              check(
+                  diagnostic.get("date") == collecte.get("date"),
+                  "Dates identiques"
+              )
+
+              check(
+                  diagnostic.get("statistiques")
+                  == collecte.get("statistiques"),
+                  "Statistiques identiques"
+              )
+
+              try:
+                  check(
+                      timestamp(diagnostic.get("collecte_a"))
+                      == timestamp(collecte.get("collecte_a")),
+                      "Horodatages identiques"
+                  )
+              except (ValueError, TypeError):
+                  check(False, "Horodatages incompatibles")
+
+              if diagnostic.get("statut") != "OK":
+                  warn("Diagnostic collecte non OK")
+
+              if diagnostic.get("erreurs"):
+                  warn("Erreurs du diagnostic collecteur")
+
+          print("=== PUBLICATIONS SPORTIVES ===")
+
+          for name in (
+              "courses.json",
+              "selections.json",
+              "figes.json",
+              "audits.json"
+          ):
+              obj = objects.get(name)
+
+              if obj is None:
+                  warn(name + " absent")
+                  continue
+
+              key = name.removesuffix(".json")
+
+              if isinstance(obj, list):
+                  rows = obj
+              elif isinstance(obj, dict):
+                  rows = obj.get(key)
+              else:
+                  rows = None
+
+              if not isinstance(rows, list):
+                  check(
+                      False,
+                      name + " structure incompatible"
+                  )
+                  continue
+
+              print(
+                  name,
+                  "enregistrements:",
+                  len(rows)
+              )
+
+              if not rows:
+                  warn(name + " vide")
+
+          print("=== BILAN ===")
+          print("Erreurs:", len(errors))
+          print("Avertissements:", len(warnings))
+
+          if errors:
+              sys.exit(1)
+
+          print("CONTROLES JSON TERMINES")
+          PY
+
+      - name: Tester M1 et les archives
+        run: |
+          set -euo pipefail
+
+          test "$M1_AUTO_ANALYZE" = "false"
+
+          python m1.py --self-test
+          python m1.py --verify-archives
+          python pmu_engine.py --self-test
+
+          echo "Tests Python termines"
+
+      - name: Verifier absence de modifications
+        if: always()
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          import stat
+          from pathlib import Path
+
+          initial = json.loads(
+              Path("/tmp/m1-diagnostic-before.json")
+              .read_text(encoding="utf-8")
+          )
+
+          def snapshot():
+              result = {}
+
+              def scan(folder):
+                  with os.scandir(folder) as entries:
+                      for entry in entries:
+                          path = Path(entry.path)
+                          name = path.as_posix()
+
+                          if name == ".git":
+                              continue
+
+                          mode = entry.stat(
+                              follow_symlinks=False
+                          ).st_mode
+
+                          if stat.S_ISDIR(mode):
+                              result[name] = "DIR"
+                              scan(path)
+
+                          elif stat.S_ISLNK(mode):
+                              result[name] = (
+                                  "LINK:" + os.readlink(path)
+                              )
+
+                          elif stat.S_ISREG(mode):
+                              result[name] = (
+                                  "FILE:" +
+                                  hashlib.sha256(
+                                      path.read_bytes()
+                                  ).hexdigest()
+                              )
+
+                          else:
+                              result[name] = (
+                                  "SPECIAL:" + str(mode)
+                              )
+
+              scan(Path("."))
+              return result
+
+          current = snapshot()
+
+          if current != initial:
+              added = sorted(current.keys() - initial.keys())
+              removed = sorted(initial.keys() - current.keys())
+              changed = sorted(
+                  key for key in initial.keys() & current.keys()
+                  if initial[key] != current[key]
+              )
+
+              print("Ajoutes:", added)
+              print("Supprimes:", removed)
+              print("Modifies:", changed)
+
+              raise SystemExit(
+                  "ECHEC: fichiers modifies pendant diagnostic"
+              )
+
+          print("INTEGRITE OK: aucun fichier modifie")
+          PY
+
+          test -z "$(
+            git status --porcelain --untracked-files=all
+          )"
+
+          echo "DEPOT INCHANGE"
+
+      - name: Bilan final
+        if: success()
+        run: |
+          echo "Diagnostic M1 termine avec succes."
+          echo "Aucun pronostic genere."
+          echo "Aucune decision sportive modifiee."
+          echo "Aucun FIGE cree ou modifie."
+          echo "Aucun audit genere."
+          echo "Aucune publication effectuee."
+          echo "M1 reste independant de M2 a M5."
