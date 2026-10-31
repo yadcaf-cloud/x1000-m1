@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   collecte-pmu:
-    name: "Collecte PMU France"
+    name: "Collecte PMU France - M1"
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -25,92 +25,345 @@ jobs:
       TZ: Europe/Paris
 
     steps:
-      - name: "Recuperer depot M1"
+
+      - name: "Recuperer le depot M1"
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
 
-      - name: "Installer Python"
+      - name: "Installer Python 3.12"
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: "Verifier collecteur PMU"
+      - name: "Verifier le collecteur"
         run: |
+          set -euo pipefail
+
           test -f pmu_engine.py
+
           python -m py_compile pmu_engine.py
+
           python pmu_engine.py --self-test
 
-      - name: "Collecter les courses PMU"
+      - name: "Preparer une collecte neuve"
+        run: |
+          set -euo pipefail
+
+          mkdir -p data
+
+          rm -f \
+            data/collecte_m1_pmu.json \
+            data/diagnostic_collecte_m1.json
+
+          echo "Anciens fichiers de collecte retires du workspace"
+
+      - name: "Collecter les donnees PMU"
         id: collecte
         continue-on-error: true
         run: |
+          set -euo pipefail
+
           python pmu_engine.py
 
-      - name: "Verifier les fichiers produits"
+      - name: "Verifier les JSON de collecte"
         id: verification
         if: steps.collecte.outcome == 'success'
         run: |
+          set -euo pipefail
+
           python - <<'PY'
+          import datetime as dt
           import json
           from pathlib import Path
+          from zoneinfo import ZoneInfo
 
           base = Path("data")
+          paris = ZoneInfo("Europe/Paris")
+          today = dt.datetime.now(paris).date()
 
-          fichiers = [
-              "collecte_m1_pmu.json",
-              "diagnostic_collecte_m1.json"
-          ]
+          def load(name):
+              path = base / name
 
-          for nom in fichiers:
-              chemin = base / nom
-              if not chemin.is_file():
+              if not path.is_file():
                   raise SystemExit(
-                      "Fichier absent : " + str(chemin)
-                  )
-              with chemin.open(
-                  encoding="utf-8"
-              ) as f:
-                  donnees = json.load(f)
-
-              if not isinstance(donnees, dict):
-                  raise SystemExit(
-                      "Format JSON incorrect : " + nom
+                      "Fichier absent : " + str(path)
                   )
 
-          with (
-              base / "collecte_m1_pmu.json"
-          ).open(encoding="utf-8") as f:
-              collecte = json.load(f)
+              with path.open(encoding="utf-8") as f:
+                  data = json.load(f)
+
+              if not isinstance(data, dict):
+                  raise SystemExit(
+                      "Objet JSON attendu : " + name
+                  )
+
+              return data
+
+          collecte = load("collecte_m1_pmu.json")
+          diagnostic = load("diagnostic_collecte_m1.json")
 
           if collecte.get("statut") != "OK":
               raise SystemExit(
-                  "Collecte non valide"
+                  "Statut collecte different de OK"
               )
 
-          if not collecte.get("courses"):
+          if diagnostic.get("statut") != "OK":
               raise SystemExit(
-                  "Aucune course verifiee"
+                  "Statut diagnostic different de OK"
               )
 
-          for course in collecte["courses"]:
+          if collecte.get("date") != today.isoformat():
+              raise SystemExit(
+                  "Date collecte incorrecte"
+              )
+
+          if diagnostic.get("date") != today.isoformat():
+              raise SystemExit(
+                  "Date diagnostic incorrecte"
+              )
+
+          if (
+              collecte.get("collecte_a")
+              != diagnostic.get("collecte_a")
+          ):
+              raise SystemExit(
+                  "Horodatages collecte/diagnostic differents"
+              )
+
+          try:
+              instant = dt.datetime.fromisoformat(
+                  collecte["collecte_a"]
+              )
+
+              if (
+                  instant.tzinfo is None
+                  or instant.utcoffset() is None
+              ):
+                  raise ValueError("Fuseau absent")
+
+              age = (
+                  dt.datetime.now(dt.timezone.utc)
+                  - instant.astimezone(dt.timezone.utc)
+              ).total_seconds()
+
+              if not -60 <= age <= 1200:
+                  raise ValueError(
+                      "Collecte trop ancienne ou future"
+                  )
+
+          except (KeyError, ValueError, TypeError) as e:
+              raise SystemExit(
+                  "Horodatage collecte invalide : " + str(e)
+              )
+
+          courses = collecte.get("courses")
+
+          if not isinstance(courses, list) or not courses:
+              raise SystemExit(
+                  "Aucune course francaise verifiee"
+              )
+
+          ids = set()
+
+          for course in courses:
+              if not isinstance(course, dict):
+                  raise SystemExit(
+                      "Course non conforme"
+                  )
+
+              cid = course.get("id")
+
+              if not isinstance(cid, str) or not cid:
+                  raise SystemExit(
+                      "Identifiant de course absent"
+                  )
+
+              if cid in ids:
+                  raise SystemExit(
+                      "Course dupliquee : " + cid
+                  )
+
+              ids.add(cid)
+
               if (
                   course.get(
                       "localisation_france_verifiee"
                   ) is not True
               ):
                   raise SystemExit(
-                      "Course non francaise verifiee"
+                      "France non verifiee : " + cid
                   )
 
-          print("Collecte PMU validee")
+              try:
+                  depart = dt.datetime.fromisoformat(
+                      course["depart"]
+                  )
+
+                  if (
+                      depart.tzinfo is None
+                      or depart.utcoffset() is None
+                  ):
+                      raise ValueError("Fuseau absent")
+
+                  if (
+                      depart.astimezone(paris).date()
+                      != today
+                  ):
+                      raise ValueError(
+                          "Date de depart incorrecte"
+                      )
+
+              except (KeyError, ValueError, TypeError) as e:
+                  raise SystemExit(
+                      cid + " : depart invalide : " + str(e)
+                  )
+
+              partants = course.get("partants")
+
+              if (
+                  not isinstance(partants, list)
+                  or not partants
+              ):
+                  raise SystemExit(
+                      cid + " : partants absents"
+                  )
+
+              numeros = set()
+              non_partants = set()
+
+              for p in partants:
+                  if not isinstance(p, dict):
+                      raise SystemExit(
+                          cid + " : participant invalide"
+                      )
+
+                  n = p.get("numero")
+
+                  if type(n) is not int or n <= 0:
+                      raise SystemExit(
+                          cid + " : numero invalide"
+                      )
+
+                  if n in numeros:
+                      raise SystemExit(
+                          cid + " : numero duplique"
+                      )
+
+                  numeros.add(n)
+
+                  if (
+                      not isinstance(p.get("nom"), str)
+                      or not p["nom"].strip()
+                  ):
+                      raise SystemExit(
+                          cid + " : nom de cheval absent"
+                      )
+
+                  if type(p.get("non_partant")) is not bool:
+                      raise SystemExit(
+                          cid + " : statut NP invalide"
+                      )
+
+                  if p["non_partant"]:
+                      non_partants.add(n)
+
+              if (
+                  course.get("nombre_partants")
+                  != len(partants) - len(non_partants)
+              ):
+                  raise SystemExit(
+                      cid + " : nombre de partants incoherent"
+                  )
+
+              if (
+                  set(course.get("non_partants", []))
+                  != non_partants
+              ):
+                  raise SystemExit(
+                      cid + " : non-partants incoherents"
+                  )
+
+          stats = collecte.get("statistiques", {})
+
+          if stats.get("courses") != len(courses):
+              raise SystemExit(
+                  "Statistiques courses incoherentes"
+              )
+
+          if diagnostic.get("statistiques") != stats:
+              raise SystemExit(
+                  "Diagnostic/statistiques incoherents"
+              )
+
+          if collecte.get("erreurs"):
+              raise SystemExit(
+                  "Collecte OK avec erreurs signalees"
+              )
+
+          print(
+              "VALIDATION OK :",
+              len(courses),
+              "courses francaises controlees"
+          )
           PY
 
-      - name: "Publier uniquement les JSON PMU"
+      - name: "Verifier les fichiers autorises"
+        id: protection
         if: >-
           steps.collecte.outcome == 'success' &&
           steps.verification.outcome == 'success'
         run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import subprocess
+
+          autorises = {
+              "data/collecte_m1_pmu.json",
+              "data/diagnostic_collecte_m1.json"
+          }
+
+          result = subprocess.run(
+              [
+                  "git", "status",
+                  "--porcelain",
+                  "--untracked-files=all"
+              ],
+              capture_output=True,
+              text=True,
+              check=True
+          )
+
+          interdits = []
+
+          for line in result.stdout.splitlines():
+              path = line[3:]
+
+              if path not in autorises:
+                  interdits.append(path)
+
+          if interdits:
+              raise SystemExit(
+                  "Modifications non autorisees : "
+                  + ", ".join(interdits)
+              )
+
+          print(
+              "Protection M1 : aucun autre fichier modifie"
+          )
+          PY
+
+      - name: "Publier uniquement les JSON PMU"
+        id: publication
+        if: >-
+          steps.collecte.outcome == 'success' &&
+          steps.verification.outcome == 'success' &&
+          steps.protection.outcome == 'success'
+        run: |
+          set -euo pipefail
+
           git config user.name "github-actions[bot]"
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
@@ -120,35 +373,60 @@ jobs:
             data/diagnostic_collecte_m1.json
 
           if git diff --cached --quiet; then
-            echo "Aucune modification PMU"
+            echo "Aucune modification PMU a publier"
             exit 0
           fi
 
           git diff --cached --name-only
 
+          git diff --cached --name-only | \
+          while IFS= read -r fichier; do
+            case "$fichier" in
+              data/collecte_m1_pmu.json|data/diagnostic_collecte_m1.json)
+                ;;
+              *)
+                echo "Publication interdite : $fichier"
+                exit 1
+                ;;
+            esac
+          done
+
           git commit -m \
-            "M1: actualisation collecte PMU"
+            "M1: actualisation collecte PMU verifiee"
 
           git push origin HEAD:main
 
-      - name: "Bilan collecte"
+      - name: "Bilan de la collecte"
         if: always()
+        env:
+          COLLECTE: ${{ steps.collecte.outcome }}
+          VERIFICATION: ${{ steps.verification.outcome }}
+          PROTECTION: ${{ steps.protection.outcome }}
+          PUBLICATION: ${{ steps.publication.outcome }}
         run: |
           {
-            echo "## X1000 M1 - Collecte PMU"
+            echo "## 🇸🇳🧠🔥 X1000 M1 — Collecte PMU"
             echo ""
-            echo "- Collecte : ${{ steps.collecte.outcome }}"
-            echo "- Verification : ${{ steps.verification.outcome }}"
-            echo "- Frequence demandee : 10 minutes"
-            echo "- Donnees M1 protegees : non modifiees"
-            echo "- FIGES historiques : non modifies"
+            echo "- Collecte : ${COLLECTE}"
+            echo "- Verification : ${VERIFICATION}"
+            echo "- Protection : ${PROTECTION}"
+            echo "- Publication : ${PUBLICATION}"
+            echo "- Frequence programmee : 10 minutes"
+            echo "- Courses M1 : non modifiees"
+            echo "- Decisions sportives : non modifiees"
             echo "- Pronostics : non modifies"
+            echo "- FIGEs historiques : non modifies"
+            echo "- Audits : non modifies"
+            echo ""
+            echo "Les statuts ci-dessus correspondent aux resultats des etapes."
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: "Signaler une collecte non valide"
+      - name: "Signaler un echec reel"
         if: >-
           steps.collecte.outcome != 'success' ||
-          steps.verification.outcome != 'success'
+          steps.verification.outcome != 'success' ||
+          steps.protection.outcome != 'success' ||
+          steps.publication.outcome != 'success'
         run: |
-          echo "Collecte PMU non validee"
+          echo "ECHEC : collecte PMU non validee ou non publiee"
           exit 1
