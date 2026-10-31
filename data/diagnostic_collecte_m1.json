@@ -1,0 +1,17 @@
+{
+  "version": "M1-PMU-COLLECTE-1.0",
+  "date": "2026-10-31",
+  "collecte_a": "2026-10-31T02:47:10.990538+01:00",
+  "statut": "OK",
+  "statistiques": {
+    "reunions_recues": 9,
+    "courses": 62,
+    "chevaux": 816,
+    "non_partants": 4
+  },
+  "erreurs": [],
+  "avertissements": [
+    "R4 ignorée : localisation française non confirmée",
+    "R6 ignorée : localisation française non confirmée"
+  ]
+}
