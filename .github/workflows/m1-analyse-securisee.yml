@@ -1,4 +1,4 @@
-name: "X1000 M1 - Analyse autonome securisee"
+name: "X1000 M1 - Analyse autonome securisee V1.6"
 
 on:
   workflow_dispatch:
@@ -15,11 +15,13 @@ concurrency:
 jobs:
   analyse:
     name: "M1 - Analyse et prepublication"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
+
     defaults:
       run:
         shell: bash
+
     env:
       TZ: Europe/Paris
       PYTHONDONTWRITEBYTECODE: "1"
@@ -38,35 +40,79 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: "Memoriser les empreintes avant les tests"
+      - name: "Preparer les rapports et empreintes"
         run: |
           set -euo pipefail
+
+          mkdir -p "$RUNNER_TEMP/m1-rapports"
+
           python - <<'PY'
-          import hashlib, json, subprocess
+          import hashlib
+          import json
+          import os
+          import subprocess
           from pathlib import Path
-          names = [p.decode('utf-8') for p in subprocess.check_output(['git', 'ls-files', '-z']).split(b'\0') if p]
+
+          names = [
+              p.decode("utf-8")
+              for p in subprocess.check_output(
+                  ["git", "ls-files", "-z"]
+              ).split(b"\0") if p
+          ]
+
           snapshot = {}
+
           for name in names:
               path = Path(name)
+
               if path.is_symlink() or not path.is_file():
-                  raise SystemExit('Fichier suivi non regulier : ' + name)
-              snapshot[name] = hashlib.sha256(path.read_bytes()).hexdigest()
-          Path('/tmp/m1-snapshot.json').write_text(json.dumps(snapshot, sort_keys=True), encoding='utf-8')
-          print('Empreintes enregistrees :', len(snapshot))
+                  raise SystemExit(
+                      "Fichier suivi non regulier : " + name
+                  )
+
+              snapshot[name] = hashlib.sha256(
+                  path.read_bytes()
+              ).hexdigest()
+
+          output = (
+              Path(os.environ["RUNNER_TEMP"])
+              / "m1-snapshot.json"
+          )
+
+          output.write_text(
+              json.dumps(snapshot, sort_keys=True),
+              encoding="utf-8"
+          )
+
+          print("Empreintes :", len(snapshot))
           PY
 
       - name: "Verifier programmes et archives"
         run: |
           set -euo pipefail
+
           test -f m1.py
           test -f m1_analyse_autonome.py
           test -f pmu_engine.py
+
           python - <<'PY'
+          import ast
           from pathlib import Path
-          for name in ('m1.py', 'm1_analyse_autonome.py', 'pmu_engine.py'):
-              compile(Path(name).read_bytes(), name, 'exec')
-              print(name, 'syntaxe OK')
+
+          for name in (
+              "m1.py",
+              "m1_analyse_autonome.py",
+              "pmu_engine.py"
+          ):
+              ast.parse(
+                  Path(name).read_text(
+                      encoding="utf-8-sig"
+                  ),
+                  filename=name
+              )
+              print("Syntaxe OK :", name)
           PY
+
           python m1.py --self-test
           python m1.py --verify-archives
           python m1_analyse_autonome.py --self-test
@@ -76,146 +122,538 @@ jobs:
         id: collecte
         run: |
           set -euo pipefail
-          mkdir -p /tmp/x1000-m1-rapports
+
           python - <<'PY'
           import datetime as dt
-          import json, os, re
+          import json
+          import os
+          import re
           from pathlib import Path
           from zoneinfo import ZoneInfo
-          paris = ZoneInfo('Europe/Paris')
+
+          paris = ZoneInfo("Europe/Paris")
           now = dt.datetime.now(paris)
-          status = {'statut': 'INVALIDE', 'motif': '', 'collecte_a': None, 'courses': 0}
+
+          status = {
+              "statut": "INVALIDE",
+              "motif": "",
+              "courses": 0,
+              "collecte_a": None
+          }
+
           def strict(path):
               if not path.is_file() or path.is_symlink():
-                  raise ValueError('Fichier absent ou lien : ' + str(path))
+                  raise ValueError(
+                      "Fichier absent ou lien : " + str(path)
+                  )
+
               def pairs(items):
                   result = {}
                   for key, value in items:
                       if key in result:
-                          raise ValueError('Cle JSON dupliquee : ' + key)
+                          raise ValueError(
+                              "Cle dupliquee : " + key
+                          )
                       result[key] = value
                   return result
-              def constant(value):
-                  raise ValueError('Constante JSON interdite : ' + value)
-              return json.loads(path.read_text(encoding='utf-8-sig'), object_pairs_hook=pairs, parse_constant=constant)
+
+              def reject(value):
+                  raise ValueError(
+                      "Constante interdite : " + value
+                  )
+
+              return json.loads(
+                  path.read_text(encoding="utf-8-sig"),
+                  object_pairs_hook=pairs,
+                  parse_constant=reject
+              )
+
           def stamp(value):
               if not isinstance(value, str):
-                  raise ValueError('Horodatage absent')
-              date = dt.datetime.fromisoformat(value.replace('Z', '+00:00'))
-              if date.tzinfo is None or date.utcoffset() is None:
-                  raise ValueError('Fuseau absent')
-              return date.astimezone(paris)
+                  raise ValueError("Horodatage absent")
+
+              d = dt.datetime.fromisoformat(
+                  value.replace("Z", "+00:00")
+              )
+
+              if d.tzinfo is None or d.utcoffset() is None:
+                  raise ValueError("Fuseau absent")
+
+              return d.astimezone(paris)
+
           try:
-              data = strict(Path('data/collecte_m1_pmu.json'))
-              diag = strict(Path('data/diagnostic_collecte_m1.json'))
-              if not isinstance(data, dict) or not isinstance(diag, dict):
-                  raise ValueError('Objet JSON attendu')
-              if data.get('statut') != 'OK' or diag.get('statut') != 'OK':
-                  raise ValueError('Collecte non OK')
-              if data.get('erreurs') != [] or diag.get('erreurs') != []:
-                  raise ValueError('Erreurs de collecte presentes')
-              if data.get('date') != now.date().isoformat() or diag.get('date') != data.get('date'):
-                  raise ValueError('Collecte hors date Paris')
-              if data.get('collecte_a') != diag.get('collecte_a'):
-                  raise ValueError('Horodatages differents')
-              if not isinstance(data.get('statistiques'), dict) or data['statistiques'] != diag.get('statistiques'):
-                  raise ValueError('Statistiques incoherentes')
-              courses = data.get('courses')
+              data = strict(
+                  Path("data/collecte_m1_pmu.json")
+              )
+
+              diag = strict(
+                  Path("data/diagnostic_collecte_m1.json")
+              )
+
+              if not all(
+                  isinstance(x, dict)
+                  for x in (data, diag)
+              ):
+                  raise ValueError(
+                      "Objets JSON attendus"
+                  )
+
+              if (
+                  data.get("statut") != "OK"
+                  or diag.get("statut") != "OK"
+              ):
+                  raise ValueError(
+                      "Collecte non OK"
+                  )
+
+              if (
+                  data.get("erreurs") != []
+                  or diag.get("erreurs") != []
+              ):
+                  raise ValueError(
+                      "Erreurs de collecte"
+                  )
+
+              today = now.date().isoformat()
+
+              if (
+                  data.get("date") != today
+                  or diag.get("date") != today
+              ):
+                  raise ValueError(
+                      "Collecte hors date Paris"
+                  )
+
+              if (
+                  data.get("collecte_a")
+                  != diag.get("collecte_a")
+              ):
+                  raise ValueError(
+                      "Horodatages differents"
+                  )
+
+              if (
+                  not isinstance(
+                      data.get("statistiques"), dict
+                  )
+                  or data["statistiques"]
+                  != diag.get("statistiques")
+              ):
+                  raise ValueError(
+                      "Statistiques incoherentes"
+                  )
+
+              courses = data.get("courses")
+
               if not isinstance(courses, list):
-                  raise ValueError('courses : liste attendue')
-              status['courses'] = len(courses)
+                  raise ValueError(
+                      "courses : liste attendue"
+                  )
+
               ids = set()
+              total_partants = 0
+              total_np = 0
+
+              pattern = (
+                  r"\d{4}-\d{2}-\d{2}"
+                  r"-R[1-9]\d*-C[1-9]\d*"
+              )
+
               for c in courses:
                   if not isinstance(c, dict):
-                      raise ValueError('Course non structuree')
-                  cid = c.get('id')
-                  if not isinstance(cid, str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}-R[1-9]\d*-C[1-9]\d*', cid) or cid in ids:
-                      raise ValueError('Identifiant course invalide ou duplique')
+                      raise ValueError(
+                          "Course non structuree"
+                      )
+
+                  cid = c.get("id")
+
+                  if (
+                      not isinstance(cid, str)
+                      or not re.fullmatch(pattern, cid)
+                      or cid in ids
+                      or not cid.startswith(today + "-")
+                  ):
+                      raise ValueError(
+                          "Course invalide ou double"
+                      )
+
                   ids.add(cid)
-                  if cid[:10] != data['date'] or c.get('localisation_france_verifiee') is not True:
-                      raise ValueError('Date ou France non verifiee : ' + cid)
-                  if stamp(c.get('depart')).date() != now.date():
-                      raise ValueError('Depart hors date : ' + cid)
-                  horses = c.get('partants')
-                  if not isinstance(horses, list) or not horses:
-                      raise ValueError('Partants absents : ' + cid)
-                  numbers, np = set(), set()
+
+                  if (
+                      c.get(
+                          "localisation_france_verifiee"
+                      ) is not True
+                  ):
+                      raise ValueError(
+                          "France non verifiee : " + cid
+                      )
+
+                  if stamp(c.get("depart")).date() != (
+                      now.date()
+                  ):
+                      raise ValueError(
+                          "Depart hors date : " + cid
+                      )
+
+                  horses = c.get("partants")
+
+                  if (
+                      not isinstance(horses, list)
+                      or not horses
+                  ):
+                      raise ValueError(
+                          "Partants absents : " + cid
+                      )
+
+                  numbers = set()
+                  np = set()
+
                   for h in horses:
-                      if not isinstance(h, dict) or type(h.get('numero')) is not int or h['numero'] <= 0 or h['numero'] in numbers:
-                          raise ValueError('Numero invalide : ' + cid)
-                      numbers.add(h['numero'])
-                      if not isinstance(h.get('nom'), str) or not h['nom'].strip() or type(h.get('non_partant')) is not bool:
-                          raise ValueError('Cheval invalide : ' + cid)
-                      if h['non_partant']:
-                          np.add(h['numero'])
-                  declared = c.get('non_partants')
-                  if not isinstance(declared, list) or any(type(n) is not int for n in declared) or len(declared) != len(set(declared)) or set(declared) != np:
-                      raise ValueError('NP incoherents : ' + cid)
-                  if type(c.get('nombre_partants')) is not int or c['nombre_partants'] != len(numbers) - len(np):
-                      raise ValueError('Total partants incoherent : ' + cid)
-              collected = stamp(data.get('collecte_a'))
-              age = (now - collected).total_seconds()
-              status['collecte_a'] = data['collecte_a']
-              status['age_secondes'] = round(age)
+                      if not isinstance(h, dict):
+                          raise ValueError(
+                              "Cheval invalide"
+                          )
+
+                      n = h.get("numero")
+
+                      if (
+                          type(n) is not int
+                          or n <= 0
+                          or n in numbers
+                      ):
+                          raise ValueError(
+                              "Numero invalide : " + cid
+                          )
+
+                      numbers.add(n)
+
+                      if (
+                          not isinstance(
+                              h.get("nom"), str
+                          )
+                          or not h["nom"].strip()
+                          or type(
+                              h.get("non_partant")
+                          ) is not bool
+                      ):
+                          raise ValueError(
+                              "Cheval invalide : " + cid
+                          )
+
+                      if h["non_partant"]:
+                          np.add(n)
+
+                  declared = c.get("non_partants")
+
+                  if (
+                      not isinstance(declared, list)
+                      or any(
+                          type(n) is not int
+                          for n in declared
+                      )
+                      or len(declared)
+                      != len(set(declared))
+                      or set(declared) != np
+                  ):
+                      raise ValueError(
+                          "NP incoherents : " + cid
+                      )
+
+                  actifs = len(numbers) - len(np)
+
+                  if (
+                      type(
+                          c.get("nombre_partants")
+                      ) is not int
+                      or c["nombre_partants"] != actifs
+                  ):
+                      raise ValueError(
+                          "Total partants incoherent"
+                      )
+
+                  total_partants += actifs
+                  total_np += len(np)
+
+              stats = data["statistiques"]
+
+              attendus = {
+                  "courses": len(courses),
+                  "partants": total_partants,
+                  "non_partants": total_np
+              }
+
+              for key, value in attendus.items():
+                  if (
+                      type(stats.get(key)) is not int
+                      or stats[key] != value
+                  ):
+                      raise ValueError(
+                          "Statistique invalide : " + key
+                      )
+
+              collected = stamp(
+                  data.get("collecte_a")
+              )
+
+              age = (
+                  now - collected
+              ).total_seconds()
+
+              status["courses"] = len(courses)
+              status["collecte_a"] = data["collecte_a"]
+              status["age_secondes"] = round(age)
+
               if not 0 <= age <= 1800:
-                  status.update(statut='PERIMEE_OU_FUTURE', motif='Collecte hors fenetre de 30 minutes')
+                  status.update(
+                      statut="PERIMEE_OU_FUTURE",
+                      motif="Collecte hors 30 minutes"
+                  )
               elif not courses:
-                  status.update(statut='SANS_COURSES', motif='Aucune course disponible')
+                  status.update(
+                      statut="SANS_COURSES",
+                      motif="Aucune course disponible"
+                  )
               else:
-                  status.update(statut='OK', motif='Collecte verifiee pour preanalyse')
-          except (OSError, ValueError, TypeError, KeyError) as exc:
-              status.update(statut='INVALIDE', motif=str(exc))
-          out = Path('/tmp/x1000-m1-rapports/diagnostic.json')
-          out.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-          print(json.dumps(status, ensure_ascii=False))
-          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as f:
-              f.write('pret=' + str(status['statut'] == 'OK').lower() + '\n')
-              f.write('statut=' + status['statut'] + '\n')
+                  status.update(
+                      statut="OK",
+                      motif="Collecte verifiee"
+                  )
+
+          except (
+              OSError,
+              ValueError,
+              TypeError,
+              KeyError,
+              OverflowError
+          ) as exc:
+              status.update(
+                  statut="INVALIDE",
+                  motif=str(exc)
+              )
+
+          out = (
+              Path(os.environ["RUNNER_TEMP"])
+              / "m1-rapports"
+              / "diagnostic.json"
+          )
+
+          out.write_text(
+              json.dumps(
+                  status,
+                  ensure_ascii=False,
+                  indent=2
+              ) + "\n",
+              encoding="utf-8"
+          )
+
+          print(
+              json.dumps(status, ensure_ascii=False)
+          )
+
+          with open(
+              os.environ["GITHUB_OUTPUT"],
+              "a",
+              encoding="utf-8"
+          ) as f:
+              f.write(
+                  "pret=" +
+                  str(status["statut"] == "OK").lower()
+                  + "\n"
+              )
+              f.write(
+                  "statut=" + status["statut"] + "\n"
+              )
           PY
 
-      - name: "Executer la preanalyse M1"
+      - name: "Preparer la copie isolee"
+        if: steps.collecte.outputs.pret == 'true'
+        run: |
+          set -euo pipefail
+
+          TEST_DIR="$RUNNER_TEMP/m1-isole"
+
+          mkdir -p "$TEST_DIR/data"
+
+          cp m1_analyse_autonome.py "$TEST_DIR/"
+
+          cp data/collecte_m1_pmu.json \
+            "$TEST_DIR/data/collecte_m1_pmu.json"
+
+          echo "Copie isolee preparee"
+
+      - name: "Executer la preanalyse isolee"
         id: preanalyse
         if: steps.collecte.outputs.pret == 'true'
         run: |
           set -euo pipefail
+
+          cd "$RUNNER_TEMP/m1-isole"
+
           python m1_analyse_autonome.py \
             --source data/collecte_m1_pmu.json \
-            --output /tmp/x1000-m1-rapports/propositions.json
+            --output \
+              "$RUNNER_TEMP/m1-rapports/propositions.json"
+
+      - name: "Verifier les propositions M1"
+        if: steps.preanalyse.outcome == 'success'
+        run: |
+          set -euo pipefail
+
           python - <<'PY'
           import datetime as dt
           import json
+          import os
           from pathlib import Path
-          from zoneinfo import ZoneInfo
-          source = json.loads(Path('data/collecte_m1_pmu.json').read_text(encoding='utf-8'))
-          report = json.loads(Path('/tmp/x1000-m1-rapports/propositions.json').read_text(encoding='utf-8'))
-          if not isinstance(report, dict) or report.get('moteur') != 'M1' or report.get('statut') != 'PREPUBLICATION' or report.get('aucune_modification_figes') is not True or report.get('validation_sportive_humaine') is not False:
-              raise SystemExit('Rapport non conforme')
-          proposals = report.get('propositions')
-          if not isinstance(proposals, list) or type(report.get('nombre_propositions')) is not int or report['nombre_propositions'] != len(proposals):
-              raise SystemExit('Compteur propositions invalide')
-          races = {c['id']: c for c in source['courses']}
+
+          root = Path(os.environ["RUNNER_TEMP"])
+
+          source = json.loads(
+              (
+                  root / "m1-isole/data/"
+                  "collecte_m1_pmu.json"
+              ).read_text(encoding="utf-8")
+          )
+
+          report = json.loads(
+              (
+                  root / "m1-rapports/propositions.json"
+              ).read_text(encoding="utf-8")
+          )
+
+          if (
+              not isinstance(report, dict)
+              or report.get("moteur") != "M1"
+              or report.get("statut")
+              != "PREPUBLICATION"
+              or report.get(
+                  "aucune_modification_figes"
+              ) is not True
+              or report.get(
+                  "validation_sportive_humaine"
+              ) is not False
+          ):
+              raise ValueError(
+                  "Rapport M1 non conforme"
+              )
+
+          proposals = report.get("propositions")
+
+          if (
+              not isinstance(proposals, list)
+              or type(
+                  report.get("nombre_propositions")
+              ) is not int
+              or report["nombre_propositions"]
+              != len(proposals)
+          ):
+              raise ValueError(
+                  "Compteur propositions invalide"
+              )
+
+          races = {
+              c["id"]: c
+              for c in source["courses"]
+          }
+
+          generated = dt.datetime.fromisoformat(
+              report["genere_a"].replace(
+                  "Z", "+00:00"
+              )
+          )
+
+          if (
+              generated.tzinfo is None
+              or generated.utcoffset() is None
+          ):
+              raise ValueError(
+                  "Generation sans fuseau"
+              )
+
           ids = set()
-          generated = dt.datetime.fromisoformat(report['genere_a'].replace('Z', '+00:00'))
-          if generated.tzinfo is None or generated.utcoffset() is None:
-              raise SystemExit('Generation sans fuseau')
+
           for p in proposals:
-              if not isinstance(p, dict) or p.get('moteur') != 'M1' or p.get('statut') != 'PROPOSITION_NON_VALIDEE':
-                  raise SystemExit('Proposition invalide')
-              if p.get('fige') is not False or p.get('publication_officielle') is not False or p.get('pari_envisage') is not None:
-                  raise SystemExit('Publication ou pari interdit')
-              cid = p.get('course_id')
-              if not isinstance(cid, str) or cid in ids or cid not in races:
-                  raise SystemExit('Course absente ou dupliquee')
+              if (
+                  not isinstance(p, dict)
+                  or p.get("moteur") != "M1"
+                  or p.get("statut")
+                  != "PROPOSITION_NON_VALIDEE"
+              ):
+                  raise ValueError(
+                      "Proposition invalide"
+                  )
+
+              if (
+                  p.get("fige") is not False
+                  or p.get(
+                      "publication_officielle"
+                  ) is not False
+                  or p.get("pari_envisage")
+                  is not None
+              ):
+                  raise ValueError(
+                      "Publication interdite"
+                  )
+
+              cid = p.get("course_id")
+
+              if (
+                  not isinstance(cid, str)
+                  or cid in ids
+                  or cid not in races
+              ):
+                  raise ValueError(
+                      "Course absente ou dupliquee"
+                  )
+
               ids.add(cid)
+
               course = races[cid]
-              eligible = {h['numero'] for h in course['partants'] if h['non_partant'] is False}
-              ranking = p.get('classement')
-              if not isinstance(ranking, list) or len(ranking) != 5 or any(type(n) is not int or n <= 0 for n in ranking) or len(set(ranking)) != 5 or not set(ranking).issubset(eligible):
-                  raise SystemExit('Classement invalide ou non-partant : ' + cid)
-              depart = dt.datetime.fromisoformat(course['depart'].replace('Z', '+00:00'))
-              if depart.tzinfo is None or generated >= depart - dt.timedelta(minutes=5):
-                  raise SystemExit('Proposition trop proche du depart : ' + cid)
-          print('Propositions controlees :', len(proposals))
+
+              eligible = {
+                  h["numero"]
+                  for h in course["partants"]
+                  if h["non_partant"] is False
+              }
+
+              ranking = p.get("classement")
+
+              if (
+                  not isinstance(ranking, list)
+                  or len(ranking) != 5
+                  or any(
+                      type(n) is not int or n <= 0
+                      for n in ranking
+                  )
+                  or len(set(ranking)) != 5
+                  or not set(ranking).issubset(
+                      eligible
+                  )
+              ):
+                  raise ValueError(
+                      "Classement invalide : " + cid
+                  )
+
+              depart = dt.datetime.fromisoformat(
+                  course["depart"].replace(
+                      "Z", "+00:00"
+                  )
+              )
+
+              if (
+                  depart.tzinfo is None
+                  or depart.utcoffset() is None
+                  or generated >= depart -
+                  dt.timedelta(minutes=5)
+              ):
+                  raise ValueError(
+                      "Proposition tardive : " + cid
+                  )
+
+          print(
+              "Propositions controlees :",
+              len(proposals)
+          )
+          print("Aucune publication officielle")
           PY
 
       - name: "Verifier les fichiers proteges"
@@ -223,23 +661,63 @@ jobs:
         if: always()
         run: |
           set -euo pipefail
+
           python - <<'PY'
-          import hashlib, json, subprocess
+          import hashlib
+          import json
+          import os
+          import subprocess
           from pathlib import Path
-          path = Path('/tmp/m1-snapshot.json')
+
+          root = Path(os.environ["RUNNER_TEMP"])
+          path = root / "m1-snapshot.json"
+
           if not path.is_file():
-              raise SystemExit('Empreintes initiales absentes')
-          initial = json.loads(path.read_text(encoding='utf-8'))
-          current = [p.decode('utf-8') for p in subprocess.check_output(['git', 'ls-files', '-z']).split(b'\0') if p]
+              raise SystemExit(
+                  "Empreintes initiales absentes"
+              )
+
+          initial = json.loads(
+              path.read_text(encoding="utf-8")
+          )
+
+          current = [
+              p.decode("utf-8")
+              for p in subprocess.check_output(
+                  ["git", "ls-files", "-z"]
+              ).split(b"\0") if p
+          ]
+
           if set(current) != set(initial):
-              raise SystemExit('Liste des fichiers suivis modifiee')
+              raise SystemExit(
+                  "Liste des fichiers modifiee"
+              )
+
           for name, digest in initial.items():
               p = Path(name)
-              if not p.is_file() or p.is_symlink() or hashlib.sha256(p.read_bytes()).hexdigest() != digest:
-                  raise SystemExit('Fichier protege modifie : ' + name)
-          if subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=all']):
-              raise SystemExit('Depot modifie ou fichier non suivi')
-          print('Depot inchange : SHA256 OK')
+
+              if (
+                  not p.is_file()
+                  or p.is_symlink()
+                  or hashlib.sha256(
+                      p.read_bytes()
+                  ).hexdigest() != digest
+              ):
+                  raise SystemExit(
+                      "Fichier modifie : " + name
+                  )
+
+          if subprocess.check_output(
+              [
+                  "git", "status", "--porcelain",
+                  "--untracked-files=all"
+              ]
+          ):
+              raise SystemExit(
+                  "Depot modifie"
+              )
+
+          print("SHA256 : depot intact")
           PY
 
       - name: "Archiver les rapports"
@@ -247,23 +725,25 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: m1-preanalyse-diagnostic
-          path: /tmp/x1000-m1-rapports/*.json
+          path: ${{ runner.temp }}/m1-rapports/*.json
           if-no-files-found: warn
           retention-days: 7
 
       - name: "Rapport final"
         if: always()
         env:
+          JOB_STATUS: ${{ job.status }}
           COLLECTE_STATUT: ${{ steps.collecte.outputs.statut }}
           PREANALYSE: ${{ steps.preanalyse.outcome }}
           PROTECTION: ${{ steps.protection.outcome }}
         run: |
           {
-            echo '## X1000 M1 - Analyse securisee V1.5'
+            echo '## X1000 M1 - Analyse securisee V1.6'
+            echo "- Job : ${JOB_STATUS}"
             echo "- Collecte : ${COLLECTE_STATUT:-NON_EXECUTEE}"
             echo "- Preanalyse : ${PREANALYSE:-NON_EXECUTEE}"
             echo "- Protection SHA256 : ${PROTECTION:-NON_EXECUTEE}"
-            echo '- Aucune publication officielle, aucun push, aucun FIGE modifie'
-            echo '- Si collecte perimee : diagnostic seulement'
-            echo '- Rapports : artefact GitHub Actions'
+            echo '- Aucune publication officielle'
+            echo '- Aucun push ni FIGE modifie'
+            echo '- Collecte perimee : diagnostic uniquement'
           } >> "$GITHUB_STEP_SUMMARY"
