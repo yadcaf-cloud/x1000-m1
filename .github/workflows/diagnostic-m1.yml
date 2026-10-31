@@ -1,4 +1,4 @@
-name: "X1000 M1 - Pipeline securise V3.3"
+name: "X1000 M1 - Pipeline securise V3.4"
 
 on:
   workflow_dispatch:
@@ -12,7 +12,10 @@ concurrency:
 
 jobs:
   validation:
-    name: "M1 - Collecte, analyse et controles"
+    name: "M1 - Validation isolee"
+    if: >-
+      github.event_name == 'workflow_dispatch' &&
+      github.ref == 'refs/heads/feature/m1-pipeline-securise-20261031'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
 
@@ -27,20 +30,7 @@ jobs:
       M1_AUTO_ANALYZE: "false"
 
     steps:
-      - name: "Verifier la branche autorisee"
-        env:
-          BRANCH: ${{ github.ref_name }}
-          EVENT: ${{ github.event_name }}
-        run: |
-          set -euo pipefail
-
-          test "$EVENT" = "workflow_dispatch"
-          test "$BRANCH" = \
-            "feature/m1-pipeline-securise-20261031"
-
-          echo "Branche de test autorisee"
-
-      - name: "Recuperer le depot"
+      - name: "Recuperer la branche de test"
         uses: actions/checkout@v4
         with:
           persist-credentials: false
@@ -51,17 +41,24 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: "Verifier les fichiers M1"
+      - name: "Verifier les fichiers requis"
         run: |
           set -euo pipefail
 
-          test -f m1.py
-          test -f pmu_engine.py
-          test -f m1_analyse_autonome.py
-          test -f data/courses.json
-          test -f data/collecte_m1_pmu.json
+          for f in \
+            m1.py \
+            pmu_engine.py \
+            m1_analyse_autonome.py \
+            data/courses.json \
+            data/collecte_m1_pmu.json
+          do
+            test -f "$f" || {
+              echo "::error::Fichier absent : $f"
+              exit 1
+            }
+          done
 
-          echo "Fichiers requis presents"
+          echo "Fichiers M1 presents"
 
       - name: "Verifier la syntaxe Python"
         run: |
@@ -71,13 +68,11 @@ jobs:
           import ast
           from pathlib import Path
 
-          fichiers = [
+          for nom in (
               "m1.py",
               "pmu_engine.py",
               "m1_analyse_autonome.py"
-          ]
-
-          for nom in fichiers:
+          ):
               source = Path(nom).read_text(
                   encoding="utf-8-sig"
               )
@@ -85,7 +80,7 @@ jobs:
               print("Syntaxe OK :", nom)
           PY
 
-      - name: "Controler les JSON existants"
+      - name: "Verifier les JSON existants"
         run: |
           set -euo pipefail
 
@@ -94,43 +89,43 @@ jobs:
           from pathlib import Path
 
           def paires(items):
-              resultat = {}
-              for cle, valeur in items:
-                  if cle in resultat:
+              result = {}
+              for key, value in items:
+                  if key in result:
                       raise ValueError(
-                          "Cle dupliquee : " + cle
+                          "Cle dupliquee : " + key
                       )
-                  resultat[cle] = valeur
-              return resultat
+                  result[key] = value
+              return result
 
-          def constante(valeur):
+          def constante(value):
               raise ValueError(
-                  "Constante interdite : " + valeur
+                  "Constante interdite : " + value
               )
 
-          def lire(nom):
+          def lire(path):
               return json.loads(
-                  Path(nom).read_text(
+                  Path(path).read_text(
                       encoding="utf-8-sig"
                   ),
                   object_pairs_hook=paires,
                   parse_constant=constante
               )
 
-          courses = lire("data/courses.json")
+          publication = lire("data/courses.json")
 
-          if isinstance(courses, dict):
-              liste = courses.get("courses")
-          elif isinstance(courses, list):
-              liste = courses
+          if isinstance(publication, dict):
+              courses = publication.get("courses")
+          elif isinstance(publication, list):
+              courses = publication
           else:
               raise ValueError(
-                  "Structure courses.json invalide"
+                  "Structure publication invalide"
               )
 
-          if not isinstance(liste, list):
+          if not isinstance(courses, list):
               raise ValueError(
-                  "courses : liste attendue"
+                  "courses.json : liste attendue"
               )
 
           collecte = lire(
@@ -139,52 +134,59 @@ jobs:
 
           if not isinstance(collecte, dict):
               raise ValueError(
-                  "Collecte PMU : objet attendu"
+                  "Collecte : objet attendu"
               )
 
-          if not isinstance(
-              collecte.get("courses"), list
-          ):
+          source = collecte.get("courses")
+
+          if not isinstance(source, list):
               raise ValueError(
-                  "Collecte PMU : courses invalides"
+                  "Collecte : courses invalides"
               )
 
-          print("JSON valides")
-          print("Courses publication :", len(liste))
-          print(
-              "Courses collecte :",
-              len(collecte["courses"])
-          )
+          print("Publication :", len(courses))
+          print("Collecte :", len(source))
+
+          if source and not courses:
+              print(
+                  "::warning::Collecte presente "
+                  "mais publication M1 vide"
+              )
+
+          print("Structures JSON valides")
           PY
 
-      - name: "Executer les autotests"
+      - name: "Autotests et archives M1"
         run: |
           set -euo pipefail
 
           python pmu_engine.py --self-test
           python m1_analyse_autonome.py --self-test
+          python m1.py --self-test
+          python m1.py --verify-archives
 
-      - name: "Preparer une copie isolee"
+          echo "Autotests termines"
+
+      - name: "Creer environnement isole"
         run: |
           set -euo pipefail
 
-          mkdir -p "$RUNNER_TEMP/x1000-m1-test"
-          mkdir -p "$RUNNER_TEMP/x1000-m1-test/data"
+          TEST_DIR="$RUNNER_TEMP/x1000-m1-test"
 
-          cp pmu_engine.py \
-            "$RUNNER_TEMP/x1000-m1-test/"
+          mkdir -p "$TEST_DIR/data"
 
-          cp m1_analyse_autonome.py \
-            "$RUNNER_TEMP/x1000-m1-test/"
+          cp pmu_engine.py "$TEST_DIR/"
+          cp m1_analyse_autonome.py "$TEST_DIR/"
 
-          cp data/collecte_m1_pmu.json \
-            "$RUNNER_TEMP/x1000-m1-test/data/"
+          # Ne pas copier une ancienne collecte.
+          # La collecte doit etre creee par le test.
+          test ! -e \
+            "$TEST_DIR/data/collecte_m1_pmu.json"
 
-          echo "Copie temporaire preparee"
+          echo "Environnement isole pret"
 
-      - name: "Collecte PMU en isolation"
+      - name: "Collecter PMU dans la copie"
         id: collecte
-        continue-on-error: true
         run: |
           set -euo pipefail
 
@@ -192,50 +194,209 @@ jobs:
 
           python pmu_engine.py
 
-      - name: "Verifier la collecte temporaire"
-        if: always()
+          test -f data/collecte_m1_pmu.json
+          test -f data/diagnostic_collecte_m1.json
+
+          echo "Collecte terminee"
+
+      - name: "Verifier collecte fraiche"
         run: |
           set -euo pipefail
 
           python - <<'PY'
+          import datetime as dt
           import json
           import os
           from pathlib import Path
+          from zoneinfo import ZoneInfo
 
-          dossier = (
+          root = (
               Path(os.environ["RUNNER_TEMP"])
               / "x1000-m1-test"
               / "data"
           )
 
-          chemin = dossier / "collecte_m1_pmu.json"
+          def lire(nom):
+              def pairs(items):
+                  result = {}
+                  for k, v in items:
+                      if k in result:
+                          raise ValueError(
+                              "Cle dupliquee : " + k
+                          )
+                      result[k] = v
+                  return result
 
-          if not chemin.is_file():
-              raise SystemExit(
-                  "Collecte temporaire absente"
+              def reject(value):
+                  raise ValueError(
+                      "Constante invalide : " + value
+                  )
+
+              return json.loads(
+                  (root / nom).read_text(
+                      encoding="utf-8-sig"
+                  ),
+                  object_pairs_hook=pairs,
+                  parse_constant=reject
               )
 
-          contenu = json.loads(
-              chemin.read_text(encoding="utf-8")
+          collecte = lire("collecte_m1_pmu.json")
+          diagnostic = lire(
+              "diagnostic_collecte_m1.json"
           )
 
-          if not isinstance(contenu, dict):
-              raise SystemExit(
-                  "Structure collecte invalide"
+          if not isinstance(collecte, dict):
+              raise ValueError(
+                  "Collecte non structuree"
               )
 
-          courses = contenu.get("courses")
-
-          if not isinstance(courses, list):
-              raise SystemExit(
-                  "courses : liste attendue"
+          if not isinstance(diagnostic, dict):
+              raise ValueError(
+                  "Diagnostic non structure"
               )
 
-          print("Courses disponibles :", len(courses))
-          print("Structure temporaire valide")
+          if (
+              collecte.get("statut") != "OK"
+              or diagnostic.get("statut") != "OK"
+          ):
+              raise ValueError(
+                  "Collecte PMU non validee"
+              )
+
+          if (
+              collecte.get("erreurs") != []
+              or diagnostic.get("erreurs") != []
+          ):
+              raise ValueError(
+                  "Erreurs PMU presentes"
+              )
+
+          if (
+              collecte.get("collecte_a")
+              != diagnostic.get("collecte_a")
+          ):
+              raise ValueError(
+                  "Horodatages differents"
+              )
+
+          paris = ZoneInfo("Europe/Paris")
+          now = dt.datetime.now(paris)
+
+          stamp = dt.datetime.fromisoformat(
+              collecte["collecte_a"].replace(
+                  "Z", "+00:00"
+              )
+          )
+
+          if stamp.tzinfo is None:
+              raise ValueError(
+                  "Fuseau horaire absent"
+              )
+
+          age = (
+              now - stamp.astimezone(paris)
+          ).total_seconds()
+
+          if not 0 <= age <= 1800:
+              raise ValueError(
+                  "Collecte ancienne ou future"
+              )
+
+          if collecte.get("date") != (
+              now.date().isoformat()
+          ):
+              raise ValueError(
+                  "Date Paris incoherente"
+              )
+
+          if diagnostic.get("date") != (
+              collecte.get("date")
+          ):
+              raise ValueError(
+                  "Dates collecte et diagnostic "
+                  "differentes"
+              )
+
+          courses = collecte.get("courses")
+
+          if (
+              not isinstance(courses, list)
+              or not courses
+          ):
+              raise ValueError(
+                  "Aucune course exploitable"
+              )
+
+          ids = set()
+
+          for course in courses:
+              if not isinstance(course, dict):
+                  raise ValueError(
+                      "Course non structuree"
+                  )
+
+              cid = course.get("id")
+
+              if (
+                  not isinstance(cid, str)
+                  or cid in ids
+              ):
+                  raise ValueError(
+                      "Identifiant invalide ou double"
+                  )
+
+              ids.add(cid)
+
+              if (
+                  course.get(
+                      "localisation_france_verifiee"
+                  ) is not True
+              ):
+                  raise ValueError(
+                      "France non verifiee : " + cid
+                  )
+
+              partants = course.get("partants")
+
+              if not isinstance(partants, list):
+                  raise ValueError(
+                      "Partants invalides : " + cid
+                  )
+
+              numeros = set()
+
+              for cheval in partants:
+                  if not isinstance(cheval, dict):
+                      raise ValueError(
+                          "Cheval non structure"
+                      )
+
+                  numero = cheval.get("numero")
+
+                  if (
+                      type(numero) is not int
+                      or numero <= 0
+                      or numero in numeros
+                  ):
+                      raise ValueError(
+                          "Numero invalide : " + cid
+                      )
+
+                  numeros.add(numero)
+
+                  if type(
+                      cheval.get("non_partant")
+                  ) is not bool:
+                      raise ValueError(
+                          "Statut NP invalide"
+                      )
+
+          print("Collecte fraiche : OK")
+          print("Courses verifiees :", len(courses))
+          print("Age secondes :", round(age))
           PY
 
-      - name: "Preanalyse M1 isolee"
+      - name: "Preanalyse M1 independante"
         run: |
           set -euo pipefail
 
@@ -245,7 +406,7 @@ jobs:
             --source data/collecte_m1_pmu.json \
             --output "$RUNNER_TEMP/m1-propositions.json"
 
-      - name: "Verifier les propositions M1"
+      - name: "Verifier rapport de preanalyse"
         run: |
           set -euo pipefail
 
@@ -254,56 +415,73 @@ jobs:
           import os
           from pathlib import Path
 
-          chemin = (
+          path = (
               Path(os.environ["RUNNER_TEMP"])
               / "m1-propositions.json"
           )
 
-          rapport = json.loads(
-              chemin.read_text(encoding="utf-8")
+          if not path.is_file():
+              raise ValueError(
+                  "Rapport M1 absent"
+              )
+
+          report = json.loads(
+              path.read_text(encoding="utf-8")
           )
 
-          if not isinstance(rapport, dict):
-              raise ValueError("Rapport M1 invalide")
+          if not isinstance(report, dict):
+              raise ValueError(
+                  "Rapport M1 invalide"
+              )
 
-          nombre = rapport.get(
+          count = report.get(
               "nombre_propositions"
           )
 
-          if type(nombre) is not int or nombre < 0:
+          if (
+              type(count) is not int
+              or count < 0
+          ):
               raise ValueError(
-                  "Nombre de propositions invalide"
+                  "Compteur M1 invalide"
               )
 
-          print("Propositions M1 :", nombre)
-          print("Aucune validation officielle")
-          print("Aucun FIGE cree")
+          print("Propositions M1 :", count)
+          print("Preanalyse uniquement")
+          print("Aucun FIGE officiel")
+          print("Aucun pronostic publie")
           PY
 
-      - name: "Verifier les fichiers suivis"
+      - name: "Verifier integrite du depot"
         if: always()
         run: |
           set -euo pipefail
 
-          if test -n "$(git status --porcelain)"; then
-            echo "Modification detectee :"
+          if test -n "$(
+            git status --porcelain \
+              --untracked-files=all
+          )"; then
+            echo "::error::Depot modifie"
             git status --short
             exit 1
           fi
 
-          echo "Depot suivi intact"
+          echo "Depot intact"
 
-      - name: "Bilan de validation"
+      - name: "Bilan final securise"
         if: always()
         env:
-          COLLECTE_RESULT: ${{ steps.collecte.outcome }}
+          JOB_STATUS: ${{ job.status }}
+          COLLECTE_STATUS: ${{ steps.collecte.outcome }}
         run: |
           echo "================================"
-          echo "X1000 M1 - BILAN SECURISE"
+          echo "X1000 M1 - PIPELINE V3.4"
           echo "================================"
-          echo "Collecte : $COLLECTE_RESULT"
+          echo "Job : $JOB_STATUS"
+          echo "Collecte : $COLLECTE_STATUS"
           echo "Aucun push"
           echo "Aucune publication"
-          echo "Aucun FIGE officiel"
-          echo "Aucune modification M2-M5"
+          echo "Aucun FIGE cree"
+          echo "Aucun pronostic modifie"
+          echo "M2-M5 non touches"
           echo "================================"
