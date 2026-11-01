@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07131f">
-<meta name="description" content="X1000 M1 — Tableau de bord hippique indépendant">
+<meta name="description" content="X1000 M1 — Intelligence hippique indépendante">
 <title>🇸🇳🧠🔥 X1000 M1 — Premium</title>
+
 <style>
 :root{
  color-scheme:dark;
@@ -24,8 +25,7 @@
 html{scroll-behavior:smooth}
 body{
  margin:0;
- background:radial-gradient(ellipse at 85% 0%,#17483e,transparent 38%),
- linear-gradient(160deg,#07131f,#0b1c2b);
+ background:radial-gradient(ellipse at 85% 0%,#17483e,transparent 38%),linear-gradient(160deg,#07131f,#0b1c2b);
  color:var(--text);
  font:15px/1.55 system-ui,Arial,sans-serif
 }
@@ -51,16 +51,10 @@ nav a{
 }
 nav a:hover{color:var(--gold);border-color:var(--gold)}
 .hero{padding:30px 0 20px}
-.hero h1{
- font-size:clamp(1.8rem,5vw,3rem);
- line-height:1.2;margin:10px 0
-}
+.hero h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.2;margin:10px 0}
 .hero h1 span{color:var(--gold)}
 .hero p{max-width:780px;color:var(--muted)}
-.toolbar{
- display:flex;flex-wrap:wrap;
- align-items:center;gap:12px;margin:20px 0
-}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:20px 0}
 button{
  background:linear-gradient(135deg,#21876b,#145541);
  border:1px solid #419c7c;color:white;
@@ -74,8 +68,7 @@ button:disabled{opacity:.5;cursor:wait}
 .warn{color:var(--gold)}
 .bad{color:var(--red)}
 .status{
- background:var(--panel);
- border:1px solid var(--border);
+ background:var(--panel);border:1px solid var(--border);
  border-left:4px solid var(--gold);
  border-radius:12px;padding:15px;margin-bottom:20px
 }
@@ -90,73 +83,70 @@ button:disabled{opacity:.5;cursor:wait}
  background:linear-gradient(145deg,#173344,#102637);
  border:1px solid var(--border);
  border-radius:16px;padding:18px 14px;
- box-shadow:0 12px 30px #0003;
  min-width:0
 }
 .card-label{font-size:.82rem;color:var(--muted)}
-.count{
- font-size:2rem;font-weight:900;
- color:var(--green);margin-top:8px
-}
+.count{font-size:2rem;font-weight:900;color:var(--green);margin-top:8px}
 .card:nth-child(4) .count,
 .card:nth-child(5) .count{color:var(--gold)}
-section{
+main section{
  background:linear-gradient(145deg,#112738,#0d202e);
  border:1px solid var(--border);
  border-radius:17px;padding:21px;
- margin-bottom:18px;
- scroll-margin-top:135px
+ margin-bottom:18px;scroll-margin-top:145px
 }
 h2{color:var(--gold);font-size:1.2rem;margin:0 0 12px}
-section p{color:var(--muted)}
+main section p{color:var(--muted)}
 .badge{
- display:inline-block;
- background:#153d35;color:var(--green);
- border:1px solid #386b5c;
- padding:4px 10px;border-radius:20px;
- font-size:.76rem;margin-bottom:12px
+ display:inline-block;background:#153d35;color:var(--green);
+ border:1px solid #386b5c;padding:4px 10px;
+ border-radius:20px;font-size:.76rem;margin-bottom:12px
 }
 input,select{
  width:100%;max-width:570px;padding:12px;
  background:#091d2a;border:1px solid var(--border);
  color:white;border-radius:10px;margin:8px 0 16px
 }
-.scroll{
- overflow-x:auto;
- border:1px solid var(--border);
- border-radius:11px
-}
-table{
- width:100%;min-width:700px;
- border-collapse:collapse;font-size:.87rem
-}
-th,td{
- text-align:left;padding:12px;
- border-bottom:1px solid #2a4655;
- vertical-align:top
-}
+.scroll{overflow-x:auto;border:1px solid var(--border);border-radius:11px}
+table{width:100%;min-width:700px;border-collapse:collapse;font-size:.87rem}
+th,td{text-align:left;padding:12px;border-bottom:1px solid #2a4655;vertical-align:top}
 th{background:#1b3949;color:var(--gold)}
 tbody tr:nth-child(even){background:#ffffff06}
-tbody tr:hover{background:#ffffff0d}
-.empty{
- padding:22px;color:var(--muted);
- text-align:center
-}
+.empty{padding:22px;color:var(--muted);text-align:center}
 .diagnostic-line{
- background:#0b2030;
- border:1px solid var(--border);
- border-radius:9px;
- padding:12px;margin-bottom:9px;
+ background:#0b2030;border:1px solid var(--border);
+ border-radius:9px;padding:12px;margin-bottom:9px;
  overflow-wrap:anywhere
 }
-.diagnostic-line strong{
- display:block;margin-bottom:4px
+.diagnostic-line strong{display:block;margin-bottom:4px}
+#mission-m1{border-top:3px solid var(--gold)}
+#mission-m1 h3{color:var(--green)}
+#mission-m1 details{
+ background:var(--panel);border:1px solid var(--border);
+ border-radius:12px;margin:10px 0;padding:13px 15px
 }
-footer{
- text-align:center;
- padding:28px 15px;
- color:var(--muted)
+#mission-m1 details[open]{border-color:#456b63}
+#mission-m1 summary{
+ cursor:pointer;color:var(--gold);
+ font-weight:750;line-height:1.5
 }
+#mission-m1 li{margin:7px 0}
+#mission-m1 ol{padding-left:24px}
+.m1-devise{
+ padding:15px;border-left:4px solid var(--green);
+ background:var(--panel2);border-radius:8px;font-weight:650
+}
+.m1-pipeline{
+ padding:15px;background:var(--bg);
+ border:1px solid var(--border);
+ border-radius:10px;overflow-wrap:anywhere;
+ color:var(--blue);font-weight:700;line-height:2
+}
+.m1-note{
+ padding:12px 14px;background:#0b2431;
+ border-left:3px solid var(--blue);border-radius:6px
+}
+footer{text-align:center;padding:28px 15px;color:var(--muted)}
 @media(max-width:1000px){
  .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
@@ -164,16 +154,17 @@ footer{
  .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
  .card{padding:14px 12px}
  .count{font-size:1.8rem}
- section{padding:15px}
+ main section{padding:15px}
  .hero{padding-top:20px}
+ #mission-m1 details{padding:12px}
 }
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
 }
 </style>
 </head>
-<body>
 
+<body>
 <header>
 <div class="container header-inner">
  <div class="brand">🇸🇳🧠🔥 X1000 M1</div>
@@ -186,6 +177,7 @@ footer{
   <a href="#figes">FIGÉs</a>
   <a href="#audits">Audits</a>
   <a href="#diagnostic">Diagnostic</a>
+  <a href="#mission-m1">Mission M1</a>
  </nav>
 </div>
 </header>
@@ -194,62 +186,34 @@ footer{
 
 <div class="hero">
  <div class="badge">M1 INDÉPENDANT · LECTURE SEULE</div>
- <h1>Intelligence hippique<br>
- <span>Tableau de bord Premium</span></h1>
- <p>
- Courses PMU physiquement disputées en France,
- partants, décisions M1, FIGÉs historiques et audits
- uniquement lorsqu'ils sont réellement publiés.
- </p>
+ <h1>Intelligence hippique<br><span>Tableau de bord Premium</span></h1>
+ <p>Courses PMU physiquement disputées en France, partants, décisions M1, FIGÉs historiques et audits uniquement lorsqu'ils sont réellement publiés.</p>
 </div>
 
 <div class="toolbar">
- <span>Heure de Paris :
- <strong class="clock" id="heureParis">—</strong></span>
+ <span>Heure de Paris : <strong class="clock" id="heureParis">—</strong></span>
  <button id="actualiser" type="button">↻ Actualiser</button>
- <span class="muted" id="majAuto">
- Actualisation automatique : 5 minutes
- </span>
+ <span class="muted" id="majAuto">Actualisation automatique : 5 minutes</span>
 </div>
 
-<div id="etatGlobal" class="status warn"
- role="status" aria-live="polite">
+<div id="etatGlobal" class="status warn" role="status" aria-live="polite">
  Chargement des données M1...
 </div>
 
 <div class="cards">
- <div class="card">
-  <div class="card-label">Courses françaises</div>
-  <div class="count" id="nbCourses">—</div>
- </div>
- <div class="card">
-  <div class="card-label">Partants</div>
-  <div class="count" id="nbPartants">—</div>
- </div>
- <div class="card">
-  <div class="card-label">Non-partants</div>
-  <div class="count" id="nbNP">—</div>
- </div>
- <div class="card">
-  <div class="card-label">Décisions M1</div>
-  <div class="count" id="nbDecisions">—</div>
- </div>
- <div class="card">
-  <div class="card-label">FIGÉs publiés</div>
-  <div class="count" id="nbFiges">—</div>
- </div>
- <div class="card">
-  <div class="card-label">Audits</div>
-  <div class="count" id="nbAudits">—</div>
- </div>
+ <div class="card"><div class="card-label">Courses françaises du jour</div><div class="count" id="nbCourses">—</div></div>
+ <div class="card"><div class="card-label">Partants</div><div class="count" id="nbPartants">—</div></div>
+ <div class="card"><div class="card-label">Non-partants</div><div class="count" id="nbNP">—</div></div>
+ <div class="card"><div class="card-label">Décisions M1 publiées</div><div class="count" id="nbDecisions">—</div></div>
+ <div class="card"><div class="card-label">FIGÉs publiés</div><div class="count" id="nbFiges">—</div></div>
+ <div class="card"><div class="card-label">Audits</div><div class="count" id="nbAudits">—</div></div>
 </div>
 
 <section id="courses">
  <h2>Courses françaises publiées</h2>
- <p>Uniquement les courses avec localisation française vérifiée.</p>
+ <p>Courses du jour avec localisation française explicitement vérifiée.</p>
  <label for="rechercheCourses">Rechercher une course</label>
- <input id="rechercheCourses" type="search"
- placeholder="Course ou hippodrome...">
+ <input id="rechercheCourses" type="search" placeholder="Course ou hippodrome...">
  <div class="scroll" id="tableCourses"></div>
 </section>
 
@@ -262,7 +226,7 @@ footer{
 
 <section id="decisions">
  <h2>Tableau indépendant des décisions M1</h2>
- <p>Les collectes et préanalyses ne sont pas des décisions officielles.</p>
+ <p>Les collectes, propositions et préanalyses ne sont pas des décisions officielles.</p>
  <div class="scroll" id="tableDecisions"></div>
 </section>
 
@@ -281,18 +245,165 @@ footer{
 <section id="diagnostic">
  <h2>Diagnostic technique M1</h2>
  <div id="rapportTechnique">Vérification en attente.</div>
- <p>
- GitHub Pages ne lance aucun moteur Python.
- Cette page ne certifie pas indépendamment
- les résultats officiels ni les empreintes SHA256.
- </p>
+ <p>GitHub Pages ne lance aucun moteur Python. Cette page ne certifie pas indépendamment les résultats officiels ni les empreintes SHA256.</p>
+ <p><a href="https://github.com/yadcaf-cloud/x1000-m1/actions" target="_blank" rel="noopener noreferrer">Consulter GitHub Actions M1</a></p>
+</section>
+
+<section id="mission-m1" aria-labelledby="mission-m1-titre">
+<h2 id="mission-m1-titre">🇸🇳🧠🔥 X1000 M1 — Directive suprême</h2>
+<p><strong>AUTONOMIE TOTALE ET RESPONSABILITÉ GÉNÉRALE</strong></p>
+
+<div class="m1-devise">
+Un seul moteur. Toutes les responsabilités.
+Une intelligence hippique indépendante, autonome,
+active et vérifiable.
+</div>
+
+<p>M1 assume toute sa chaîne opérationnelle sans dépendre des moteurs M2, M3, M4 ou M5. Son périmètre concerne exclusivement les courses PMU physiquement disputées en France.</p>
+
+<details open>
+<summary>1. Les 25 responsabilités de M1</summary>
+<ol>
+<li>Recherche automatique des courses PMU.</li>
+<li>Collecte des données hippiques réelles.</li>
+<li>Vérification des courses disputées en France.</li>
+<li>Identification des partants et non-partants.</li>
+<li>Sélection intelligente et souple des courses.</li>
+<li>Analyse approfondie de chaque cheval.</li>
+<li>Détection des favoris fragiles ou trompeurs.</li>
+<li>Recherche des chevaux cachés et négligés.</li>
+<li>Évaluation des chances de victoire et de placement.</li>
+<li>Production des pronostics indépendants M1.</li>
+<li>Classement prévisionnel des cinq premiers.</li>
+<li>Choix autonome du pari pertinent.</li>
+<li>Qualification et validation sportive.</li>
+<li>Publication des analyses vérifiées.</li>
+<li>Création des procès-verbaux de décision.</li>
+<li>FIGÉ des décisions avant le départ officiel.</li>
+<li>Réévaluation justifiée avant le départ.</li>
+<li>Conservation des archives et historiques.</li>
+<li>Récupération des résultats officiels.</li>
+<li>Comparaison des prévisions aux arrivées réelles.</li>
+<li>Réalisation des audits après course.</li>
+<li>Analyse des erreurs et amélioration des méthodes.</li>
+<li>Surveillance technique des fichiers et publications.</li>
+<li>Actualisation automatique du site X1000 M1.</li>
+<li>Détection et signalement des anomalies.</li>
+</ol>
+<p>En cas d'échec, M1 doit identifier la cause, tenter une récupération sécurisée et signaler les opérations impossibles.</p>
+</details>
+
+<details>
+<summary>2. Recherche large et sélection souple</summary>
+<p>M1 recherche largement les courses françaises. La sélection ne doit jamais être excessivement sévère. Il ne doit pas attendre des conditions parfaites pour étudier une course disposant d'informations sportives suffisantes et vérifiables.</p>
+<p>États distincts : découverte, vérifiée en France, analysable, préqualifiée, qualifiée, pronostic publié, décision FIGÉE, terminée et auditée.</p>
+<p>Une course qualifiée n'est pas automatiquement un pronostic validé. Une course non retenue peut être réexaminée avant son départ.</p>
+</details>
+
+<details>
+<summary>3. Analyse approfondie cheval par cheval</summary>
+<p>M1 étudie chaque cheval individuellement : forme, musique, régularité, distance, parcours, vitesse, endurance, spécialité, terrain, jockey ou driver, entraîneur, entourage, gains, opposition et risques de contre-performance.</p>
+<p>Les nouvelles informations avant le départ doivent être prises en compte lorsqu'elles sont vérifiées.</p>
+<p><strong>Aucune donnée manquante ne doit être inventée.</strong></p>
+</details>
+
+<details>
+<summary>4. Faux favoris et chevaux cachés</summary>
+<p>Ne jamais choisir un cheval uniquement parce qu'il est favori. Comprendre pourquoi il peut gagner, pourquoi il peut perdre et quel adversaire possède les qualités pour le battre.</p>
+<p>Les chevaux négligés doivent être examinés avec la même rigueur que les favoris.</p>
+</details>
+
+<details>
+<summary>5. Décisions sportives indépendantes</summary>
+<p>M1 détermine son gagnant espéré, son meilleur placé, ses cinq premières positions prévues, ses principaux adversaires, son niveau de confiance justifié, ses risques et les raisons sportives de son choix.</p>
+<p>Aucun classement fictif ni décision copiée automatiquement d'un autre moteur.</p>
+<p>Si les informations sont insuffisantes, la décision doit rester explicitement non validée.</p>
+</details>
+
+<details>
+<summary>6. Choix autonome des paris</summary>
+<p>M1 examine les formules de pari pertinentes selon les règles applicables et son analyse sportive. Il peut décider de ne retenir aucun pari.</p>
+<p>Aucune mise d'argent réelle automatique. Aucun pronostic ne garantit un gain.</p>
+</details>
+
+<details>
+<summary>7. FIGÉ sécurisé avant le départ</summary>
+<ol>
+<li>Vérifier l'heure officielle en Europe/Paris.</li>
+<li>Contrôler les non-partants connus.</li>
+<li>Finaliser l'analyse sportive.</li>
+<li>Horodater la décision.</li>
+<li>Créer un procès-verbal vérifiable.</li>
+<li>FIGER uniquement une décision valide.</li>
+<li>Conserver l'historique de toutes les versions.</li>
+</ol>
+<p><strong>Aucun FIGÉ vide, fictif ou rétroactif.</strong></p>
+<p>Toute révision justifiée doit intervenir avant le départ officiel et conserver la version précédente. Après le départ, les décisions historiques restent immuables.</p>
+</details>
+
+<details>
+<summary>8. Audits automatiques après course</summary>
+<p>M1 compare ses décisions enregistrées avant le départ aux résultats officiels disponibles. Il évalue le gagnant, les placés, les cinq premiers, l'ordre prévu, les paris et les erreurs.</p>
+<p>Aucune arrivée officielle inventée. Aucune réussite attribuée sans preuve.</p>
+</details>
+
+<details>
+<summary>9. Apprentissage et amélioration continue</summary>
+<p>M1 exploite les audits pour identifier les erreurs récurrentes et améliorer ses futures analyses. Les changements doivent être testés sans utiliser d'informations futures.</p>
+<p>Les anciennes décisions et leurs archives restent immuables.</p>
+</details>
+
+<details open>
+<summary>10. Autonomie technique et actualisation</summary>
+<div class="m1-pipeline">
+COLLECTE → VÉRIFICATION → SÉLECTION →
+ANALYSE → DÉCISION → PUBLICATION →
+FIGÉ → RÉSULTATS → AUDIT
+</div>
+<p>Objectif : fonctionnement automatique avec contrôles toutes les cinq à dix minutes lorsque l'infrastructure le permet.</p>
+<p>Les retards d'exécution doivent être détectés et signalés.</p>
+<p class="m1-note">Le rafraîchissement de cette page ne lance pas les scripts Python et ne prouve pas qu'une analyse a été effectuée.</p>
+</details>
+
+<details>
+<summary>11. Sécurité, intégrité et protection</summary>
+<p>Préserver le tableau officiel M1, les décisions, les FIGÉs historiques, les procès-verbaux, les audits, les résultats officiels et les fichiers des autres moteurs.</p>
+<p>Aucun écrasement historique, aucune suppression de protection et aucune validation artificielle.</p>
+<p>Les publications doivent être cohérentes et protégées contre les écrasements accidentels.</p>
+</details>
+
+<details>
+<summary>12. Surveillance du site et diagnostic</summary>
+<p>Le diagnostic doit distinguer clairement : collecte réussie, importation des données, analyse exécutée, décision produite, publication et FIGÉ.</p>
+<p>Si les décisions restent à zéro, rechercher : erreurs JSON, données non importées, analyse non exécutée, erreur Python, course non qualifiée ou publication absente.</p>
+<p>Ne jamais afficher un succès technique sans preuve correspondante.</p>
+</details>
+
+<details>
+<summary>13. Obligation de travail effectif</summary>
+<p>Toute course collectée doit pouvoir être évaluée. Toute course analysable doit pouvoir être étudiée.</p>
+<p>Toute analyse achevée doit produire une conclusion explicite, y compris une décision de ne pas parier.</p>
+<p>Toute décision validée doit pouvoir être publiée et FIGÉE avant le départ. Toute course terminée doit pouvoir être auditée après récupération des résultats.</p>
+<p>Chaque impossibilité doit être documentée avec sa cause réelle.</p>
+</details>
+
+<h3>Directive finale — M1 responsable de sa chaîne</h3>
+<p><strong>M1 est responsable de la recherche, de la collecte, de la vérification, de la sélection, de l'analyse, de la prédiction, de la décision, du choix des paris, de la publication, du FIGÉ, de la surveillance, des audits et de l'amélioration continue.</strong></p>
+
+<div class="m1-devise">
+🇸🇳🧠🔥 Un moteur. Toutes les responsabilités.
+Une analyse indépendante. Une décision avant le départ.
+Des résultats vérifiés.
+</div>
+
+<p class="m1-note"><strong>Charte opérationnelle — lecture seule.</strong> Cette section n'exécute aucune action, ne crée aucun pronostic et ne modifie aucun FIGÉ ni fichier historique.</p>
 </section>
 
 </main>
 
 <footer>
- 🇸🇳🧠🔥 X1000 M1 — Indépendance sportive et technique.
- <p>Aucun pronostic ne garantit un gain.</p>
+🇸🇳🧠🔥 X1000 M1 — Indépendance sportive et technique.
+<p>Aucun pronostic ne garantit un gain.</p>
 </footer>
 
 <script>
@@ -351,8 +462,7 @@ function esc(value){
 function first(obj,...keys){
  for(const key of keys){
   if(obj && obj[key] !== null &&
-     obj[key] !== undefined &&
-     obj[key] !== ""){
+     obj[key] !== undefined && obj[key] !== ""){
    return obj[key];
   }
  }
@@ -382,26 +492,21 @@ function nowParis(){
  }).format(new Date());
 }
 
-function dateParis(value){
- if(value === null || value === undefined || value === ""){
-  return "—";
- }
- const d = new Date(value);
- if(!Number.isFinite(d.getTime())){
-  return "Date invalide";
- }
- return new Intl.DateTimeFormat("fr-FR",{
-  timeZone:"Europe/Paris",
-  dateStyle:"short",
-  timeStyle:"short"
- }).format(d);
-}
-
 function validDate(value){
  if(typeof value !== "string") return null;
  if(!/(Z|[+-]\d{2}:\d{2})$/i.test(value)) return null;
  const d = new Date(value);
  return Number.isFinite(d.getTime()) ? d : null;
+}
+
+function dateParis(value){
+ const d = validDate(value);
+ if(!d) return "—";
+ return new Intl.DateTimeFormat("fr-FR",{
+  timeZone:"Europe/Paris",
+  dateStyle:"short",
+  timeStyle:"short"
+ }).format(d);
 }
 
 function courseId(c){
@@ -413,8 +518,8 @@ function isNP(p){
   p?.nonPartant === true ||
   ["NON_PARTANT","NONPARTANT","NP","FORFAIT"].includes(
    String(p?.statut || "")
-   .toUpperCase()
-   .replace(/[ -]/g,"_")
+    .toUpperCase()
+    .replace(/[ -]/g,"_")
   );
 }
 
@@ -424,21 +529,28 @@ function arr(value){
 
 function rank(x){
  const r = first(
-  x,"classement","classement_complet",
-  "ordre_espere","ordre_arrivee_espere","ranking"
+  x,
+  "classement",
+  "classement_complet",
+  "ordre_espere",
+  "ordre_arrivee_espere",
+  "ranking"
  );
  return Array.isArray(r) ? r : [];
 }
 
 function bet(x){
  const value = first(x,"pari_retenu","pari_envisage","pari");
+
  if(typeof value === "string") return value;
+
  if(value && typeof value === "object" && !Array.isArray(value)){
   return [
    value.formule || value.type || "Pari",
    Array.isArray(value.numeros) ? arr(value.numeros) : ""
   ].filter(Boolean).join(" : ");
  }
+
  return "—";
 }
 
@@ -446,13 +558,16 @@ function table(rows,columns,empty){
  if(!rows.length){
   return '<div class="empty">'+esc(empty)+'</div>';
  }
+
  return "<table><thead><tr>"+
   columns.map(c=>"<th scope='col'>"+esc(c[0])+"</th>").join("")+
   "</tr></thead><tbody>"+
   rows.map(r=>"<tr>"+
    columns.map(c=>{
     let value = "—";
-    try{value = c[1](r)}catch(_){}
+    try{
+     value = c[1](r);
+    }catch(_){}
     return "<td>"+esc(value)+"</td>";
    }).join("")+
    "</tr>").join("")+
@@ -462,14 +577,20 @@ function table(rows,columns,empty){
 async function fetchJSON(filename){
  const controller = new AbortController();
  const timer = setTimeout(()=>controller.abort(),12000);
+
  try{
   const response = await fetch(
    "data/"+encodeURIComponent(filename)+"?t="+Date.now(),
-   {cache:"no-store",signal:controller.signal}
+   {
+    cache:"no-store",
+    signal:controller.signal
+   }
   );
+
   if(!response.ok){
    throw new Error("HTTP "+response.status);
   }
+
   return await response.json();
  }finally{
   clearTimeout(timer);
@@ -478,19 +599,21 @@ async function fetchJSON(filename){
 
 function extract(raw,keys){
  if(Array.isArray(raw)) return raw;
+
  if(raw && typeof raw === "object"){
   for(const key of keys){
-   if(Array.isArray(raw[key])) return raw[key];
+   if(Array.isArray(raw[key])){
+    return raw[key];
+   }
   }
  }
+
  throw new Error("Structure JSON incompatible");
 }
 
 async function loadKind(kind){
  const errors = [];
 
- // La premiere source valide fait autorite,
- // meme si sa liste est vide.
  for(const [filename,keys] of FILES[kind]){
   try{
    const raw = await fetchJSON(filename);
@@ -500,7 +623,9 @@ async function loadKind(kind){
    state.sources[kind] = filename;
 
    if(kind === "courses"){
-    state.collecte = raw;
+    state.collecte =
+     filename === "collecte_m1_pmu.json" &&
+     !Array.isArray(raw) ? raw : null;
    }
 
    if(rows.length === 0){
@@ -508,6 +633,7 @@ async function loadKind(kind){
    }
 
    return rows;
+
   }catch(error){
    errors.push(filename+": "+error.message);
   }
@@ -526,8 +652,7 @@ function onlyM1(x){
   x &&
   typeof x === "object" &&
   !Array.isArray(x) &&
-  String(first(x,"moteur","engine") || "")
-   .toUpperCase() === "M1"
+  String(first(x,"moteur","engine") || "").toUpperCase() === "M1"
  );
 }
 
@@ -535,11 +660,9 @@ function isM1Archive(x,kind){
  if(!x || typeof x !== "object" || Array.isArray(x)){
   return false;
  }
+
  if(onlyM1(x)) return true;
 
- // Archives propres au depot M1 :
- // accepter les archives sans moteur explicite,
- // mais jamais celles attribuees a un autre moteur.
  return !first(x,"moteur","engine") &&
   ["figes.json","audits.json"].includes(state.sources[kind]);
 }
@@ -554,10 +677,7 @@ function decisionsM1(rows){
 
   if(onlyM1(x)){
    output.push(x);
-   continue;
-  }
-
-  if(Array.isArray(x.moteurs)){
+  }else if(Array.isArray(x.moteurs)){
    for(const m of x.moteurs){
     if(onlyM1(m)){
      output.push({
@@ -586,15 +706,33 @@ function decisionsM1(rows){
   }
  }
 
- // Ne pas assimiler les preanalyses
- // ou propositions non validees
- // aux decisions officielles.
- return output.filter(x=>
-  x.fige !== false &&
-  x.publication_officielle !== false &&
-  !["PREPUBLICATION","PROPOSITION_NON_VALIDEE"]
-   .includes(String(x.statut || "").toUpperCase())
- );
+ const refus = /PRE|PROPOSITION|BROUILLON|NON[_ -]?VALID|REJET|ATTENTE|ECHEC|ÉCHEC|COLLECTE|ANALYSE_SEULE/;
+
+ return output.filter(x=>{
+  if(
+   x.fige === false ||
+   x.publication_officielle === false ||
+   x.valide === false ||
+   x.validation === false
+  ){
+   return false;
+  }
+
+  const statut = String(
+   first(x,"statut","validation") || ""
+  ).toUpperCase();
+
+  if(refus.test(statut)) return false;
+
+  const explicite =
+   x.publication_officielle === true ||
+   x.valide === true ||
+   x.validation === true ||
+   x.fige === true ||
+   /^(VALIDE|VALIDÉ|PUBLIE|PUBLIÉ|OFFICIEL|FIGE|FIGÉ)$/.test(statut);
+
+  return explicite && courseId(x) !== "—";
+ });
 }
 
 function diagLine(label,detail,level=""){
@@ -605,7 +743,8 @@ function diagLine(label,detail,level=""){
 
 function displayCourses(){
  const query = $("rechercheCourses").value
-  .trim().toLocaleLowerCase("fr");
+  .trim()
+  .toLocaleLowerCase("fr");
 
  const rows = state.courses.filter(c=>
   !query ||
@@ -661,6 +800,7 @@ function display(){
     courseId(c)
    ));
   }
+
   if(state.courses.some(c=>courseId(c) === previous)){
    selector.value = previous;
   }
@@ -679,7 +819,7 @@ function display(){
    ["Statut",x=>first(x,"statut","validation","qualification")],
    ["Heure Paris",x=>dateParis(first(x,"cree_a","analyse_a","heure","date"))]
   ],
-  "Aucune décision officielle M1 publiée."
+  "Aucune décision M1 publiée dans les sources reconnues."
  );
 
  $("tableFiges").innerHTML = table(
@@ -731,7 +871,7 @@ function display(){
   )
  );
 
- if(state.collecte && !Array.isArray(state.collecte)){
+ if(state.collecte){
   lines.push(diagLine(
    "Collecte PMU",
    "Statut : "+(state.collecte.statut || "Absent")+
@@ -740,8 +880,10 @@ function display(){
    state.collecte.statut === "OK" ? "ok" : "warn"
   ));
 
-  if(Array.isArray(state.collecte.erreurs) &&
-     state.collecte.erreurs.length){
+  if(
+   Array.isArray(state.collecte.erreurs) &&
+   state.collecte.erreurs.length
+  ){
    lines.push(diagLine(
     "Erreurs de collecte",
     state.collecte.erreurs.join(" | "),
@@ -773,6 +915,12 @@ function display(){
  }
 
  lines.push(diagLine(
+  "Chaîne d'analyse",
+  "Une collecte réussie ne prouve pas que l'analyse, la décision et le FIGÉ ont été exécutés.",
+  "warn"
+ ));
+
+ lines.push(diagLine(
   "Protection M1",
   "Page en lecture seule. Aucune décision, aucun FIGÉ et aucun audit créés ou modifiés."
  ));
@@ -792,17 +940,18 @@ async function refresh(){
  $("actualiser").disabled = true;
  setStatus("warn","Actualisation des données M1...");
 
- // Ne conserver aucune donnée périmée en mémoire.
- state.courses = [];
- state.selections = [];
- state.figes = [];
- state.audits = [];
- state.sources = {};
- state.loaded = {};
- state.notes = {};
- state.collecte = null;
- state.diagnostic = null;
- state.ready = false;
+ Object.assign(state,{
+  courses:[],
+  selections:[],
+  figes:[],
+  audits:[],
+  sources:{},
+  loaded:{},
+  notes:{},
+  collecte:null,
+  diagnostic:null,
+  ready:false
+ });
 
  try{
   const kinds = Object.keys(FILES);
@@ -823,8 +972,6 @@ async function refresh(){
 
   const today = parisDay();
 
-  // Les compteurs concernent les courses du jour,
-  // et non les archives historiques.
   state.courses = state.courses.filter(c=>
    c &&
    typeof c === "object" &&
@@ -850,17 +997,29 @@ async function refresh(){
   const age = stamp ? Date.now()-stamp.getTime() : null;
 
   const currentDate = source?.date === today;
-  const fresh = age !== null &&
+
+  const fresh =
+   age !== null &&
    age >= -60000 &&
    age <= 30*60*1000;
 
-  const errorsOK = Array.isArray(source?.erreurs) &&
+  const errorsOK =
+   Array.isArray(source?.erreurs) &&
    source.erreurs.length === 0;
 
-  const diagOK = state.diagnostic &&
-   state.diagnostic.statut === "OK" &&
-   state.diagnostic.date === source?.date &&
-   state.diagnostic.collecte_a === source?.collecte_a;
+  const diagnosticStamp = validDate(
+   state.diagnostic?.collecte_a
+  );
+
+  const diagOK = Boolean(
+   stamp &&
+   diagnosticStamp &&
+   state.diagnostic?.statut === "OK" &&
+   state.diagnostic?.date === source?.date &&
+   Math.abs(
+    diagnosticStamp.getTime()-stamp.getTime()
+   ) <= 10*60*1000
+  );
 
   state.ready = Boolean(
    state.sources.courses === "collecte_m1_pmu.json" &&
@@ -875,6 +1034,11 @@ async function refresh(){
    setStatus(
     "bad",
     "Fichiers de courses indisponibles. Vérifiez GitHub Actions."
+   );
+  }else if(state.sources.courses !== "collecte_m1_pmu.json"){
+   setStatus(
+    "warn",
+    "Source de secours affichée : collecte principale non confirmée."
    );
   }else if(!currentDate){
    setStatus(
@@ -901,7 +1065,7 @@ async function refresh(){
     "ok",
     "Collecte PMU vérifiée : "+
     state.courses.length+
-    " courses françaises du jour. Décisions et FIGÉs affichés seulement s'ils sont publiés."
+    " courses françaises du jour. Les décisions et FIGÉs sont des publications distinctes."
    );
   }
 
@@ -934,5 +1098,6 @@ setInterval(tick,1000);
 refresh();
 setInterval(refresh,300000);
 </script>
+
 </body>
 </html>
