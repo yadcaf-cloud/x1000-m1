@@ -1,129 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-01T17:59:46.918699+01:00",
+  "genere_a": "2026-11-01T18:30:54.552355+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
-  "propositions": [
-    {
-      "course_id": "2026-11-01-R1-C9",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-01T18:25:00+01:00",
-      "hippodrome": "HIPPODROME DE LAVAL",
-      "classement": [
-        3,
-        9,
-        16,
-        11,
-        1
-      ],
-      "details": [
-        {
-          "numero": 3,
-          "nom": "JUNINHO",
-          "score_heuristique": 6.8187,
-          "forme_recente": 6.961,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J.F. HUGUES",
-          "entraineur": "Arnaud MORIN",
-          "musique": "1a4aDa2a2aDa1a1aDa3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "HILKA DE BERTRANGE",
-          "score_heuristique": 5.2669,
-          "forme_recente": 5.959,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. MOURAUD",
-          "entraineur": "J.J. BEAUSSE",
-          "musique": "2a5a2a6a6a5aDaAa8aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 16,
-          "nom": "IMAGINE GIRL",
-          "score_heuristique": 4.7023,
-          "forme_recente": 4.94,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. RAFFIN",
-          "entraineur": "Y. DREUX",
-          "musique": "7a6a7aDa2a1a1aDa4a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "JIM DU PALAIS",
-          "score_heuristique": 4.6598,
-          "forme_recente": 5.2,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "JORDY WEISS",
-          "entraineur": "A. CHAVATTE",
-          "musique": "2a3a9a4a0a0a6a7a5a9a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "KASH DIBAH",
-          "score_heuristique": 4.0007,
-          "forme_recente": 4.688,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Q. CHAMPENOIS",
-          "entraineur": "Y. GAUTIER",
-          "musique": "4a2a5aDaDa7aDa6aDa7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 14,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    }
-  ],
+  "propositions": [],
   "courses_ecartees": [
     {
       "course_id": "2026-11-01-R3-C1",
@@ -403,7 +284,11 @@
     },
     {
       "course_id": "2026-11-01-R5-C4",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-01-R1-C9",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-01-R5-C5",
@@ -418,7 +303,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 1,
+  "nombre_propositions": 0,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
