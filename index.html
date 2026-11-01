@@ -9,48 +9,97 @@
 <style>
 :root{
  color-scheme:dark;
- --bg:#07131f;--panel:#102637;--panel2:#173344;
- --border:#315263;--text:#eff8f7;--muted:#a9bfca;
- --green:#75dfaf;--gold:#eac977;--blue:#9bd8ff;
- --red:#ff9b9b
+ --bg:#07131f;
+ --panel:#102637;
+ --panel2:#173344;
+ --border:#315263;
+ --text:#eff8f7;
+ --muted:#a9bfca;
+ --green:#75dfaf;
+ --gold:#eac977;
+ --blue:#9bd8ff;
+ --red:#ff9b9b;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
- margin:0;color:var(--text);
- background:radial-gradient(ellipse at 85% 0%,#17483e,transparent 38%),
- linear-gradient(160deg,#07131f,#0b1c2b);
- font:15px/1.55 system-ui,Arial,sans-serif
+ margin:0;
+ color:var(--text);
+ background:
+  radial-gradient(ellipse at 85% 0%,#17483e,transparent 38%),
+  linear-gradient(160deg,#07131f,#0b1c2b);
+ font:15px/1.55 system-ui,Arial,sans-serif;
 }
 a{color:var(--blue)}
 button,input,select{font:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.container{max-width:1250px;margin:auto;padding:0 15px}
+:focus-visible{
+ outline:2px solid var(--gold);
+ outline-offset:3px;
+}
+.container{
+ max-width:1250px;
+ margin:auto;
+ padding:0 15px;
+}
 header{
- position:sticky;top:0;z-index:20;
- background:#081824f2;border-bottom:1px solid var(--border);
- backdrop-filter:blur(12px)
+ position:sticky;
+ top:0;
+ z-index:20;
+ background:#081824f2;
+ border-bottom:1px solid var(--border);
+ backdrop-filter:blur(12px);
 }
 .header-inner{padding-top:15px}
-.brand{font-size:1.25rem;font-weight:900;color:var(--gold)}
+.brand{
+ font-size:1.25rem;
+ font-weight:900;
+ color:var(--gold);
+}
 .subtitle,.muted{color:var(--muted)}
 .subtitle{font-size:.8rem}
-nav{display:flex;overflow-x:auto;gap:8px;padding:14px 0}
-nav a{
- white-space:nowrap;text-decoration:none;color:var(--text);
- background:var(--panel2);border:1px solid var(--border);
- border-radius:30px;padding:8px 13px;font-size:.85rem
+nav{
+ display:flex;
+ overflow-x:auto;
+ gap:8px;
+ padding:14px 0;
 }
-nav a:hover{color:var(--gold);border-color:var(--gold)}
+nav a{
+ white-space:nowrap;
+ text-decoration:none;
+ color:var(--text);
+ background:var(--panel2);
+ border:1px solid var(--border);
+ border-radius:30px;
+ padding:8px 13px;
+ font-size:.85rem;
+}
+nav a:hover{
+ color:var(--gold);
+ border-color:var(--gold);
+}
 .hero{padding:30px 0 20px}
-.hero h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.2;margin:10px 0}
+.hero h1{
+ font-size:clamp(1.8rem,5vw,3rem);
+ line-height:1.2;
+ margin:10px 0;
+}
 .hero h1 span{color:var(--gold)}
 .hero p{max-width:850px;color:var(--muted)}
-.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:20px 0}
+.toolbar{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:12px;
+ margin:20px 0;
+}
 button{
  background:linear-gradient(135deg,#21876b,#145541);
- border:1px solid #419c7c;color:white;border-radius:11px;
- padding:12px 18px;font-weight:750;cursor:pointer
+ border:1px solid #419c7c;
+ color:white;
+ border-radius:11px;
+ padding:12px 18px;
+ font-weight:750;
+ cursor:pointer;
 }
 button:disabled{opacity:.5;cursor:wait}
 .clock{color:var(--gold);font-weight:bold}
@@ -58,96 +107,181 @@ button:disabled{opacity:.5;cursor:wait}
 .warn{color:var(--gold)}
 .bad{color:var(--red)}
 .status{
- background:var(--panel);border:1px solid var(--border);
- border-left:4px solid var(--gold);border-radius:12px;
- padding:15px;margin-bottom:20px
+ background:var(--panel);
+ border:1px solid var(--border);
+ border-left:4px solid var(--gold);
+ border-radius:12px;
+ padding:15px;
+ margin-bottom:20px;
 }
 .status.ok{border-left-color:var(--green)}
 .status.bad{border-left-color:var(--red)}
 .cards{
- display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
- gap:12px;margin-bottom:25px
+ display:grid;
+ grid-template-columns:repeat(6,minmax(0,1fr));
+ gap:12px;
+ margin-bottom:25px;
 }
 .card{
  background:linear-gradient(145deg,#173344,#102637);
- border:1px solid var(--border);border-radius:16px;
- padding:18px 14px;box-shadow:0 12px 30px #0003;
- min-width:0
+ border:1px solid var(--border);
+ border-radius:16px;
+ padding:18px 14px;
+ min-width:0;
 }
 .card-label{font-size:.82rem;color:var(--muted)}
-.count{font-size:2rem;font-weight:900;color:var(--green);margin-top:8px}
-.card:nth-child(4) .count,.card:nth-child(5) .count{color:var(--gold)}
+.count{
+ font-size:2rem;
+ font-weight:900;
+ color:var(--green);
+ margin-top:8px;
+}
 section{
  background:linear-gradient(145deg,#112738,#0d202e);
- border:1px solid var(--border);border-radius:17px;
- padding:21px;margin-bottom:18px;scroll-margin-top:125px
+ border:1px solid var(--border);
+ border-radius:17px;
+ padding:21px;
+ margin-bottom:18px;
+ scroll-margin-top:125px;
 }
-h2{color:var(--gold);font-size:1.2rem;margin:0 0 12px}
-h3{color:var(--blue);font-size:1rem;margin:18px 0 8px}
+h2{
+ color:var(--gold);
+ font-size:1.2rem;
+ margin:0 0 12px;
+}
+h3{color:var(--blue);font-size:1rem}
 section p{color:var(--muted)}
 .badge{
- display:inline-block;background:#153d35;color:var(--green);
- border:1px solid #386b5c;padding:4px 10px;
- border-radius:20px;font-size:.76rem;margin-bottom:12px
+ display:inline-block;
+ background:#153d35;
+ color:var(--green);
+ border:1px solid #386b5c;
+ padding:4px 10px;
+ border-radius:20px;
+ font-size:.76rem;
 }
 input,select{
- width:100%;max-width:570px;padding:12px;
- background:#091d2a;border:1px solid var(--border);
- color:white;border-radius:10px;margin:8px 0 16px
+ width:100%;
+ max-width:570px;
+ padding:12px;
+ background:#091d2a;
+ border:1px solid var(--border);
+ color:white;
+ border-radius:10px;
+ margin:8px 0 16px;
 }
-.scroll{overflow-x:auto;border:1px solid var(--border);border-radius:11px}
-table{width:100%;min-width:760px;border-collapse:collapse;font-size:.87rem}
-th,td{text-align:left;padding:12px;border-bottom:1px solid #2a4655;vertical-align:top}
-th{background:#1b3949;color:var(--gold)}
+.scroll{
+ overflow-x:auto;
+ border:1px solid var(--border);
+ border-radius:11px;
+}
+table{
+ width:100%;
+ min-width:760px;
+ border-collapse:collapse;
+ font-size:.87rem;
+}
+#tableDecisions table{min-width:1550px}
+th,td{
+ text-align:left;
+ padding:12px;
+ border-bottom:1px solid #2a4655;
+ vertical-align:top;
+}
+th{
+ background:#1b3949;
+ color:var(--gold);
+ white-space:nowrap;
+}
 tbody tr:nth-child(even){background:#ffffff06}
-.empty{padding:22px;color:var(--muted);text-align:center}
-.diagnostic-line,.notice{
- background:#0b2030;border:1px solid var(--border);
- border-radius:10px;padding:13px;margin:10px 0;
- overflow-wrap:anywhere
+.empty{
+ padding:22px;
+ color:var(--muted);
+ text-align:center;
 }
-.diagnostic-line strong{display:block;margin-bottom:4px}
+.notice,.diagnostic-line{
+ background:#0b2030;
+ border:1px solid var(--border);
+ border-radius:10px;
+ padding:13px;
+ margin:10px 0;
+ overflow-wrap:anywhere;
+}
 .alert{
- background:#392622;border:1px solid #975a4b;
- color:#ffd2c9;border-radius:10px;padding:14px;margin:10px 0
+ background:#392622;
+ border:1px solid #975a4b;
+ color:#ffd2c9;
+ border-radius:10px;
+ padding:14px;
+ margin:10px 0;
+}
+.diagnostic-line strong{
+ display:block;
+ margin-bottom:4px;
 }
 .directive-lead{
- border-left:4px solid var(--gold);padding:15px;
- background:#172d36;border-radius:8px;
- color:var(--gold);font-weight:750
+ border-left:4px solid var(--gold);
+ padding:15px;
+ background:#172d36;
+ border-radius:8px;
+ color:var(--gold);
+ font-weight:750;
 }
 details{
- border:1px solid var(--border);border-radius:12px;
- padding:12px 15px;margin:10px 0;background:#102637
+ border:1px solid var(--border);
+ border-radius:12px;
+ padding:12px 15px;
+ margin:10px 0;
+ background:var(--panel);
 }
-summary{cursor:pointer;font-weight:800;color:var(--gold)}
-details ul,details ol{padding-left:24px}
+summary{
+ cursor:pointer;
+ font-weight:800;
+ color:var(--gold);
+}
 details li{margin:7px 0}
-footer{text-align:center;padding:28px 15px;color:var(--muted)}
+.stars{
+ color:var(--gold);
+ white-space:nowrap;
+}
+footer{
+ text-align:center;
+ padding:28px 15px;
+ color:var(--muted);
+}
 @media(max-width:1000px){
- .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .cards{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+ }
 }
 @media(max-width:600px){
- .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
- .card{padding:14px 12px}.count{font-size:1.8rem}
- section{padding:15px}.hero{padding-top:20px}
+ .cards{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:9px;
+ }
+ .card{padding:14px 12px}
+ .count{font-size:1.8rem}
+ section{padding:15px}
 }
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
 }
 </style>
 </head>
+
 <body>
 
 <header>
 <div class="container header-inner">
  <div class="brand">🇸🇳🧠🔥 X1000 M1</div>
- <div class="subtitle">Intelligence hippique — Moteur indépendant</div>
+ <div class="subtitle">
+  Intelligence hippique — Moteur indépendant
+ </div>
  <nav aria-label="Navigation principale">
   <a href="#accueil">Accueil</a>
   <a href="#courses">Courses</a>
   <a href="#partants">Partants</a>
-  <a href="#decisions">Décisions M1</a>
+  <a href="#decisions">Tableau officiel</a>
   <a href="#figes">FIGÉs</a>
   <a href="#surveillance">Surveillance</a>
   <a href="#audits">Audits</a>
@@ -158,9 +292,15 @@ footer{text-align:center;padding:28px 15px;color:var(--muted)}
 </header>
 
 <main class="container" id="accueil">
+
 <div class="hero">
- <div class="badge">M1 INDÉPENDANT · LECTURE SEULE</div>
- <h1>Intelligence hippique<br><span>Autonome et évolutive</span></h1>
+ <div class="badge">
+  M1 INDÉPENDANT · LECTURE SEULE
+ </div>
+ <h1>
+  Intelligence hippique<br>
+  <span>Autonome et évolutive</span>
+ </h1>
  <p>
   Courses PMU françaises vérifiées, analyses sportives,
   décisions provisoires, FIGÉs historiques,
@@ -169,178 +309,229 @@ footer{text-align:center;padding:28px 15px;color:var(--muted)}
 </div>
 
 <div class="toolbar">
- <span>Heure de Paris :
+ <span>
+  Heure de Paris :
   <strong class="clock" id="heureParis">—</strong>
  </span>
- <button id="actualiser" type="button">↻ Actualiser</button>
- <span id="majAuto" class="muted">Actualisation : 5 minutes</span>
+ <button id="actualiser" type="button">
+  ↻ Actualiser
+ </button>
+ <span id="majAuto" class="muted">
+  Actualisation : 5 minutes
+ </span>
 </div>
 
-<div id="etatGlobal" class="status warn" role="status" aria-live="polite">
- Chargement des données...
+<div id="etatGlobal"
+ class="status warn"
+ role="status"
+ aria-live="polite">
+ Chargement des données M1…
 </div>
 
 <div class="cards">
- <div class="card"><div class="card-label">Courses françaises</div><div class="count" id="nbCourses">—</div></div>
- <div class="card"><div class="card-label">Partants</div><div class="count" id="nbPartants">—</div></div>
- <div class="card"><div class="card-label">Non-partants</div><div class="count" id="nbNP">—</div></div>
- <div class="card"><div class="card-label">Décisions M1</div><div class="count" id="nbDecisions">—</div></div>
- <div class="card"><div class="card-label">FIGÉs publiés</div><div class="count" id="nbFiges">—</div></div>
- <div class="card"><div class="card-label">Audits</div><div class="count" id="nbAudits">—</div></div>
+ <div class="card">
+  <div class="card-label">Courses françaises</div>
+  <div class="count" id="nbCourses">—</div>
+ </div>
+ <div class="card">
+  <div class="card-label">Partants</div>
+  <div class="count" id="nbPartants">—</div>
+ </div>
+ <div class="card">
+  <div class="card-label">Non-partants</div>
+  <div class="count" id="nbNP">—</div>
+ </div>
+ <div class="card">
+  <div class="card-label">Décisions M1</div>
+  <div class="count" id="nbDecisions">—</div>
+ </div>
+ <div class="card">
+  <div class="card-label">FIGÉs publiés</div>
+  <div class="count" id="nbFiges">—</div>
+ </div>
+ <div class="card">
+  <div class="card-label">Audits</div>
+  <div class="count" id="nbAudits">—</div>
+ </div>
 </div>
 
 <section id="courses">
  <h2>Courses françaises publiées</h2>
- <p>Courses dont la localisation française est explicitement vérifiée.</p>
- <label for="rechercheCourses">Rechercher une course</label>
- <input id="rechercheCourses" type="search" placeholder="Course ou hippodrome...">
+ <p>
+  Courses dont la localisation française
+  est explicitement vérifiée.
+ </p>
+ <label for="rechercheCourses">
+  Rechercher une course
+ </label>
+ <input
+  id="rechercheCourses"
+  type="search"
+  placeholder="Course ou hippodrome…">
  <div class="scroll" id="tableCourses"></div>
 </section>
 
 <section id="partants">
  <h2>Partants et non-partants</h2>
- <label for="choixCourse">Choisir une course</label>
+ <label for="choixCourse">
+  Choisir une course
+ </label>
  <select id="choixCourse"></select>
  <div class="scroll" id="tablePartants"></div>
 </section>
 
 <section id="decisions">
- <h2>Décisions sportives M1</h2>
- <p>Décisions publiées. Une sélection provisoire ne constitue pas un FIGÉ.</p>
+ <h2>🇸🇳🧠🔥 Tableau officiel X1000 M1</h2>
+ <p>
+  Départ Paris, arrivée réelle vérifiée, discipline,
+  gagnant espéré, meilleur placé, ordre espéré,
+  pari envisagé, validation sportive et statut.
+ </p>
+ <div class="notice" id="tableauEtat">
+  Chargement du tableau officiel…
+ </div>
  <div class="scroll" id="tableDecisions"></div>
+ <p>
+  🌟 à 🌟🌟🌟🌟🌟 : niveau de confiance documenté.
+  Sans justification vérifiable : « Non évalué ».
+  Les étoiles ne garantissent aucun gain.
+ </p>
 </section>
 
 <section id="figes">
  <h2>FIGÉs historiques M1</h2>
  <p>
-  Dernières versions publiées et archives précédentes.
-  Le statut actif n'est pas présumé sans confirmation.
+  Versions publiées et archives historiques.
+  La dernière version publiée n'est pas
+  automatiquement considérée comme active.
  </p>
  <div class="scroll" id="tableFiges"></div>
 </section>
 
 <section id="surveillance">
  <h2>Surveillance des FIGÉs et non-partants</h2>
- <p>Contrôle indicatif des dernières données publiées.</p>
- <div id="surveillanceEtat" class="notice">Surveillance en attente.</div>
+ <p>
+  Contrôle indicatif fondé sur la dernière collecte PMU.
+ </p>
+ <div id="surveillanceEtat" class="notice">
+  Surveillance en attente.
+ </div>
  <div class="scroll" id="tableSurveillance"></div>
  <p>
-  Aucune alerte ne peut, à elle seule, annuler un pari PMU.
-  Les révisions appartiennent au moteur Python.
+  Cette page ne modifie ni les paris ni les FIGÉs.
+  Les décisions et révisions appartiennent au moteur Python.
  </p>
 </section>
 
 <section id="audits">
  <h2>Audits après course</h2>
- <p>Informations déclarées dans les archives, sans certification indépendante.</p>
+ <p>
+  Informations déclarées dans les archives,
+  sans certification indépendante.
+ </p>
  <div class="scroll" id="tableAudits"></div>
 </section>
 
 <section id="directive">
- <h2>🇸🇳🧠🔥 Directive suprême — Intelligence hippique autonome M1</h2>
+ <h2>🇸🇳🧠🔥 Directive suprême M1</h2>
+
  <div class="directive-lead">
   « Étudier largement, sélectionner intelligemment,
   décider librement, FIGER avant le départ et réviser
-  lorsqu'une information vérifiée remet en cause le pari actif. »
+  lorsqu'une information vérifiée remet en cause
+  le pari actif. »
  </div>
- <p>
-  X1000-M1 est conçu comme un système hippique indépendant
-  consacré aux courses PMU physiquement disputées en France.
- </p>
 
  <details open>
-  <summary>1. Autonomie totale de M1</summary>
+  <summary>1. Autonomie indépendante</summary>
   <ul>
    <li>Collecter les données PMU réelles.</li>
-   <li>Identifier les courses françaises adaptées.</li>
+   <li>Analyser les courses françaises vérifiées.</li>
    <li>Étudier chaque cheval individuellement.</li>
-   <li>Détecter les favoris trompeurs et chevaux négligés.</li>
-   <li>Construire ses classements prévisionnels.</li>
-   <li>Réévaluer les décisions avant départ.</li>
-   <li>FIGER uniquement après contrôles.</li>
-   <li>Conserver toutes les versions historiques.</li>
-   <li>Auditer après résultats officiels vérifiés.</li>
+   <li>Identifier les favoris trompeurs.</li>
+   <li>Rechercher les chevaux négligés.</li>
+   <li>Décider indépendamment des autres moteurs.</li>
+   <li>Préserver les archives historiques.</li>
   </ul>
-  <p>L'autonomie nécessite des données fiables et des contrôles satisfaits.</p>
  </details>
 
  <details>
   <summary>2. Sélection large et intelligente</summary>
   <p>
-   Ne pas être excessivement sévère. Étudier toute course
-   française suffisamment documentée, sans obligation de pari.
+   Ne pas être excessivement sévère.
+   Étudier toute course suffisamment documentée,
+   sans obligation de pari.
   </p>
-  <strong>Course analysée ≠ course retenue pour pari ≠ pari FIGÉ.</strong>
+  <strong>
+   Course analysée ≠ pari retenu ≠ FIGÉ.
+  </strong>
  </details>
 
  <details>
   <summary>3. Analyse cheval par cheval</summary>
   <ul>
    <li>Forme, musique et régularité.</li>
-   <li>Distance, parcours, discipline et terrain.</li>
-   <li>Jockey, driver, entraîneur et entourage.</li>
-   <li>Endurance, vitesse et capacité de finition.</li>
-   <li>Opposition et évolution des performances.</li>
-   <li>Non-partants et informations récentes.</li>
+   <li>Distance, parcours et discipline.</li>
+   <li>Terrain et conditions de course.</li>
+   <li>Jockey, driver et entraîneur.</li>
+   <li>Endurance, vitesse et finition.</li>
+   <li>Opposition et performances récentes.</li>
+   <li>Non-partants et changements vérifiés.</li>
   </ul>
-  <p>
-   Comprendre pourquoi un favori peut perdre
-   et quel concurrent peut le battre.
-  </p>
-  <strong>Aucune donnée absente ne doit être inventée.</strong>
+  <strong>
+   Aucune donnée absente ne doit être inventée.
+  </strong>
  </details>
 
  <details>
-  <summary>4. Décisions sportives autonomes</summary>
+  <summary>4. Décisions sportives</summary>
   <ol>
    <li>Proposition sportive initiale.</li>
    <li>Décision provisoire.</li>
-   <li>Pari envisagé et vérifié.</li>
-   <li>FIGÉ avant départ.</li>
-   <li>Versions historiques.</li>
-   <li>Audit après course.</li>
+   <li>Pari envisagé si justifié.</li>
+   <li>FIGÉ avant départ, si autorisé.</li>
+   <li>Conservation des versions historiques.</li>
+   <li>Audit après résultats officiels.</li>
   </ol>
-  <p>Chaque révision doit être justifiée, datée et traçable.</p>
  </details>
 
  <details>
-  <summary>5. FIGÉ automatique à l'approche du départ</summary>
+  <summary>5. FIGÉ avant départ</summary>
   <p>
-   M1 doit contrôler les données avant de FIGER :
-   course, cinq chevaux, non-partants, pari éventuel,
-   justification, heure de Paris, source, version et SHA256.
+   Vérifier la course, les cinq chevaux,
+   les non-partants, le classement, le pari,
+   l'heure de Paris, la justification et
+   l'intégrité des archives.
   </p>
-  <strong>Aucun FIGÉ vide, fictif ou rétroactif.</strong>
+  <strong>
+   Aucun FIGÉ vide, fictif ou rétroactif.
+  </strong>
  </details>
 
  <details>
-  <summary>6. Révision d'un FIGÉ avant départ</summary>
-  <p><strong>Un FIGÉ ne doit jamais devenir une prison sportive.</strong></p>
+  <summary>6. Révision avant départ</summary>
   <p>
-   Un NP, une information sportive vérifiée ou une incohérence
-   peut justifier une réévaluation.
+   Une information sportive vérifiée peut justifier
+   une réévaluation avant le départ.
   </p>
   <ol>
    <li>Détecter le changement.</li>
    <li>Vérifier la source.</li>
    <li>Réévaluer les chevaux.</li>
-   <li>Créer une nouvelle décision justifiée.</li>
-   <li>Créer un nouveau FIGÉ avant départ, si autorisé.</li>
-   <li>Conserver intégralement les anciennes versions.</li>
+   <li>Justifier la nouvelle décision.</li>
+   <li>Créer une nouvelle version si autorisé.</li>
+   <li>Conserver les versions antérieures.</li>
   </ol>
-  <strong>Interdiction d'écraser une archive historique.</strong>
  </details>
 
  <details>
-  <summary>7. Gestion prioritaire des non-partants</summary>
+  <summary>7. Surveillance des non-partants</summary>
   <p>
-   Un cheval FIGÉ devenu non-partant impose une vérification
-   prioritaire. L'ancien FIGÉ reste archivé.
+   Un cheval FIGÉ devenu non-partant doit déclencher
+   un contrôle prioritaire côté moteur.
   </p>
   <p>
-   Si aucune nouvelle décision valide n'est possible avant
-   le départ, le moteur doit signaler la suspension
-   de sa recommandation active.
+   Aucune révision rétroactive après départ.
   </p>
  </details>
 
@@ -348,75 +539,82 @@ footer{text-align:center;padding:28px 15px;color:var(--muted)}
   <summary>8. Interdictions après départ</summary>
   <ul>
    <li>Aucun nouveau FIGÉ rétroactif.</li>
-   <li>Aucune archive effacée.</li>
    <li>Aucun classement corrigé après coup.</li>
+   <li>Aucune archive effacée.</li>
    <li>Aucun résultat inventé.</li>
-   <li>Audits distincts des décisions initiales.</li>
+   <li>Audits séparés des décisions initiales.</li>
   </ul>
  </details>
 
  <details>
-  <summary>9. Automatisation et surveillance</summary>
+  <summary>9. Automatisation</summary>
   <ul>
    <li>Collecte PMU récurrente.</li>
    <li>Préanalyse autonome.</li>
-   <li>Surveillance des départs et des NP.</li>
-   <li>Réévaluation des décisions provisoires.</li>
-   <li>FIGÉ conditionnel et révisions tracées.</li>
-   <li>Publication et journal technique.</li>
+   <li>Surveillance des départs.</li>
+   <li>Contrôle des non-partants.</li>
+   <li>Réévaluation avant départ.</li>
+   <li>Publication et diagnostic technique.</li>
   </ul>
   <p>
-   GitHub Actions peut subir des retards :
-   une fréquence programmée ne garantit pas
-   une exécution exacte.
+   GitHub Actions peut subir des retards.
+   Une fréquence programmée ne garantit pas
+   une exécution à l'heure exacte.
   </p>
  </details>
 
  <details>
-  <summary>10. Sécurité et intégrité</summary>
+  <summary>10. Tableau officiel enrichi</summary>
+  <ul>
+   <li>Départ officiel en heure de Paris.</li>
+   <li>Arrivée réelle officiellement vérifiée.</li>
+   <li>Discipline publiée et vérifiable.</li>
+   <li>Gagnant et meilleur placé espérés.</li>
+   <li>Ordre espéré des cinq chevaux.</li>
+   <li>Pari envisagé si publié.</li>
+   <li>Confiance de une à cinq étoiles justifiées.</li>
+   <li>Statut réel de la décision.</li>
+   <li>Heure de dernière analyse publiée.</li>
+  </ul>
+  <strong>
+   Sans données suffisantes : Non évalué.
+  </strong>
+ </details>
+
+ <details>
+  <summary>11. Sécurité et intégrité</summary>
   <ul>
    <li>Aucune donnée hippique inventée.</li>
    <li>Aucun pronostic fictif.</li>
    <li>Aucun résultat officiel inventé.</li>
-   <li>Aucun FIGÉ après départ.</li>
-   <li>Aucune archive historique écrasée.</li>
-   <li>Aucun NP dans un nouveau classement FIGÉ.</li>
    <li>Aucune validation fictive.</li>
+   <li>Aucun FIGÉ historique écrasé.</li>
    <li>Aucune modification silencieuse.</li>
    <li>Aucune intervention sur M2 à M5.</li>
-   <li>Aucune modification non autorisée du tableau officiel.</li>
+   <li>Aucune modification des décisions par cette page.</li>
   </ul>
- </details>
-
- <details>
-  <summary>11. Directive finale</summary>
-  <p>
-   M1 ne doit pas conserver une décision simplement
-   parce qu'elle a déjà été FIGÉe.
-  </p>
-  <p>
-   Toute nouvelle décision doit être fondée sur
-   des informations vérifiées, créée avant le départ
-   et préserver intégralement l'historique.
-  </p>
  </details>
 
  <div class="notice">
   Cette directive décrit les règles souhaitées.
   Son affichage ne prouve pas que les fonctions
-  automatiques correspondantes sont activées.
+  automatiques sont activées dans Python.
  </div>
 </section>
 
 <section id="diagnostic">
  <h2>Diagnostic technique M1</h2>
- <div id="rapportTechnique">Vérification en attente.</div>
+ <div id="rapportTechnique">
+  Vérification en attente.
+ </div>
  <p>
-  GitHub Pages est statique. Cette page ne lance pas
-  Python, ne crée pas de FIGÉ et ne certifie pas
+  GitHub Pages est statique.
+  Cette page ne lance pas Python,
+  ne crée pas de FIGÉ et ne certifie pas
   indépendamment les archives.
  </p>
 </section>
+
 </main>
 
 <footer>
@@ -427,19 +625,23 @@ footer{text-align:center;padding:28px 15px;color:var(--muted)}
 <script>
 "use strict";
 
+(() => {
+
 const $ = id => document.getElementById(id);
 
 const state = {
  courses:[],
  selections:[],
+ propositions:[],
  figes:[],
  audits:[],
- loaded:{},
- sources:{},
- notes:{},
+ enrichissements:[],
  collecte:null,
  diagnostic:null,
- publication:null
+ publication:null,
+ loaded:{},
+ sources:{},
+ notes:{}
 };
 
 let busy = false;
@@ -456,6 +658,9 @@ const configs = {
   {file:"m1_selections.json",keys:["selections"]},
   {file:"publication_pronostics.json",keys:["pronostics","analyses"]}
  ],
+ propositions:[
+  {file:"publication_propositions_m1.json",keys:["propositions"]}
+ ],
  figes:[
   {file:"figes.json",keys:["figes","figés"]},
   {file:"publication_figes.json",keys:["figes","figés"]}
@@ -463,74 +668,84 @@ const configs = {
  audits:[
   {file:"audits.json",keys:["audits"]},
   {file:"publication_audits.json",keys:["audits"]}
+ ],
+ enrichissements:[
+  {file:"publication_tableau_m1_enrichi.json",keys:["courses"]}
  ]
 };
 
-function esc(value){
- return String(value ?? "—").replace(/[&<>"']/g,c=>({
-  "&":"&amp;","<":"&lt;",">":"&gt;",
-  '"':"&quot;","'":"&#39;"
- }[c]));
+function obj(x){
+ return x !== null &&
+  typeof x === "object" &&
+  !Array.isArray(x);
 }
 
-function first(obj,...keys){
+function first(x,...keys){
  for(const key of keys){
-  if(obj && obj[key] !== undefined &&
-     obj[key] !== null && obj[key] !== ""){
-   return obj[key];
+  if(x && x[key] !== undefined &&
+     x[key] !== null && x[key] !== ""){
+   return x[key];
   }
  }
  return null;
 }
 
-function validObject(x){
- return x !== null && typeof x === "object" &&
-  !Array.isArray(x);
+function esc(value){
+ const safe =
+  value === null ||
+  value === undefined ||
+  value === ""
+   ? "—"
+   : typeof value === "object"
+    ? JSON.stringify(value)
+    : String(value);
+
+ return safe.replace(/[&<>"']/g,c=>({
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#39;"
+ }[c]));
 }
 
-function courseId(x){
+function cid(x){
  return first(x,"course_id","id") || "—";
 }
 
-function onlyM1(x){
- return validObject(x) &&
-  String(first(x,"moteur","engine") || "").toUpperCase() === "M1";
+function isM1(x){
+ return obj(x) &&
+  String(first(x,"moteur","engine") || "")
+   .toUpperCase() === "M1";
 }
 
-function ownM1(x,kind){
- return validObject(x) &&
-  (
-   onlyM1(x) ||
-   (
-    !first(x,"moteur","engine") &&
-    state.sources[kind] === kind+".json"
-   )
-  );
-}
+function owned(x,kind){
+ if(!obj(x)) return false;
+ if(isM1(x)) return true;
+ if(first(x,"moteur","engine")) return false;
 
-function parisDay(){
- const parts = new Intl.DateTimeFormat("en-GB",{
-  timeZone:"Europe/Paris",
-  year:"numeric",month:"2-digit",day:"2-digit"
- }).formatToParts(new Date());
- const p = {};
- for(const item of parts) p[item.type] = item.value;
- return p.year+"-"+p.month+"-"+p.day;
-}
+ const localFiles = {
+  selections:["selections.json","m1_selections.json"],
+  figes:["figes.json"],
+  audits:["audits.json"],
+  propositions:["publication_propositions_m1.json"],
+  enrichissements:["publication_tableau_m1_enrichi.json"]
+ };
 
-function nowParis(){
- return new Intl.DateTimeFormat("fr-FR",{
-  timeZone:"Europe/Paris",
-  dateStyle:"full",timeStyle:"medium"
- }).format(new Date());
+ return (localFiles[kind] || []).includes(
+  state.sources[kind]
+ );
 }
 
 function parseTime(value){
  if(typeof value !== "string") return NaN;
+
  const s = value.trim();
- if(!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(s)){
+
+ if(!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2})?(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(s)){
   return NaN;
  }
+
  const t = Date.parse(s);
  return Number.isFinite(t) ? t : NaN;
 }
@@ -538,68 +753,187 @@ function parseTime(value){
 function dateParis(value){
  const t = parseTime(value);
  if(!Number.isFinite(t)) return "—";
+
  return new Intl.DateTimeFormat("fr-FR",{
   timeZone:"Europe/Paris",
-  dateStyle:"short",timeStyle:"short"
+  dateStyle:"short",
+  timeStyle:"short"
  }).format(new Date(t));
+}
+
+function nowParis(){
+ return new Intl.DateTimeFormat("fr-FR",{
+  timeZone:"Europe/Paris",
+  dateStyle:"full",
+  timeStyle:"medium"
+ }).format(new Date());
+}
+
+function parisDay(){
+ const parts = new Intl.DateTimeFormat("en-GB",{
+  timeZone:"Europe/Paris",
+  year:"numeric",
+  month:"2-digit",
+  day:"2-digit"
+ }).formatToParts(new Date());
+
+ const p = {};
+ for(const item of parts){
+  p[item.type] = item.value;
+ }
+
+ return p.year+"-"+p.month+"-"+p.day;
+}
+
+function positiveNumber(value){
+ if(typeof value !== "number" &&
+    typeof value !== "string"){
+  return null;
+ }
+
+ if(typeof value === "string" &&
+    !/^\d+$/.test(value.trim())){
+  return null;
+ }
+
+ const n = Number(value);
+ return Number.isInteger(n) && n > 0 ? n : null;
 }
 
 function rank(x){
  const r = first(
-  x,"classement","classement_complet",
-  "ordre_espere","ordre_arrivee_espere","ranking"
+  x,
+  "classement",
+  "classement_complet",
+  "ordre_espere",
+  "ordre_arrivee_espere",
+  "ranking"
  );
- return Array.isArray(r) ? r : [];
+
+ if(!Array.isArray(r)) return [];
+
+ return r.map(positiveNumber).filter(n=>n !== null);
 }
 
-function arr(value){
- return Array.isArray(value) ? value.join(" - ") : "—";
+function joined(value){
+ return Array.isArray(value) && value.length
+  ? value.join(" - ")
+  : "—";
 }
 
 function isNP(p){
- if(!validObject(p)) return false;
+ if(!obj(p)) return false;
+
  return p.non_partant === true ||
   p.nonPartant === true ||
   ["NON_PARTANT","NONPARTANT","NP","FORFAIT"].includes(
-   String(p.statut || "").toUpperCase().replace(/[ -]/g,"_")
+   String(p.statut || "")
+    .toUpperCase()
+    .replace(/[ -]/g,"_")
   );
 }
 
 function bet(x){
- const b = first(x,"pari_envisage","pari_retenu","pari");
+ const b = first(
+  x,"pari_envisage","pari_retenu","pari"
+ );
+
  if(!b) return "—";
  if(typeof b === "string") return b;
- if(validObject(b)){
+
+ if(obj(b)){
   return [
    b.formule || b.type || "Pari",
-   Array.isArray(b.numeros) ? arr(b.numeros) : ""
+   Array.isArray(b.numeros)
+    ? joined(b.numeros)
+    : ""
   ].filter(Boolean).join(" : ");
  }
+
  return "—";
 }
 
-function table(rows,columns,empty="Aucune publication disponible."){
+function stars(x){
+ if(!obj(x)) return "Non évalué";
+
+ const n = x.niveau_confiance;
+ const justification = x.justification_confiance;
+ const criteria = x.criteres_verifies;
+
+ if(
+  !Number.isInteger(n) ||
+  n < 1 ||
+  n > 5 ||
+  typeof justification !== "string" ||
+  justification.trim().length < 30 ||
+  !Array.isArray(criteria) ||
+  criteria.length === 0 ||
+  !criteria.every(c=>
+   typeof c === "string" &&
+   c.trim().length > 0
+  )
+ ){
+  return "Non évalué";
+ }
+
+ return "🌟".repeat(n);
+}
+
+function runner(n,course){
+ const num = positiveNumber(n);
+ if(num === null) return "—";
+
+ const p = Array.isArray(course.partants)
+  ? course.partants.find(x=>
+     positiveNumber(x.numero) === num
+    )
+  : null;
+
+ return p && p.nom
+  ? num+" - "+p.nom
+  : "N° "+num;
+}
+
+function table(rows,columns,empty="Aucune donnée publiée."){
  if(!rows.length){
   return '<div class="empty">'+esc(empty)+'</div>';
  }
+
  return "<table><thead><tr>"+
-  columns.map(c=>"<th scope='col'>"+esc(c[0])+"</th>").join("")+
+  columns.map(c=>
+   "<th scope='col'>"+esc(c[0])+"</th>"
+  ).join("")+
   "</tr></thead><tbody>"+
-  rows.map(row=>"<tr>"+
-   columns.map(c=>"<td>"+esc(c[1](row))+"</td>").join("")+
-   "</tr>").join("")+
+  rows.map(row=>
+   "<tr>"+
+   columns.map(c=>
+    "<td>"+esc(c[1](row))+"</td>"
+   ).join("")+
+   "</tr>"
+  ).join("")+
   "</tbody></table>";
 }
 
 async function fetchJSON(filename){
  const controller = new AbortController();
- const timer = setTimeout(()=>controller.abort(),12000);
+ const timer = setTimeout(
+  ()=>controller.abort(),12000
+ );
+
  try{
   const response = await fetch(
-   "data/"+encodeURIComponent(filename)+"?t="+Date.now(),
-   {cache:"no-store",signal:controller.signal}
+   "data/"+encodeURIComponent(filename)+
+   "?t="+Date.now(),
+   {
+    cache:"no-store",
+    signal:controller.signal
+   }
   );
-  if(!response.ok) throw new Error("HTTP "+response.status);
+
+  if(!response.ok){
+   throw new Error("HTTP "+response.status);
+  }
+
   return await response.json();
  }finally{
   clearTimeout(timer);
@@ -608,11 +942,15 @@ async function fetchJSON(filename){
 
 function extract(raw,keys){
  if(Array.isArray(raw)) return raw;
- if(validObject(raw)){
+
+ if(obj(raw)){
   for(const key of keys){
-   if(Array.isArray(raw[key])) return raw[key];
+   if(Array.isArray(raw[key])){
+    return raw[key];
+   }
   }
  }
+
  throw new Error("Structure JSON incompatible");
 }
 
@@ -630,7 +968,10 @@ async function loadKind(kind){
     state.sources[kind] = spec.file;
     return rows;
    }
-   if(!empty) empty = {file:spec.file,rows};
+
+   if(!empty){
+    empty = {file:spec.file,rows};
+   }
   }catch(e){
    errors.push(spec.file+" : "+e.message);
   }
@@ -644,8 +985,10 @@ async function loadKind(kind){
  }
 
  state.loaded[kind] = false;
- state.notes[kind] = errors.join(" ; ") ||
+ state.notes[kind] =
+  errors.join(" ; ") ||
   "Aucune publication disponible";
+
  return [];
 }
 
@@ -653,96 +996,153 @@ function normalizeSelections(rows){
  const result = [];
 
  for(const x of rows){
-  if(!validObject(x)) continue;
+  if(!obj(x)) continue;
 
-  if(onlyM1(x)){
+  if(isM1(x) || owned(x,"selections")){
    result.push(x);
    continue;
   }
 
   if(Array.isArray(x.moteurs)){
    for(const m of x.moteurs){
-    if(onlyM1(m)){
+    if(isM1(m)){
      result.push({
-      ...m,course_id:first(m,"course_id") || courseId(x)
+      ...m,
+      course_id:first(m,"course_id") || cid(x)
      });
     }
    }
-  }else if(validObject(x.moteurs?.M1)){
+  }else if(obj(x.moteurs?.M1)){
    result.push({
     ...x.moteurs.M1,
     moteur:"M1",
-    course_id:courseId(x)
+    course_id:cid(x)
    });
-  }else if(
-   !first(x,"moteur","engine") &&
-   ["selections.json","m1_selections.json"].includes(
-    state.sources.selections
-   )
-  ){
-   result.push(x);
   }
  }
 
  const seen = new Set();
+
  return result.filter(x=>{
   const id = first(x,"identifiant","selection_id");
+
   if(!id) return true;
   if(seen.has(String(id))) return false;
+
   seen.add(String(id));
   return true;
  });
 }
 
-function figVersion(f){
- const n = Number(f.version);
+function version(x){
+ const n = Number(x.version);
  return Number.isInteger(n) && n > 0 ? n : 0;
 }
 
-function figTime(f){
- return parseTime(first(f,"fige_a","date_fige","cree_a"));
+function latestByCourse(rows){
+ const map = new Map();
+
+ for(const x of rows){
+  if(!obj(x)) continue;
+
+  const id = cid(x);
+  if(id === "—") continue;
+
+  const old = map.get(id);
+
+  const a = parseTime(first(
+   x,"cree_a","genere_a","analyse_a","fige_a"
+  ));
+
+  const b = old ? parseTime(first(
+   old,"cree_a","genere_a","analyse_a","fige_a"
+  )) : NaN;
+
+  if(
+   !old ||
+   (
+    Number.isFinite(a) &&
+    (!Number.isFinite(b) || a > b)
+   )
+  ){
+   map.set(id,x);
+  }
+ }
+
+ return map;
 }
 
 function latestFiges(){
- const latest = new Map();
+ const map = new Map();
 
  for(const f of state.figes){
-  const id = courseId(f);
+  const id = cid(f);
   if(id === "—") continue;
 
-  const old = latest.get(id);
+  const old = map.get(id);
+
   if(!old){
-   latest.set(id,f);
+   map.set(id,f);
    continue;
   }
 
-  const newerVersion = figVersion(f) > figVersion(old);
-  const newerTime =
-   figVersion(f) === figVersion(old) &&
-   Number.isFinite(figTime(f)) &&
-   (
-    !Number.isFinite(figTime(old)) ||
-    figTime(f) > figTime(old)
-   );
+  const a = parseTime(first(
+   f,"fige_a","date_fige","cree_a"
+  ));
 
-  if(newerVersion || newerTime) latest.set(id,f);
+  const b = parseTime(first(
+   old,"fige_a","date_fige","cree_a"
+  ));
+
+  if(
+   version(f) > version(old) ||
+   (
+    version(f) === version(old) &&
+    Number.isFinite(a) &&
+    (!Number.isFinite(b) || a > b)
+   )
+  ){
+   map.set(id,f);
+  }
  }
 
- return latest;
+ return map;
+}
+
+function validCollection(){
+ const c = state.collecte;
+ if(!obj(c)) return false;
+
+ const age = Date.now()-parseTime(c.collecte_a);
+
+ return c.statut === "OK" &&
+  c.date === parisDay() &&
+  Array.isArray(c.erreurs) &&
+  c.erreurs.length === 0 &&
+  Number.isFinite(age) &&
+  age >= -60000 &&
+  age <= 20*60000;
 }
 
 function displayCourses(){
- const q = $("rechercheCourses").value.trim().toLocaleLowerCase("fr");
+ const q = $("rechercheCourses").value
+  .trim()
+  .toLocaleLowerCase("fr");
+
  const rows = state.courses.filter(c=>
   !q ||
-  (courseId(c)+" "+(c.hippodrome||"")+" "+(c.nom||""))
-   .toLocaleLowerCase("fr").includes(q)
+  (
+   cid(c)+" "+
+   (c.hippodrome || "")+" "+
+   (c.nom || "")
+  ).toLocaleLowerCase("fr").includes(q)
  );
 
  $("tableCourses").innerHTML = table(rows,[
-  ["Course",courseId],
+  ["Course",cid],
   ["Hippodrome",x=>x.hippodrome],
   ["Départ Paris",x=>dateParis(x.depart)],
+  ["Discipline",x=>x.discipline || "Non renseignée"],
   ["Partants",x=>x.partants.filter(p=>!isNP(p)).length],
   ["NP",x=>x.partants.filter(isNP).length],
   ["Statut",x=>x.statut]
@@ -751,7 +1151,7 @@ function displayCourses(){
 
 function showPartants(){
  const c = state.courses.find(
-  x=>courseId(x) === $("choixCourse").value
+  x=>cid(x) === $("choixCourse").value
  );
 
  $("tablePartants").innerHTML = table(
@@ -760,7 +1160,7 @@ function showPartants(){
    ["N°",p=>p.numero],
    ["Cheval",p=>p.nom],
    ["Statut",p=>isNP(p)?"NON-PARTANT":"Partant déclaré"],
-   ["Jockey / Driver",p=>p.jockey||p.driver],
+   ["Jockey / Driver",p=>p.jockey || p.driver],
    ["Entraîneur",p=>p.entraineur],
    ["Musique",p=>p.musique]
   ],
@@ -768,43 +1168,133 @@ function showPartants(){
  );
 }
 
-function diagnosticLine(label,detail,level=""){
- return '<div class="diagnostic-line">'+
-  '<strong class="'+esc(level)+'">'+esc(label)+'</strong>'+
-  '<div>'+esc(detail)+'</div></div>';
+function displayOfficial(){
+ const selections = latestByCourse(state.selections);
+ const propositions = latestByCourse(state.propositions);
+ const figes = latestFiges();
+ const extras = latestByCourse(state.enrichissements);
+
+ const rows = state.courses.map(c=>{
+  const id = cid(c);
+  const sel = selections.get(id);
+  const fig = figes.get(id);
+  const prop = propositions.get(id);
+  const extra = extras.get(id) || {};
+
+  // Priorité aux décisions publiées.
+  // Un FIGÉ historique n'est pas présumé actif.
+  const decision = sel || prop || fig || {};
+  const ranking = rank(decision);
+
+  const departure = parseTime(c.depart);
+  const arrivalTime = parseTime(
+   extra.heure_arrivee_reelle
+  );
+
+  const arrivalValid =
+   extra.arrivee_officielle_verifiee === true &&
+   typeof extra.source_officielle === "string" &&
+   extra.source_officielle.trim().length > 0 &&
+   Number.isFinite(arrivalTime) &&
+   Number.isFinite(departure) &&
+   arrivalTime >= departure;
+
+  let status = "EN ATTENTE";
+
+  if(sel){
+   status = String(
+    first(sel,"statut","validation") ||
+    "DÉCISION PUBLIÉE"
+   );
+  }else if(prop){
+   status = "PROPOSITION NON VALIDÉE";
+  }else if(fig){
+   status = "FIGÉ HISTORIQUE";
+  }
+
+  return {
+   id,
+   course:c,
+   decision,
+   ranking,
+   extra,
+   arrival:arrivalValid
+    ? dateParis(extra.heure_arrivee_reelle)
+    : "Non disponible",
+   status,
+   analysisTime:first(
+    decision,
+    "cree_a",
+    "analyse_a",
+    "fige_a",
+    "genere_a"
+   )
+  };
+ });
+
+ $("tableDecisions").innerHTML = table(rows,[
+  ["Course",x=>x.id],
+  ["Départ Paris",x=>dateParis(x.course.depart)],
+  ["Arrivée réelle",x=>x.arrival],
+  ["Discipline",x=>
+   x.course.discipline || "Non renseignée"
+  ],
+  ["Gagnant espéré",x=>
+   first(x.decision,"gagnant_espere") ??
+   runner(x.ranking[0],x.course)
+  ],
+  ["Meilleur placé",x=>
+   first(x.decision,"meilleur_place") ??
+   runner(x.ranking[1],x.course)
+  ],
+  ["Ordre espéré",x=>joined(x.ranking)],
+  ["Pari envisagé",x=>bet(x.decision)],
+  ["Validation 🌟",x=>stars(x.extra)],
+  ["Statut",x=>x.status],
+  ["Analyse Paris",x=>dateParis(x.analysisTime)]
+ ],"Aucune course française vérifiée disponible.");
+
+ const evaluated = rows.filter(x=>
+  stars(x.extra) !== "Non évalué"
+ ).length;
+
+ $("tableauEtat").textContent =
+  rows.length+
+  " course(s) française(s) vérifiée(s) affichée(s). "+
+  evaluated+
+  " évaluation(s) étoilée(s) documentée(s). "+
+  "Les FIGÉs historiques ne sont pas présumés actifs.";
 }
 
 function displaySurveillance(){
  const latest = latestFiges();
  const rows = [];
+
  let alerts = 0;
  let unknown = 0;
  let near = 0;
 
- const collectionTime = parseTime(state.collecte?.collecte_a);
- const collectionAge = Date.now()-collectionTime;
- const fresh = state.collecte?.statut === "OK" &&
-  state.collecte?.date === parisDay() &&
-  Array.isArray(state.collecte?.erreurs) &&
-  state.collecte.erreurs.length === 0 &&
-  Number.isFinite(collectionAge) &&
-  collectionAge >= -60000 &&
-  collectionAge <= 20*60*1000;
+ const fresh = validCollection();
+ const collected = new Map();
 
- const fromCollection = new Map();
  if(Array.isArray(state.collecte?.courses)){
   for(const c of state.collecte.courses){
-   if(validObject(c) &&
-      c.localisation_france_verifiee === true){
-    fromCollection.set(courseId(c),c);
+   if(
+    obj(c) &&
+    c.localisation_france_verifiee === true
+   ){
+    collected.set(cid(c),c);
    }
   }
  }
 
  for(const [id,f] of latest){
-  const c = fromCollection.get(id);
+  const c = collected.get(id);
   const ranking = rank(f);
-  const departure = c ? parseTime(c.depart) : NaN;
+  const departure = c
+   ? parseTime(c.depart)
+   : NaN;
+
   const diff = departure-Date.now();
 
   let status = "CONTRÔLE NON CONCLUANT";
@@ -812,91 +1302,104 @@ function displaySurveillance(){
 
   if(!fresh){
    unknown++;
-   detail = "Collecte PMU récente et valide indisponible.";
+   detail = "Collecte PMU récente indisponible.";
   }else if(!c || !Array.isArray(c.partants)){
    unknown++;
-   detail = "Course ou partants absents de la collecte récente.";
+   detail = "Course ou partants absents de la collecte.";
   }else if(!Number.isFinite(departure)){
    unknown++;
-   detail = "Heure de départ non vérifiable.";
+   detail = "Départ non vérifiable.";
   }else if(
    ranking.length !== 5 ||
-   ranking.some(n=>!Number.isInteger(Number(n))) ||
-   new Set(ranking.map(Number)).size !== 5
+   new Set(ranking).size !== 5
   ){
    unknown++;
    detail = "Classement FIGÉ non exploitable.";
   }else{
    const np = new Set(
-    c.partants.filter(isNP).map(p=>Number(p.numero))
+    c.partants
+     .filter(isNP)
+     .map(p=>positiveNumber(p.numero))
    );
-   const affected = ranking.filter(n=>np.has(Number(n)));
 
-   if(affected.length && diff > 0){
+   const affected = ranking.filter(n=>np.has(n));
+
+   if(affected.length){
     alerts++;
-    status = "ALERTE NP — RÉÉVALUATION AVANT DÉPART";
-    detail = "Cheval(s) concerné(s) : "+affected.join(", ")+
-     ". Contrôle et décision serveur nécessaires.";
-   }else if(affected.length){
-    alerts++;
-    status = "NP DÉTECTÉ — COURSE DÉJÀ PARTIE";
-    detail = "Archive conservée. Aucune révision rétroactive.";
+
+    status = diff > 0
+     ? "ALERTE NP — RÉÉVALUATION"
+     : "NP DÉTECTÉ — DÉPART ATTEINT";
+
+    detail =
+     "Cheval(s) : "+affected.join(", ")+
+     ". Vérification serveur nécessaire.";
    }else if(diff <= 0){
     status = "DÉPART ATTEINT";
     detail = "Aucun nouveau FIGÉ autorisé.";
-   }else if(diff <= 15*60*1000){
+   }else if(diff <= 15*60000){
     near++;
-    status = "DÉPART PROCHE — CONTRÔLE PRIORITAIRE";
-    detail = "Vérification serveur avant départ recommandée.";
+    status = "DÉPART PROCHE";
+    detail = "Contrôle prioritaire côté M1.";
    }else{
-    status = "AUCUN NP DÉTECTÉ DANS LE CLASSEMENT";
-    detail = "Selon la dernière collecte disponible. "+
-     "Intégrité sportive non certifiée.";
+    status = "AUCUN NP DÉTECTÉ";
+    detail =
+     "Selon la collecte récente uniquement.";
    }
   }
 
   rows.push({
-   id,version:f.version,ranking,
-   depart:c?.depart,status,detail
+   id,
+   version:f.version,
+   ranking,
+   depart:c?.depart,
+   status,
+   detail
   });
  }
 
  $("tableSurveillance").innerHTML = table(rows,[
   ["Course",x=>x.id],
   ["Version",x=>x.version],
-  ["Classement",x=>arr(x.ranking)],
+  ["Classement",x=>joined(x.ranking)],
   ["Départ Paris",x=>dateParis(x.depart)],
   ["Contrôle",x=>x.status],
   ["Observation",x=>x.detail]
  ],"Aucun FIGÉ M1 publié pour surveillance.");
 
  const box = $("surveillanceEtat");
+ box.className = alerts ? "alert" : "notice";
 
  if(!rows.length){
-  box.className = "notice";
   box.textContent = "Aucun FIGÉ disponible.";
  }else if(alerts){
-  box.className = "alert";
   box.textContent =
-   alerts+" FIGÉ(s) concernés par un NP. "+
-   "Vérification serveur nécessaire. "+
-   "Aucune archive modifiée par cette page.";
+   alerts+
+   " FIGÉ(s) concernés par un NP. "+
+   "Vérification serveur nécessaire.";
  }else if(unknown){
-  box.className = "notice";
   box.textContent =
-   unknown+" FIGÉ(s) sans contrôle concluant. "+
+   unknown+
+   " FIGÉ(s) sans contrôle concluant. "+
    "Une absence d'alerte ne vaut pas validation.";
  }else if(near){
-  box.className = "notice";
   box.textContent =
-   near+" course(s) proches du départ. "+
-   "Contrôle prioritaire côté moteur M1.";
+   near+
+   " course(s) proches du départ.";
  }else{
-  box.className = "notice";
   box.textContent =
-   "Aucun NP détecté dans les classements vérifiables "+
-   "à partir de la collecte récente.";
+   "Aucun NP détecté dans les classements "+
+   "vérifiables selon la collecte récente.";
  }
+}
+
+function diagnosticLine(label,detail,level=""){
+ return '<div class="diagnostic-line">'+
+  '<strong class="'+esc(level)+'">'+
+  esc(label)+
+  '</strong><div>'+
+  esc(detail)+
+  '</div></div>';
 }
 
 function display(){
@@ -904,68 +1407,91 @@ function display(){
 
  const select = $("choixCourse");
  const previous = select.value;
+
  select.replaceChildren();
 
  if(!state.courses.length){
-  select.add(new Option("Aucune course publiée",""));
+  select.add(new Option(
+   "Aucune course publiée",""
+  ));
  }else{
   for(const c of state.courses){
    select.add(new Option(
-    courseId(c)+" — "+(c.hippodrome||"Hippodrome inconnu"),
-    courseId(c)
+    cid(c)+" — "+
+    (c.hippodrome || "Hippodrome inconnu"),
+    cid(c)
    ));
   }
-  if(state.courses.some(c=>courseId(c)===previous)){
+
+  if(state.courses.some(c=>cid(c) === previous)){
    select.value = previous;
   }
  }
- showPartants();
 
- $("tableDecisions").innerHTML = table(state.selections,[
-  ["Course",courseId],
-  ["Gagnant espéré",x=>first(x,"gagnant_espere")??rank(x)[0]],
-  ["Meilleur placé",x=>first(x,"meilleur_place")??rank(x)[1]],
-  ["Ordre espéré",x=>arr(rank(x))],
-  ["Pari envisagé",bet],
-  ["Statut",x=>first(x,"statut","validation")],
-  ["Heure Paris",x=>dateParis(first(x,"cree_a","analyse_a","heure"))]
- ],"Aucune décision M1 publiée.");
+ showPartants();
+ displayOfficial();
 
  const latest = latestFiges();
 
  $("tableFiges").innerHTML = table(state.figes,[
-  ["Course",courseId],
+  ["Course",cid],
   ["Version",x=>x.version],
-  ["Classement",x=>arr(rank(x))],
+  ["Classement",x=>joined(rank(x))],
   ["Pari",bet],
-  ["FIGÉ à",x=>dateParis(first(x,"fige_a","date_fige","cree_a"))],
-  ["Historique",x=>latest.get(courseId(x))===x
-   ?"DERNIÈRE VERSION PUBLIÉE":"VERSION ANTÉRIEURE"],
+  ["FIGÉ à",x=>dateParis(first(
+   x,"fige_a","date_fige","cree_a"
+  ))],
+  ["Historique",x=>
+   latest.get(cid(x)) === x
+    ? "DERNIÈRE VERSION PUBLIÉE"
+    : "VERSION ANTÉRIEURE"
+  ],
   ["Statut déclaré",x=>x.statut],
-  ["SHA256 déclaré",x=>first(x,"sha256","hash")]
+  ["SHA256 déclaré",x=>first(
+   x,"sha256","hash"
+  )]
  ],"Aucun FIGÉ M1 publié.");
 
  $("tableAudits").innerHTML = table(state.audits,[
-  ["Course",courseId],
+  ["Course",cid],
   ["Version",x=>x.version],
-  ["Arrivée déclarée",x=>arr(first(x,"arrivee_officielle","arrivee"))],
+  ["Arrivée déclarée",x=>joined(first(
+   x,"arrivee_officielle","arrivee"
+  ))],
   ["Top 5 détectés",x=>x.top5_detectes],
-  ["Ordre exact",x=>x.ordre_exact===true
-   ?"Oui":x.ordre_exact===false?"Non":"—"],
+  ["Ordre exact",x=>
+   x.ordre_exact === true
+    ? "Oui"
+    : x.ordre_exact === false
+     ? "Non"
+     : "—"
+  ],
   ["Source déclarée",x=>first(
-   x,"source_officielle","source_arrivee","source_resultat"
+   x,
+   "source_officielle",
+   "source_arrivee",
+   "source_resultat"
   )],
-  ["Heure audit",x=>dateParis(first(x,"audite_a","date_audit"))]
+  ["Heure audit",x=>dateParis(first(
+   x,"audite_a","date_audit"
+  ))]
  ],"Aucun audit M1 publié.");
 
- const runners = state.courses.flatMap(c=>c.partants);
+ const runners = state.courses.flatMap(
+  c=>c.partants
+ );
 
  $("nbCourses").textContent = state.courses.length;
- $("nbPartants").textContent = runners.filter(p=>!isNP(p)).length;
- $("nbNP").textContent = runners.filter(isNP).length;
- $("nbDecisions").textContent = state.selections.length;
- $("nbFiges").textContent = state.figes.length;
- $("nbAudits").textContent = state.audits.length;
+ $("nbPartants").textContent =
+  runners.filter(p=>!isNP(p)).length;
+ $("nbNP").textContent =
+  runners.filter(isNP).length;
+ $("nbDecisions").textContent =
+  state.selections.length;
+ $("nbFiges").textContent =
+  state.figes.length;
+ $("nbAudits").textContent =
+  state.audits.length;
 
  displaySurveillance();
 
@@ -973,35 +1499,46 @@ function display(){
   diagnosticLine(
    kind,
    state.loaded[kind]
-    ?"data/"+state.sources[kind]+
-     (state.notes[kind]?" — "+state.notes[kind]:"")
-    :state.notes[kind],
-   state.loaded[kind]?"ok":"warn"
+    ? "data/"+state.sources[kind]+
+      (
+       state.notes[kind]
+        ? " — "+state.notes[kind]
+        : ""
+      )
+    : state.notes[kind],
+   state.loaded[kind] ? "ok" : "warn"
   )
  );
 
  if(state.collecte){
   lines.push(diagnosticLine(
-   "Collecte PMU indépendante",
-   String(state.collecte.statut||"Statut absent")+
-   " — "+dateParis(state.collecte.collecte_a),
-   state.collecte.statut==="OK"?"ok":"warn"
+   "Collecte PMU",
+   String(
+    state.collecte.statut || "Statut absent"
+   )+
+   " — "+
+   dateParis(state.collecte.collecte_a),
+   validCollection() ? "ok" : "warn"
   ));
 
-  if(Array.isArray(state.collecte.erreurs) &&
-     state.collecte.erreurs.length){
+  if(
+   Array.isArray(state.collecte.erreurs) &&
+   state.collecte.erreurs.length
+  ){
    lines.push(diagnosticLine(
     "Erreurs collecte",
     state.collecte.erreurs.map(x=>
-     typeof x==="string"?x:JSON.stringify(x)
+     typeof x === "string"
+      ? x
+      : JSON.stringify(x)
     ).join(" | "),
     "bad"
    ));
   }
  }else{
   lines.push(diagnosticLine(
-   "Collecte PMU indépendante",
-   state.notes.collecte||"Indisponible",
+   "Collecte PMU",
+   state.notes.collecte || "Indisponible",
    "warn"
   ));
  }
@@ -1009,51 +1546,66 @@ function display(){
  if(state.diagnostic){
   lines.push(diagnosticLine(
    "Diagnostic collecteur",
-   String(state.diagnostic.statut||"Statut absent")+
-   " — "+dateParis(state.diagnostic.collecte_a)
+   String(
+    state.diagnostic.statut || "Statut absent"
+   )+
+   " — "+
+   dateParis(state.diagnostic.collecte_a)
   ));
  }
 
  if(state.publication){
   lines.push(diagnosticLine(
    "Publication autonome M1",
-   String(state.publication.statut||"Statut absent")+
-   " — "+dateParis(state.publication.genere_a)+
-   " — nouvelles décisions déclarées : "+
-   String(state.publication.decisions_nouvelles??"—")
+   String(
+    state.publication.statut || "Statut absent"
+   )+
+   " — "+
+   dateParis(state.publication.genere_a)
   ));
  }
 
  lines.push(diagnosticLine(
-  "Protection des archives",
-  "Lecture seule. Aucun FIGÉ, pari, pronostic ou audit "+
-  "créé, supprimé ou remplacé par cette page."
+  "Archives historiques",
+  "Lecture seule : aucune création, "+
+  "modification ou suppression de FIGÉ ou audit."
+ ));
+
+ lines.push(diagnosticLine(
+  "Étoiles M1",
+  "Aucune étoile attribuée sans niveau, "+
+  "critères et justification publiés."
  ));
 
  lines.push(diagnosticLine(
   "Directive M1",
-  "Directive affichée. Automatisation effective "+
-  "à vérifier dans Python et GitHub Actions."
+  "Automatisation effective à vérifier "+
+  "dans Python et GitHub Actions."
  ));
 
- $("rapportTechnique").innerHTML = lines.join("");
+ $("rapportTechnique").innerHTML =
+  lines.join("");
 }
 
-async function optionalJSON(filename,noteKey){
+async function optionalJSON(filename,key){
  try{
   return await fetchJSON(filename);
  }catch(e){
-  state.notes[noteKey] = filename+" : "+e.message;
+  state.notes[key] =
+   filename+" : "+e.message;
   return null;
  }
 }
 
 async function refresh(){
  if(busy) return;
+
  busy = true;
+
  $("actualiser").disabled = true;
  $("etatGlobal").className = "status warn";
- $("etatGlobal").textContent = "Actualisation des données M1...";
+ $("etatGlobal").textContent =
+  "Actualisation des données M1…";
 
  state.loaded = {};
  state.sources = {};
@@ -1064,89 +1616,151 @@ async function refresh(){
 
  try{
   const kinds = Object.keys(configs);
-  const results = await Promise.all(kinds.map(loadKind));
-  kinds.forEach((kind,i)=>state[kind]=results[i]);
+  const results = await Promise.all(
+   kinds.map(loadKind)
+  );
+
+  kinds.forEach((kind,i)=>{
+   state[kind] = results[i];
+  });
 
   const extras = await Promise.all([
-   optionalJSON("collecte_m1_pmu.json","collecte"),
-   optionalJSON("diagnostic_collecte_m1.json","diagnostic"),
-   optionalJSON("publication_m1_autonome.json","publication")
+   optionalJSON(
+    "collecte_m1_pmu.json","collecte"
+   ),
+   optionalJSON(
+    "diagnostic_collecte_m1.json","diagnostic"
+   ),
+   optionalJSON(
+    "publication_m1_autonome.json","publication"
+   )
   ]);
 
-  state.collecte = validObject(extras[0])?extras[0]:null;
-  state.diagnostic = validObject(extras[1])?extras[1]:null;
-  state.publication = validObject(extras[2])?extras[2]:null;
+  state.collecte = obj(extras[0])
+   ? extras[0]
+   : null;
 
-  state.courses = state.courses.filter(c=>
-   validObject(c) &&
-   c.localisation_france_verifiee===true &&
+  state.diagnostic = obj(extras[1])
+   ? extras[1]
+   : null;
+
+  state.publication = obj(extras[2])
+   ? extras[2]
+   : null;
+
+  const valid = state.courses.filter(c=>
+   obj(c) &&
+   c.localisation_france_verifiee === true &&
    Array.isArray(c.partants) &&
-   /^\d{4}-\d{2}-\d{2}-R[1-9]\d*-C[1-9]\d*$/.test(courseId(c))
+   /^\d{4}-\d{2}-\d{2}-R[1-9]\d*-C[1-9]\d*$/.test(
+    cid(c)
+   )
   );
 
-  const uniqueCourses = new Map();
-  for(const c of state.courses){
-   if(!uniqueCourses.has(courseId(c))){
-    uniqueCourses.set(courseId(c),c);
+  const unique = new Map();
+
+  for(const c of valid){
+   if(!unique.has(cid(c))){
+    unique.set(cid(c),c);
    }
   }
-  state.courses = [...uniqueCourses.values()];
 
-  state.selections = normalizeSelections(state.selections);
-  state.figes = state.figes.filter(x=>ownM1(x,"figes"));
-  state.audits = state.audits.filter(x=>ownM1(x,"audits"));
+  state.courses = [...unique.values()];
 
-  state.courses.sort((a,b)=>
-   parseTime(a.depart)-parseTime(b.depart)
+  state.selections = normalizeSelections(
+   state.selections
   );
 
+  state.propositions =
+   state.propositions.filter(x=>
+    owned(x,"propositions")
+   );
+
+  state.figes =
+   state.figes.filter(x=>
+    owned(x,"figes")
+   );
+
+  state.audits =
+   state.audits.filter(x=>
+    owned(x,"audits")
+   );
+
+  state.enrichissements =
+   state.enrichissements.filter(x=>
+    owned(x,"enrichissements")
+   );
+
+  state.courses.sort((a,b)=>{
+   const ta = parseTime(a.depart);
+   const tb = parseTime(b.depart);
+
+   if(!Number.isFinite(ta) &&
+      !Number.isFinite(tb)) return 0;
+   if(!Number.isFinite(ta)) return 1;
+   if(!Number.isFinite(tb)) return -1;
+
+   return ta-tb;
+  });
+
   state.figes.sort((a,b)=>
-   courseId(a).localeCompare(courseId(b)) ||
-   figVersion(a)-figVersion(b)
+   cid(a).localeCompare(cid(b)) ||
+   version(a)-version(b)
   );
 
   display();
-
-  const timestamp = parseTime(state.collecte?.collecte_a);
-  const age = Date.now()-timestamp;
-  const fresh = Number.isFinite(age) &&
-   age >= -60000 && age <= 20*60*1000;
-
-  const dateOK = state.collecte?.date===parisDay();
-  const statusOK = state.collecte?.statut==="OK";
-  const errorsOK = Array.isArray(state.collecte?.erreurs) &&
-   state.collecte.erreurs.length===0;
 
   let level = "warn";
   let message = "";
 
   if(!state.loaded.courses){
    level = "bad";
-   message = "Courses indisponibles : vérifiez les publications GitHub.";
+   message =
+    "Courses indisponibles : "+
+    "vérifiez les publications GitHub.";
   }else if(!state.collecte){
-   message = "Courses affichées, mais collecte PMU indépendante indisponible.";
-  }else if(!statusOK || !errorsOK){
+   message =
+    "Courses affichées, mais collecte PMU "+
+    "indépendante indisponible.";
+  }else if(
+   state.collecte.statut !== "OK" ||
+   !Array.isArray(state.collecte.erreurs) ||
+   state.collecte.erreurs.length !== 0
+  ){
    level = "bad";
-   message = "Collecte PMU non validée : consultez le diagnostic.";
-  }else if(!fresh || !dateOK){
-   message = "Collecte PMU ancienne ou de date différente : données à revérifier.";
+   message =
+    "Collecte PMU non validée : "+
+    "consultez le diagnostic.";
+  }else if(!validCollection()){
+   message =
+    "Collecte PMU ancienne ou de date différente : "+
+    "données à revérifier.";
   }else if(!state.courses.length){
-   message = "Aucune course française vérifiée disponible.";
+   message =
+    "Aucune course française vérifiée disponible.";
   }else{
    level = "ok";
-   message = "Collecte PMU récente chargée : "+
+   message =
+    "Collecte PMU récente chargée : "+
     state.courses.length+
-    " courses françaises vérifiées affichées.";
+    " course(s) française(s) vérifiée(s).";
   }
 
-  $("etatGlobal").className = "status "+level;
-  $("etatGlobal").textContent = message;
+  $("etatGlobal").className =
+   "status "+level;
+
+  $("etatGlobal").textContent =
+   message;
+
   $("majAuto").textContent =
-   "Dernier contrôle : "+nowParis()+
-   " · Affichage actualisé toutes les 5 minutes";
+   "Dernier contrôle : "+
+   nowParis()+
+   " · Actualisation toutes les 5 minutes";
 
  }catch(e){
-  $("etatGlobal").className = "status bad";
+  $("etatGlobal").className =
+   "status bad";
+
   $("etatGlobal").textContent =
    "Erreur d'affichage : "+e.message;
  }finally{
@@ -1155,18 +1769,31 @@ async function refresh(){
  }
 }
 
-$("actualiser").addEventListener("click",refresh);
-$("choixCourse").addEventListener("change",showPartants);
-$("rechercheCourses").addEventListener("input",displayCourses);
+$("actualiser").addEventListener(
+ "click",refresh
+);
+
+$("choixCourse").addEventListener(
+ "change",showPartants
+);
+
+$("rechercheCourses").addEventListener(
+ "input",displayCourses
+);
 
 function tick(){
- $("heureParis").textContent = nowParis();
+ $("heureParis").textContent =
+  nowParis();
 }
 
 tick();
 setInterval(tick,1000);
+
 refresh();
 setInterval(refresh,300000);
+
+})();
 </script>
+
 </body>
 </html>
