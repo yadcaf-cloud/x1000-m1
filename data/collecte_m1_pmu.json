@@ -1,7 +1,7 @@
 {
   "version": "M1-PMU-COLLECTE-2.0",
   "date": "2026-11-01",
-  "collecte_a": "2026-11-01T16:22:01.047335+01:00",
+  "collecte_a": "2026-11-01T16:54:11.972897+01:00",
   "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026",
   "statut": "OK",
   "courses": [
@@ -15,8 +15,8 @@
       "depart": "2026-11-01T11:27:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R3/C1/participants",
-      "source_verifiee_a": "2026-11-01T16:22:05.341131+01:00",
-      "collecte_a": "2026-11-01T16:22:05.341131+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:18.112493+01:00",
+      "collecte_a": "2026-11-01T16:54:18.112493+01:00",
       "partants": [
         {
           "numero": 1,
@@ -96,8 +96,8 @@
       "depart": "2026-11-01T11:59:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R3/C2/participants",
-      "source_verifiee_a": "2026-11-01T16:22:05.648978+01:00",
-      "collecte_a": "2026-11-01T16:22:05.648978+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:18.481682+01:00",
+      "collecte_a": "2026-11-01T16:54:18.481682+01:00",
       "partants": [
         {
           "numero": 1,
@@ -271,8 +271,8 @@
       "depart": "2026-11-01T12:31:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R3/C3/participants",
-      "source_verifiee_a": "2026-11-01T16:22:06.017855+01:00",
-      "collecte_a": "2026-11-01T16:22:06.017855+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:18.801808+01:00",
+      "collecte_a": "2026-11-01T16:54:18.801808+01:00",
       "partants": [
         {
           "numero": 1,
@@ -362,8 +362,8 @@
       "depart": "2026-11-01T12:45:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R12/C1/participants",
-      "source_verifiee_a": "2026-11-01T16:22:13.426241+01:00",
-      "collecte_a": "2026-11-01T16:22:13.426241+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:26.481743+01:00",
+      "collecte_a": "2026-11-01T16:54:26.481743+01:00",
       "partants": [
         {
           "numero": 1,
@@ -501,8 +501,8 @@
       "depart": "2026-11-01T13:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R8/C1/participants",
-      "source_verifiee_a": "2026-11-01T16:22:10.220662+01:00",
-      "collecte_a": "2026-11-01T16:22:10.220662+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:23.509094+01:00",
+      "collecte_a": "2026-11-01T16:54:23.509094+01:00",
       "partants": [
         {
           "numero": 1,
@@ -700,8 +700,8 @@
       "depart": "2026-11-01T13:03:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R3/C4/participants",
-      "source_verifiee_a": "2026-11-01T16:22:06.355257+01:00",
-      "collecte_a": "2026-11-01T16:22:06.355257+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:19.130154+01:00",
+      "collecte_a": "2026-11-01T16:54:19.130154+01:00",
       "partants": [
         {
           "numero": 1,
@@ -865,8 +865,8 @@
       "depart": "2026-11-01T13:05:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R16/C1/participants",
-      "source_verifiee_a": "2026-11-01T16:22:22.451554+01:00",
-      "collecte_a": "2026-11-01T16:22:22.451554+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:36.699581+01:00",
+      "collecte_a": "2026-11-01T16:54:36.699581+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1016,8 +1016,8 @@
       "depart": "2026-11-01T13:10:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R15/C1/participants",
-      "source_verifiee_a": "2026-11-01T16:22:19.474852+01:00",
-      "collecte_a": "2026-11-01T16:22:19.474852+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:33.363517+01:00",
+      "collecte_a": "2026-11-01T16:54:33.363517+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1227,8 +1227,8 @@
       "depart": "2026-11-01T13:15:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R12/C2/participants",
-      "source_verifiee_a": "2026-11-01T16:22:14.016806+01:00",
-      "collecte_a": "2026-11-01T16:22:14.016806+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:26.817391+01:00",
+      "collecte_a": "2026-11-01T16:54:26.817391+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1390,8 +1390,8 @@
       "depart": "2026-11-01T13:27:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R1/C1/participants",
-      "source_verifiee_a": "2026-11-01T16:22:02.056950+01:00",
-      "collecte_a": "2026-11-01T16:22:02.056950+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:13.312333+01:00",
+      "collecte_a": "2026-11-01T16:54:13.312333+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1589,8 +1589,8 @@
       "depart": "2026-11-01T13:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R13/C1/participants",
-      "source_verifiee_a": "2026-11-01T16:22:16.551548+01:00",
-      "collecte_a": "2026-11-01T16:22:16.551548+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:29.836469+01:00",
+      "collecte_a": "2026-11-01T16:54:29.836469+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1668,8 +1668,8 @@
       "depart": "2026-11-01T13:32:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R8/C2/participants",
-      "source_verifiee_a": "2026-11-01T16:22:10.657254+01:00",
-      "collecte_a": "2026-11-01T16:22:10.657254+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:23.831366+01:00",
+      "collecte_a": "2026-11-01T16:54:23.831366+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1855,8 +1855,8 @@
       "depart": "2026-11-01T13:35:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R16/C2/participants",
-      "source_verifiee_a": "2026-11-01T16:22:22.770807+01:00",
-      "collecte_a": "2026-11-01T16:22:22.770807+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:37.024341+01:00",
+      "collecte_a": "2026-11-01T16:54:37.024341+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2066,8 +2066,8 @@
       "depart": "2026-11-01T13:40:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R15/C2/participants",
-      "source_verifiee_a": "2026-11-01T16:22:19.784122+01:00",
-      "collecte_a": "2026-11-01T16:22:19.784122+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:33.742999+01:00",
+      "collecte_a": "2026-11-01T16:54:33.742999+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2253,8 +2253,8 @@
       "depart": "2026-11-01T13:43:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R3/C5/participants",
-      "source_verifiee_a": "2026-11-01T16:22:06.698298+01:00",
-      "collecte_a": "2026-11-01T16:22:06.698298+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:19.451896+01:00",
+      "collecte_a": "2026-11-01T16:54:19.451896+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2416,8 +2416,8 @@
       "depart": "2026-11-01T13:45:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R12/C3/participants",
-      "source_verifiee_a": "2026-11-01T16:22:14.322012+01:00",
-      "collecte_a": "2026-11-01T16:22:14.322012+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:27.542004+01:00",
+      "collecte_a": "2026-11-01T16:54:27.542004+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2579,8 +2579,8 @@
       "depart": "2026-11-01T14:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R13/C2/participants",
-      "source_verifiee_a": "2026-11-01T16:22:16.850282+01:00",
-      "collecte_a": "2026-11-01T16:22:16.850282+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:30.158939+01:00",
+      "collecte_a": "2026-11-01T16:54:30.158939+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2682,8 +2682,8 @@
       "depart": "2026-11-01T14:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R17/C1/participants",
-      "source_verifiee_a": "2026-11-01T16:22:25.422081+01:00",
-      "collecte_a": "2026-11-01T16:22:25.422081+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:39.675234+01:00",
+      "collecte_a": "2026-11-01T16:54:39.675234+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2797,8 +2797,8 @@
       "depart": "2026-11-01T14:02:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R1/C2/participants",
-      "source_verifiee_a": "2026-11-01T16:22:02.493869+01:00",
-      "collecte_a": "2026-11-01T16:22:02.493869+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:13.636980+01:00",
+      "collecte_a": "2026-11-01T16:54:13.636980+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3032,8 +3032,8 @@
       "depart": "2026-11-01T14:02:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R8/C3/participants",
-      "source_verifiee_a": "2026-11-01T16:22:11.256466+01:00",
-      "collecte_a": "2026-11-01T16:22:11.256466+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:24.175356+01:00",
+      "collecte_a": "2026-11-01T16:54:24.175356+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3219,8 +3219,8 @@
       "depart": "2026-11-01T14:05:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R16/C3/participants",
-      "source_verifiee_a": "2026-11-01T16:22:23.071089+01:00",
-      "collecte_a": "2026-11-01T16:22:23.071089+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:37.346201+01:00",
+      "collecte_a": "2026-11-01T16:54:37.346201+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3406,8 +3406,8 @@
       "depart": "2026-11-01T14:10:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R15/C3/participants",
-      "source_verifiee_a": "2026-11-01T16:22:20.149957+01:00",
-      "collecte_a": "2026-11-01T16:22:20.149957+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:34.067391+01:00",
+      "collecte_a": "2026-11-01T16:54:34.067391+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3593,8 +3593,8 @@
       "depart": "2026-11-01T14:15:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R12/C4/participants",
-      "source_verifiee_a": "2026-11-01T16:22:14.620548+01:00",
-      "collecte_a": "2026-11-01T16:22:14.620548+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:28.001792+01:00",
+      "collecte_a": "2026-11-01T16:54:28.001792+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3756,8 +3756,8 @@
       "depart": "2026-11-01T14:18:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R3/C6/participants",
-      "source_verifiee_a": "2026-11-01T16:22:06.995039+01:00",
-      "collecte_a": "2026-11-01T16:22:06.995039+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:19.819983+01:00",
+      "collecte_a": "2026-11-01T16:54:19.819983+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3931,8 +3931,8 @@
       "depart": "2026-11-01T14:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R8/C4/participants",
-      "source_verifiee_a": "2026-11-01T16:22:11.573780+01:00",
-      "collecte_a": "2026-11-01T16:22:11.573780+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:24.497315+01:00",
+      "collecte_a": "2026-11-01T16:54:24.497315+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4118,8 +4118,8 @@
       "depart": "2026-11-01T14:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R13/C3/participants",
-      "source_verifiee_a": "2026-11-01T16:22:17.154021+01:00",
-      "collecte_a": "2026-11-01T16:22:17.154021+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:30.522515+01:00",
+      "collecte_a": "2026-11-01T16:54:30.522515+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4307,8 +4307,8 @@
       "depart": "2026-11-01T14:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R17/C2/participants",
-      "source_verifiee_a": "2026-11-01T16:22:25.742958+01:00",
-      "collecte_a": "2026-11-01T16:22:25.742958+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:40.000126+01:00",
+      "collecte_a": "2026-11-01T16:54:40.000126+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4494,8 +4494,8 @@
       "depart": "2026-11-01T14:35:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R1/C3/participants",
-      "source_verifiee_a": "2026-11-01T16:22:02.796152+01:00",
-      "collecte_a": "2026-11-01T16:22:02.796152+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:14.475909+01:00",
+      "collecte_a": "2026-11-01T16:54:14.475909+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4669,8 +4669,8 @@
       "depart": "2026-11-01T14:35:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R16/C4/participants",
-      "source_verifiee_a": "2026-11-01T16:22:23.430969+01:00",
-      "collecte_a": "2026-11-01T16:22:23.430969+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:37.729818+01:00",
+      "collecte_a": "2026-11-01T16:54:37.729818+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4856,8 +4856,8 @@
       "depart": "2026-11-01T14:40:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R15/C4/participants",
-      "source_verifiee_a": "2026-11-01T16:22:20.488098+01:00",
-      "collecte_a": "2026-11-01T16:22:20.488098+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:34.588440+01:00",
+      "collecte_a": "2026-11-01T16:54:34.588440+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5019,8 +5019,8 @@
       "depart": "2026-11-01T14:45:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R12/C5/participants",
-      "source_verifiee_a": "2026-11-01T16:22:15.041705+01:00",
-      "collecte_a": "2026-11-01T16:22:15.041705+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:28.324466+01:00",
+      "collecte_a": "2026-11-01T16:54:28.324466+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5182,8 +5182,8 @@
       "depart": "2026-11-01T14:51:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R3/C7/participants",
-      "source_verifiee_a": "2026-11-01T16:22:07.338735+01:00",
-      "collecte_a": "2026-11-01T16:22:07.338735+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:20.189399+01:00",
+      "collecte_a": "2026-11-01T16:54:20.189399+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5369,8 +5369,8 @@
       "depart": "2026-11-01T15:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R8/C5/participants",
-      "source_verifiee_a": "2026-11-01T16:22:11.892207+01:00",
-      "collecte_a": "2026-11-01T16:22:11.892207+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:24.818604+01:00",
+      "collecte_a": "2026-11-01T16:54:24.818604+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5556,8 +5556,8 @@
       "depart": "2026-11-01T15:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R17/C3/participants",
-      "source_verifiee_a": "2026-11-01T16:22:26.037658+01:00",
-      "collecte_a": "2026-11-01T16:22:26.037658+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:40.322907+01:00",
+      "collecte_a": "2026-11-01T16:54:40.322907+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5709,8 +5709,8 @@
       "depart": "2026-11-01T15:05:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R13/C4/participants",
-      "source_verifiee_a": "2026-11-01T16:22:17.547708+01:00",
-      "collecte_a": "2026-11-01T16:22:17.547708+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:30.898476+01:00",
+      "collecte_a": "2026-11-01T16:54:30.898476+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5896,8 +5896,8 @@
       "depart": "2026-11-01T15:05:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R16/C5/participants",
-      "source_verifiee_a": "2026-11-01T16:22:23.731955+01:00",
-      "collecte_a": "2026-11-01T16:22:23.731955+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:38.052664+01:00",
+      "collecte_a": "2026-11-01T16:54:38.052664+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6059,8 +6059,8 @@
       "depart": "2026-11-01T15:10:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R15/C5/participants",
-      "source_verifiee_a": "2026-11-01T16:22:20.800796+01:00",
-      "collecte_a": "2026-11-01T16:22:20.800796+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:34.935378+01:00",
+      "collecte_a": "2026-11-01T16:54:34.935378+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6294,8 +6294,8 @@
       "depart": "2026-11-01T15:15:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R1/C4/participants",
-      "source_verifiee_a": "2026-11-01T16:22:03.109107+01:00",
-      "collecte_a": "2026-11-01T16:22:03.109107+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:14.831319+01:00",
+      "collecte_a": "2026-11-01T16:54:14.831319+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6529,8 +6529,8 @@
       "depart": "2026-11-01T15:15:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R12/C6/participants",
-      "source_verifiee_a": "2026-11-01T16:22:15.362705+01:00",
-      "collecte_a": "2026-11-01T16:22:15.362705+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:28.789119+01:00",
+      "collecte_a": "2026-11-01T16:54:28.789119+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6704,8 +6704,8 @@
       "depart": "2026-11-01T15:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R8/C6/participants",
-      "source_verifiee_a": "2026-11-01T16:22:12.478952+01:00",
-      "collecte_a": "2026-11-01T16:22:12.478952+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:25.186026+01:00",
+      "collecte_a": "2026-11-01T16:54:25.186026+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6918,8 +6918,8 @@
       "depart": "2026-11-01T15:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R17/C4/participants",
-      "source_verifiee_a": "2026-11-01T16:22:26.436048+01:00",
-      "collecte_a": "2026-11-01T16:22:26.436048+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:40.645679+01:00",
+      "collecte_a": "2026-11-01T16:54:40.645679+01:00",
       "partants": [
         {
           "numero": 1,
@@ -7057,8 +7057,8 @@
       "depart": "2026-11-01T15:33:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R13/C5/participants",
-      "source_verifiee_a": "2026-11-01T16:22:17.855256+01:00",
-      "collecte_a": "2026-11-01T16:22:17.855256+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:31.272182+01:00",
+      "collecte_a": "2026-11-01T16:54:31.272182+01:00",
       "partants": [
         {
           "numero": 1,
@@ -7244,8 +7244,8 @@
       "depart": "2026-11-01T15:35:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R3/C8/participants",
-      "source_verifiee_a": "2026-11-01T16:22:07.669997+01:00",
-      "collecte_a": "2026-11-01T16:22:07.669997+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:20.553929+01:00",
+      "collecte_a": "2026-11-01T16:54:20.553929+01:00",
       "partants": [
         {
           "numero": 1,
@@ -7445,8 +7445,8 @@
       "depart": "2026-11-01T15:35:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R16/C6/participants",
-      "source_verifiee_a": "2026-11-01T16:22:24.039149+01:00",
-      "collecte_a": "2026-11-01T16:22:24.039149+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:38.382386+01:00",
+      "collecte_a": "2026-11-01T16:54:38.382386+01:00",
       "partants": [
         {
           "numero": 1,
@@ -7608,8 +7608,8 @@
       "depart": "2026-11-01T15:40:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R15/C6/participants",
-      "source_verifiee_a": "2026-11-01T16:22:21.109111+01:00",
-      "collecte_a": "2026-11-01T16:22:21.109111+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:35.309604+01:00",
+      "collecte_a": "2026-11-01T16:54:35.309604+01:00",
       "partants": [
         {
           "numero": 1,
@@ -7843,8 +7843,8 @@
       "depart": "2026-11-01T15:45:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R12/C7/participants",
-      "source_verifiee_a": "2026-11-01T16:22:15.660766+01:00",
-      "collecte_a": "2026-11-01T16:22:15.660766+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:29.146767+01:00",
+      "collecte_a": "2026-11-01T16:54:29.146767+01:00",
       "partants": [
         {
           "numero": 1,
@@ -8042,8 +8042,8 @@
       "depart": "2026-11-01T15:52:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R1/C5/participants",
-      "source_verifiee_a": "2026-11-01T16:22:03.457127+01:00",
-      "collecte_a": "2026-11-01T16:22:03.457127+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:15.184351+01:00",
+      "collecte_a": "2026-11-01T16:54:15.184351+01:00",
       "partants": [
         {
           "numero": 1,
@@ -8193,8 +8193,8 @@
       "depart": "2026-11-01T16:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R8/C7/participants",
-      "source_verifiee_a": "2026-11-01T16:22:12.773666+01:00",
-      "collecte_a": "2026-11-01T16:22:12.773666+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:25.532750+01:00",
+      "collecte_a": "2026-11-01T16:54:25.532750+01:00",
       "partants": [
         {
           "numero": 1,
@@ -8404,8 +8404,8 @@
       "depart": "2026-11-01T16:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R17/C5/participants",
-      "source_verifiee_a": "2026-11-01T16:22:26.821854+01:00",
-      "collecte_a": "2026-11-01T16:22:26.821854+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:40.969285+01:00",
+      "collecte_a": "2026-11-01T16:54:40.969285+01:00",
       "partants": [
         {
           "numero": 1,
@@ -8569,8 +8569,8 @@
       "depart": "2026-11-01T16:01:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R13/C6/participants",
-      "source_verifiee_a": "2026-11-01T16:22:18.171182+01:00",
-      "collecte_a": "2026-11-01T16:22:18.171182+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:31.996132+01:00",
+      "collecte_a": "2026-11-01T16:54:31.996132+01:00",
       "partants": [
         {
           "numero": 1,
@@ -8780,8 +8780,8 @@
       "depart": "2026-11-01T16:05:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R16/C7/participants",
-      "source_verifiee_a": "2026-11-01T16:22:24.333836+01:00",
-      "collecte_a": "2026-11-01T16:22:24.333836+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:38.704028+01:00",
+      "collecte_a": "2026-11-01T16:54:38.704028+01:00",
       "partants": [
         {
           "numero": 1,
@@ -8979,8 +8979,8 @@
       "depart": "2026-11-01T16:10:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R5/C1/participants",
-      "source_verifiee_a": "2026-11-01T16:22:07.985576+01:00",
-      "collecte_a": "2026-11-01T16:22:07.985576+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:20.969655+01:00",
+      "collecte_a": "2026-11-01T16:54:20.969655+01:00",
       "partants": [
         {
           "numero": 1,
@@ -9106,8 +9106,8 @@
       "depart": "2026-11-01T16:10:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R15/C7/participants",
-      "source_verifiee_a": "2026-11-01T16:22:21.430631+01:00",
-      "collecte_a": "2026-11-01T16:22:21.430631+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:35.696075+01:00",
+      "collecte_a": "2026-11-01T16:54:35.696075+01:00",
       "partants": [
         {
           "numero": 1,
@@ -9293,8 +9293,8 @@
       "depart": "2026-11-01T16:15:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R12/C8/participants",
-      "source_verifiee_a": "2026-11-01T16:22:16.252119+01:00",
-      "collecte_a": "2026-11-01T16:22:16.252119+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:29.470924+01:00",
+      "collecte_a": "2026-11-01T16:54:29.470924+01:00",
       "partants": [
         {
           "numero": 1,
@@ -9470,8 +9470,8 @@
       "depart": "2026-11-01T16:28:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R1/C6/participants",
-      "source_verifiee_a": "2026-11-01T16:22:03.892628+01:00",
-      "collecte_a": "2026-11-01T16:22:03.892628+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:15.749283+01:00",
+      "collecte_a": "2026-11-01T16:54:15.749283+01:00",
       "partants": [
         {
           "numero": 1,
@@ -9609,8 +9609,8 @@
       "depart": "2026-11-01T16:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R8/C8/participants",
-      "source_verifiee_a": "2026-11-01T16:22:13.091040+01:00",
-      "collecte_a": "2026-11-01T16:22:13.091040+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:26.038010+01:00",
+      "collecte_a": "2026-11-01T16:54:26.038010+01:00",
       "partants": [
         {
           "numero": 1,
@@ -9822,8 +9822,8 @@
       "depart": "2026-11-01T16:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R17/C6/participants",
-      "source_verifiee_a": "2026-11-01T16:22:27.234049+01:00",
-      "collecte_a": "2026-11-01T16:22:27.234049+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:41.290527+01:00",
+      "collecte_a": "2026-11-01T16:54:41.290527+01:00",
       "partants": [
         {
           "numero": 1,
@@ -9985,8 +9985,8 @@
       "depart": "2026-11-01T16:35:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R16/C8/participants",
-      "source_verifiee_a": "2026-11-01T16:22:24.645540+01:00",
-      "collecte_a": "2026-11-01T16:22:24.645540+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:39.026955+01:00",
+      "collecte_a": "2026-11-01T16:54:39.026955+01:00",
       "partants": [
         {
           "numero": 1,
@@ -10184,8 +10184,8 @@
       "depart": "2026-11-01T16:40:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R15/C8/participants",
-      "source_verifiee_a": "2026-11-01T16:22:21.747455+01:00",
-      "collecte_a": "2026-11-01T16:22:21.747455+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:36.026644+01:00",
+      "collecte_a": "2026-11-01T16:54:36.026644+01:00",
       "partants": [
         {
           "numero": 1,
@@ -10373,8 +10373,8 @@
       "depart": "2026-11-01T16:42:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R13/C7/participants",
-      "source_verifiee_a": "2026-11-01T16:22:18.490940+01:00",
-      "collecte_a": "2026-11-01T16:22:18.490940+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:32.381250+01:00",
+      "collecte_a": "2026-11-01T16:54:32.381250+01:00",
       "partants": [
         {
           "numero": 1,
@@ -10538,8 +10538,8 @@
       "depart": "2026-11-01T16:45:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R5/C2/participants",
-      "source_verifiee_a": "2026-11-01T16:22:08.340779+01:00",
-      "collecte_a": "2026-11-01T16:22:08.340779+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:21.292002+01:00",
+      "collecte_a": "2026-11-01T16:54:21.292002+01:00",
       "partants": [
         {
           "numero": 1,
@@ -10632,418 +10632,6 @@
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
     {
-      "id": "2026-11-01-R13-C8",
-      "course_id": "2026-11-01-R13-C8",
-      "reunion": 13,
-      "course": 8,
-      "hippodrome": "HIPPODROME DE BEAUMONT DE LOMAGNE",
-      "nom": "PRIX FEDERATION REGIONALE DU SUD-OUEST",
-      "depart": "2026-11-01T17:00:00+01:00",
-      "localisation_france_verifiee": true,
-      "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R13/C8/participants",
-      "source_verifiee_a": "2026-11-01T16:22:18.849330+01:00",
-      "collecte_a": "2026-11-01T16:22:18.849330+01:00",
-      "partants": [
-        {
-          "numero": 1,
-          "nom": "JARNY DE BERTRANGE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "0a4a6a4a3a9aDa3a7aDa",
-          "jockey": null,
-          "driver": "L. KONEFAL",
-          "entraineur": "J. ASSELIE",
-          "age": 7,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 2,
-          "nom": "IPSON ELTE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "6aDa0a9aDa9a(25)5aDa8a",
-          "jockey": null,
-          "driver": "C. LANGLOIS",
-          "entraineur": "TH. BOSQUE",
-          "age": 8,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 3,
-          "nom": "INSTINCT DU RENARD",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Da9a5a2a5a4aDa3aDa5a",
-          "jockey": null,
-          "driver": "A. TOUZERY",
-          "entraineur": "A. TOUZERY",
-          "age": 8,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 4,
-          "nom": "JOUEUR DU METZ",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "6a0aDa0a8a0a0a0a(25)Da",
-          "jockey": null,
-          "driver": "P. NEVEU HERBRETEAU",
-          "entraineur": "K. AIT OUAKLI",
-          "age": 7,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 5,
-          "nom": "JADE SOTHO",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "8a9aDa7a0a4a7a6a4a8a",
-          "jockey": null,
-          "driver": "J.N. PECCOT",
-          "entraineur": "F. BELLIER",
-          "age": 7,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 6,
-          "nom": "ICARE PASSION",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "3a4a4a2a2a2a4a6a(25)4a",
-          "jockey": null,
-          "driver": "P. BESSON",
-          "entraineur": "B. OLICARD",
-          "age": 8,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 7,
-          "nom": "JUST BLESS",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Da7a1a4a0a2a(25)3a1a2a",
-          "jockey": null,
-          "driver": "L. SEIGNE",
-          "entraineur": "F. MARTY",
-          "age": 7,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 8,
-          "nom": "JOHNDEER DU DROPT",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Da6a7a8aDa0a0aDaDa9a",
-          "jockey": null,
-          "driver": "P.X.  FLEURY",
-          "entraineur": "P.X. FLEURY",
-          "age": 7,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 9,
-          "nom": "ILLICO FONTENAILLE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "7a9a5a2a2a0a1a6a0a(25)",
-          "jockey": null,
-          "driver": "Mlle ADELINE HARET",
-          "entraineur": "D. LIZEE",
-          "age": 8,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 10,
-          "nom": "INCERTAIN LANCELOT",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "3a4a5a1a6a5aDa5aDa1a",
-          "jockey": null,
-          "driver": "S. BIZEUL",
-          "entraineur": "S. BIZEUL",
-          "age": 8,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 11,
-          "nom": "JILPA KALONIG",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Da7aAaDaDaDaDa8a7a(25)",
-          "jockey": null,
-          "driver": "B. CANDELLE-GARDENQ",
-          "entraineur": "A. RIEUPEYROUX",
-          "age": 7,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 12,
-          "nom": "JO DE L'ORMERIE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "(25)Da0a0a(24)Da3a0a6a1a",
-          "jockey": null,
-          "driver": "F. JULIEN",
-          "entraineur": "J.M. TEILLET",
-          "age": 7,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 13,
-          "nom": "INCA VENESI",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "0a0a9a(25)9a2a3aDaDa3a",
-          "jockey": null,
-          "driver": "M.X. FLEURY",
-          "entraineur": "Mme G. HERITIER",
-          "age": 8,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 14,
-          "nom": "JOYAU WINNER",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "0a7aDmDa8a5mDa6a0aDa",
-          "jockey": null,
-          "driver": "J. MARC",
-          "entraineur": "E. AUDEBERT",
-          "age": 7,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 15,
-          "nom": "JAZZIE MARIVALOISE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "DaDa4a3a8a0a6a4a7a(25)",
-          "jockey": null,
-          "driver": "Mlle M. PAILLARD",
-          "entraineur": "S. CAMBOU",
-          "age": 7,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 16,
-          "nom": "IVANHOE DU FIER",
-          "non_partant": true,
-          "statut": "NON_PARTANT",
-          "musique": "7a5a4a0aAa7a0a5a(25)4a",
-          "jockey": null,
-          "driver": "CHARLY CLOZIER",
-          "entraineur": "F. CLOZIER",
-          "age": 8,
-          "sexe": "HONGRES"
-        }
-      ],
-      "nombre_participants": 16,
-      "nombre_partants": 15,
-      "non_partants": [
-        16
-      ],
-      "statut": "COLLECTE_REELLE_NON_IMPORTEE"
-    },
-    {
-      "id": "2026-11-01-R14-C8",
-      "course_id": "2026-11-01-R14-C8",
-      "reunion": 14,
-      "course": 8,
-      "hippodrome": "HIPPODROME DE NIMES",
-      "nom": "PRIX DES HARAS D'UZES - PRIX GENYBET",
-      "depart": "2026-11-01T17:00:00+01:00",
-      "localisation_france_verifiee": true,
-      "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R14/C8/participants",
-      "source_verifiee_a": "2026-11-01T16:22:19.162297+01:00",
-      "collecte_a": "2026-11-01T16:22:19.162297+01:00",
-      "partants": [
-        {
-          "numero": 1,
-          "nom": "HACH DES CAPELLES",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "0a6aDa3a9a3a0a8a9a8a",
-          "jockey": null,
-          "driver": "G. TOURON",
-          "entraineur": "G. TOURON",
-          "age": 9,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 2,
-          "nom": "KELAS",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "5a1a4a4a9a4aDa6a4a0a",
-          "jockey": null,
-          "driver": "NICOLAS GERMAIN LEFEVRE",
-          "entraineur": "D. ALEXANDRE",
-          "age": 6,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 3,
-          "nom": "ILLEGITIME PRINCE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "3a6a5aDa6a5a4a4a3a4a",
-          "jockey": null,
-          "driver": "J.D. FERREIRA",
-          "entraineur": "F.X. KOENIG",
-          "age": 8,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 4,
-          "nom": "IBERICO",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Da8a6a9aDa0a9a9a0a0a",
-          "jockey": null,
-          "driver": "K. THONNERIEUX",
-          "entraineur": "K. THONNERIEUX",
-          "age": 8,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 5,
-          "nom": "GAETAN",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "4a3a6a9a8aDa4a2a5a3a",
-          "jockey": null,
-          "driver": "K. DEVIENNE",
-          "entraineur": "F.X. KOENIG",
-          "age": 10,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 6,
-          "nom": "KAPITANO DREAM",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "3a9a1a2a2a7a1a0a1a4a",
-          "jockey": null,
-          "driver": "S. STEFANO",
-          "entraineur": "J.M. ROUBAUD",
-          "age": 6,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 7,
-          "nom": "JO DE CAZOULENE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "2a4a2a7a0aDm6a0aDm8a",
-          "jockey": null,
-          "driver": "L. GOETZ",
-          "entraineur": "B. GOETZ",
-          "age": 7,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 8,
-          "nom": "JEREZ",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "0aDa0a9a8a6a9a8a4a0a",
-          "jockey": null,
-          "driver": "H. SOREL",
-          "entraineur": "J.M. ROUBAUD",
-          "age": 7,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 9,
-          "nom": "IMPACT DE L'ITON",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "9a8aDaDa4a6a2a5a5aDa",
-          "jockey": null,
-          "driver": "B. RUET",
-          "entraineur": "G. LAURENT",
-          "age": 8,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 10,
-          "nom": "ILLUSTRE FERM",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "5a9a9a7a6a1a9a7a3a0a",
-          "jockey": null,
-          "driver": "P. REPICHET",
-          "entraineur": "P. REPICHET",
-          "age": 8,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 11,
-          "nom": "IBIZA EVENING",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Da8a7a2a3a5a7a9aDa3a",
-          "jockey": null,
-          "driver": "Y.A. BRIAND",
-          "entraineur": "TH. BONNARDEL",
-          "age": 8,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 12,
-          "nom": "IRIS RIVOISE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "8a9a0a3a9a0a7a3a8aDa",
-          "jockey": null,
-          "driver": "M. CINIER",
-          "entraineur": "R.F. PERRET",
-          "age": 8,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 13,
-          "nom": "HENZO DE CARSI",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "8a6a2a1a4a0a9aDaDa3a",
-          "jockey": null,
-          "driver": "J.F. SENET",
-          "entraineur": "J.F. SENET",
-          "age": 9,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 14,
-          "nom": "HOLDING GIRL",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "0a6a0aDa6a9a2a0a(25)3a",
-          "jockey": null,
-          "driver": "M.X. CHARLOT",
-          "entraineur": "M.X. CHARLOT",
-          "age": 9,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 15,
-          "nom": "ILLICO DU JAS",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "DaDa3a1a4aDa7aDa0a1a",
-          "jockey": null,
-          "driver": "J.CH. FERON",
-          "entraineur": "Y. HAGEGE",
-          "age": 8,
-          "sexe": "HONGRES"
-        }
-      ],
-      "nombre_participants": 15,
-      "nombre_partants": 15,
-      "non_partants": [],
-      "statut": "COLLECTE_REELLE_NON_IMPORTEE"
-    },
-    {
       "id": "2026-11-01-R17-C7",
       "course_id": "2026-11-01-R17-C7",
       "reunion": 17,
@@ -11053,8 +10641,8 @@
       "depart": "2026-11-01T17:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R17/C7/participants",
-      "source_verifiee_a": "2026-11-01T16:22:27.543944+01:00",
-      "collecte_a": "2026-11-01T16:22:27.543944+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:41.616750+01:00",
+      "collecte_a": "2026-11-01T16:54:41.616750+01:00",
       "partants": [
         {
           "numero": 1,
@@ -11242,8 +10830,8 @@
       "depart": "2026-11-01T17:03:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R1/C7/participants",
-      "source_verifiee_a": "2026-11-01T16:22:04.190195+01:00",
-      "collecte_a": "2026-11-01T16:22:04.190195+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:16.365375+01:00",
+      "collecte_a": "2026-11-01T16:54:16.365375+01:00",
       "partants": [
         {
           "numero": 1,
@@ -11468,6 +11056,205 @@
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
     {
+      "id": "2026-11-01-R14-C8",
+      "course_id": "2026-11-01-R14-C8",
+      "reunion": 14,
+      "course": 8,
+      "hippodrome": "HIPPODROME DE NIMES",
+      "nom": "PRIX DES HARAS D'UZES - PRIX GENYBET",
+      "depart": "2026-11-01T17:05:00+01:00",
+      "localisation_france_verifiee": true,
+      "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R14/C8/participants",
+      "source_verifiee_a": "2026-11-01T16:54:33.040208+01:00",
+      "collecte_a": "2026-11-01T16:54:33.040208+01:00",
+      "partants": [
+        {
+          "numero": 1,
+          "nom": "HACH DES CAPELLES",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "0a6aDa3a9a3a0a8a9a8a",
+          "jockey": null,
+          "driver": "G. TOURON",
+          "entraineur": "G. TOURON",
+          "age": 9,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 2,
+          "nom": "KELAS",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "5a1a4a4a9a4aDa6a4a0a",
+          "jockey": null,
+          "driver": "NICOLAS GERMAIN LEFEVRE",
+          "entraineur": "D. ALEXANDRE",
+          "age": 6,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 3,
+          "nom": "ILLEGITIME PRINCE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "3a6a5aDa6a5a4a4a3a4a",
+          "jockey": null,
+          "driver": "J.D. FERREIRA",
+          "entraineur": "F.X. KOENIG",
+          "age": 8,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 4,
+          "nom": "IBERICO",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Da8a6a9aDa0a9a9a0a0a",
+          "jockey": null,
+          "driver": "K. THONNERIEUX",
+          "entraineur": "K. THONNERIEUX",
+          "age": 8,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 5,
+          "nom": "GAETAN",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "4a3a6a9a8aDa4a2a5a3a",
+          "jockey": null,
+          "driver": "K. DEVIENNE",
+          "entraineur": "F.X. KOENIG",
+          "age": 10,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 6,
+          "nom": "KAPITANO DREAM",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "3a9a1a2a2a7a1a0a1a4a",
+          "jockey": null,
+          "driver": "S. STEFANO",
+          "entraineur": "J.M. ROUBAUD",
+          "age": 6,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 7,
+          "nom": "JO DE CAZOULENE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "2a4a2a7a0aDm6a0aDm8a",
+          "jockey": null,
+          "driver": "L. GOETZ",
+          "entraineur": "B. GOETZ",
+          "age": 7,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 8,
+          "nom": "JEREZ",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "0aDa0a9a8a6a9a8a4a0a",
+          "jockey": null,
+          "driver": "H. SOREL",
+          "entraineur": "J.M. ROUBAUD",
+          "age": 7,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 9,
+          "nom": "IMPACT DE L'ITON",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "9a8aDaDa4a6a2a5a5aDa",
+          "jockey": null,
+          "driver": "B. RUET",
+          "entraineur": "G. LAURENT",
+          "age": 8,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 10,
+          "nom": "ILLUSTRE FERM",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "5a9a9a7a6a1a9a7a3a0a",
+          "jockey": null,
+          "driver": "P. REPICHET",
+          "entraineur": "P. REPICHET",
+          "age": 8,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 11,
+          "nom": "IBIZA EVENING",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Da8a7a2a3a5a7a9aDa3a",
+          "jockey": null,
+          "driver": "Y.A. BRIAND",
+          "entraineur": "TH. BONNARDEL",
+          "age": 8,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 12,
+          "nom": "IRIS RIVOISE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "8a9a0a3a9a0a7a3a8aDa",
+          "jockey": null,
+          "driver": "M. CINIER",
+          "entraineur": "R.F. PERRET",
+          "age": 8,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 13,
+          "nom": "HENZO DE CARSI",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "8a6a2a1a4a0a9aDaDa3a",
+          "jockey": null,
+          "driver": "J.F. SENET",
+          "entraineur": "J.F. SENET",
+          "age": 9,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 14,
+          "nom": "HOLDING GIRL",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "0a6a0aDa6a9a2a0a(25)3a",
+          "jockey": null,
+          "driver": "M.X. CHARLOT",
+          "entraineur": "M.X. CHARLOT",
+          "age": 9,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 15,
+          "nom": "ILLICO DU JAS",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "DaDa3a1a4aDa7aDa0a1a",
+          "jockey": null,
+          "driver": "J.CH. FERON",
+          "entraineur": "Y. HAGEGE",
+          "age": 8,
+          "sexe": "HONGRES"
+        }
+      ],
+      "nombre_participants": 15,
+      "nombre_partants": 15,
+      "non_partants": [],
+      "statut": "COLLECTE_REELLE_NON_IMPORTEE"
+    },
+    {
       "id": "2026-11-01-R16-C9",
       "course_id": "2026-11-01-R16-C9",
       "reunion": 16,
@@ -11477,8 +11264,8 @@
       "depart": "2026-11-01T17:05:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R16/C9/participants",
-      "source_verifiee_a": "2026-11-01T16:22:25.079767+01:00",
-      "collecte_a": "2026-11-01T16:22:25.079767+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:39.350097+01:00",
+      "collecte_a": "2026-11-01T16:54:39.350097+01:00",
       "partants": [
         {
           "numero": 1,
@@ -11679,6 +11466,219 @@
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
     {
+      "id": "2026-11-01-R13-C8",
+      "course_id": "2026-11-01-R13-C8",
+      "reunion": 13,
+      "course": 8,
+      "hippodrome": "HIPPODROME DE BEAUMONT DE LOMAGNE",
+      "nom": "PRIX FEDERATION REGIONALE DU SUD-OUEST",
+      "depart": "2026-11-01T17:07:00+01:00",
+      "localisation_france_verifiee": true,
+      "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R13/C8/participants",
+      "source_verifiee_a": "2026-11-01T16:54:32.704608+01:00",
+      "collecte_a": "2026-11-01T16:54:32.704608+01:00",
+      "partants": [
+        {
+          "numero": 1,
+          "nom": "JARNY DE BERTRANGE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "0a4a6a4a3a9aDa3a7aDa",
+          "jockey": null,
+          "driver": "L. KONEFAL",
+          "entraineur": "J. ASSELIE",
+          "age": 7,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 2,
+          "nom": "IPSON ELTE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "6aDa0a9aDa9a(25)5aDa8a",
+          "jockey": null,
+          "driver": "C. LANGLOIS",
+          "entraineur": "TH. BOSQUE",
+          "age": 8,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 3,
+          "nom": "INSTINCT DU RENARD",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Da9a5a2a5a4aDa3aDa5a",
+          "jockey": null,
+          "driver": "A. TOUZERY",
+          "entraineur": "A. TOUZERY",
+          "age": 8,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 4,
+          "nom": "JOUEUR DU METZ",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "6a0aDa0a8a0a0a0a(25)Da",
+          "jockey": null,
+          "driver": "P. NEVEU HERBRETEAU",
+          "entraineur": "K. AIT OUAKLI",
+          "age": 7,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 5,
+          "nom": "JADE SOTHO",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "8a9aDa7a0a4a7a6a4a8a",
+          "jockey": null,
+          "driver": "J.N. PECCOT",
+          "entraineur": "F. BELLIER",
+          "age": 7,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 6,
+          "nom": "ICARE PASSION",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "3a4a4a2a2a2a4a6a(25)4a",
+          "jockey": null,
+          "driver": "P. BESSON",
+          "entraineur": "B. OLICARD",
+          "age": 8,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 7,
+          "nom": "JUST BLESS",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Da7a1a4a0a2a(25)3a1a2a",
+          "jockey": null,
+          "driver": "L. SEIGNE",
+          "entraineur": "F. MARTY",
+          "age": 7,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 8,
+          "nom": "JOHNDEER DU DROPT",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Da6a7a8aDa0a0aDaDa9a",
+          "jockey": null,
+          "driver": "P.X.  FLEURY",
+          "entraineur": "P.X. FLEURY",
+          "age": 7,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 9,
+          "nom": "ILLICO FONTENAILLE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "7a9a5a2a2a0a1a6a0a(25)",
+          "jockey": null,
+          "driver": "Mlle ADELINE HARET",
+          "entraineur": "D. LIZEE",
+          "age": 8,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 10,
+          "nom": "INCERTAIN LANCELOT",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "3a4a5a1a6a5aDa5aDa1a",
+          "jockey": null,
+          "driver": "S. BIZEUL",
+          "entraineur": "S. BIZEUL",
+          "age": 8,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 11,
+          "nom": "JILPA KALONIG",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Da7aAaDaDaDaDa8a7a(25)",
+          "jockey": null,
+          "driver": "B. CANDELLE-GARDENQ",
+          "entraineur": "A. RIEUPEYROUX",
+          "age": 7,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 12,
+          "nom": "JO DE L'ORMERIE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "(25)Da0a0a(24)Da3a0a6a1a",
+          "jockey": null,
+          "driver": "F. JULIEN",
+          "entraineur": "J.M. TEILLET",
+          "age": 7,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 13,
+          "nom": "INCA VENESI",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "0a0a9a(25)9a2a3aDaDa3a",
+          "jockey": null,
+          "driver": "M.X. FLEURY",
+          "entraineur": "Mme G. HERITIER",
+          "age": 8,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 14,
+          "nom": "JOYAU WINNER",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "0a7aDmDa8a5mDa6a0aDa",
+          "jockey": null,
+          "driver": "J. MARC",
+          "entraineur": "E. AUDEBERT",
+          "age": 7,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 15,
+          "nom": "JAZZIE MARIVALOISE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "DaDa4a3a8a0a6a4a7a(25)",
+          "jockey": null,
+          "driver": "Mlle M. PAILLARD",
+          "entraineur": "S. CAMBOU",
+          "age": 7,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 16,
+          "nom": "IVANHOE DU FIER",
+          "non_partant": true,
+          "statut": "NON_PARTANT",
+          "musique": "7a5a4a0aAa7a0a5a(25)4a",
+          "jockey": null,
+          "driver": "CHARLY CLOZIER",
+          "entraineur": "F. CLOZIER",
+          "age": 8,
+          "sexe": "HONGRES"
+        }
+      ],
+      "nombre_participants": 16,
+      "nombre_partants": 15,
+      "non_partants": [
+        16
+      ],
+      "statut": "COLLECTE_REELLE_NON_IMPORTEE"
+    },
+    {
       "id": "2026-11-01-R15-C9",
       "course_id": "2026-11-01-R15-C9",
       "reunion": 15,
@@ -11688,8 +11688,8 @@
       "depart": "2026-11-01T17:10:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R15/C9/participants",
-      "source_verifiee_a": "2026-11-01T16:22:22.079431+01:00",
-      "collecte_a": "2026-11-01T16:22:22.079431+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:36.378030+01:00",
+      "collecte_a": "2026-11-01T16:54:36.378030+01:00",
       "partants": [
         {
           "numero": 1,
@@ -11899,8 +11899,8 @@
       "depart": "2026-11-01T17:20:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R5/C3/participants",
-      "source_verifiee_a": "2026-11-01T16:22:08.632269+01:00",
-      "collecte_a": "2026-11-01T16:22:08.632269+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:21.652588+01:00",
+      "collecte_a": "2026-11-01T16:54:21.652588+01:00",
       "partants": [
         {
           "numero": 1,
@@ -12028,8 +12028,8 @@
       "depart": "2026-11-01T17:49:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R1/C8/participants",
-      "source_verifiee_a": "2026-11-01T16:22:04.630339+01:00",
-      "collecte_a": "2026-11-01T16:22:04.630339+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:16.838037+01:00",
+      "collecte_a": "2026-11-01T16:54:16.838037+01:00",
       "partants": [
         {
           "numero": 1,
@@ -12263,8 +12263,8 @@
       "depart": "2026-11-01T18:07:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R5/C4/participants",
-      "source_verifiee_a": "2026-11-01T16:22:08.942004+01:00",
-      "collecte_a": "2026-11-01T16:22:08.942004+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:21.975328+01:00",
+      "collecte_a": "2026-11-01T16:54:21.975328+01:00",
       "partants": [
         {
           "numero": 1,
@@ -12392,8 +12392,8 @@
       "depart": "2026-11-01T18:25:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R1/C9/participants",
-      "source_verifiee_a": "2026-11-01T16:22:04.976785+01:00",
-      "collecte_a": "2026-11-01T16:22:04.976785+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:17.609165+01:00",
+      "collecte_a": "2026-11-01T16:54:17.609165+01:00",
       "partants": [
         {
           "numero": 1,
@@ -12603,8 +12603,8 @@
       "depart": "2026-11-01T18:43:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R5/C5/participants",
-      "source_verifiee_a": "2026-11-01T16:22:09.241700+01:00",
-      "collecte_a": "2026-11-01T16:22:09.241700+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:22.298942+01:00",
+      "collecte_a": "2026-11-01T16:54:22.298942+01:00",
       "partants": [
         {
           "numero": 1,
@@ -12718,8 +12718,8 @@
       "depart": "2026-11-01T19:16:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R5/C6/participants",
-      "source_verifiee_a": "2026-11-01T16:22:09.543575+01:00",
-      "collecte_a": "2026-11-01T16:22:09.543575+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:22.637236+01:00",
+      "collecte_a": "2026-11-01T16:54:22.637236+01:00",
       "partants": [
         {
           "numero": 1,
@@ -12797,8 +12797,8 @@
       "depart": "2026-11-01T19:48:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/01112026/R5/C7/participants",
-      "source_verifiee_a": "2026-11-01T16:22:09.853937+01:00",
-      "collecte_a": "2026-11-01T16:22:09.853937+01:00",
+      "source_verifiee_a": "2026-11-01T16:54:23.050730+01:00",
+      "collecte_a": "2026-11-01T16:54:23.050730+01:00",
       "partants": [
         {
           "numero": 1,
