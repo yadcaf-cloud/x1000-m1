@@ -1,4 +1,4 @@
-name: "X1000 M1 - Autonomie generale corrigee V1.2"
+name: "X1000 M1 - Autonomie generale V1.3"
 
 on:
   workflow_dispatch:
@@ -14,21 +14,20 @@ concurrency:
 
 jobs:
   autonomie-m1:
-    name: "PMU - Import - Analyse - Publication M1"
+    if: github.ref == 'refs/heads/main'
+    name: "PMU - Import - Decisions provisoires M1"
     runs-on: ubuntu-latest
     timeout-minutes: 25
-
     defaults:
       run:
         shell: bash
-
     env:
       TZ: Europe/Paris
       PYTHONDONTWRITEBYTECODE: "1"
       PYTHONUNBUFFERED: "1"
 
     steps:
-      - name: "Recuperer X1000 M1"
+      - name: "Recuperer le depot M1"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -39,536 +38,272 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: "Verifier programmes et archives"
+      - name: "Verifier les programmes et les archives"
         run: |
           set -euo pipefail
-
           test -f m1.py
           test -f pmu_engine.py
           test -f m1_analyse_autonome.py
-
-          python - <<'PY'
-          from pathlib import Path
-          for name in (
-              "m1.py",
-              "pmu_engine.py",
-              "m1_analyse_autonome.py"
-          ):
-              compile(Path(name).read_bytes(), name, "exec")
-              print(name, "syntaxe OK")
-          PY
-
+          python -m py_compile m1.py pmu_engine.py m1_analyse_autonome.py
           python m1.py --self-test
           python m1.py --verify-archives
           python pmu_engine.py --self-test
           python m1_analyse_autonome.py --self-test
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          protected = ("data/figes.json", "data/audits.json")
+          manifest = {}
+          for name in protected:
+              path = Path(name)
+              if path.is_symlink():
+                  raise SystemExit(f"Lien symbolique interdit : {name}")
+              if not path.is_file():
+                  raise SystemExit(f"Archive requise absente : {name}")
+              manifest[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+              print(name, manifest[name])
+          Path("/tmp/m1-archives-manifest.json").write_text(
+              __import__("json").dumps(manifest), encoding="utf-8"
+          )
+          PY
 
       - name: "Collecter les courses PMU reelles"
         run: |
           set -euo pipefail
           python pmu_engine.py
 
-      - name: "Importation et decisions M1 autonomes"
+      - name: "Importer et decider provisoirement"
         run: |
           set -euo pipefail
-
           python - <<'PY'
           import datetime as dt
           import json
           import os
-          import shutil
           import tempfile
           from pathlib import Path
           from zoneinfo import ZoneInfo
-
           import m1
           import m1_analyse_autonome as sport
 
           DATA = Path("data")
           SOURCE = DATA / "collecte_m1_pmu.json"
           PARIS = ZoneInfo("Europe/Paris")
+          if not SOURCE.is_file() or SOURCE.is_symlink():
+              raise SystemExit("Collecte attendue absente : data/collecte_m1_pmu.json")
 
-          DATA.mkdir(parents=True, exist_ok=True)
-
-          def atomic_write(path, obj):
-              fd, temp = tempfile.mkstemp(
-                  prefix=".m1-",
-                  suffix=".tmp",
-                  dir=path.parent
-              )
+          def atomic_write(path, value):
+              if path.is_symlink():
+                  raise ValueError(f"Lien symbolique interdit : {path}")
+              fd, tmp = tempfile.mkstemp(prefix=".m1-", suffix=".tmp", dir=path.parent)
               try:
-                  with os.fdopen(
-                      fd, "w", encoding="utf-8"
-                  ) as stream:
-                      json.dump(
-                          obj,
-                          stream,
-                          ensure_ascii=False,
-                          indent=2,
-                          allow_nan=False
-                      )
-                      stream.write("\n")
-                      stream.flush()
-                      os.fsync(stream.fileno())
-
-                  os.replace(temp, path)
+                  with os.fdopen(fd, "w", encoding="utf-8") as f:
+                      json.dump(value, f, ensure_ascii=False, indent=2, allow_nan=False)
+                      f.write("\n")
+                      f.flush()
+                      os.fsync(f.fileno())
+                  os.replace(tmp, path)
               finally:
-                  if os.path.exists(temp):
-                      os.unlink(temp)
+                  if os.path.exists(tmp):
+                      os.unlink(tmp)
 
-          def read_strict(path):
-              return m1.load_json(
-                  path.read_text(encoding="utf-8-sig")
-              )
+          def strict_read(path):
+              return m1.load_json(path.read_text(encoding="utf-8-sig"))
 
-          def prepare_records(name):
+          for name in ("courses.json", "selections.json", "figes.json", "audits.json"):
               path = DATA / name
+              if not path.is_file() or path.is_symlink():
+                  raise ValueError(f"Fichier obligatoire absent ou non regulier : {path}")
+              m1.records(name)
 
-              if not path.exists():
-                  atomic_write(path, [])
-                  return []
-
-              obj = read_strict(path)
-
-              if isinstance(obj, list):
-                  rows = obj
-
-              elif isinstance(obj, dict):
-                  key = name.removesuffix(".json")
-                  rows = obj.get(key)
-
-                  if not isinstance(rows, list):
-                      raise ValueError(
-                          name + ": liste interne absente"
-                      )
-
-                  backup = DATA / (
-                      "m1_sauvegarde_" + name
-                  )
-
-                  if backup.exists():
-                      saved = read_strict(backup)
-                      if saved != obj:
-                          raise ValueError(
-                              name + ": sauvegarde existante "
-                              "differente, intervention requise"
-                          )
-                  else:
-                      shutil.copy2(path, backup)
-
-                  atomic_write(path, rows)
-
-              else:
-                  raise ValueError(
-                      name + ": format incompatible"
-                  )
-
-              if any(
-                  not isinstance(row, dict)
-                  for row in rows
-              ):
-                  raise ValueError(
-                      name + ": objet invalide"
-                  )
-
-              return rows
-
-          if not SOURCE.is_file():
-              raise ValueError(
-                  "Collecte PMU absente"
-              )
+          before_figes = (DATA / "figes.json").read_bytes()
+          before_audits = (DATA / "audits.json").read_bytes()
+          m1.verify_archives(m1.records("figes.json"))
 
           instant = dt.datetime.now(PARIS)
-          collecte = read_strict(SOURCE)
-
-          if not isinstance(collecte, dict):
-              raise ValueError(
-                  "Collecte non structuree"
-              )
-
-          if collecte.get("statut") != "OK":
-              raise ValueError(
-                  "Collecte PMU non validee"
-              )
-
+          collecte = strict_read(SOURCE)
+          if not isinstance(collecte, dict) or collecte.get("statut") != "OK":
+              raise ValueError("Collecte PMU non validee")
           if collecte.get("erreurs") != []:
-              raise ValueError(
-                  "Erreurs de collecte presentes"
-              )
-
-          if (
-              collecte.get("date")
-              != instant.date().isoformat()
-          ):
-              raise ValueError(
-                  "Date PMU incoherente"
-              )
-
-          collected_at = m1.parse_date(
-              collecte.get("collecte_a")
-          )
-
-          age = (
-              instant - collected_at
-          ).total_seconds()
-
+              raise ValueError("Erreurs de collecte presentes")
+          if collecte.get("date") != instant.date().isoformat():
+              raise ValueError("Date de collecte incoherente")
+          age = (instant - m1.parse_date(collecte.get("collecte_a"))).total_seconds()
           if not 0 <= age <= 1800:
-              raise ValueError(
-                  "Collecte trop ancienne ou future"
-              )
+              raise ValueError("Collecte trop ancienne ou future")
+          raw = collecte.get("courses")
+          if not isinstance(raw, list) or not raw:
+              raise ValueError("Liste de courses vide ou invalide")
 
-          raw_courses = collecte.get("courses")
+          # Rejeter toute duplication en entree, meme triple.
+          counts = {}
+          for item in raw:
+              if isinstance(item, dict) and isinstance(item.get("id"), str):
+                  cid = item["id"]
+                  counts[cid] = counts.get(cid, 0) + 1
+          if any(n > 1 for n in counts.values()):
+              raise ValueError("Identifiants de course dupliques dans la collecte")
 
-          if not isinstance(raw_courses, list):
-              raise ValueError(
-                  "Collecte : courses[] attendu"
-              )
-
-          if not raw_courses:
-              raise ValueError(
-                  "Aucune course reelle collectee"
-              )
-
-          # Controler les archives AVANT toute migration.
-          original_figes = DATA / "figes.json"
-
-          if original_figes.exists():
-              raw_figes = read_strict(original_figes)
-
-              if not isinstance(raw_figes, list):
-                  raise ValueError(
-                      "FIGEs historiques : liste attendue"
-                  )
-
-              m1.verify_archives(raw_figes)
-
-          # Ne jamais convertir ou reecrire les FIGEs.
-          prepare_records("courses.json")
-          prepare_records("selections.json")
-          prepare_records("audits.json")
-
-          if not original_figes.exists():
-              atomic_write(original_figes, [])
-
-          m1.verify_archives(
-              m1.records("figes.json")
-          )
-
-          # L'importateur M1 verifie la France,
-          # les partants, les doublons et les FIGEs.
-          import_report = m1.import_courses(
-              str(SOURCE)
-          )
-
-          # Analyse sportive independante.
-          sport_report = sport.produire(
-              SOURCE,
-              dt.datetime.now(PARIS)
-          )
-
-          proposals = sport_report.get(
-              "propositions"
-          )
-
+          # Preanalyse AVANT importation : aucune decision sur donnees non analysees.
+          sport_report = sport.produire(SOURCE, instant)
+          proposals = sport_report.get("propositions")
           if not isinstance(proposals, list):
-              raise ValueError(
-                  "Propositions M1 invalides"
-              )
+              raise ValueError("Propositions sportives invalides")
+          if sport_report.get("nombre_propositions") != len(proposals):
+              raise ValueError("Compteur propositions incoherent")
+          if sport_report.get("moteur") != "M1" or sport_report.get("statut") != "PREPUBLICATION":
+              raise ValueError("Rapport sportif incompatible")
 
-          courses_list = m1.records(
-              "courses.json"
-          )
-
-          courses = {
-              c["id"]: c
-              for c in courses_list
-          }
-
+          import_report = m1.import_courses(str(SOURCE))
+          courses_list = m1.records("courses.json")
+          courses = {c["id"]: c for c in courses_list}
           if len(courses) != len(courses_list):
-              raise ValueError(
-                  "Doublons dans les courses importees"
-              )
-
-          selections = m1.records(
-              "selections.json"
-          )
-
-          published = []
-          skipped = []
-          seen = set()
-
-          for proposal in proposals:
-              if not isinstance(proposal, dict):
-                  raise ValueError(
-                      "Proposition non structuree"
-                  )
-
-              cid = proposal.get("course_id")
-
-              if cid in seen:
-                  skipped.append({
-                      "course_id": cid,
-                      "raison": "Proposition dupliquee"
-                  })
+              raise ValueError("Courses dupliquees en base")
+          if not isinstance(import_report.get("rejetees"), list):
+              raise ValueError("Diagnostic import invalide")
+          rejected_ids = {r.get("id") for r in import_report["rejetees"] if isinstance(r, dict)}
+          selections = m1.records("selections.json")
+          published, skipped, seen = [], [], set()
+          for p in proposals:
+              if not isinstance(p, dict):
+                  raise ValueError("Proposition invalide")
+              cid = p.get("course_id")
+              if not isinstance(cid, str) or cid in seen:
+                  skipped.append({"course_id": cid, "raison": "ID absent ou duplique"})
                   continue
-
               seen.add(cid)
-
               course = courses.get(cid)
-              ranking = proposal.get("classement")
-
-              if course is None:
-                  skipped.append({
-                      "course_id": cid,
-                      "raison": "Course non importee"
-                  })
+              ranking = p.get("classement")
+              if course is None or cid not in counts or cid in rejected_ids:
+                  skipped.append({"course_id": cid, "raison": "Course non importee"})
                   continue
-
-              if (
-                  not isinstance(ranking, list)
-                  or len(ranking) != 5
-                  or any(
-                      type(n) is not int
-                      for n in ranking
-                  )
-                  or len(set(ranking)) != 5
-              ):
-                  skipped.append({
-                      "course_id": cid,
-                      "raison": "Classement invalide"
-                  })
+              if (p.get("moteur") != "M1" or p.get("statut") != "PROPOSITION_NON_VALIDEE"
+                  or p.get("publication_officielle") is not False
+                  or p.get("fige") is not False or p.get("pari_envisage") is not None):
+                  skipped.append({"course_id": cid, "raison": "Proposition non conforme"})
                   continue
-
-              if not set(ranking).issubset(
-                  m1.starters(course)
-              ):
-                  skipped.append({
-                      "course_id": cid,
-                      "raison": (
-                          "Cheval absent ou non-partant"
-                      )
-                  })
+              if (not isinstance(ranking, list) or len(ranking) != 5
+                  or any(type(n) is not int or n <= 0 for n in ranking)
+                  or len(set(ranking)) != 5 or not set(ranking) <= m1.starters(course)):
+                  skipped.append({"course_id": cid, "raison": "Classement invalide ou NP"})
                   continue
-
               moment = dt.datetime.now(PARIS)
-              depart = m1.parse_date(
-                  course["depart"]
-              )
-
-              if moment >= (
-                  depart - dt.timedelta(minutes=5)
-              ):
-                  skipped.append({
-                      "course_id": cid,
-                      "raison": "Depart trop proche"
-                  })
+              if moment >= m1.parse_date(course["depart"]) - dt.timedelta(minutes=5):
+                  skipped.append({"course_id": cid, "raison": "Depart trop proche"})
                   continue
-
-              previous = [
-                  s for s in selections
-                  if (
-                      s.get("course_id") == cid
-                      and s.get("moteur") == "M1"
-                  )
-              ]
-
-              # Eviter les repetitions de decisions.
+              previous = [s for s in selections if s.get("course_id") == cid and s.get("moteur") == "M1"]
               if previous:
-                  last = previous[-1]
+                  # Ne pas remplacer les decisions existantes sans regle de revision explicite.
+                  skipped.append({"course_id": cid, "raison": "Decision M1 deja existante"})
+                  continue
+              analysis = p.get("analyse")
+              if not isinstance(analysis, str) or len(analysis.strip()) < 30:
+                  skipped.append({"course_id": cid, "raison": "Analyse insuffisante"})
+                  continue
+              decision = m1.create_selection(cid, ranking, analysis, bet=None)
+              selections = m1.records("selections.json")
+              published.append({"course_id": cid, "selection_id": decision["identifiant"],
+                                "classement": ranking, "statut": "PROVISOIRE"})
 
-                  if last.get("classement") == ranking:
-                      skipped.append({
-                          "course_id": cid,
-                          "raison": "Decision deja presente"
-                      })
-                      continue
-
-              # La justification indique les limites
-              # reelles de l'analyse heuristique.
-              analysis = (
-                  str(proposal.get("analyse") or "")
-                  + " Classement automatique M1 "
-                  "base sur les performances "
-                  "exploitables. Les limites "
-                  "sportives restent documentees. "
-                  "Aucun resultat garanti."
-              )
-
-              decision = m1.create_selection(
-                  cid,
-                  ranking,
-                  analysis,
-                  bet=None
-              )
-
-              # create_selection a deja ecrit le JSON.
-              # Recharger sans ajouter deux fois.
-              selections = m1.records(
-                  "selections.json"
-              )
-
-              published.append({
-                  "course_id": cid,
-                  "selection_id": decision[
-                      "identifiant"
-                  ],
-                  "classement": ranking,
-                  "statut": "PROVISOIRE"
-              })
-
-          figes = m1.records("figes.json")
-          m1.verify_archives(figes)
-
-          audits = m1.records("audits.json")
-          final_selections = m1.records(
-              "selections.json"
-          )
-
+          if (DATA / "figes.json").read_bytes() != before_figes:
+              raise ValueError("FIGEs modifies : publication interdite")
+          if (DATA / "audits.json").read_bytes() != before_audits:
+              raise ValueError("Audits modifies : publication interdite")
+          m1.verify_archives(m1.records("figes.json"))
           summary = {
-              "version": "M1-AUTONOMIE-1.2",
-              "moteur": "M1",
-              "date": instant.date().isoformat(),
-              "genere_a": dt.datetime.now(
-                  PARIS
-              ).isoformat(),
-              "statut": (
-                  "DECISIONS_PROVISOIRES_PUBLIEES"
-              ),
-              "source": "PMU",
-              "collecte_a": collecte["collecte_a"],
-              "courses_collectees": len(
-                  raw_courses
-              ),
-              "courses_importees": import_report[
-                  "importees"
-              ],
-              "courses_en_base": len(courses),
-              "propositions_sportives": len(
-                  proposals
-              ),
-              "decisions_nouvelles": len(
-                  published
-              ),
-              "decisions_total": len(
-                  final_selections
-              ),
-              "figes_total": len(figes),
-              "audits_total": len(audits),
+              "version": "M1-AUTONOMIE-1.3", "moteur": "M1",
+              "date": instant.date().isoformat(), "genere_a": dt.datetime.now(PARIS).isoformat(),
+              "statut": "DECISIONS_PROVISOIRES_PUBLIEES" if published else "AUCUNE_NOUVELLE_DECISION",
+              "source": "PMU", "collecte_a": collecte["collecte_a"],
+              "courses_collectees": len(raw), "courses_importees": import_report["importees"],
+              "courses_en_base": len(courses), "propositions_sportives": len(proposals),
+              "decisions_nouvelles": len(published), "decisions_total": len(selections),
+              "figes_total": len(m1.records("figes.json")),
+              "audits_total": len(m1.records("audits.json")),
               "decisions_publiees": published,
-              "courses_ecartees": (
-                  sport_report.get(
-                      "courses_ecartees", []
-                  ) + skipped
-              ),
+              "courses_ecartees": sport_report.get("courses_ecartees", []) + skipped,
               "import_diagnostic": import_report,
-              "note": (
-                  "Decisions M1 provisoires "
-                  "issues d'une analyse heuristique. "
-                  "Aucun FIGE ni audit invente."
-              )
+              "note": "Decisions provisoires heuristiques, non validees sportivement. Aucun FIGE ni audit automatique."
           }
-
-          atomic_write(
-              DATA / "publication_m1_autonome.json",
-              summary
-          )
-
-          atomic_write(
-              DATA / "publication_propositions_m1.json",
-              sport_report
-          )
-
-          print(json.dumps(
-              summary,
-              ensure_ascii=False,
-              indent=2
-          ))
+          atomic_write(DATA / "publication_m1_autonome.json", summary)
+          atomic_write(DATA / "publication_propositions_m1.json", sport_report)
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
           PY
 
-      - name: "Validation finale avant publication"
+      - name: "Validation finale et protection des archives"
         run: |
           set -euo pipefail
-
           python m1.py --verify-archives
-
           python - <<'PY'
-          import json
           from pathlib import Path
-
-          required = (
-              "courses.json",
-              "selections.json",
-              "figes.json",
-              "audits.json"
-          )
-
-          for name in required:
-              path = Path("data") / name
-
-              if not path.is_file():
-                  raise SystemExit(
-                      "Fichier absent : " + name
-                  )
-
-              obj = json.loads(
-                  path.read_text(encoding="utf-8")
-              )
-
-              if not isinstance(obj, list):
-                  raise SystemExit(
-                      name + ": liste attendue"
-                  )
-
-              print(name, len(obj), "OK")
-
-          summary = json.loads(
-              Path(
-                  "data/publication_m1_autonome.json"
-              ).read_text(encoding="utf-8")
-          )
-
+          import hashlib
+          import json
+          import m1
+          manifest = json.loads(Path("/tmp/m1-archives-manifest.json").read_text(encoding="utf-8"))
+          for name, expected in manifest.items():
+              path = Path(name)
+              if not path.is_file() or path.is_symlink():
+                  raise SystemExit("Archive absente ou symbolique : " + name)
+              if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+                  raise SystemExit("Archive historique modifiee : " + name)
+          for name in ("courses.json", "selections.json", "figes.json", "audits.json"):
+              print(name, len(m1.records(name)), "OK")
+          summary = m1.load_json(Path("data/publication_m1_autonome.json").read_text(encoding="utf-8"))
+          assert summary["version"] == "M1-AUTONOMIE-1.3"
           assert summary["moteur"] == "M1"
-          assert summary["version"] == "M1-AUTONOMIE-1.2"
-
-          print("VALIDATION FINALE OK")
+          assert summary["decisions_nouvelles"] == len(summary["decisions_publiees"])
           PY
+          if ! git diff --quiet -- data/figes.json data/audits.json; then
+            echo "Archives modifiees : publication interdite"
+            exit 1
+          fi
+          if ! git diff --cached --quiet -- data/figes.json data/audits.json; then
+            echo "Archives indexees : publication interdite"
+            exit 1
+          fi
 
       - name: "Publication GitHub Pages"
         run: |
           set -euo pipefail
-
+          test "${GITHUB_REF}" = "refs/heads/main"
           git config user.name "github-actions[bot]"
-          git config user.email \
-            "41898282+github-actions[bot]@users.noreply.github.com"
-
-          for path in \
-            data/collecte_m1_pmu.json \
-            data/diagnostic_collecte_m1.json \
-            data/courses.json \
-            data/selections.json \
-            data/import_diagnostic.json \
-            data/publication_m1_autonome.json \
-            data/publication_propositions_m1.json \
-            data/m1_sauvegarde_courses.json \
-            data/m1_sauvegarde_selections.json \
-            data/m1_sauvegarde_audits.json
-          do
-            if test -f "$path"; then
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          files=(
+            data/collecte_m1_pmu.json
+            data/diagnostic_collecte_m1.json
+            data/courses.json
+            data/selections.json
+            data/import_diagnostic.json
+            data/publication_m1_autonome.json
+            data/publication_propositions_m1.json
+          )
+          for path in "${files[@]}"; do
+            if test -f "$path" && ! test -L "$path"; then
               git add -- "$path"
             fi
           done
-
+          if ! git diff --quiet -- data/figes.json data/audits.json || \
+             ! git diff --cached --quiet -- data/figes.json data/audits.json; then
+            echo "Archives modifiees : publication interdite"
+            exit 1
+          fi
           if git diff --cached --quiet; then
             echo "Aucune modification a publier"
             exit 0
           fi
-
-          git commit -m \
-            "M1: collecte reelle et decisions autonomes"
-
-          # Pas de push force.
-          # Un conflit impose une nouvelle execution
-          # sur les donnees les plus recentes.
-          git push origin HEAD:main
-
-          echo "Publication M1 terminee"
+          # Ne jamais embarquer un fichier hors liste, meme deja indexe.
+          git diff --cached --name-only | while IFS= read -r path; do
+            case " ${files[*]} " in
+              *" $path "*) ;;
+              *) echo "Fichier indexe inattendu : $path"; exit 1 ;;
+            esac
+          done
+          git commit -m "M1: collecte et decisions provisoires autonomes V1.3"
+          git fetch origin main
+          remote="$(git rev-parse origin/main)"
+          parent="$(git rev-parse HEAD^)"
+          if test "$remote" != "$parent"; then
+            echo "main a change : relancer l'analyse sur les donnees recentes"
+            exit 1
+          fi
+          git push origin HEAD:refs/heads/main
+          echo "Publication M1 V1.3 terminee"
