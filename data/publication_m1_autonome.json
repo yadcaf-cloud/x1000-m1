@@ -2,10 +2,10 @@
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
   "date": "2026-11-01",
-  "genere_a": "2026-11-01T19:02:24.124626+01:00",
+  "genere_a": "2026-11-01T19:40:58.374916+01:00",
   "statut": "AUCUNE_NOUVELLE_DECISION",
   "source": "PMU",
-  "collecte_a": "2026-11-01T19:01:56.954334+01:00",
+  "collecte_a": "2026-11-01T19:40:32.451109+01:00",
   "courses_collectees": 74,
   "courses_importees": 73,
   "courses_en_base": 73,
@@ -306,7 +306,7 @@
     },
     {
       "course_id": "2026-11-01-R5-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-01-R5-C7",
@@ -314,7 +314,7 @@
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-01T19:02:24.118745+01:00",
+    "date": "2026-11-01T19:40:58.371486+01:00",
     "version": "M1-6.0",
     "importees": 73,
     "rejetees": [
