@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-01T08:02:39.634992+01:00",
+  "genere_a": "2026-11-01T08:25:03.756565+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -4269,7 +4269,7 @@
         12,
         8,
         13,
-        9
+        10
       ],
       "details": [
         {
@@ -4349,16 +4349,16 @@
           ]
         },
         {
-          "numero": 9,
-          "nom": "HARKANSAS DE L'OZE",
-          "score_heuristique": 4.6779,
-          "forme_recente": 5.222,
-          "regularite_podium": 0.25,
+          "numero": 10,
+          "nom": "IDRA DESBOIS",
+          "score_heuristique": 4.3214,
+          "forme_recente": 4.464,
+          "regularite_podium": 0.375,
           "performances_lisibles": 8,
           "gains_declares": null,
-          "jockey_driver": "D. LAPRAY",
-          "entraineur": "J.M. GAUDIN",
-          "musique": "5a5a3aDa3a5aDa6a8a5a",
+          "jockey_driver": "Mme L. CURY",
+          "entraineur": "B. CURY",
+          "musique": "8a9a2a9a2a6aAa3a6a6a",
           "limites": [
             "Distance non évaluée",
             "Terrain non évalué",
@@ -4368,8 +4368,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 10,
+      "non_partants_exclus": [
+        9
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
