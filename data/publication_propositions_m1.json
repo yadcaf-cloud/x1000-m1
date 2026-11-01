@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-01T17:24:51.579187+01:00",
+  "genere_a": "2026-11-01T17:59:46.918699+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-01-R1-C8",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-01T17:49:00+01:00",
-      "hippodrome": "HIPPODROME DE LAVAL",
-      "classement": [
-        7,
-        4,
-        8,
-        11,
-        10
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "MICHIGAN BLUE",
-          "score_heuristique": 8.2551,
-          "forme_recente": 8.444,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "T. PARTAIX",
-          "entraineur": "Sté. Ent. Grégory THOREL",
-          "musique": "1m3m1m1m1mDm4m2mDmDm",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "MEGA D'UZE",
-          "score_heuristique": 8.1689,
-          "forme_recente": 8.068,
-          "regularite_podium": 0.857,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "E. RAFFIN",
-          "entraineur": "A. CHAVATTE",
-          "musique": "8a1a2a1a(25)1a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "MISTRAL EXPRESS",
-          "score_heuristique": 8.0824,
-          "forme_recente": 8.228,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "B. ROCHARD",
-          "entraineur": "M. SASSIER",
-          "musique": "1a1a1a1a1aDaDa2a2a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "MOSTRA DE CHANLECY",
-          "score_heuristique": 7.6997,
-          "forme_recente": 8.062,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.PH. PLOQUIN",
-          "entraineur": "C. BUHIGNE",
-          "musique": "1a1a3a2a7a3a4a8a7a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "MELIA BARBES",
-          "score_heuristique": 6.7096,
-          "forme_recente": 6.512,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. BOUDET",
-          "entraineur": "CH. BIGEON",
-          "musique": "0a3a1a1a(25)1a0a1a1a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 14,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-01-R1-C9",
       "moteur": "M1",
@@ -516,6 +398,10 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-01-R1-C8",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-01-R5-C4",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     },
@@ -532,7 +418,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 2,
+  "nombre_propositions": 1,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
