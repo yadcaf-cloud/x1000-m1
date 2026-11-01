@@ -1,0 +1,818 @@
+[
+  {
+    "course_id": "2026-11-01-R8-C1",
+    "moteur": "M1",
+    "classement": [
+      13,
+      5,
+      7,
+      6,
+      10
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.835590+01:00",
+    "identifiant": "27e33f11ab0c4778ba37564b62fb6703"
+  },
+  {
+    "course_id": "2026-11-01-R15-C1",
+    "moteur": "M1",
+    "classement": [
+      16,
+      13,
+      11,
+      7,
+      5
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.841162+01:00",
+    "identifiant": "4921e0b188dd4ea99230ead4ed106e0a"
+  },
+  {
+    "course_id": "2026-11-01-R12-C2",
+    "moteur": "M1",
+    "classement": [
+      11,
+      12,
+      6,
+      10,
+      9
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.846403+01:00",
+    "identifiant": "899719be1311409aadeadc4be6530728"
+  },
+  {
+    "course_id": "2026-11-01-R1-C1",
+    "moteur": "M1",
+    "classement": [
+      8,
+      11,
+      3,
+      12,
+      13
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.851650+01:00",
+    "identifiant": "4bc4620583b2446c97d833fa9be4125f"
+  },
+  {
+    "course_id": "2026-11-01-R8-C2",
+    "moteur": "M1",
+    "classement": [
+      8,
+      9,
+      7,
+      5,
+      12
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.856694+01:00",
+    "identifiant": "3a9db8668c714a509dfc48f54b271933"
+  },
+  {
+    "course_id": "2026-11-01-R15-C2",
+    "moteur": "M1",
+    "classement": [
+      2,
+      11,
+      1,
+      14,
+      8
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.861853+01:00",
+    "identifiant": "a6d22d8f55e94bd492ae7a7b19f42d2b"
+  },
+  {
+    "course_id": "2026-11-01-R12-C3",
+    "moteur": "M1",
+    "classement": [
+      12,
+      4,
+      9,
+      10,
+      8
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.867842+01:00",
+    "identifiant": "bb66028b6c17438092c8d1dd6ee5cafa"
+  },
+  {
+    "course_id": "2026-11-01-R1-C2",
+    "moteur": "M1",
+    "classement": [
+      3,
+      12,
+      17,
+      2,
+      7
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.873578+01:00",
+    "identifiant": "cf44004dc88544f9b474ab85c66a7adc"
+  },
+  {
+    "course_id": "2026-11-01-R8-C3",
+    "moteur": "M1",
+    "classement": [
+      8,
+      11,
+      5,
+      2,
+      12
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.878704+01:00",
+    "identifiant": "8034ce32224c4c1388b2716bdf606664"
+  },
+  {
+    "course_id": "2026-11-01-R16-C3",
+    "moteur": "M1",
+    "classement": [
+      8,
+      13,
+      1,
+      3,
+      4
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.883834+01:00",
+    "identifiant": "b2189242dff64d3e8ed16afb8f1464db"
+  },
+  {
+    "course_id": "2026-11-01-R15-C3",
+    "moteur": "M1",
+    "classement": [
+      1,
+      9,
+      2,
+      13,
+      8
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.889376+01:00",
+    "identifiant": "5725b2b25845496c81807b178cced7ec"
+  },
+  {
+    "course_id": "2026-11-01-R12-C4",
+    "moteur": "M1",
+    "classement": [
+      9,
+      4,
+      3,
+      6,
+      11
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.894468+01:00",
+    "identifiant": "3674b9e650a34804869fb34cfd394ec1"
+  },
+  {
+    "course_id": "2026-11-01-R8-C4",
+    "moteur": "M1",
+    "classement": [
+      12,
+      9,
+      10,
+      7,
+      2
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.899682+01:00",
+    "identifiant": "b598e6934c9c4ac3bee4c5072ebd4240"
+  },
+  {
+    "course_id": "2026-11-01-R13-C3",
+    "moteur": "M1",
+    "classement": [
+      6,
+      1,
+      3,
+      8,
+      14
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.904836+01:00",
+    "identifiant": "5741babbbf5b4ddbb966846246361a4f"
+  },
+  {
+    "course_id": "2026-11-01-R17-C2",
+    "moteur": "M1",
+    "classement": [
+      6,
+      1,
+      4,
+      7,
+      5
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.910514+01:00",
+    "identifiant": "20b1f621396f4f8492d991154fcf5d98"
+  },
+  {
+    "course_id": "2026-11-01-R1-C3",
+    "moteur": "M1",
+    "classement": [
+      13,
+      11,
+      1,
+      6,
+      7
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.916347+01:00",
+    "identifiant": "760271844ca846a78d34d01112a2aa43"
+  },
+  {
+    "course_id": "2026-11-01-R16-C4",
+    "moteur": "M1",
+    "classement": [
+      10,
+      9,
+      7,
+      12,
+      5
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.921768+01:00",
+    "identifiant": "eec0b73603d546fd83d803e68dc66c26"
+  },
+  {
+    "course_id": "2026-11-01-R12-C5",
+    "moteur": "M1",
+    "classement": [
+      4,
+      9,
+      5,
+      6,
+      11
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.927328+01:00",
+    "identifiant": "1766585ec5904727b8860e1941ddd61b"
+  },
+  {
+    "course_id": "2026-11-01-R8-C5",
+    "moteur": "M1",
+    "classement": [
+      2,
+      5,
+      4,
+      6,
+      7
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.933063+01:00",
+    "identifiant": "755a9bdd53374380a23fc0d17c0e63d9"
+  },
+  {
+    "course_id": "2026-11-01-R13-C4",
+    "moteur": "M1",
+    "classement": [
+      2,
+      3,
+      13,
+      5,
+      7
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.938325+01:00",
+    "identifiant": "fbefd7e3e40a4f438ec7f86d33d743d6"
+  },
+  {
+    "course_id": "2026-11-01-R17-C3",
+    "moteur": "M1",
+    "classement": [
+      4,
+      5,
+      6,
+      7,
+      2
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.943632+01:00",
+    "identifiant": "34642b276f3f4ba88e94262d1bb346d8"
+  },
+  {
+    "course_id": "2026-11-01-R16-C5",
+    "moteur": "M1",
+    "classement": [
+      12,
+      10,
+      11,
+      5,
+      4
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.949043+01:00",
+    "identifiant": "6e736d44c14e42b29e823ec877063171"
+  },
+  {
+    "course_id": "2026-11-01-R15-C5",
+    "moteur": "M1",
+    "classement": [
+      18,
+      12,
+      16,
+      10,
+      14
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.954619+01:00",
+    "identifiant": "a26f98b330934eae8e00a9199595d63e"
+  },
+  {
+    "course_id": "2026-11-01-R1-C4",
+    "moteur": "M1",
+    "classement": [
+      13,
+      4,
+      18,
+      17,
+      15
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.960329+01:00",
+    "identifiant": "68bca4a304e2441bbbc684e5a01ebacc"
+  },
+  {
+    "course_id": "2026-11-01-R12-C6",
+    "moteur": "M1",
+    "classement": [
+      12,
+      13,
+      9,
+      1,
+      3
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.965855+01:00",
+    "identifiant": "b5e82e57b8cc43fe8337dd3eea5590a7"
+  },
+  {
+    "course_id": "2026-11-01-R8-C6",
+    "moteur": "M1",
+    "classement": [
+      12,
+      9,
+      6,
+      1,
+      11
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.971303+01:00",
+    "identifiant": "46d7b4abf5b84e6c9ecd9eac0dfe86fa"
+  },
+  {
+    "course_id": "2026-11-01-R13-C5",
+    "moteur": "M1",
+    "classement": [
+      3,
+      7,
+      12,
+      4,
+      1
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.976682+01:00",
+    "identifiant": "2dffd5b020aa4d559be58da189bbc57f"
+  },
+  {
+    "course_id": "2026-11-01-R16-C6",
+    "moteur": "M1",
+    "classement": [
+      4,
+      5,
+      10,
+      7,
+      9
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.983165+01:00",
+    "identifiant": "6a9679e93acb4af6ab9d1479e0bf3f53"
+  },
+  {
+    "course_id": "2026-11-01-R15-C6",
+    "moteur": "M1",
+    "classement": [
+      18,
+      14,
+      12,
+      7,
+      4
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.988669+01:00",
+    "identifiant": "d5ebb0bbd13c4486b813d8a7a17deb50"
+  },
+  {
+    "course_id": "2026-11-01-R12-C7",
+    "moteur": "M1",
+    "classement": [
+      10,
+      2,
+      7,
+      4,
+      12
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.994222+01:00",
+    "identifiant": "8afd8e6734fb45358b99508f1805c323"
+  },
+  {
+    "course_id": "2026-11-01-R1-C5",
+    "moteur": "M1",
+    "classement": [
+      6,
+      8,
+      7,
+      5,
+      10
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:27.999777+01:00",
+    "identifiant": "fe7abc987a424562bb1c0d9c87858a08"
+  },
+  {
+    "course_id": "2026-11-01-R8-C7",
+    "moteur": "M1",
+    "classement": [
+      13,
+      7,
+      16,
+      6,
+      2
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.005308+01:00",
+    "identifiant": "7a6ae6927c9340fa99689473785f886f"
+  },
+  {
+    "course_id": "2026-11-01-R13-C6",
+    "moteur": "M1",
+    "classement": [
+      16,
+      2,
+      7,
+      6,
+      1
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.010934+01:00",
+    "identifiant": "6eaaacc66d7848ae83c8ca1da11f3c16"
+  },
+  {
+    "course_id": "2026-11-01-R17-C5",
+    "moteur": "M1",
+    "classement": [
+      8,
+      6,
+      2,
+      4,
+      12
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.016479+01:00",
+    "identifiant": "e6a9153aa291497ab2496d108741e791"
+  },
+  {
+    "course_id": "2026-11-01-R16-C7",
+    "moteur": "M1",
+    "classement": [
+      12,
+      10,
+      15,
+      3,
+      14
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.022055+01:00",
+    "identifiant": "0fbf83b282b64e109c0c96114938f557"
+  },
+  {
+    "course_id": "2026-11-01-R15-C7",
+    "moteur": "M1",
+    "classement": [
+      3,
+      8,
+      10,
+      11,
+      9
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.027919+01:00",
+    "identifiant": "6f6a82c3da5945ff9c15782c627db5e1"
+  },
+  {
+    "course_id": "2026-11-01-R12-C8",
+    "moteur": "M1",
+    "classement": [
+      11,
+      12,
+      8,
+      13,
+      9
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.033569+01:00",
+    "identifiant": "d5514fd9a6bc497da4f825b93f325bb6"
+  },
+  {
+    "course_id": "2026-11-01-R1-C6",
+    "moteur": "M1",
+    "classement": [
+      9,
+      2,
+      5,
+      6,
+      1
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.039141+01:00",
+    "identifiant": "987c7093e143418c86f3f2dd4cf897e6"
+  },
+  {
+    "course_id": "2026-11-01-R8-C8",
+    "moteur": "M1",
+    "classement": [
+      4,
+      11,
+      14,
+      15,
+      5
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.044889+01:00",
+    "identifiant": "25601e663532405f928447f38f0c69ef"
+  },
+  {
+    "course_id": "2026-11-01-R13-C7",
+    "moteur": "M1",
+    "classement": [
+      7,
+      1,
+      11,
+      8,
+      6
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.050500+01:00",
+    "identifiant": "dcd1f196f6864dfa989cf01f2c21d012"
+  },
+  {
+    "course_id": "2026-11-01-R17-C6",
+    "moteur": "M1",
+    "classement": [
+      12,
+      3,
+      10,
+      8,
+      4
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.056192+01:00",
+    "identifiant": "025370253d72452c8700937d3cb1eb76"
+  },
+  {
+    "course_id": "2026-11-01-R16-C8",
+    "moteur": "M1",
+    "classement": [
+      12,
+      5,
+      11,
+      10,
+      15
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.062229+01:00",
+    "identifiant": "f02d60070b6c4219a0e25c32fd18cd37"
+  },
+  {
+    "course_id": "2026-11-01-R15-C8",
+    "moteur": "M1",
+    "classement": [
+      14,
+      7,
+      12,
+      10,
+      4
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.069252+01:00",
+    "identifiant": "c8594bec0844489eb790cf8a4718a459"
+  },
+  {
+    "course_id": "2026-11-01-R13-C8",
+    "moteur": "M1",
+    "classement": [
+      6,
+      10,
+      7,
+      9,
+      1
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.076298+01:00",
+    "identifiant": "943fd69246864632bddd823c07dff734"
+  },
+  {
+    "course_id": "2026-11-01-R14-C8",
+    "moteur": "M1",
+    "classement": [
+      6,
+      2,
+      5,
+      3,
+      13
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.082325+01:00",
+    "identifiant": "c05a757e8bbd46549faf4d57d0be1c03"
+  },
+  {
+    "course_id": "2026-11-01-R17-C7",
+    "moteur": "M1",
+    "classement": [
+      11,
+      2,
+      10,
+      12,
+      3
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.088260+01:00",
+    "identifiant": "f1dc058d248c4b3c8abc551052166377"
+  },
+  {
+    "course_id": "2026-11-01-R1-C7",
+    "moteur": "M1",
+    "classement": [
+      7,
+      9,
+      16,
+      15,
+      5
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.094389+01:00",
+    "identifiant": "9eb8606e59854eaa875ca007e6cf946e"
+  },
+  {
+    "course_id": "2026-11-01-R16-C9",
+    "moteur": "M1",
+    "classement": [
+      7,
+      2,
+      14,
+      1,
+      13
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.100322+01:00",
+    "identifiant": "e826791a67fa40d3b420b4ba10a10bda"
+  },
+  {
+    "course_id": "2026-11-01-R15-C9",
+    "moteur": "M1",
+    "classement": [
+      16,
+      6,
+      12,
+      5,
+      10
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.106361+01:00",
+    "identifiant": "26c830adb6db409abb44c59dcff177f9"
+  },
+  {
+    "course_id": "2026-11-01-R1-C8",
+    "moteur": "M1",
+    "classement": [
+      7,
+      4,
+      8,
+      11,
+      10
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.112324+01:00",
+    "identifiant": "0d7ab03efb694e5dab301ce4fc35fe47"
+  },
+  {
+    "course_id": "2026-11-01-R1-C9",
+    "moteur": "M1",
+    "classement": [
+      3,
+      9,
+      16,
+      11,
+      1
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire. Classement automatique M1 base sur les performances exploitables. Les limites sportives restent documentees. Aucun resultat garanti.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-01T04:47:28.118501+01:00",
+    "identifiant": "363bac8efede46b88cb0b6bcd3089bd5"
+  }
+]
