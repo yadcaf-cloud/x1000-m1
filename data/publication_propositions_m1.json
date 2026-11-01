@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-01T10:27:45.492543+01:00",
+  "genere_a": "2026-11-01T11:14:36.119154+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -2479,7 +2479,9 @@
         }
       ],
       "chevaux_evalues": 6,
-      "non_partants_exclus": [],
+      "non_partants_exclus": [
+        9
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -3068,8 +3070,9 @@
           ]
         }
       ],
-      "chevaux_evalues": 10,
+      "chevaux_evalues": 9,
       "non_partants_exclus": [
+        8,
         16
       ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
