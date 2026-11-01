@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-01T19:40:58.353375+01:00",
+  "genere_a": "2026-11-01T20:22:40.366606+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [],
@@ -300,7 +300,7 @@
     },
     {
       "course_id": "2026-11-01-R5-C7",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     }
   ],
   "nombre_propositions": 0,
