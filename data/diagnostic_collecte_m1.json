@@ -1,7 +1,7 @@
 {
   "version": "M1-PMU-COLLECTE-2.0",
   "date": "2026-11-02",
-  "collecte_a": "2026-11-02T11:25:31.470615+01:00",
+  "collecte_a": "2026-11-02T11:55:20.994614+01:00",
   "statut": "OK",
   "statistiques": {
     "reunions_recues": 10,
@@ -9,8 +9,8 @@
     "courses_prevues": 48,
     "courses": 48,
     "chevaux": 617,
-    "partants": 611,
-    "non_partants": 6,
+    "partants": 610,
+    "non_partants": 7,
     "erreurs": 0
   },
   "erreurs": [],
