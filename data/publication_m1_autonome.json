@@ -2,14 +2,14 @@
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
   "date": "2026-11-02",
-  "genere_a": "2026-11-02T14:51:36.715147+01:00",
+  "genere_a": "2026-11-02T15:44:54.277455+01:00",
   "statut": "AUCUNE_NOUVELLE_DECISION",
   "source": "PMU",
-  "collecte_a": "2026-11-02T14:51:15.935153+01:00",
+  "collecte_a": "2026-11-02T15:44:38.861863+01:00",
   "courses_collectees": 48,
   "courses_importees": 48,
   "courses_en_base": 121,
-  "propositions_sportives": 16,
+  "propositions_sportives": 9,
   "decisions_nouvelles": 0,
   "decisions_total": 78,
   "figes_total": 0,
@@ -117,16 +117,44 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-02-R7-C5",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-02-R10-C6",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-02-R3-C8",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-02-R1-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-02-R9-C4",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-02-R4-C3",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-02-R7-C6",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-02-R10-C7",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-02-R9-C5",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-02-R1-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-02-R4-C4",
@@ -143,34 +171,6 @@
     {
       "course_id": "2026-11-02-R4-C7",
       "raison": "Moins de cinq chevaux avec historique exploitable"
-    },
-    {
-      "course_id": "2026-11-02-R7-C5",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-02-R10-C6",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-02-R9-C4",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-02-R4-C3",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-02-R7-C6",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-02-R10-C7",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-02-R9-C5",
-      "raison": "Decision existante"
     },
     {
       "course_id": "2026-11-02-R7-C7",
@@ -210,7 +210,7 @@
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-02T14:51:36.709436+01:00",
+    "date": "2026-11-02T15:44:54.268133+01:00",
     "version": "M1-6.0",
     "importees": 48,
     "rejetees": [],
