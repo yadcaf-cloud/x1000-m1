@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-03T12:27:34.444930+01:00",
+  "genere_a": "2026-11-03T13:20:39.564535+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-03-R3-C4",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-03T12:55:00+01:00",
-      "hippodrome": "HIPPODROME DE SAINT GALMIER",
-      "classement": [
-        12,
-        7,
-        11,
-        10,
-        5
-      ],
-      "details": [
-        {
-          "numero": 12,
-          "nom": "MISTER DU CHOQUEL",
-          "score_heuristique": 9.1035,
-          "forme_recente": 9.192,
-          "regularite_podium": 0.875,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. GERGOUIL",
-          "entraineur": "J. FOIN",
-          "musique": "1a2a1a1a1a2a6a3a2a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "MISTER DES LOYAUX",
-          "score_heuristique": 8.9002,
-          "forme_recente": 8.938,
-          "regularite_podium": 0.875,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "D. BEKAERT",
-          "entraineur": "M. BONNEFOY",
-          "musique": "1a2a2a1a1a2a2a(25)9aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "MOGADOR BLEU",
-          "score_heuristique": 8.2568,
-          "forme_recente": 8.446,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "MARTIN CORMY",
-          "entraineur": "MICKAEL CORMY",
-          "musique": "1a1a1a3aDa1a2a4a1a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "MY NAME IS CHENU",
-          "score_heuristique": 6.6021,
-          "forme_recente": 7.003,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P. PELLEROT",
-          "entraineur": "P. PELLEROT",
-          "musique": "1aDa3a2a1a4a4a6a(25)2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "MYA D'OLIVERIE",
-          "score_heuristique": 5.5016,
-          "forme_recente": 5.627,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "TH. BRIAND",
-          "entraineur": "PH. GAILLARD",
-          "musique": "Da1a2a8a1a5aDa1aDa(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-03-R3-C5",
       "moteur": "M1",
@@ -1440,6 +1322,10 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-03-R3-C4",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-03-R1-C3",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     },
@@ -1476,7 +1362,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 12,
+  "nombre_propositions": 11,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
