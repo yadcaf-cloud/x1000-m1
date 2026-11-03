@@ -1,247 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-03T17:15:28.558348+01:00",
+  "genere_a": "2026-11-03T18:18:35.218303+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
-  "propositions": [
-    {
-      "course_id": "2026-11-03-R1-C7",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-03T17:25:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        4,
-        7,
-        2,
-        3,
-        13
-      ],
-      "details": [
-        {
-          "numero": 4,
-          "nom": "KATCHINA FOR CLARA",
-          "score_heuristique": 7.0233,
-          "forme_recente": 6.904,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mlle M. MENDIBOURE",
-          "entraineur": "CH. MOTTIER",
-          "musique": "1mDm3m1m3m1m3mDmDm2m",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "JOKER DE FROULAY",
-          "score_heuristique": 6.7878,
-          "forme_recente": 6.922,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mlle E. BOUCLET",
-          "entraineur": "M. MOTTIER",
-          "musique": "1mAm2m1m2m2mDm4m(25)5m",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "JAZZY THOURJAN",
-          "score_heuristique": 6.4921,
-          "forme_recente": 6.865,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. MAILLARD",
-          "entraineur": "L. GUITTON",
-          "musique": "3m5m2m5m5m2m3mDm3m7m",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "JUBLA VIKING",
-          "score_heuristique": 5.8537,
-          "forme_recente": 5.755,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mlle A. GERVAIS",
-          "entraineur": "D. BROHIER",
-          "musique": "Dm4m7m3m1m3m2m3mDmDm",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "IMPERIAL DURABUTIN",
-          "score_heuristique": 5.2595,
-          "forme_recente": 5.949,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. POTIER",
-          "entraineur": "F. TERRY",
-          "musique": "5a6a4a6a3a4a2a0a(25)1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 7,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-03-R1-C8",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-03T18:00:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        8,
-        7,
-        10,
-        15,
-        16
-      ],
-      "details": [
-        {
-          "numero": 8,
-          "nom": "LA DAME DE COEUR",
-          "score_heuristique": 7.6523,
-          "forme_recente": 7.69,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. DUBOIS",
-          "entraineur": "J. DUBOIS",
-          "musique": "4a6a2a2a2a3a3a2a6a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "LIPA STAR",
-          "score_heuristique": 7.2482,
-          "forme_recente": 7.498,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "E. LELIEVRE",
-          "entraineur": "E. LELIEVRE",
-          "musique": "3a1a4aDa4a1a1a(25)3a0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "LYANA D'ARC",
-          "score_heuristique": 6.035,
-          "forme_recente": 6.606,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "N. BRIDAULT",
-          "musique": "5a3a2a4a5a3a8a8a5a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 15,
-          "nom": "LITTLE ITALY",
-          "score_heuristique": 5.1668,
-          "forme_recente": 5.521,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "R. LAMY",
-          "entraineur": "P. LEVESQUE",
-          "musique": "2aDa5a4a8a0a1a(25)1a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 16,
-          "nom": "LOUANGE CASTELETS",
-          "score_heuristique": 5.1084,
-          "forme_recente": 5.761,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. BARRIER",
-          "entraineur": "J.PH. MONCLIN",
-          "musique": "5a9a2a1a0a4a4a5a(25)2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    }
-  ],
+  "propositions": [],
   "courses_ecartees": [
     {
       "course_id": "2026-11-03-R3-C1",
@@ -312,12 +75,20 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-03-R1-C7",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-03-R4-C4",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-03-R1-C8",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-03-R4-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-03-R4-C6",
@@ -332,7 +103,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 2,
+  "nombre_propositions": 0,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
