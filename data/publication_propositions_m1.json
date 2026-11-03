@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-03T11:35:09.335117+01:00",
+  "genere_a": "2026-11-03T12:27:34.444930+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-03-R3-C3",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-03T12:23:00+01:00",
-      "hippodrome": "HIPPODROME DE SAINT GALMIER",
-      "classement": [
-        7,
-        5,
-        14,
-        3,
-        6
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "NUSTY BERRY",
-          "score_heuristique": 7.709,
-          "forme_recente": 7.761,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "P. CALLIER",
-          "entraineur": "Ch. DUCHIER",
-          "musique": "6a3a1a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "NELSON DU DUDY",
-          "score_heuristique": 7.6929,
-          "forme_recente": 7.616,
-          "regularite_podium": 0.8,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "MICKAEL CORMY",
-          "entraineur": "MICKAEL CORMY",
-          "musique": "6a3a1a3a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 14,
-          "nom": "NOCCATO D'ORLY",
-          "score_heuristique": 7.2566,
-          "forme_recente": 7.508,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. GUERINEAU",
-          "entraineur": "A. RIPOLL RIGO",
-          "musique": "2a1aDa5a2a1a1a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "NORMAND DEBELGRAVE",
-          "score_heuristique": 7.027,
-          "forme_recente": 7.355,
-          "regularite_podium": 0.571,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "B. THIENNE",
-          "entraineur": "L. LERENARD",
-          "musique": "4a5a3a4a3a2a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "NELSON GRIFF",
-          "score_heuristique": 6.7915,
-          "forme_recente": 6.489,
-          "regularite_podium": 0.8,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "ALEXIS LERENARD",
-          "entraineur": "L. LERENARD",
-          "musique": "Da2a2a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-03-R3-C4",
       "moteur": "M1",
@@ -1551,7 +1433,11 @@
     },
     {
       "course_id": "2026-11-03-R3-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-03-R3-C3",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-03-R1-C3",
@@ -1590,7 +1476,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 13,
+  "nombre_propositions": 12,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
