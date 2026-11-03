@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-03T10:37:08.182052+01:00",
+  "genere_a": "2026-11-03T11:35:09.335117+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-03-R3-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-03T11:19:00+01:00",
-      "hippodrome": "HIPPODROME DE SAINT GALMIER",
-      "classement": [
-        7,
-        2,
-        11,
-        5,
-        3
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "KALISKO",
-          "score_heuristique": 7.6667,
-          "forme_recente": 8.021,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "ST. CORBIN",
-          "entraineur": "L. LAMAZIERE",
-          "musique": "1a2a1a3a7a3a8a4a1a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "KHOSIAB",
-          "score_heuristique": 7.5055,
-          "forme_recente": 7.819,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "E. CIVE",
-          "entraineur": "Phady LY",
-          "musique": "4a4a2a2a5a2a3a2aDa0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "JACY DE NARMONT",
-          "score_heuristique": 6.0827,
-          "forme_recente": 6.353,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "NOE BRUN",
-          "entraineur": "Y. VIDAL",
-          "musique": "3a2a4aDa3aDa5a1a7a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "KALINEO PENEME",
-          "score_heuristique": 4.4601,
-          "forme_recente": 5.263,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "N. BRUN",
-          "entraineur": "Y. HENRY",
-          "musique": "5a9a4a4aDa4a5a2aDaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "KUNG FU FAMILY",
-          "score_heuristique": 4.3174,
-          "forme_recente": 4.459,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. CINIER",
-          "entraineur": "M. BONNEFOY",
-          "musique": "9a2aDa0a4a6a3a2aDa4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-03-R3-C3",
       "moteur": "M1",
@@ -1664,6 +1546,10 @@
   ],
   "courses_ecartees": [
     {
+      "course_id": "2026-11-03-R3-C1",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-03-R3-C2",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     },
@@ -1704,7 +1590,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 14,
+  "nombre_propositions": 13,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
