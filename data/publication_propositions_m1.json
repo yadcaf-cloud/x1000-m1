@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-03T06:38:09.502869+01:00",
+  "genere_a": "2026-11-03T07:36:14.722367+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -1195,32 +1195,13 @@
       "depart": "2026-11-03T16:15:00+01:00",
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "classement": [
-        16,
         8,
         11,
         10,
-        14
+        14,
+        5
       ],
       "details": [
-        {
-          "numero": 16,
-          "nom": "MELISSA MATCH",
-          "score_heuristique": 8.4162,
-          "forme_recente": 8.735,
-          "regularite_podium": 0.714,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "C. MESNIL",
-          "entraineur": "TH. DUVALDESTIN",
-          "musique": "2a1a1a7a(25)1a1a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
         {
           "numero": 8,
           "nom": "MINDIE DES PRES",
@@ -1296,10 +1277,31 @@
             "Aptitude au parcours non évaluée",
             "Forme de l'entourage non évaluée"
           ]
+        },
+        {
+          "numero": 5,
+          "nom": "MELVIANA",
+          "score_heuristique": 5.0092,
+          "forme_recente": 5.011,
+          "regularite_podium": 0.5,
+          "performances_lisibles": 8,
+          "gains_declares": null,
+          "jockey_driver": "E. RAFFIN",
+          "entraineur": "C. MEGISSIER",
+          "musique": "3a9aDa8a3a1a1a(25)0aDa",
+          "limites": [
+            "Distance non évaluée",
+            "Terrain non évalué",
+            "Opposition non évaluée",
+            "Aptitude au parcours non évaluée",
+            "Forme de l'entourage non évaluée"
+          ]
         }
       ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 10,
+      "non_partants_exclus": [
+        16
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
