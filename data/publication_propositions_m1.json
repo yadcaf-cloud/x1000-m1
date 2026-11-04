@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-04T15:40:43.672773+01:00",
+  "genere_a": "2026-11-04T16:32:12.924583+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-04-R1-C6",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-04T16:15:00+01:00",
-      "hippodrome": "HIPPODROME DE NANTES",
-      "classement": [
-        7,
-        8,
-        11,
-        3,
-        5
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "JUST BIRD",
-          "score_heuristique": 8.6341,
-          "forme_recente": 8.605,
-          "regularite_podium": 0.875,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "B. ROCHARD",
-          "entraineur": "P.Edouard MARY",
-          "musique": "1m1m2m1m3mDm2m2m2mDm",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "JOSELITO DU VIVIER",
-          "score_heuristique": 6.0575,
-          "forme_recente": 6.322,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. LAMY",
-          "entraineur": "B. MARIE",
-          "musique": "2m5m5mDmDm1m1m(25)1m1m",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "GOUTIER CELESTE",
-          "score_heuristique": 4.914,
-          "forme_recente": 4.58,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mlle C. JARY",
-          "entraineur": "Nils PACHA",
-          "musique": "0mDm(25)9m3m(24)1m2m1m1m",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "JET GIRL",
-          "score_heuristique": 3.5828,
-          "forme_recente": 3.853,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mlle L.A. LECOQ",
-          "entraineur": "P.L. DESAUNETTE",
-          "musique": "5a0a1a0aDa3a8a9a9aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "IPSOS DE BANVILLE",
-          "score_heuristique": 2.2124,
-          "forme_recente": 2.766,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "E. RAFFIN",
-          "entraineur": "J.P. PITON",
-          "musique": "0a8a0a5a9a4a4a9a6a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 5,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-04-R1-C7",
       "moteur": "M1",
@@ -413,11 +295,15 @@
     },
     {
       "course_id": "2026-11-04-R4-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-04-R1-C6",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-04-R4-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-04-R4-C3",
@@ -444,7 +330,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 3,
+  "nombre_propositions": 2,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
