@@ -1582,5 +1582,101 @@
     "statut": "PROVISOIRE",
     "cree_a": "2026-11-04T00:26:37.012102+01:00",
     "identifiant": "70f670f8792a4983a9b60887b2a2e6b4"
+  },
+  {
+    "course_id": "2026-11-05-R1-C1",
+    "moteur": "M1",
+    "classement": [
+      9,
+      12,
+      6,
+      16,
+      17
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-05T00:18:23.084229+01:00",
+    "identifiant": "7e69733783254c718a5d304f8963831a"
+  },
+  {
+    "course_id": "2026-11-05-R1-C3",
+    "moteur": "M1",
+    "classement": [
+      13,
+      9,
+      12,
+      10,
+      1
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-05T00:18:23.098208+01:00",
+    "identifiant": "b94bac5efe3d4feaa14c12011d7a5f70"
+  },
+  {
+    "course_id": "2026-11-05-R1-C4",
+    "moteur": "M1",
+    "classement": [
+      10,
+      11,
+      6,
+      8,
+      4
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-05T00:18:23.112009+01:00",
+    "identifiant": "ae5944f590f045668bc5b5d680227a8a"
+  },
+  {
+    "course_id": "2026-11-05-R1-C5",
+    "moteur": "M1",
+    "classement": [
+      3,
+      5,
+      1,
+      8,
+      4
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-05T00:18:23.126002+01:00",
+    "identifiant": "63bfdeccebbd4151839455e18422e8c0"
+  },
+  {
+    "course_id": "2026-11-05-R1-C7",
+    "moteur": "M1",
+    "classement": [
+      7,
+      6,
+      8,
+      14,
+      10
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-05T00:18:23.140063+01:00",
+    "identifiant": "5b7208c0aee343e98062d70a84b08fcc"
+  },
+  {
+    "course_id": "2026-11-05-R1-C8",
+    "moteur": "M1",
+    "classement": [
+      12,
+      13,
+      1,
+      4,
+      14
+    ],
+    "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
+    "pari_envisage": null,
+    "statut": "PROVISOIRE",
+    "cree_a": "2026-11-05T00:18:23.153944+01:00",
+    "identifiant": "f9d60770d66349579eaa7ce519ea8d18"
   }
 ]
