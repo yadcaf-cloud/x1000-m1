@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-05T15:02:10.624021+01:00",
+  "genere_a": "2026-11-05T15:56:15.063672+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-05-R1-C4",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-05T15:40:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        10,
-        11,
-        6,
-        8,
-        4
-      ],
-      "details": [
-        {
-          "numero": 10,
-          "nom": "NOMAN'S POINT",
-          "score_heuristique": 7.9115,
-          "forme_recente": 7.806,
-          "regularite_podium": 0.833,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "CH. MARTENS",
-          "entraineur": "V. MARTENS",
-          "musique": "2a2a3aDa1a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "NORDLAND VEDAQUAIS",
-          "score_heuristique": 7.0456,
-          "forme_recente": 7.14,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "D. THOMAIN",
-          "entraineur": "PH. ALLAIRE",
-          "musique": "1a1aDa1aDa1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "NEGOCIABLE",
-          "score_heuristique": 5.8941,
-          "forme_recente": 5.805,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "THEO DUVALDESTIN",
-          "entraineur": "TH. DUVALDESTIN",
-          "musique": "7a2aDa1aDa3a1a(25)2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "NOVO SUPREME",
-          "score_heuristique": 5.7518,
-          "forme_recente": 6.565,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "T. PARTAIX",
-          "entraineur": "T. PARTAIX",
-          "musique": "2a5a1a7a8a4a5a8a7a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "NICOU CHAK",
-          "score_heuristique": 5.6463,
-          "forme_recente": 6.12,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. BARRIER",
-          "entraineur": "Mario VAN DOOYEWEERD",
-          "musique": "1a5a9a1a3aAa4aDa1a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-05-R1-C5",
       "moteur": "M1",
@@ -547,11 +429,15 @@
     },
     {
       "course_id": "2026-11-05-R3-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-05-R1-C4",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-05-R3-C7",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-05-R3-C8",
@@ -594,7 +480,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 4,
+  "nombre_propositions": 3,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
