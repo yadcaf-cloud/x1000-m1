@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-05T10:57:49.236660+01:00",
+  "genere_a": "2026-11-05T11:58:36.524260+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -236,8 +236,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 13,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 12,
+      "non_partants_exclus": [
+        2
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -488,10 +490,10 @@
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "classement": [
         7,
-        6,
         8,
         14,
-        10
+        10,
+        11
       ],
       "details": [
         {
@@ -505,25 +507,6 @@
           "jockey_driver": "A. WIELS",
           "entraineur": "J.P. MARMION",
           "musique": "1a1a1a1a1a4a(25)1a6a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "LUGANO DE LOU",
-          "score_heuristique": 6.1727,
-          "forme_recente": 6.466,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. ABRIVARD",
-          "entraineur": "L.CL. ABRIVARD",
-          "musique": "1a1a1aDaDaDa1a7a(25)Da",
           "limites": [
             "Distance non évaluée",
             "Terrain non évalué",
@@ -588,10 +571,31 @@
             "Aptitude au parcours non évaluée",
             "Forme de l'entourage non évaluée"
           ]
+        },
+        {
+          "numero": 11,
+          "nom": "LEWIS RIVER",
+          "score_heuristique": 4.6206,
+          "forme_recente": 4.838,
+          "regularite_podium": 0.375,
+          "performances_lisibles": 8,
+          "gains_declares": null,
+          "jockey_driver": "P.PH. PLOQUIN",
+          "entraineur": "S. GUARATO",
+          "musique": "Da2a2a3a4a0aDa6a2a2a",
+          "limites": [
+            "Distance non évaluée",
+            "Terrain non évalué",
+            "Opposition non évaluée",
+            "Aptitude au parcours non évaluée",
+            "Forme de l'entourage non évaluée"
+          ]
         }
       ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 11,
+      "non_partants_exclus": [
+        6
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -723,11 +727,11 @@
     },
     {
       "course_id": "2026-11-05-R2-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-05-R2-C3",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-05-R3-C1",
