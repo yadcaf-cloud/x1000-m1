@@ -1,22 +1,21 @@
 {
   "version": "M1-PMU-COLLECTE-2.0",
-  "date": "2026-11-05",
-  "collecte_a": "2026-11-05T23:53:19.602572+01:00",
+  "date": "2026-11-06",
+  "collecte_a": "2026-11-06T00:31:47.647595+01:00",
   "statut": "OK",
   "statistiques": {
-    "reunions_recues": 7,
+    "reunions_recues": 6,
     "reunions_francaises_verifiees": 4,
-    "courses_prevues": 32,
-    "courses": 32,
-    "chevaux": 368,
-    "partants": 361,
-    "non_partants": 7,
+    "courses_prevues": 31,
+    "courses": 31,
+    "chevaux": 402,
+    "partants": 399,
+    "non_partants": 3,
     "erreurs": 0
   },
   "erreurs": [],
   "avertissements": [
     "R5 ignorée : localisation française non confirmée",
-    "R6 ignorée : localisation française non confirmée",
-    "R7 ignorée : localisation française non confirmée"
+    "R6 ignorée : localisation française non confirmée"
   ]
 }
