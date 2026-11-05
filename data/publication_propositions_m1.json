@@ -1,250 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-05T13:46:04.123503+01:00",
+  "genere_a": "2026-11-05T15:02:10.624021+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-05-R1-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-05T13:55:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        9,
-        12,
-        6,
-        16,
-        17
-      ],
-      "details": [
-        {
-          "numero": 9,
-          "nom": "READY STAR",
-          "score_heuristique": 9.448,
-          "forme_recente": 9.31,
-          "regularite_podium": 1.0,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "MATS DJUSE",
-          "entraineur": "J. WESTHOLM",
-          "musique": "1a2a1a2a3a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "KAXIG IN",
-          "score_heuristique": 7.148,
-          "forme_recente": 7.268,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "David PERSSON",
-          "musique": "3a8a4a3a1a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "HUMANITY PELLINI",
-          "score_heuristique": 6.4348,
-          "forme_recente": 6.377,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "D. BEKAERT",
-          "entraineur": "CH. ERIKSSON",
-          "musique": "9a1a2a3a1a(25)Da",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 16,
-          "nom": "ZOOM DIAMANT",
-          "score_heuristique": 6.1649,
-          "forme_recente": 6.456,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "M. ABRIVARD",
-          "entraineur": "P. HAGOORT",
-          "musique": "2aDa1a6a2a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 17,
-          "nom": "NIAGARA RIVER",
-          "score_heuristique": 5.921,
-          "forme_recente": 6.151,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "D. BROUWER",
-          "entraineur": "D. BROUWER",
-          "musique": "8a2a5aDa1a1a1a6a(25)5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 14,
-      "non_partants_exclus": [
-        13
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-05-R1-C3",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-05T15:05:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        13,
-        9,
-        12,
-        10,
-        1
-      ],
-      "details": [
-        {
-          "numero": 13,
-          "nom": "NATRICIA",
-          "score_heuristique": 9.743,
-          "forme_recente": 9.679,
-          "regularite_podium": 1.0,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "J. VAN DEN PUTTE JR.",
-          "entraineur": "D. VAN DE WALLE",
-          "musique": "1a2a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NOBLESS DU NOYER",
-          "score_heuristique": 8.1132,
-          "forme_recente": 8.475,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "B. ROCHARD",
-          "entraineur": "M. SASSIER",
-          "musique": "2a2a2a1a4a(25)6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "NOTA PRIMO",
-          "score_heuristique": 6.8356,
-          "forme_recente": 7.473,
-          "regularite_podium": 0.429,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "F. JOSEPH",
-          "entraineur": "F. JOSEPH",
-          "musique": "4a6a4a1a4a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NOBLESSE DU CHENE",
-          "score_heuristique": 6.4775,
-          "forme_recente": 6.847,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.PH. PLOQUIN",
-          "entraineur": "J. LE MER",
-          "musique": "2a2a3a4a3aDaDa4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "NANA DU LEVANT",
-          "score_heuristique": 5.9681,
-          "forme_recente": 6.523,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "D. THOMAIN",
-          "entraineur": "D. BETHOUART",
-          "musique": "3a1a7a5a7a8a6a(25)2a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [
-        2
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-05-R1-C4",
       "moteur": "M1",
@@ -758,24 +518,32 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-05-R1-C1",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-05-R3-C4",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-05-R2-C7",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-05-R1-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-05-R3-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-05-R2-C8",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-05-R1-C3",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-05-R3-C6",
@@ -826,7 +594,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 6,
+  "nombre_propositions": 4,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
