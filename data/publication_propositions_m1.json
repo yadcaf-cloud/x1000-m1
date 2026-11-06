@@ -1,129 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-06T22:14:28.620001+01:00",
+  "genere_a": "2026-11-06T22:53:10.336360+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
-  "propositions": [
-    {
-      "course_id": "2026-11-06-R1-C8",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-06T22:20:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        6,
-        8,
-        5,
-        7,
-        10
-      ],
-      "details": [
-        {
-          "numero": 6,
-          "nom": "NEPTUNE DE JEAN",
-          "score_heuristique": 6.9565,
-          "forme_recente": 7.446,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "E. RAFFIN",
-          "entraineur": "W. BIGEON",
-          "musique": "7a1a2a1a5a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "NARVAL PIERJI",
-          "score_heuristique": 6.4785,
-          "forme_recente": 6.848,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "N. BRIDAULT",
-          "musique": "2a1a6a2a5aDaDa1a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "NITAI SANTMIXO",
-          "score_heuristique": 6.3842,
-          "forme_recente": 6.73,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "G. GELORMINI",
-          "entraineur": "Vitale CIOTOLA",
-          "musique": "2a7a3a3a3a4a0a4a2a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "NOWAK BONBON",
-          "score_heuristique": 6.0013,
-          "forme_recente": 6.252,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "B. ROCHARD",
-          "entraineur": "R. JAJOLET",
-          "musique": "1a3aDa3a6a2aDa6aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NOAH DES MALBERAUX",
-          "score_heuristique": 5.5896,
-          "forme_recente": 6.05,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. BARRIER",
-          "entraineur": "Sté. Ent. Grégory THOREL",
-          "musique": "2aDa5a1a3a4a4aDa6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 8,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    }
-  ],
+  "propositions": [],
   "courses_ecartees": [
     {
       "course_id": "2026-11-06-R2-C1",
@@ -244,9 +125,13 @@
     {
       "course_id": "2026-11-06-R1-C7",
       "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-06-R1-C8",
+      "raison": "Départ passé ou trop proche"
     }
   ],
-  "nombre_propositions": 1,
+  "nombre_propositions": 0,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
