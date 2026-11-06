@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-06T15:36:46.922746+01:00",
+  "genere_a": "2026-11-06T16:26:06.510571+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-06-R3-C7",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-06T16:02:00+01:00",
-      "hippodrome": "HIPPODROME DE CHARTRES",
-      "classement": [
-        10,
-        9,
-        6,
-        16,
-        7
-      ],
-      "details": [
-        {
-          "numero": 10,
-          "nom": "KELLY DU RIL",
-          "score_heuristique": 6.0963,
-          "forme_recente": 6.37,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. IONESCU",
-          "entraineur": "R. DERIEUX",
-          "musique": "4a1a(25)1a3a0a0aDa1a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "KIDNAPPING",
-          "score_heuristique": 5.4046,
-          "forme_recente": 5.506,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A.A. BOULARD",
-          "entraineur": "R. DERIEUX",
-          "musique": "3a1aDa(25)1a0a0a1aDa1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "KAISER LUDOIS",
-          "score_heuristique": 5.1944,
-          "forme_recente": 5.555,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "B. ROCHARD",
-          "entraineur": "S. BOURLIER",
-          "musique": "1a6a0a1aDa2a8a8a1a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 16,
-          "nom": "KUZCO",
-          "score_heuristique": 5.0134,
-          "forme_recente": 5.017,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "PH. MASSCHAELE",
-          "entraineur": "Mme G. MASSCHAELE",
-          "musique": "7a7aDa3a3a2a3a8a5aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "KARAMEL NOIR",
-          "score_heuristique": 3.9306,
-          "forme_recente": 4.601,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. ABRIVARD",
-          "entraineur": "D.M. OLIVIER",
-          "musique": "8a5a0a4a4a4a2aDa4a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-06-R3-C8",
       "moteur": "M1",
@@ -1009,11 +891,15 @@
     },
     {
       "course_id": "2026-11-06-R4-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-06-R3-C7",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-06-R4-C3",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-06-R4-C4",
@@ -1044,7 +930,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 8,
+  "nombre_propositions": 7,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
