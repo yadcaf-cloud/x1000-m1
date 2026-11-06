@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-06T11:41:15.840732+01:00",
+  "genere_a": "2026-11-06T12:32:08.148048+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-06-R3-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-06T12:34:00+01:00",
-      "hippodrome": "HIPPODROME DE CHARTRES",
-      "classement": [
-        12,
-        8,
-        5,
-        6,
-        11
-      ],
-      "details": [
-        {
-          "numero": 12,
-          "nom": "IPSY DJOB",
-          "score_heuristique": 6.8055,
-          "forme_recente": 7.257,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "K. GIRAUD",
-          "entraineur": "F. HEUDIARD",
-          "musique": "1a4a1aDa5a2a6a3a0a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "ISARD DE PLAY",
-          "score_heuristique": 4.8826,
-          "forme_recente": 5.478,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme B. GUENET",
-          "entraineur": "B. MARIE",
-          "musique": "6a6a3a1a5a7aDa8a7a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "JAVA DU MONCEL",
-          "score_heuristique": 4.4083,
-          "forme_recente": 4.885,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "B. PELLAN",
-          "entraineur": "B. PELLAN",
-          "musique": "3a8a4aDa0a6a4a3aDa0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "INAO SAINT CLAIR",
-          "score_heuristique": 3.6747,
-          "forme_recente": 4.281,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J.PH. DERRIAN",
-          "entraineur": "J.PH. DERRIAN",
-          "musique": "5a2aDa4a7aDa0a(25)9aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "HYAK DES FONTAINES",
-          "score_heuristique": 3.6597,
-          "forme_recente": 3.95,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "D. GRIMAULT",
-          "entraineur": "F. LECATHELINAIS",
-          "musique": "0a6a0a6a3a5a4a3a7a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 8,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-06-R3-C3",
       "moteur": "M1",
@@ -1551,7 +1433,11 @@
     },
     {
       "course_id": "2026-11-06-R2-C3",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-06-R3-C1",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-06-R2-C4",
@@ -1614,7 +1500,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 13,
+  "nombre_propositions": 12,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
