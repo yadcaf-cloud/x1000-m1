@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-06T19:04:56.783936+01:00",
+  "genere_a": "2026-11-06T19:52:31.687992+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-06-R1-C3",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-06T19:33:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        7,
-        11,
-        1,
-        18,
-        10
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "L'ELITE DU CHOQUEL",
-          "score_heuristique": 7.8997,
-          "forme_recente": 8.312,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.Y. VERVA",
-          "entraineur": "F. GHEKIERE",
-          "musique": "2a1a1a8a4a2a4a1a5a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "LORELEI",
-          "score_heuristique": 7.8084,
-          "forme_recente": 8.198,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "CEDRIC TERRY",
-          "entraineur": "F. TERRY",
-          "musique": "4a2a2a4a2a5a1a1a2a8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "LITTLE ROAD",
-          "score_heuristique": 7.7399,
-          "forme_recente": 7.8,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "C. RAIMBAUD",
-          "entraineur": "CL. RAIMOND",
-          "musique": "2a6a6a3a2a1a1a2aDa(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 18,
-          "nom": "LUXUEUSE DANICA",
-          "score_heuristique": 6.0957,
-          "forme_recente": 6.37,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "LILIAN BERTIN",
-          "entraineur": "A.PH. GRIMAULT",
-          "musique": "7m4m3m(25)7m2m6m2m3m4m",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "LOREZZA ERA",
-          "score_heuristique": 5.8604,
-          "forme_recente": 6.075,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. GUARATO",
-          "entraineur": "S. GUARATO",
-          "musique": "4aDa4a8a3a1a1a2aDaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 15,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-06-R1-C4",
       "moteur": "M1",
@@ -695,14 +577,18 @@
     },
     {
       "course_id": "2026-11-06-R4-C8",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-06-R1-C3",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-06-R1-C6",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 5,
+  "nombre_propositions": 4,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
