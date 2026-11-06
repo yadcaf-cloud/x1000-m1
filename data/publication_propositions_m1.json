@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-06T20:39:43.851606+01:00",
+  "genere_a": "2026-11-06T21:27:33.619074+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-06-R1-C5",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-06T20:50:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        5,
-        12,
-        9,
-        10,
-        2
-      ],
-      "details": [
-        {
-          "numero": 5,
-          "nom": "NOMIS",
-          "score_heuristique": 7.5874,
-          "forme_recente": 8.234,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "ANTOINE BOUTIN",
-          "entraineur": "M. MOTTIER",
-          "musique": "1a3a1a1a4a5a5a(25)7a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "NOSTRA COSA",
-          "score_heuristique": 6.8676,
-          "forme_recente": 7.335,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.PH. PLOQUIN",
-          "entraineur": "PH. ALLAIRE",
-          "musique": "4a2a7a2a1a(25)7a5a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NATIVITY QUICK",
-          "score_heuristique": 6.1799,
-          "forme_recente": 6.475,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "E. RAFFIN",
-          "entraineur": "Julien RAFFESTIN",
-          "musique": "1a2a0a5a9a3a7a1aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NIGHT DE REUX",
-          "score_heuristique": 6.0086,
-          "forme_recente": 6.082,
-          "regularite_podium": 0.571,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "J.PH. MONCLIN",
-          "musique": "Da1a1a1a5a3aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "NICE GRIFF",
-          "score_heuristique": 5.4091,
-          "forme_recente": 5.333,
-          "regularite_podium": 0.571,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "R. HUE",
-          "entraineur": "Sté. Ent. R. et D. HUE",
-          "musique": "Da2a1a1aDa2aAa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 8,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-06-R1-C7",
       "moteur": "M1",
@@ -470,11 +352,15 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-06-R1-C5",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-06-R1-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     }
   ],
-  "nombre_propositions": 3,
+  "nombre_propositions": 2,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
