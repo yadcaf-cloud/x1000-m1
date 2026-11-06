@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-06T21:27:33.619074+01:00",
+  "genere_a": "2026-11-06T22:14:28.620001+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-06-R1-C7",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-06T21:55:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        5,
-        12,
-        4,
-        2,
-        14
-      ],
-      "details": [
-        {
-          "numero": 5,
-          "nom": "MAGISTRALO BELLO",
-          "score_heuristique": 9.3302,
-          "forme_recente": 9.163,
-          "regularite_podium": 1.0,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "R. LAMY",
-          "entraineur": "TH. LEVESQUE",
-          "musique": "2a1a3a1a1a3a2a2a6a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "MISTER MORO",
-          "score_heuristique": 8.2896,
-          "forme_recente": 8.487,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "J. BESCHER",
-          "musique": "2a2a4a3a4a1a2a2a(25)3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "MYLEY ELDE",
-          "score_heuristique": 7.4262,
-          "forme_recente": 7.72,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. BARRIER",
-          "entraineur": "N. LEMETAYER",
-          "musique": "2a6a4a2a1a3a6a2a6a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "MIRAGE DU CAIEU",
-          "score_heuristique": 7.0365,
-          "forme_recente": 7.233,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. OUVRIE",
-          "entraineur": "C. JEAN",
-          "musique": "3a3a1a3a4a8aDa1a1a0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 14,
-          "nom": "MISSILE DE TAGOR",
-          "score_heuristique": 5.7425,
-          "forme_recente": 6.241,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "N. MARTINEAU",
-          "entraineur": "N. MARTINEAU",
-          "musique": "3a6a4a6a2a6a3aDa6a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 13,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-06-R1-C8",
       "moteur": "M1",
@@ -358,9 +240,13 @@
     {
       "course_id": "2026-11-06-R1-C6",
       "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-06-R1-C7",
+      "raison": "Départ passé ou trop proche"
     }
   ],
-  "nombre_propositions": 2,
+  "nombre_propositions": 1,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
