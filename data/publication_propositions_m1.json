@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-06T19:52:31.687992+01:00",
+  "genere_a": "2026-11-06T20:39:43.851606+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-06-R1-C4",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-06T20:15:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        2,
-        14,
-        8,
-        9,
-        7
-      ],
-      "details": [
-        {
-          "numero": 2,
-          "nom": "INDY DE MAI",
-          "score_heuristique": 6.4246,
-          "forme_recente": 7.406,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. BARRIER",
-          "entraineur": "M. VARIN",
-          "musique": "4a2a2a5a5a4a4a4a0a0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 14,
-          "nom": "IGLIANO DES IRIS",
-          "score_heuristique": 5.6982,
-          "forme_recente": 5.56,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "ALEXIS LERENARD",
-          "entraineur": "L. LERENARD",
-          "musique": "DaDa1a1a4a2a1a2a2aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "ISSI TOP",
-          "score_heuristique": 5.4175,
-          "forme_recente": 5.834,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "G. LANNOO",
-          "entraineur": "A. LANNOO",
-          "musique": "1a3aDa7a6a7a2a9a6a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "IRIS DU LIVIER",
-          "score_heuristique": 5.2133,
-          "forme_recente": 5.579,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. ABRIVARD",
-          "entraineur": "SEBASTIEN TRIBOURDEAU",
-          "musique": "8a6a2a4a6a3a0a1a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "ITALICA",
-          "score_heuristique": 5.0822,
-          "forme_recente": 5.415,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "L.J. LEGROS",
-          "entraineur": "J.M. LEGROS",
-          "musique": "9a3a5a3a5a2a9a8a4a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 16,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-06-R1-C5",
       "moteur": "M1",
@@ -584,11 +466,15 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-06-R1-C4",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-06-R1-C6",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 4,
+  "nombre_propositions": 3,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
