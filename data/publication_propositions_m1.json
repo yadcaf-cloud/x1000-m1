@@ -1,246 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-06T13:25:54.631234+01:00",
+  "genere_a": "2026-11-06T14:43:13.037657+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-06-R3-C3",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-06T13:43:00+01:00",
-      "hippodrome": "HIPPODROME DE CHARTRES",
-      "classement": [
-        4,
-        10,
-        15,
-        9,
-        2
-      ],
-      "details": [
-        {
-          "numero": 4,
-          "nom": "NATHALINA D'ARGENT",
-          "score_heuristique": 8.9912,
-          "forme_recente": 8.739,
-          "regularite_podium": 1.0,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "M. ABRIVARD",
-          "entraineur": "M. ABRIVARD",
-          "musique": "2a2a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NICO DU CAIEU",
-          "score_heuristique": 8.5341,
-          "forme_recente": 8.793,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "F. OUVRIE",
-          "entraineur": "F. OUVRIE",
-          "musique": "4a1a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 15,
-          "nom": "NIOSCO RED",
-          "score_heuristique": 6.0578,
-          "forme_recente": 6.072,
-          "regularite_podium": 0.6,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "E. RAFFIN",
-          "entraineur": "L. BAUDRON",
-          "musique": "0a1a2a6a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NESTOLA",
-          "score_heuristique": 6.0159,
-          "forme_recente": 6.687,
-          "regularite_podium": 0.333,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "E. LE BEC",
-          "entraineur": "V. LEBARQUE",
-          "musique": "(25)5a2a6a5a3a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "NIJNI NOVGOROD TEK",
-          "score_heuristique": 5.3767,
-          "forme_recente": 5.888,
-          "regularite_podium": 0.333,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "CH.J. BIGEON",
-          "entraineur": "CH.J. BIGEON",
-          "musique": "7a6a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 10,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-06-R3-C4",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-06T14:18:00+01:00",
-      "hippodrome": "HIPPODROME DE CHARTRES",
-      "classement": [
-        5,
-        6,
-        11,
-        7,
-        3
-      ],
-      "details": [
-        {
-          "numero": 5,
-          "nom": "MUVRINI",
-          "score_heuristique": 7.7044,
-          "forme_recente": 7.964,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "G. GELORMINI",
-          "entraineur": "J. WESTHOLM",
-          "musique": "1a2a1aDa2a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "MANIGOD D'ELLE",
-          "score_heuristique": 6.2106,
-          "forme_recente": 6.826,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "B. ROCHARD",
-          "entraineur": "TH. RAFFEGEAU",
-          "musique": "5a5a3a5a1a5a6a2a(25)7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "MILORD DE COQUERIE",
-          "score_heuristique": 5.8919,
-          "forme_recente": 6.427,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. ABRIVARD",
-          "entraineur": "W. MICHEL",
-          "musique": "4a6a4a7a3a3a3a6a4a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "MALOU DIESCHOOT",
-          "score_heuristique": 5.7694,
-          "forme_recente": 6.274,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "E. DE JESUS",
-          "entraineur": "CH. DAGNICOURT",
-          "musique": "1a7a3a1a4aDa7aDa5a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "MYLKO DE REM",
-          "score_heuristique": 5.235,
-          "forme_recente": 5.606,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. ANDRE",
-          "entraineur": "Mme Betty REMY",
-          "musique": "9a1a2a8a0a1a5a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 10,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-06-R3-C5",
       "moteur": "M1",
@@ -1452,12 +1216,20 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-06-R3-C3",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-06-R2-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-06-R3-C4",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-06-R2-C7",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-06-R4-C1",
@@ -1500,7 +1272,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 12,
+  "nombre_propositions": 10,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
