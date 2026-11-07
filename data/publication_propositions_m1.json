@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-07T10:55:00.518161+01:00",
+  "genere_a": "2026-11-07T11:30:14.689236+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-07-R2-C2",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-07T11:14:00+01:00",
-      "hippodrome": "HIPPODROME DE MAUQUENCHY",
-      "classement": [
-        13,
-        2,
-        5,
-        14,
-        8
-      ],
-      "details": [
-        {
-          "numero": 13,
-          "nom": "MINIE DE TOUCHYVON",
-          "score_heuristique": 6.4628,
-          "forme_recente": 6.828,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. OUVRIE",
-          "entraineur": "J. BETHOUART",
-          "musique": "1a1a2a5a8aDaDa3a5aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "MINNIE DE MIENNAIS",
-          "score_heuristique": 6.0185,
-          "forme_recente": 6.898,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. LAMY",
-          "entraineur": "K. WESKA",
-          "musique": "1a1a4a5a7a0a7a4a7a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "MEDITH DE VALAILLE",
-          "score_heuristique": 5.3139,
-          "forme_recente": 5.705,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. DESMIGNEUX",
-          "entraineur": "A. TESSANDIER",
-          "musique": "1a0a3a4a6a7a3aDa7a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 14,
-          "nom": "MUZE DES BOIS",
-          "score_heuristique": 5.306,
-          "forme_recente": 5.383,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "C. MEGISSIER",
-          "entraineur": "C. MEGISSIER",
-          "musique": "3a6a9a3a2aDaDa3a7a9a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "MACOE",
-          "score_heuristique": 4.8101,
-          "forme_recente": 5.075,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "R. LAMY",
-          "entraineur": "TH. LEVESQUE",
-          "musique": "Da7a1a4a(25)2aDa1a5aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 10,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-07-R2-C3",
       "moteur": "M1",
@@ -1552,8 +1434,12 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-07-R2-C2",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-07-R3-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-07-R3-C3",
@@ -1648,7 +1534,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 13,
+  "nombre_propositions": 12,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
