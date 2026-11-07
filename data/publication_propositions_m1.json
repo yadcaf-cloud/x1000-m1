@@ -1,246 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-07T13:25:36.917817+01:00",
+  "genere_a": "2026-11-07T14:27:43.994781+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-07-R2-C7",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-07T13:54:00+01:00",
-      "hippodrome": "HIPPODROME DE MAUQUENCHY",
-      "classement": [
-        14,
-        10,
-        15,
-        9,
-        12
-      ],
-      "details": [
-        {
-          "numero": 14,
-          "nom": "LADISLAS DU CANET",
-          "score_heuristique": 7.287,
-          "forme_recente": 7.546,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mlle L. PLANCHENAULT",
-          "entraineur": "M. DAVID",
-          "musique": "1m1m5m2mDm6m3m3mDmDm",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "LABEL PIYA",
-          "score_heuristique": 6.7445,
-          "forme_recente": 7.181,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. DURVILLE",
-          "entraineur": "B. CARPENTIER",
-          "musique": "5m2m4m2m4m3m1mDmDm5m",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 15,
-          "nom": "LARIANA CLEVILLE",
-          "score_heuristique": 5.3855,
-          "forme_recente": 5.794,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. ANDRE",
-          "entraineur": "V. VIEL",
-          "musique": "4m4mDm1m5mDm3m3m3mDm",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "LILIUM TUILERIE",
-          "score_heuristique": 5.3757,
-          "forme_recente": 5.782,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "ALEXANDRE BODIN",
-          "entraineur": "CH. MOTTIER",
-          "musique": "5a1a4aDa2a2a0aDa0aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "LEU DES BOIS",
-          "score_heuristique": 3.8177,
-          "forme_recente": 4.147,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. FERRON",
-          "entraineur": "Thomas LEBREC",
-          "musique": "6mDm6m2mDm1mDm6mDm2m",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 7,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-07-R2-C8",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-07T14:26:00+01:00",
-      "hippodrome": "HIPPODROME DE MAUQUENCHY",
-      "classement": [
-        1,
-        10,
-        8,
-        12,
-        4
-      ],
-      "details": [
-        {
-          "numero": 1,
-          "nom": "JOY EASTER",
-          "score_heuristique": 5.9213,
-          "forme_recente": 6.152,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. NEIRINCK",
-          "entraineur": "Pavel TAMSIN",
-          "musique": "2a2a7a0a2a2aDa7aDa8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "INCANTATOR",
-          "score_heuristique": 5.6789,
-          "forme_recente": 5.849,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. LABOUTIQUE",
-          "entraineur": "S. LABOUTIQUE",
-          "musique": "1a0a2aAa7a2a6a1a2aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "IBLISS MAYBE",
-          "score_heuristique": 4.0783,
-          "forme_recente": 4.473,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. BRIDAULT",
-          "entraineur": "Mlle C. LECLERCQ",
-          "musique": "4a0a9a6a7a1a0a1a4aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "JOLIE NANA",
-          "score_heuristique": 3.8545,
-          "forme_recente": 4.193,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. UNTERREINER",
-          "entraineur": "A. UNTERREINER",
-          "musique": "(25)0a9a5a4a7a3a6a2a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "HECTOR DE CORDAY",
-          "score_heuristique": 3.5039,
-          "forme_recente": 4.067,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. HOSTE",
-          "entraineur": "L. CANNAERT",
-          "musique": "5aDa7a5aDa7a1a7a3a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-07-R5-C1",
       "moteur": "M1",
@@ -1115,23 +879,31 @@
     },
     {
       "course_id": "2026-11-07-R3-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-07-R2-C7",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-07-R1-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-07-R7-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-07-R3-C7",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-07-R2-C8",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-07-R7-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-07-R1-C2",
@@ -1190,7 +962,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 9,
+  "nombre_propositions": 7,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
