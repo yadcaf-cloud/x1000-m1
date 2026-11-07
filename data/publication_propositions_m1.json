@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-07T18:22:09.799359+01:00",
+  "genere_a": "2026-11-07T18:55:02.111580+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -10,7 +10,7 @@
       "moteur": "M1",
       "methode": "M1-ANALYSE-1.1",
       "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-07T19:02:00+01:00",
+      "depart": "2026-11-07T19:03:00+01:00",
       "hippodrome": "HIPPODROME DE LAVAL",
       "classement": [
         15,
