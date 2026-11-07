@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-07T17:52:16.941939+01:00",
+  "genere_a": "2026-11-07T18:22:09.799359+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-07-R5-C5",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-07T18:27:00+01:00",
-      "hippodrome": "HIPPODROME DE LAVAL",
-      "classement": [
-        7,
-        10,
-        8,
-        11,
-        13
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "KREIZ DE PRAT GUEN",
-          "score_heuristique": 7.6095,
-          "forme_recente": 7.637,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "R. VILAULT",
-          "entraineur": "P.L. DESAUNETTE",
-          "musique": "2a2a0a1a1a2a6a2a4a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "KRONOS MADRIK",
-          "score_heuristique": 6.4972,
-          "forme_recente": 7.184,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme L. CHARRIAUD",
-          "entraineur": "M. ABRIVARD",
-          "musique": "1a4a4a4a1a9a2a0a(25)5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "KELIA DES TOUCHES",
-          "score_heuristique": 6.4795,
-          "forme_recente": 6.537,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "H. BAUMER",
-          "entraineur": "P.L. DESAUNETTE",
-          "musique": "4a0a1a7a2a3a1a2a0aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "KOSETTE DU LINON",
-          "score_heuristique": 5.59,
-          "forme_recente": 6.362,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. POTIER",
-          "entraineur": "E. LAMY",
-          "musique": "5a5a1a9a4a3a6a4a3a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "KOZMIC BLUES",
-          "score_heuristique": 5.4794,
-          "forme_recente": 5.287,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P. BOUGON BOUGEARD",
-          "entraineur": "F. TERRY",
-          "musique": "Aa1aDa7a3a1a2a2a4aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 15,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-07-R5-C6",
       "moteur": "M1",
@@ -499,14 +381,18 @@
     },
     {
       "course_id": "2026-11-07-R1-C8",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-07-R5-C5",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-07-R5-C8",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 3,
+  "nombre_propositions": 2,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
