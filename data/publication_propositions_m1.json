@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-07T06:28:02.677296+01:00",
+  "genere_a": "2026-11-07T07:19:36.326540+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -486,10 +486,10 @@
       "hippodrome": "HIPPODROME DE MAUQUENCHY",
       "classement": [
         14,
-        10,
         2,
         15,
-        11
+        11,
+        5
       ],
       "details": [
         {
@@ -503,25 +503,6 @@
           "jockey_driver": "PH. DAUGEARD",
           "entraineur": "PH. DAUGEARD",
           "musique": "2a1a3a3a3a3aDa5a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "KAPRICE D'AVRIL",
-          "score_heuristique": 6.6025,
-          "forme_recente": 6.378,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. HOUYVET",
-          "entraineur": "S. HOUYVET",
-          "musique": "0a(25)3a2a1a1a2aDa1a0a",
           "limites": [
             "Distance non évaluée",
             "Terrain non évalué",
@@ -586,10 +567,31 @@
             "Aptitude au parcours non évaluée",
             "Forme de l'entourage non évaluée"
           ]
+        },
+        {
+          "numero": 5,
+          "nom": "KILLER D'ENFER",
+          "score_heuristique": 4.2659,
+          "forme_recente": 4.707,
+          "regularite_podium": 0.25,
+          "performances_lisibles": 8,
+          "gains_declares": null,
+          "jockey_driver": "P.A. DELACOUR",
+          "entraineur": "G. DELACOUR",
+          "musique": "0a3a3a8a5a5a5a8aDa8a",
+          "limites": [
+            "Distance non évaluée",
+            "Terrain non évalué",
+            "Opposition non évaluée",
+            "Aptitude au parcours non évaluée",
+            "Forme de l'entourage non évaluée"
+          ]
         }
       ],
-      "chevaux_evalues": 15,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 14,
+      "non_partants_exclus": [
+        10
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
