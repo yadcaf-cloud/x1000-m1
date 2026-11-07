@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-07T10:12:18.131424+01:00",
+  "genere_a": "2026-11-07T10:55:00.518161+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-07-R2-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-07T10:44:00+01:00",
-      "hippodrome": "HIPPODROME DE MAUQUENCHY",
-      "classement": [
-        6,
-        7,
-        8,
-        9,
-        2
-      ],
-      "details": [
-        {
-          "numero": 6,
-          "nom": "NAPOLEON DU CAUX",
-          "score_heuristique": 7.927,
-          "forme_recente": 8.034,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "D. THOMAIN",
-          "entraineur": "V. SEGUIN",
-          "musique": "3a3a2a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "NUIT MAGIQUE",
-          "score_heuristique": 7.8651,
-          "forme_recente": 8.165,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "JULIEN RAFFESTIN",
-          "entraineur": "Julien RAFFESTIN",
-          "musique": "4a2a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "NORIA JOSSELYN",
-          "score_heuristique": 6.9108,
-          "forme_recente": 6.972,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "A. ANDRE",
-          "entraineur": "Antonin ANDRE",
-          "musique": "2a1aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NEYMAR D'ALOUETTE",
-          "score_heuristique": 6.5838,
-          "forme_recente": 6.98,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "A.A. CHAVATTE",
-          "entraineur": "A. CHAVATTE",
-          "musique": "1a4a3aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "NOIR C'EST BLACK",
-          "score_heuristique": 5.2318,
-          "forme_recente": 6.123,
-          "regularite_podium": 0.167,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "M. VERVA",
-          "entraineur": "G. VERVA",
-          "musique": "4a1a5aDa6a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-07-R2-C2",
       "moteur": "M1",
@@ -1662,8 +1544,12 @@
   ],
   "courses_ecartees": [
     {
+      "course_id": "2026-11-07-R2-C1",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-07-R3-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-07-R3-C2",
@@ -1762,7 +1648,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 14,
+  "nombre_propositions": 13,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
