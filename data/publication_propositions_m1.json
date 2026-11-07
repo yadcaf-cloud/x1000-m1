@@ -1,130 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-07T12:49:37.204874+01:00",
+  "genere_a": "2026-11-07T13:25:36.917817+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-07-R2-C6",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-07T13:22:00+01:00",
-      "hippodrome": "HIPPODROME DE MAUQUENCHY",
-      "classement": [
-        14,
-        2,
-        15,
-        11,
-        5
-      ],
-      "details": [
-        {
-          "numero": 14,
-          "nom": "KISS YOU DU VERGER",
-          "score_heuristique": 7.7269,
-          "forme_recente": 7.784,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "PH. DAUGEARD",
-          "entraineur": "PH. DAUGEARD",
-          "musique": "2a1a3a3a3a3aDa5a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "KAPRICCIO",
-          "score_heuristique": 5.7914,
-          "forme_recente": 6.302,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "E. DE JESUS",
-          "entraineur": "G. BEAUFILS",
-          "musique": "1a3a6a5a3a6aDa(25)0a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 15,
-          "nom": "KAID DES BOSC",
-          "score_heuristique": 5.0939,
-          "forme_recente": 5.43,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "L. GUILLEMIN",
-          "entraineur": "L. GUILLEMIN",
-          "musique": "1aDa6a2a5a2aDaDa6a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "KING BOLD",
-          "score_heuristique": 4.728,
-          "forme_recente": 5.285,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. OLIVIER",
-          "entraineur": "PH. DAUGEARD",
-          "musique": "3a6a8a0a6a5a(25)2a5a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "KILLER D'ENFER",
-          "score_heuristique": 4.2659,
-          "forme_recente": 4.707,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.A. DELACOUR",
-          "entraineur": "G. DELACOUR",
-          "musique": "0a3a3a8a5a5a5a8aDa8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 14,
-      "non_partants_exclus": [
-        10
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-07-R2-C7",
       "moteur": "M1",
@@ -1227,7 +1107,11 @@
     },
     {
       "course_id": "2026-11-07-R3-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-07-R2-C6",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-07-R3-C6",
@@ -1306,7 +1190,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 10,
+  "nombre_propositions": 9,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
