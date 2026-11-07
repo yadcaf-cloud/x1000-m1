@@ -1,129 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-07T19:26:57.074678+01:00",
+  "genere_a": "2026-11-07T20:18:11.940845+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
-  "propositions": [
-    {
-      "course_id": "2026-11-07-R5-C7",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-07T19:34:00+01:00",
-      "hippodrome": "HIPPODROME DE LAVAL",
-      "classement": [
-        13,
-        15,
-        9,
-        12,
-        6
-      ],
-      "details": [
-        {
-          "numero": 13,
-          "nom": "NINA DE POURPRIX",
-          "score_heuristique": 6.9111,
-          "forme_recente": 7.639,
-          "regularite_podium": 0.4,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "A. BARRIER",
-          "entraineur": "P. DANET",
-          "musique": "3a1a5a5a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 15,
-          "nom": "NORA DE GUERINIERE",
-          "score_heuristique": 6.7939,
-          "forme_recente": 6.992,
-          "regularite_podium": 0.6,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "J.ET. ABRIVARD",
-          "entraineur": "M. ABRIVARD",
-          "musique": "1a3a9a7a(25)2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NICOTINE",
-          "score_heuristique": 6.7677,
-          "forme_recente": 6.96,
-          "regularite_podium": 0.6,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "LEO ABRIVARD",
-          "entraineur": "LEO ABRIVARD",
-          "musique": "1a3a6a3aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "NYMPHE D'HELIOS",
-          "score_heuristique": 6.3485,
-          "forme_recente": 6.436,
-          "regularite_podium": 0.6,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "CEDRIC TERRY",
-          "entraineur": "F. HAREL",
-          "musique": "3a1aDa3a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "NAIROBI DE CHENU",
-          "score_heuristique": 5.5256,
-          "forme_recente": 5.907,
-          "regularite_podium": 0.4,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "P. PELLEROT",
-          "entraineur": "P. PELLEROT",
-          "musique": "6a3a2a5aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    }
-  ],
+  "propositions": [],
   "courses_ecartees": [
     {
       "course_id": "2026-11-07-R2-C1",
@@ -274,11 +155,15 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-07-R5-C7",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-07-R5-C8",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     }
   ],
-  "nombre_propositions": 1,
+  "nombre_propositions": 0,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
