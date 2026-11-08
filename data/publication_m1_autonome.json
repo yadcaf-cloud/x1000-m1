@@ -2,14 +2,14 @@
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
   "date": "2026-11-08",
-  "genere_a": "2026-11-08T12:51:24.194525+01:00",
+  "genere_a": "2026-11-08T13:26:10.364121+01:00",
   "statut": "AUCUNE_NOUVELLE_DECISION",
   "source": "PMU",
-  "collecte_a": "2026-11-08T12:50:58.815051+01:00",
+  "collecte_a": "2026-11-08T13:25:46.698906+01:00",
   "courses_collectees": 71,
   "courses_importees": 71,
   "courses_en_base": 340,
-  "propositions_sportives": 36,
+  "propositions_sportives": 32,
   "decisions_nouvelles": 0,
   "decisions_total": 170,
   "figes_total": 0,
@@ -33,20 +33,36 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-08-R14-C1",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-08-R4-C4",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-08-R12-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R13-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-08-R9-C1",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R1-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R7-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-08-R14-C2",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R11-C1",
@@ -155,22 +171,6 @@
     {
       "course_id": "2026-11-08-R5-C8",
       "raison": "Moins de cinq chevaux avec historique exploitable"
-    },
-    {
-      "course_id": "2026-11-08-R14-C1",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-08-R4-C4",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-08-R9-C1",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-08-R14-C2",
-      "raison": "Decision existante"
     },
     {
       "course_id": "2026-11-08-R12-C2",
@@ -302,7 +302,7 @@
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-08T12:51:24.176527+01:00",
+    "date": "2026-11-08T13:26:10.343585+01:00",
     "version": "M1-6.0",
     "importees": 71,
     "rejetees": [],

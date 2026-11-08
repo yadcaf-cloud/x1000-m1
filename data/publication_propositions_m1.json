@@ -1,486 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-08T12:51:24.097981+01:00",
+  "genere_a": "2026-11-08T13:26:10.243670+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-08-R14-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T13:00:00+01:00",
-      "hippodrome": "HIPPODROME DE MESLAY DU MAINE",
-      "classement": [
-        16,
-        15,
-        10,
-        8,
-        13
-      ],
-      "details": [
-        {
-          "numero": 16,
-          "nom": "NARCISSE D'IDEF",
-          "score_heuristique": 3.3253,
-          "forme_recente": 3.74,
-          "regularite_podium": 0.167,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "G. DONIO",
-          "entraineur": "M. DONIO",
-          "musique": "8a6a3aDa6aAa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 15,
-          "nom": "NINO NAKANO",
-          "score_heuristique": 3.1048,
-          "forme_recente": 3.881,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "A. GUYARD",
-          "entraineur": "A. GUYARD",
-          "musique": "Da6a5a4a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NUMEROBIS DEVITRAY",
-          "score_heuristique": 1.6988,
-          "forme_recente": 2.124,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "J. BERTHELOT",
-          "entraineur": "J. BERTHELOT",
-          "musique": "Da7a6aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "NAT KING SNOB",
-          "score_heuristique": 1.4381,
-          "forme_recente": 1.798,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "CL. FRECELLE",
-          "entraineur": "CL. FRECELLE",
-          "musique": "7aDa9aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "NEW LOOK BOSS",
-          "score_heuristique": 1.3723,
-          "forme_recente": 1.715,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. LEFAUCHEUX",
-          "entraineur": "D. LEFAUCHEUX",
-          "musique": "8aDaDaDaDa(25)7a7a6a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 6,
-      "non_partants_exclus": [
-        9
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-08-R4-C4",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T13:05:00+01:00",
-      "hippodrome": "HIPPODROME DE CHATELAILLON",
-      "classement": [
-        14,
-        1,
-        10,
-        3,
-        5
-      ],
-      "details": [
-        {
-          "numero": 14,
-          "nom": "MISS ULTIME",
-          "score_heuristique": 6.3517,
-          "forme_recente": 7.106,
-          "regularite_podium": 0.333,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "V. FOUCAULT",
-          "entraineur": "J.M. BABIN",
-          "musique": "6a4a1a3a4a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "MAMZELLE BLANCHE",
-          "score_heuristique": 6.1436,
-          "forme_recente": 6.429,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "L. KOUBICHE",
-          "entraineur": "L. KOUBICHE",
-          "musique": "3a1a3aDaDa4a(25)2a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "MIRAGE RENARDIER",
-          "score_heuristique": 5.6163,
-          "forme_recente": 6.306,
-          "regularite_podium": 0.286,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "E. RAFFIN",
-          "entraineur": "R. JOLY",
-          "musique": "4a2a1a(25)5a5aDaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "MELANIA DU CLOS",
-          "score_heuristique": 5.3354,
-          "forme_recente": 5.732,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. PAILLE",
-          "entraineur": "J. PAILLE",
-          "musique": "5a1a3a7a2aDaDa9aDa9a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "MONJAMA",
-          "score_heuristique": 5.1515,
-          "forme_recente": 5.502,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "O. RAFFIN",
-          "entraineur": "P.L. DESAUNETTE",
-          "musique": "2a6aDa3a4a3a8a0a4a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 9,
-      "non_partants_exclus": [
-        4
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-08-R9-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T13:20:00+01:00",
-      "hippodrome": "HIPPODROME DE HYERES",
-      "classement": [
-        11,
-        8,
-        9,
-        10,
-        7
-      ],
-      "details": [
-        {
-          "numero": 11,
-          "nom": "NAFISA MENUET",
-          "score_heuristique": 4.8948,
-          "forme_recente": 5.285,
-          "regularite_podium": 0.333,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "TH. BRIAND",
-          "entraineur": "J. UROZ",
-          "musique": "7a3a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "NOUMEA DE NIMES",
-          "score_heuristique": 3.2316,
-          "forme_recente": 4.04,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "N. JULIEN",
-          "entraineur": "N. JULIEN",
-          "musique": "6a7a7aDa6a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NALA DU COIGNET",
-          "score_heuristique": 2.7229,
-          "forme_recente": 2.57,
-          "regularite_podium": 0.333,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "D. BEKAERT",
-          "entraineur": "D. BEKAERT",
-          "musique": "Da3aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NUMBER ONE CHOC",
-          "score_heuristique": 0.9117,
-          "forme_recente": 1.14,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. GRUMETZ",
-          "entraineur": "Maxime GRUMETZ",
-          "musique": "DaDa9aDa4a(25)0aDa9a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "NICE GALAXIE",
-          "score_heuristique": 0.6122,
-          "forme_recente": 0.765,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J.CH. FERON",
-          "entraineur": "G. ALAINE",
-          "musique": "0a0aDaDa9aDa4aDaDa5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 6,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-08-R14-C2",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T13:30:00+01:00",
-      "hippodrome": "HIPPODROME DE MESLAY DU MAINE",
-      "classement": [
-        13,
-        12,
-        10,
-        5,
-        6
-      ],
-      "details": [
-        {
-          "numero": 13,
-          "nom": "NUAGE ETOILE",
-          "score_heuristique": 2.0248,
-          "forme_recente": 2.531,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "B. ROCHARD",
-          "entraineur": "CH.A. MARY",
-          "musique": "Da4aDa5aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "NARCUS DE PLAY",
-          "score_heuristique": 1.1984,
-          "forme_recente": 1.498,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "GUILLAUME MARTIN",
-          "entraineur": "CH.A. MARY",
-          "musique": "DaDa4a(25)Da",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NISTRAL DU CHARME",
-          "score_heuristique": 1.1925,
-          "forme_recente": 1.491,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "D. BLOND",
-          "entraineur": "D. BLOND",
-          "musique": "Da8aDa8a6aDaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "NOBILIS DEL PHEDO",
-          "score_heuristique": 0.8218,
-          "forme_recente": 1.027,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "S. GOHIER",
-          "entraineur": "H. TOUVAIS",
-          "musique": "8aDaDaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "NORD OUEST JEWEL",
-          "score_heuristique": 0.0,
-          "forme_recente": 0.0,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "J. HOCDE",
-          "entraineur": "M. LECOURT",
-          "musique": "DaDaDaDaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 5,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-08-R12-C2",
       "moteur": "M1",
@@ -4282,20 +3806,36 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-08-R14-C1",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-08-R4-C4",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-08-R12-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R13-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-08-R9-C1",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R1-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R7-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-08-R14-C2",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R11-C1",
@@ -4406,7 +3946,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 36,
+  "nombre_propositions": 32,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
