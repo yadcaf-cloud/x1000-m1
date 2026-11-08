@@ -1,131 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-08T19:24:35.645912+01:00",
+  "genere_a": "2026-11-08T20:13:56.912475+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
-  "propositions": [
-    {
-      "course_id": "2026-11-08-R5-C7",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T19:37:00+01:00",
-      "hippodrome": "HIPPODROME DU CROISE LAROCHE",
-      "classement": [
-        4,
-        12,
-        11,
-        10,
-        2
-      ],
-      "details": [
-        {
-          "numero": 4,
-          "nom": "MISS FRANCE PIYA",
-          "score_heuristique": 9.3983,
-          "forme_recente": 9.248,
-          "regularite_podium": 1.0,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "A. DE VAUGIRAUD",
-          "entraineur": "A. DE VAUGIRAUD",
-          "musique": "2a3a1a1a(25)1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "MADISON DE MAHEY",
-          "score_heuristique": 6.2284,
-          "forme_recente": 6.536,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. OUVRIE",
-          "entraineur": "A. RIPOLL RIGO",
-          "musique": "3a4a2a3a3aDaDa4a(25)8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "MARIE JOSE LABELLE",
-          "score_heuristique": 5.694,
-          "forme_recente": 5.868,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "G. GELORMINI",
-          "entraineur": "R. KUIPER",
-          "musique": "3aDa1aDa4a(25)3a1a5a0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "MALICE DU CHATAULT",
-          "score_heuristique": 5.4607,
-          "forme_recente": 6.201,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. KOUBICHE",
-          "entraineur": "J. KOUBICHE",
-          "musique": "7a5a4a1a6a4a(25)8a1a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "MAEVA DES PRES",
-          "score_heuristique": 5.299,
-          "forme_recente": 5.686,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J.R. DECLERCQ",
-          "entraineur": "J.R. DECLERCQ",
-          "musique": "1a9a8a1aDa6a7a1a5aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 8,
-      "non_partants_exclus": [
-        5
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    }
-  ],
+  "propositions": [],
   "courses_ecartees": [
     {
       "course_id": "2026-11-08-R4-C1",
@@ -404,11 +283,15 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-08-R5-C7",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-08-R5-C8",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     }
   ],
-  "nombre_propositions": 1,
+  "nombre_propositions": 0,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."

@@ -2,14 +2,14 @@
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
   "date": "2026-11-08",
-  "genere_a": "2026-11-08T19:24:35.737601+01:00",
+  "genere_a": "2026-11-08T20:13:56.987536+01:00",
   "statut": "AUCUNE_NOUVELLE_DECISION",
   "source": "PMU",
-  "collecte_a": "2026-11-08T19:24:11.075969+01:00",
+  "collecte_a": "2026-11-08T20:13:28.906677+01:00",
   "courses_collectees": 71,
   "courses_importees": 71,
   "courses_en_base": 340,
-  "propositions_sportives": 1,
+  "propositions_sportives": 0,
   "decisions_nouvelles": 0,
   "decisions_total": 170,
   "figes_total": 0,
@@ -293,16 +293,16 @@
       "raison": "Départ passé ou trop proche"
     },
     {
-      "course_id": "2026-11-08-R5-C8",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "course_id": "2026-11-08-R5-C7",
+      "raison": "Départ passé ou trop proche"
     },
     {
-      "course_id": "2026-11-08-R5-C7",
-      "raison": "Decision existante"
+      "course_id": "2026-11-08-R5-C8",
+      "raison": "Départ passé ou trop proche"
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-08T19:24:35.715384+01:00",
+    "date": "2026-11-08T20:13:56.974268+01:00",
     "version": "M1-6.0",
     "importees": 71,
     "rejetees": [],
