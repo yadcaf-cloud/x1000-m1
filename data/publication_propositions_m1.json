@@ -1,252 +1,16 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-08T16:32:36.984084+01:00",
+  "genere_a": "2026-11-08T17:10:40.400412+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-08-R5-C2",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T16:42:00+01:00",
-      "hippodrome": "HIPPODROME DU CROISE LAROCHE",
-      "classement": [
-        11,
-        15,
-        7,
-        3,
-        6
-      ],
-      "details": [
-        {
-          "numero": 11,
-          "nom": "INDY DES BOTS",
-          "score_heuristique": 7.9769,
-          "forme_recente": 8.409,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "G. BEAUFILS",
-          "musique": "3a1a1a1a7a1a4a5a(25)9a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 15,
-          "nom": "HEROIC DES BOSC",
-          "score_heuristique": 4.934,
-          "forme_recente": 4.918,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "G. GELORMINI",
-          "entraineur": "Vitale CIOTOLA",
-          "musique": "2aDaDa7a8a1a3a3a8a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "JOAL FIX",
-          "score_heuristique": 4.5485,
-          "forme_recente": 4.748,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. GARANDEAU",
-          "entraineur": "E. DEVENNE",
-          "musique": "6a0a5aDa5a3a1a2aDa6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "INVINCIBLE MAUZUN",
-          "score_heuristique": 4.3781,
-          "forme_recente": 5.16,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. DE LAENDER",
-          "entraineur": "Joeri DE LAENDER",
-          "musique": "8a7a4a4a7a2a5a7a7a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "HASHTAG DU LION",
-          "score_heuristique": 4.3543,
-          "forme_recente": 4.505,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "R. HEMERY",
-          "entraineur": "Mlle A.M. SOUDAIN",
-          "musique": "7a4a0a0a2a9a2a3a7a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-08-R13-C8",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T16:45:00+01:00",
-      "hippodrome": "HIPPODROME DE MAURE DE BRETAGNE",
-      "classement": [
-        14,
-        11,
-        6,
-        10,
-        5
-      ],
-      "details": [
-        {
-          "numero": 14,
-          "nom": "KASHMIR DU BOCAGE",
-          "score_heuristique": 7.0186,
-          "forme_recente": 7.211,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. CHAMPENOIS",
-          "entraineur": "K. CHAMPENOIS",
-          "musique": "1a8a2a3a5a2a8a3a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "KINA FOUTEAU",
-          "score_heuristique": 6.9072,
-          "forme_recente": 7.384,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "T. OUVRIE",
-          "entraineur": "A. DREUX",
-          "musique": "4a6a2a1a3a4a5a3a(25)1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "KITTY RANAISE",
-          "score_heuristique": 5.5542,
-          "forme_recente": 6.005,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. FAVRIS",
-          "entraineur": "Anthonin FAVRIS",
-          "musique": "3a4a8a0a1a4a3a7aDa3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "KRACANTE A JOJO",
-          "score_heuristique": 5.4607,
-          "forme_recente": 5.888,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. SEVIN",
-          "entraineur": "J. SEVIN",
-          "musique": "4a9a6a1a2a6a2a0a5a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "KINGSTON DU MINON",
-          "score_heuristique": 4.137,
-          "forme_recente": 4.546,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. GOETZ",
-          "entraineur": "V. RENAULT",
-          "musique": "1a2aDaDaDaDa8a4a2aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-08-R5-C3",
       "moteur": "M1",
       "methode": "M1-ANALYSE-1.1",
       "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T17:17:00+01:00",
+      "depart": "2026-11-08T17:19:00+01:00",
       "hippodrome": "HIPPODROME DU CROISE LAROCHE",
       "classement": [
         10,
@@ -1054,15 +818,15 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-08-R11-C6",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-08-R1-C7",
       "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R9-C7",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-08-R11-C6",
       "raison": "Départ passé ou trop proche"
     },
     {
@@ -1074,27 +838,35 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-08-R5-C2",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-08-R7-C7",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-08-R13-C8",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R11-C7",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R1-C8",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R12-C9",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R5-C8",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 7,
+  "nombre_propositions": 5,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
