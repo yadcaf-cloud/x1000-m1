@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-08T18:18:14.871786+01:00",
+  "genere_a": "2026-11-08T18:53:51.356953+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-08-R5-C5",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T18:27:00+01:00",
-      "hippodrome": "HIPPODROME DU CROISE LAROCHE",
-      "classement": [
-        6,
-        11,
-        10,
-        3,
-        8
-      ],
-      "details": [
-        {
-          "numero": 6,
-          "nom": "NEBRASKA MELOC",
-          "score_heuristique": 8.172,
-          "forme_recente": 8.072,
-          "regularite_podium": 0.857,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "O. BIZOUX",
-          "entraineur": "O. BIZOUX",
-          "musique": "2a6a2a2a2a3a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "NUROSEDA DE WARNOC",
-          "score_heuristique": 7.8741,
-          "forme_recente": 8.176,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "J.M. CHAINEUX",
-          "musique": "1a5a5a1a3a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NIGHT DU SAPTEL",
-          "score_heuristique": 7.7245,
-          "forme_recente": 7.989,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "F. OUVRIE",
-          "entraineur": "P.Y. VERVA",
-          "musique": "1a7a3a2a1a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "NUMBER ONE D'ARBAZ",
-          "score_heuristique": 7.4583,
-          "forme_recente": 7.823,
-          "regularite_podium": 0.6,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "G. DESPREZ",
-          "entraineur": "P. DESPREZ",
-          "musique": "6a2a1a4a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "NANS DE FLEUR",
-          "score_heuristique": 6.7474,
-          "forme_recente": 6.768,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "LAURENT VERVA",
-          "entraineur": "L. VERVA",
-          "musique": "8a1a7a3a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 9,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-08-R5-C6",
       "moteur": "M1",
@@ -634,11 +516,15 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-08-R5-C5",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-08-R5-C8",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 3,
+  "nombre_propositions": 2,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
