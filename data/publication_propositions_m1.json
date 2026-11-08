@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-08T10:55:13.941877+01:00",
+  "genere_a": "2026-11-08T11:30:24.696561+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-08-R4-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T11:26:00+01:00",
-      "hippodrome": "HIPPODROME DE CHATELAILLON",
-      "classement": [
-        7,
-        4,
-        2,
-        10,
-        5
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "HILKA DE BERTRANGE",
-          "score_heuristique": 6.4653,
-          "forme_recente": 7.144,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. MOURAUD",
-          "entraineur": "J.J. BEAUSSE",
-          "musique": "1a2a5a2a6a6a5aDaAa8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "IGOR DE BOITRON",
-          "score_heuristique": 5.8122,
-          "forme_recente": 6.64,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "TH. CORBES",
-          "entraineur": "TH. CORBES",
-          "musique": "5a3a5a4a8a4a1a4aDa8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "ISIS DU CORTA",
-          "score_heuristique": 4.5324,
-          "forme_recente": 5.353,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. PITHON",
-          "entraineur": "PH. MARIE",
-          "musique": "5a6a1a8a7a7a6a8a4a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "JAMES BOND GWEN",
-          "score_heuristique": 4.3256,
-          "forme_recente": 4.782,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme J. NADEAU",
-          "entraineur": "Mme J. NADEAU",
-          "musique": "5a3a6aDa9aDa3a4aDa8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "HARLEY DU CHERISAY",
-          "score_heuristique": 4.3032,
-          "forme_recente": 5.067,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme B. GUENET",
-          "entraineur": "Mme Barbara GUENET",
-          "musique": "4a6a5a6aDa3a5a0a7a9a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-08-R4-C3",
       "moteur": "M1",
@@ -4488,8 +4370,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 9,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 8,
+      "non_partants_exclus": [
+        5
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -4497,6 +4381,10 @@
     }
   ],
   "courses_ecartees": [
+    {
+      "course_id": "2026-11-08-R4-C1",
+      "raison": "Départ passé ou trop proche"
+    },
     {
       "course_id": "2026-11-08-R4-C2",
       "raison": "Moins de cinq chevaux avec historique exploitable"
@@ -4630,7 +4518,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 38,
+  "nombre_propositions": 37,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
