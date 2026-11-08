@@ -1,136 +1,16 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-08T18:53:51.356953+01:00",
+  "genere_a": "2026-11-08T19:24:35.645912+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-08-R5-C6",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T19:02:00+01:00",
-      "hippodrome": "HIPPODROME DU CROISE LAROCHE",
-      "classement": [
-        1,
-        7,
-        2,
-        12,
-        10
-      ],
-      "details": [
-        {
-          "numero": 1,
-          "nom": "KARA DES DUNES",
-          "score_heuristique": 7.1033,
-          "forme_recente": 7.317,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. OUVRIE",
-          "entraineur": "J.R. DELLIAUX",
-          "musique": "3a5a(25)6a2a1a1a1aDa7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "KISS ME TO LIVE",
-          "score_heuristique": 6.7825,
-          "forme_recente": 6.916,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.Y. VERVA",
-          "entraineur": "G. BEAUFILS",
-          "musique": "7a3a4a7a2a1a3a1aDa(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "KETTINA DU CYGNE",
-          "score_heuristique": 6.7365,
-          "forme_recente": 7.171,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. REBECHE",
-          "entraineur": "M. VARIN",
-          "musique": "2a2a8a3a4a1a6a8a3a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "KASSIOPEE",
-          "score_heuristique": 5.6201,
-          "forme_recente": 5.775,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. DE VAUGIRAUD",
-          "entraineur": "A. DE VAUGIRAUD",
-          "musique": "4aDa1a3a(25)8a1aDa2aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "KALIFORNIE",
-          "score_heuristique": 5.4557,
-          "forme_recente": 5.882,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "R. HOJKA",
-          "entraineur": "B. HOJKA",
-          "musique": "1a3a9a7a9a1a6a0a8a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 10,
-      "non_partants_exclus": [
-        9
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-08-R5-C7",
       "moteur": "M1",
       "methode": "M1-ANALYSE-1.1",
       "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T19:34:00+01:00",
+      "depart": "2026-11-08T19:37:00+01:00",
       "hippodrome": "HIPPODROME DU CROISE LAROCHE",
       "classement": [
         4,
@@ -520,11 +400,15 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-08-R5-C6",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-08-R5-C8",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 2,
+  "nombre_propositions": 1,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
