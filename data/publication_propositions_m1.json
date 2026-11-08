@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-08T12:14:05.416976+01:00",
+  "genere_a": "2026-11-08T12:51:24.097981+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-08-R4-C3",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T12:30:00+01:00",
-      "hippodrome": "HIPPODROME DE CHATELAILLON",
-      "classement": [
-        7,
-        9,
-        11,
-        6,
-        10
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "NEED YOU MESLOIS",
-          "score_heuristique": 7.794,
-          "forme_recente": 7.867,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P. BELLOCHE",
-          "entraineur": "P. BELLOCHE",
-          "musique": "6a2a2a2a2a3a2a4a5aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NICE BOY BOURBON",
-          "score_heuristique": 7.113,
-          "forme_recente": 7.016,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "H. MONTHULE",
-          "entraineur": "S. GUARATO",
-          "musique": "3a2a1aDaAa1a3a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "NUBA DE PERVENCHE",
-          "score_heuristique": 6.3597,
-          "forme_recente": 6.7,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. LALOUM",
-          "entraineur": "S. LALOUM",
-          "musique": "4a3a4aDa3a2a4a3a2a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "NOBLE PETTEVINIERE",
-          "score_heuristique": 6.2258,
-          "forme_recente": 6.532,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "ADRIEN RAFFEGEAU",
-          "entraineur": "S. ROGER",
-          "musique": "7a4a3a2a7a5a3a2a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NOLITA MADRIK",
-          "score_heuristique": 6.0235,
-          "forme_recente": 5.967,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "E. CIVE",
-          "entraineur": "P. BELLOCHE",
-          "musique": "1a3aDa3a(25)3aDaDa3a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 9,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-08-R14-C1",
       "moteur": "M1",
@@ -4392,8 +4274,12 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-08-R4-C3",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-08-R1-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-08-R12-C1",
@@ -4520,7 +4406,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 37,
+  "nombre_propositions": 36,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
