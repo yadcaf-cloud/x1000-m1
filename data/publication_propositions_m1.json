@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-08T17:10:40.400412+01:00",
+  "genere_a": "2026-11-08T17:45:32.389579+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-08-R5-C3",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-08T17:19:00+01:00",
-      "hippodrome": "HIPPODROME DU CROISE LAROCHE",
-      "classement": [
-        10,
-        12,
-        8,
-        7,
-        9
-      ],
-      "details": [
-        {
-          "numero": 10,
-          "nom": "LYNX DU SAPTEL",
-          "score_heuristique": 6.5907,
-          "forme_recente": 7.301,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. VERVA",
-          "entraineur": "P.Y. VERVA",
-          "musique": "1a2a2a6a9a6a4a5a3a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "LUSANIO DE WARNOC",
-          "score_heuristique": 6.1733,
-          "forme_recente": 6.154,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "J.M. CHAINEUX",
-          "musique": "4a0a1aDa2a2a1a2a6a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "LYLOU DES THUYAS",
-          "score_heuristique": 5.7087,
-          "forme_recente": 5.886,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "LAURENT VERVA",
-          "entraineur": "P.Y. VERVA",
-          "musique": "7a7a5a3a1a8a3a3a2a8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "LEGENDE DE NILREM",
-          "score_heuristique": 5.5994,
-          "forme_recente": 6.062,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.Y. VERVA",
-          "entraineur": "P.Y. VERVA",
-          "musique": "2a3a5a9a6a9a8a(25)2a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "LEONTINE CASH",
-          "score_heuristique": 4.9699,
-          "forme_recente": 5.275,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. KOUBICHE",
-          "entraineur": "P. HACHIN",
-          "musique": "9a4a2a1aDa6a(25)0a1a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-08-R5-C4",
       "moteur": "M1",
@@ -862,11 +744,15 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-08-R5-C3",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-08-R5-C8",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 5,
+  "nombre_propositions": 4,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
