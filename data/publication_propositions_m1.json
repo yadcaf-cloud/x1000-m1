@@ -1,249 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-10T14:08:16.911941+01:00",
+  "genere_a": "2026-11-10T15:19:31.093779+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-10-R2-C5",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T14:47:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        6,
-        10,
-        9,
-        4,
-        7
-      ],
-      "details": [
-        {
-          "numero": 6,
-          "nom": "NOMADE PIYA",
-          "score_heuristique": 9.2771,
-          "forme_recente": 9.096,
-          "regularite_podium": 1.0,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "B. ROCHARD",
-          "entraineur": "M. SASSIER",
-          "musique": "1a3a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NASH",
-          "score_heuristique": 9.2482,
-          "forme_recente": 9.06,
-          "regularite_podium": 1.0,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "J.M. BAZIRE",
-          "entraineur": "CH. MOTTIER",
-          "musique": "2a1a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NEW HAUFOR",
-          "score_heuristique": 6.7631,
-          "forme_recente": 6.787,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "D. BONNE",
-          "entraineur": "CH. BIGEON",
-          "musique": "1aDa1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "NEC DES PLANS",
-          "score_heuristique": 6.2686,
-          "forme_recente": 6.336,
-          "regularite_podium": 0.6,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "M. ABRIVARD",
-          "entraineur": "M. ABRIVARD",
-          "musique": "7a2a1a3aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "NIMBUS DU NORD",
-          "score_heuristique": 5.3492,
-          "forme_recente": 5.436,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "G. GELORMINI",
-          "entraineur": "R. KUIPER",
-          "musique": "1a2aDaDaDa2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 8,
-      "non_partants_exclus": [
-        1,
-        2
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-10-R2-C6",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T15:22:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        8,
-        6,
-        3,
-        12,
-        5
-      ],
-      "details": [
-        {
-          "numero": 8,
-          "nom": "KALISCO PLANCHETTE",
-          "score_heuristique": 6.9666,
-          "forme_recente": 7.458,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mlle CH. DELATTRE-COLAS",
-          "entraineur": "M. IZZO",
-          "musique": "3a2a5a4a6a4a2a3a0aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "KEIGHT BLESS",
-          "score_heuristique": 6.8704,
-          "forme_recente": 7.026,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "G. D'HAENENS",
-          "entraineur": "D. LOCQUENEUX",
-          "musique": "3a2a1a8a1a1aDa0aDa1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "KING STEED",
-          "score_heuristique": 6.328,
-          "forme_recente": 6.973,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. HERIVAUX",
-          "entraineur": "A. CHAVATTE",
-          "musique": "5a1a4a1a6a3aDa4a5a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "KENDO CASTELETS",
-          "score_heuristique": 5.8027,
-          "forme_recente": 6.316,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. JANNIER",
-          "entraineur": "CH. CUILLER",
-          "musique": "3a3a5a3a8a5aDa4a5a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "KISS ME POLE",
-          "score_heuristique": 5.6109,
-          "forme_recente": 6.389,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. PLASSAIS",
-          "entraineur": "J. HERARD",
-          "musique": "5a4a1a3a4a0a5a7a3a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-10-R2-C8",
       "moteur": "M1",
@@ -1230,11 +991,19 @@
     },
     {
       "course_id": "2026-11-10-R1-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-10-R2-C5",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-10-R1-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-10-R2-C6",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-10-R1-C7",
@@ -1285,7 +1054,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 10,
+  "nombre_propositions": 8,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
