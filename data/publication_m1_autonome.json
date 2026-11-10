@@ -2,392 +2,19 @@
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
   "date": "2026-11-11",
-  "genere_a": "2026-11-11T00:00:24.203615+01:00",
-  "statut": "DECISIONS_PROVISOIRES_PUBLIEES",
+  "genere_a": "2026-11-11T00:33:27.658960+01:00",
+  "statut": "AUCUNE_NOUVELLE_DECISION",
   "source": "PMU",
-  "collecte_a": "2026-11-11T00:00:00.827222+01:00",
+  "collecte_a": "2026-11-11T00:32:58.907752+01:00",
   "courses_collectees": 72,
   "courses_importees": 72,
   "courses_en_base": 484,
   "propositions_sportives": 31,
-  "decisions_nouvelles": 31,
+  "decisions_nouvelles": 0,
   "decisions_total": 231,
   "figes_total": 0,
   "audits_total": 0,
-  "decisions_publiees": [
-    {
-      "course_id": "2026-11-11-R12-C2",
-      "selection_id": "30fac33b20b747da8ad92629733aa406",
-      "classement": [
-        11,
-        9,
-        4,
-        8,
-        3
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R12-C3",
-      "selection_id": "505ce54bdf364741a67536910bd8350f",
-      "classement": [
-        14,
-        13,
-        5,
-        10,
-        3
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R14-C1",
-      "selection_id": "dec2f22315894026a7a7b650377bd762",
-      "classement": [
-        12,
-        7,
-        14,
-        5,
-        10
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R12-C4",
-      "selection_id": "d775ba1b19504040b44063077f74fac4",
-      "classement": [
-        3,
-        1,
-        6,
-        7,
-        4
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R13-C2",
-      "selection_id": "0553e3b6f9b34c3eab0e8ee13647da26",
-      "classement": [
-        12,
-        11,
-        8,
-        1,
-        2
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R10-C3",
-      "selection_id": "7fb49df55754426a97f9b38d6a0441ee",
-      "classement": [
-        9,
-        5,
-        11,
-        4,
-        6
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R12-C5",
-      "selection_id": "b3a4a11be1dd4a7cb0813f52a4795cf7",
-      "classement": [
-        9,
-        10,
-        16,
-        13,
-        7
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R14-C3",
-      "selection_id": "71feb53562964ad5b5bd725777cbd755",
-      "classement": [
-        11,
-        9,
-        14,
-        10,
-        5
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R13-C3",
-      "selection_id": "267051b340a942699db6222c38db1e37",
-      "classement": [
-        9,
-        7,
-        10,
-        5,
-        4
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R10-C4",
-      "selection_id": "c6f6e55a410145dab95640f3343b6130",
-      "classement": [
-        10,
-        5,
-        8,
-        9,
-        4
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R3-C7",
-      "selection_id": "0e86d51ee990461fb01f5b3f3a2b1946",
-      "classement": [
-        3,
-        6,
-        11,
-        13,
-        5
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R12-C6",
-      "selection_id": "f10eba8a6c3a40c1a3eacde67819a3f5",
-      "classement": [
-        15,
-        11,
-        8,
-        6,
-        9
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R13-C4",
-      "selection_id": "2be25754bd0046b49322810979143712",
-      "classement": [
-        14,
-        2,
-        5,
-        6,
-        7
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R10-C5",
-      "selection_id": "7ad002f0bb8d40f6a6c419711eb2e079",
-      "classement": [
-        5,
-        3,
-        9,
-        12,
-        11
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R12-C7",
-      "selection_id": "48a5bfd76935409488eea524f8a27b99",
-      "classement": [
-        10,
-        2,
-        3,
-        6,
-        13
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R14-C5",
-      "selection_id": "22295cfa4c574df186827794e6244a0c",
-      "classement": [
-        2,
-        10,
-        11,
-        14,
-        9
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R10-C6",
-      "selection_id": "f357b925d54343f7baef47f6d5b46f38",
-      "classement": [
-        16,
-        3,
-        11,
-        7,
-        8
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R13-C5",
-      "selection_id": "abf11dd7d7664dcda08f6c8bdb55d23c",
-      "classement": [
-        1,
-        7,
-        8,
-        3,
-        9
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R11-C7",
-      "selection_id": "c62e8959bcbc4fdf8837aa402fe59ad8",
-      "classement": [
-        7,
-        13,
-        16,
-        9,
-        2
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R12-C8",
-      "selection_id": "fd08fa89502e4e7eb30cfad0f288ed66",
-      "classement": [
-        5,
-        12,
-        1,
-        10,
-        7
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R4-C1",
-      "selection_id": "770e19b597784b629de3d164ad95bb4b",
-      "classement": [
-        7,
-        3,
-        9,
-        8,
-        6
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R10-C7",
-      "selection_id": "411faa7863994f4d8068a35ab155f8d4",
-      "classement": [
-        5,
-        2,
-        8,
-        6,
-        1
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R4-C2",
-      "selection_id": "c34d45489a744b54a236aee7a3838aef",
-      "classement": [
-        8,
-        6,
-        13,
-        12,
-        14
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R13-C7",
-      "selection_id": "193498af69584e9db3ba2e194d4d412b",
-      "classement": [
-        10,
-        4,
-        5,
-        7,
-        14
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R14-C8",
-      "selection_id": "f1d0d32f333d45dc96c1d102bddf0ffc",
-      "classement": [
-        18,
-        14,
-        17,
-        11,
-        6
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R13-C8",
-      "selection_id": "a7ad389a474e48998de5cd5259e0cb70",
-      "classement": [
-        10,
-        3,
-        5,
-        7,
-        15
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R4-C3",
-      "selection_id": "8d347afaaa644d84bc6c18e9a4c3457d",
-      "classement": [
-        10,
-        7,
-        8,
-        12,
-        14
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R4-C4",
-      "selection_id": "79d8f59bedae4b3e8bbd3e66693341ca",
-      "classement": [
-        13,
-        10,
-        11,
-        4,
-        5
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R4-C5",
-      "selection_id": "ee5142969edf43a78c35a4bfbe7be1bc",
-      "classement": [
-        13,
-        11,
-        6,
-        16,
-        8
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R4-C7",
-      "selection_id": "c8dd46331b72493abbeef646a5c71843",
-      "classement": [
-        10,
-        13,
-        16,
-        8,
-        14
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-11-R4-C8",
-      "selection_id": "2242f7b644b04574be8077a2daa2b3c7",
-      "classement": [
-        8,
-        5,
-        2,
-        1,
-        3
-      ],
-      "statut": "PROVISOIRE"
-    }
-  ],
+  "decisions_publiees": [],
   "courses_ecartees": [
     {
       "course_id": "2026-11-11-R2-C1",
@@ -552,10 +179,134 @@
     {
       "course_id": "2026-11-11-R4-C6",
       "raison": "Moins de cinq chevaux avec historique exploitable"
+    },
+    {
+      "course_id": "2026-11-11-R12-C2",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R12-C3",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R14-C1",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R12-C4",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R13-C2",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R10-C3",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R12-C5",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R14-C3",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R13-C3",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R10-C4",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R3-C7",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R12-C6",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R13-C4",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R10-C5",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R12-C7",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R14-C5",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R10-C6",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R13-C5",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R11-C7",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R12-C8",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R4-C1",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R10-C7",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R4-C2",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R13-C7",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R14-C8",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R13-C8",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R4-C3",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R4-C4",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R4-C5",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R4-C7",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-11-R4-C8",
+      "raison": "Decision existante"
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-11T00:00:23.220908+01:00",
+    "date": "2026-11-11T00:33:27.641978+01:00",
     "version": "M1-6.0",
     "importees": 72,
     "rejetees": [],
