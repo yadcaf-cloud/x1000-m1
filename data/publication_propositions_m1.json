@@ -1,134 +1,16 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-10T19:18:04.550843+01:00",
+  "genere_a": "2026-11-10T20:22:57.551818+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-10-R3-C5",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T19:24:00+01:00",
-      "hippodrome": "HIPPODROME DE REIMS",
-      "classement": [
-        2,
-        4,
-        7,
-        1,
-        5
-      ],
-      "details": [
-        {
-          "numero": 2,
-          "nom": "MADEMOISELLE",
-          "score_heuristique": 7.4234,
-          "forme_recente": 8.029,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "ANDREA ROUSSEL",
-          "entraineur": "Alain ROUSSEL",
-          "musique": "1a1a3a4a3a6a5a6a(25)9a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "MIKONOS DU ROSAY",
-          "score_heuristique": 7.1311,
-          "forme_recente": 7.351,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. VERVA",
-          "entraineur": "O. TIRARD",
-          "musique": "2a2a3a2aDa5a6a2a3a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "MASTER PIT",
-          "score_heuristique": 6.8806,
-          "forme_recente": 6.934,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "M. ABRIVARD",
-          "entraineur": "W. NIMCZYK",
-          "musique": "1aAa3a6a1a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "MEDOC DES GLENAN",
-          "score_heuristique": 6.0105,
-          "forme_recente": 6.576,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M.J. BARCELO BISQUERRA",
-          "entraineur": "K. LEBLANC",
-          "musique": "6a1a3a5a(25)7a4a3a8a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "MILOR DES CAILLONS",
-          "score_heuristique": 3.9475,
-          "forme_recente": 4.309,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "TH. BELLET",
-          "entraineur": "B. MARIE",
-          "musique": "4aDa3a3a6aDa9aDa5a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 9,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-10-R3-C7",
       "moteur": "M1",
       "methode": "M1-ANALYSE-1.1",
       "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T20:28:00+01:00",
+      "depart": "2026-11-10T20:37:00+01:00",
       "hippodrome": "HIPPODROME DE REIMS",
       "classement": [
         3,
@@ -246,7 +128,7 @@
       "moteur": "M1",
       "methode": "M1-ANALYSE-1.1",
       "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T21:00:00+01:00",
+      "depart": "2026-11-10T21:07:00+01:00",
       "hippodrome": "HIPPODROME DE REIMS",
       "classement": [
         5,
@@ -462,23 +344,27 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-10-R3-C5",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-10-R4-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-10-R3-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-10-R4-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-10-R4-C7",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 3,
+  "nombre_propositions": 2,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
