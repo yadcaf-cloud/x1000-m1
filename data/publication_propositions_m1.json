@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-10T08:45:13.693172+01:00",
+  "genere_a": "2026-11-10T09:40:07.429147+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -709,124 +709,6 @@
         }
       ],
       "chevaux_evalues": 12,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-10-R2-C7",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T15:57:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        9,
-        8,
-        11,
-        4,
-        13
-      ],
-      "details": [
-        {
-          "numero": 9,
-          "nom": "MILA CAAL",
-          "score_heuristique": 5.3404,
-          "forme_recente": 5.738,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "B. ROCHARD",
-          "entraineur": "M. SASSIER",
-          "musique": "3a6a8a5a3aDa5a2aDa6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "MARY PICKFORD",
-          "score_heuristique": 4.996,
-          "forme_recente": 5.308,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme C. LEVESQUE",
-          "entraineur": "S. DIEUDONNE",
-          "musique": "7a3a0a5a2a3a7a6aDaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "MANON DU LEARD",
-          "score_heuristique": 4.4366,
-          "forme_recente": 4.921,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "LILIAN BERTIN",
-          "entraineur": "A.PH. GRIMAULT",
-          "musique": "1m1mDmDmDm4m7mDm4m6m",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "MY LADY HERMA",
-          "score_heuristique": 3.7556,
-          "forme_recente": 4.069,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. DESMIGNEUX",
-          "entraineur": "A. GARANDEAU",
-          "musique": "7mDm2m(25)Dm2m4mDm6mDm",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "MISS DE BAILLE",
-          "score_heuristique": 0.8914,
-          "forme_recente": 0.802,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. MOTTIER",
-          "entraineur": "M. MOTTIER",
-          "musique": "DmDmDmDmDmDm1mDm(25)Dm",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 5,
       "non_partants_exclus": [],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
@@ -1813,6 +1695,10 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
+      "course_id": "2026-11-10-R2-C7",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
+    },
+    {
       "course_id": "2026-11-10-R1-C8",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     },
@@ -1853,7 +1739,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 15,
+  "nombre_propositions": 14,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
