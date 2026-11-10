@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-10T12:21:12.569961+01:00",
+  "genere_a": "2026-11-10T13:08:45.730846+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-10-R2-C2",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T12:52:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        7,
-        10,
-        12,
-        9,
-        13
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "NERLY D'OURVILLE",
-          "score_heuristique": 7.5567,
-          "forme_recente": 7.946,
-          "regularite_podium": 0.6,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "O. PLACIER",
-          "entraineur": "M. ABRIVARD",
-          "musique": "2a5a4a2a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NOGERO",
-          "score_heuristique": 7.3749,
-          "forme_recente": 7.969,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "M. MOTTIER",
-          "entraineur": "M. MOTTIER",
-          "musique": "4a4a2a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "NOVATEUR",
-          "score_heuristique": 5.5319,
-          "forme_recente": 5.486,
-          "regularite_podium": 0.571,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "V. SAUSSAYE",
-          "entraineur": "EMILIEN RAULLINE",
-          "musique": "Da4a8a1a2a(25)3a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NARVIK DU BESSIN",
-          "score_heuristique": 5.2987,
-          "forme_recente": 5.686,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "CL. FRECELLE",
-          "entraineur": "J.ET. LE BEC",
-          "musique": "1a8a4a3a3a9aDaDa1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "NOBLE DIABLE MEF",
-          "score_heuristique": 5.0002,
-          "forme_recente": 5.625,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S.E. PASQUIER",
-          "entraineur": "B. LEFEVRE",
-          "musique": "5a5a3a5a3aAa9a5a3a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 5,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-10-R2-C3",
       "moteur": "M1",
@@ -1562,11 +1444,15 @@
     },
     {
       "course_id": "2026-11-10-R1-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-10-R2-C2",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-10-R1-C3",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-10-R1-C4",
@@ -1629,7 +1515,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 13,
+  "nombre_propositions": 12,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
