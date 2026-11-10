@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-10T07:26:28.851798+01:00",
+  "genere_a": "2026-11-10T08:45:13.693172+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -1083,8 +1083,8 @@
         16,
         10,
         12,
-        14,
-        1
+        1,
+        11
       ],
       "details": [
         {
@@ -1145,25 +1145,6 @@
           ]
         },
         {
-          "numero": 14,
-          "nom": "JALDO D'OCQUE",
-          "score_heuristique": 4.396,
-          "forme_recente": 4.557,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "PH. MASSCHAELE",
-          "entraineur": "Mlle A.M. SOUDAIN",
-          "musique": "1a7a0a0a0a1aAa1a7a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
           "numero": 1,
           "nom": "EXPRESS LOVE (SWE)",
           "score_heuristique": 4.2846,
@@ -1181,10 +1162,31 @@
             "Aptitude au parcours non évaluée",
             "Forme de l'entourage non évaluée"
           ]
+        },
+        {
+          "numero": 11,
+          "nom": "HIPPARIS",
+          "score_heuristique": 4.2247,
+          "forme_recente": 4.656,
+          "regularite_podium": 0.25,
+          "performances_lisibles": 8,
+          "gains_declares": null,
+          "jockey_driver": "J.F. SENET",
+          "entraineur": "J.F. SENET",
+          "musique": "5a9a7a2a7a0a3a7a0a2a",
+          "limites": [
+            "Distance non évaluée",
+            "Terrain non évalué",
+            "Opposition non évaluée",
+            "Aptitude au parcours non évaluée",
+            "Forme de l'entourage non évaluée"
+          ]
         }
       ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 10,
+      "non_partants_exclus": [
+        14
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
