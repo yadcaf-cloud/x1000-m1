@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-10T17:48:45.801611+01:00",
+  "genere_a": "2026-11-10T18:33:58.911261+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-10-R3-C3",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T18:17:00+01:00",
-      "hippodrome": "HIPPODROME DE REIMS",
-      "classement": [
-        12,
-        11,
-        1,
-        4,
-        13
-      ],
-      "details": [
-        {
-          "numero": 12,
-          "nom": "LE BOSS DE LUBEL",
-          "score_heuristique": 8.3559,
-          "forme_recente": 8.57,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. LAURENT",
-          "entraineur": "A. LAURENT",
-          "musique": "1a2a5a2a5a2a2a1a(25)1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "LONE RANGER",
-          "score_heuristique": 8.1081,
-          "forme_recente": 8.26,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "K. DEPUYDT",
-          "entraineur": "B.J. CREBAS",
-          "musique": "2a1a3a5a6a3a1a2a4aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "LUPIN DU BOURG",
-          "score_heuristique": 6.2883,
-          "forme_recente": 6.923,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.Y. VERVA",
-          "entraineur": "P.Y. VERVA",
-          "musique": "4a4a2a7a3a5a6a2a2a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "LAOS JIEL",
-          "score_heuristique": 5.1958,
-          "forme_recente": 6.182,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. BAUDE",
-          "entraineur": "J.L. DERSOIR",
-          "musique": "2a4a4a6a4a6a0a(25)8a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "LE PORTO",
-          "score_heuristique": 4.7081,
-          "forme_recente": 4.948,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "R. DERIEUX",
-          "entraineur": "R. DERIEUX",
-          "musique": "2a0a1aDa1a7a(24)Da9a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 10,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-10-R3-C4",
       "moteur": "M1",
@@ -679,7 +561,11 @@
     },
     {
       "course_id": "2026-11-10-R4-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-10-R3-C3",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-10-R4-C3",
@@ -706,7 +592,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 5,
+  "nombre_propositions": 4,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
