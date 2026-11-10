@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-10T11:27:49.753338+01:00",
+  "genere_a": "2026-11-10T12:21:12.569961+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-10-R2-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T12:17:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        13,
-        12,
-        11,
-        5,
-        6
-      ],
-      "details": [
-        {
-          "numero": 13,
-          "nom": "ONEY DE MAC",
-          "score_heuristique": 5.0164,
-          "forme_recente": 5.437,
-          "regularite_podium": 0.333,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "A. GENDROT",
-          "entraineur": "D. GARCIAS",
-          "musique": "4a7aDa5a2a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "OVER THE HILL",
-          "score_heuristique": 4.5542,
-          "forme_recente": 4.859,
-          "regularite_podium": 0.333,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "CHRISTOPHER CORBINEAU",
-          "entraineur": "PH. ALLAIRE",
-          "musique": "Da4a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "ORION JIEL",
-          "score_heuristique": 3.8663,
-          "forme_recente": 4.416,
-          "regularite_podium": 0.167,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "F. OUVRIE",
-          "entraineur": "J.L. DERSOIR",
-          "musique": "0a4a5a2aDa4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "OSCAR ERELL",
-          "score_heuristique": 3.2739,
-          "forme_recente": 4.092,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "A. ANDRE",
-          "entraineur": "Sté. Ent. Jonathan VANMEERBECK",
-          "musique": "4a7a8aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "OLIU MAG",
-          "score_heuristique": 2.4653,
-          "forme_recente": 2.582,
-          "regularite_podium": 0.2,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "G. GELORMINI",
-          "entraineur": "B. BOURGOIN",
-          "musique": "9a7aDaDa3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 5,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-10-R2-C2",
       "moteur": "M1",
@@ -1672,7 +1554,11 @@
   "courses_ecartees": [
     {
       "course_id": "2026-11-10-R1-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-10-R2-C1",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-10-R1-C2",
@@ -1743,7 +1629,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 14,
+  "nombre_propositions": 13,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
