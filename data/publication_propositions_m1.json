@@ -1,248 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-10T16:55:52.942332+01:00",
+  "genere_a": "2026-11-10T17:48:45.801611+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-10-R3-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T17:09:00+01:00",
-      "hippodrome": "HIPPODROME DE REIMS",
-      "classement": [
-        1,
-        6,
-        10,
-        3,
-        11
-      ],
-      "details": [
-        {
-          "numero": 1,
-          "nom": "KOBA D'HILAIRE",
-          "score_heuristique": 6.2223,
-          "forme_recente": 6.84,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. ABRIVARD",
-          "entraineur": "A. WISSOCQ",
-          "musique": "1a1a0a1a4a5aDa5a4a9a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "JUMPIE PURPLE",
-          "score_heuristique": 6.1178,
-          "forme_recente": 6.397,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "L. CHUPIN",
-          "entraineur": "Y. DOUSSET",
-          "musique": "4a6a1aDa1a1a3aDa3a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "KAMA D'EM",
-          "score_heuristique": 5.5478,
-          "forme_recente": 5.997,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.Y. VERVA",
-          "entraineur": "J. ROUX",
-          "musique": "3a4a3a8a4aDa1aDaDa8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "KIBRILLE MONTAVAL",
-          "score_heuristique": 5.2967,
-          "forme_recente": 5.996,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. ANDRE",
-          "entraineur": "ST. MEUNIER",
-          "musique": "1a9a6a5a6a5a1a9a3a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "KIRA DE CAHOT",
-          "score_heuristique": 5.105,
-          "forme_recente": 5.444,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. OUVRIE",
-          "entraineur": "CH. MIRANDEL",
-          "musique": "3a5a1a0aDa2a6aDa0a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 10,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-10-R3-C2",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T17:43:00+01:00",
-      "hippodrome": "HIPPODROME DE REIMS",
-      "classement": [
-        16,
-        10,
-        12,
-        1,
-        11
-      ],
-      "details": [
-        {
-          "numero": 16,
-          "nom": "JAZZ DE PADD",
-          "score_heuristique": 6.7208,
-          "forme_recente": 6.838,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. ABRIVARD",
-          "entraineur": "M. ABRIVARD",
-          "musique": "6a3a3a7a3a3a5a1a2a8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "JIOSCO DES CHASSES",
-          "score_heuristique": 6.1687,
-          "forme_recente": 6.461,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "T. THURMES",
-          "entraineur": "K. VANDEMOORTELE",
-          "musique": "1a1aDa5aDa2a7a2a4a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "JOURNEY OF DREAM",
-          "score_heuristique": 4.9143,
-          "forme_recente": 4.893,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. IONESCU",
-          "entraineur": "R. DERIEUX",
-          "musique": "0a1a1a0a0a(25)3a7a1a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "EXPRESS LOVE (SWE)",
-          "score_heuristique": 4.2846,
-          "forme_recente": 4.106,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "M. GOETZ",
-          "entraineur": "A. LOVDAL",
-          "musique": "8a0aDa1a3a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "HIPPARIS",
-          "score_heuristique": 4.2247,
-          "forme_recente": 4.656,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J.F. SENET",
-          "entraineur": "J.F. SENET",
-          "musique": "5a9a7a2a7a0a3a7a0a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 10,
-      "non_partants_exclus": [
-        14
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-10-R3-C3",
       "moteur": "M1",
@@ -904,8 +666,16 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-10-R3-C1",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-10-R4-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-10-R3-C2",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-10-R4-C2",
@@ -936,7 +706,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 7,
+  "nombre_propositions": 5,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
