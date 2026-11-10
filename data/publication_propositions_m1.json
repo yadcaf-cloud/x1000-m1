@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-10T09:40:07.429147+01:00",
+  "genere_a": "2026-11-10T10:31:47.554735+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -352,8 +352,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 11,
+      "non_partants_exclus": [
+        15
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -489,7 +491,7 @@
         10,
         9,
         4,
-        1
+        7
       ],
       "details": [
         {
@@ -569,16 +571,16 @@
           ]
         },
         {
-          "numero": 1,
-          "nom": "NARCO DRY",
-          "score_heuristique": 5.4512,
-          "forme_recente": 5.564,
+          "numero": 7,
+          "nom": "NIMBUS DU NORD",
+          "score_heuristique": 5.3492,
+          "forme_recente": 5.436,
           "regularite_podium": 0.5,
-          "performances_lisibles": 4,
+          "performances_lisibles": 6,
           "gains_declares": null,
-          "jockey_driver": "D. DE JESUS REIS",
-          "entraineur": "D. DE JESUS REIS",
-          "musique": "1aDa1aDa",
+          "jockey_driver": "G. GELORMINI",
+          "entraineur": "R. KUIPER",
+          "musique": "1a2aDaDaDa2a",
           "limites": [
             "Distance non évaluée",
             "Terrain non évalué",
@@ -588,8 +590,9 @@
           ]
         }
       ],
-      "chevaux_evalues": 9,
+      "chevaux_evalues": 8,
       "non_partants_exclus": [
+        1,
         2
       ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
@@ -826,9 +829,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 11,
+      "chevaux_evalues": 10,
       "non_partants_exclus": [
         1,
+        6,
         8
       ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
