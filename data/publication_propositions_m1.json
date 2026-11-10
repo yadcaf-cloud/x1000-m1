@@ -1,129 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-10T21:12:11.003502+01:00",
+  "genere_a": "2026-11-10T21:54:39.682079+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
-  "propositions": [
-    {
-      "course_id": "2026-11-10-R3-C8",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-10T21:35:00+01:00",
-      "hippodrome": "HIPPODROME DE REIMS",
-      "classement": [
-        5,
-        10,
-        3,
-        1,
-        11
-      ],
-      "details": [
-        {
-          "numero": 5,
-          "nom": "NOLWEN SOMOLLI",
-          "score_heuristique": 6.9458,
-          "forme_recente": 7.682,
-          "regularite_podium": 0.4,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "LILIAN BERTIN",
-          "entraineur": "F. LINDREC",
-          "musique": "1a5a4a3a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NIKITA JIEL",
-          "score_heuristique": 6.8925,
-          "forme_recente": 7.116,
-          "regularite_podium": 0.6,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "F. OUVRIE",
-          "entraineur": "J.L. DERSOIR",
-          "musique": "1a3a6a2aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "NIKITA JAMES",
-          "score_heuristique": 6.5802,
-          "forme_recente": 6.559,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "ARNAUD DESMOTTES",
-          "entraineur": "ARNAUD DESMOTTES",
-          "musique": "5a2a3aDa3a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "NASHWA",
-          "score_heuristique": 6.2317,
-          "forme_recente": 7.165,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "M. ABRIVARD",
-          "entraineur": "A. BUISSON",
-          "musique": "4a5a2a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "NAMI JIEL",
-          "score_heuristique": 5.7273,
-          "forme_recente": 6.222,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. BAUDE",
-          "entraineur": "J.L. DERSOIR",
-          "musique": "1a5a7a8a3a2a6aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    }
-  ],
+  "propositions": [],
   "courses_ecartees": [
     {
       "course_id": "2026-11-10-R1-C1",
@@ -248,9 +129,13 @@
     {
       "course_id": "2026-11-10-R3-C7",
       "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-10-R3-C8",
+      "raison": "Départ passé ou trop proche"
     }
   ],
-  "nombre_propositions": 1,
+  "nombre_propositions": 0,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
