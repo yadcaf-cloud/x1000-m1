@@ -2,14 +2,14 @@
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
   "date": "2026-11-11",
-  "genere_a": "2026-11-11T12:37:43.265643+01:00",
+  "genere_a": "2026-11-11T13:39:04.181470+01:00",
   "statut": "AUCUNE_NOUVELLE_DECISION",
   "source": "PMU",
-  "collecte_a": "2026-11-11T12:37:19.779149+01:00",
+  "collecte_a": "2026-11-11T13:38:40.553339+01:00",
   "courses_collectees": 72,
   "courses_importees": 72,
   "courses_en_base": 484,
-  "propositions_sportives": 31,
+  "propositions_sportives": 28,
   "decisions_nouvelles": 0,
   "decisions_total": 231,
   "figes_total": 0,
@@ -46,35 +46,47 @@
     },
     {
       "course_id": "2026-11-11-R2-C4",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-11-R12-C2",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-11-R3-C4",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-11-R10-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
-    },
-    {
-      "course_id": "2026-11-11-R2-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-11-R6-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-11-R2-C5",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-11-R12-C3",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-11-R14-C1",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-11-R13-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
-    },
-    {
-      "course_id": "2026-11-11-R3-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-11-R10-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-11-R3-C5",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-11-R2-C6",
@@ -179,18 +191,6 @@
     {
       "course_id": "2026-11-11-R4-C6",
       "raison": "Moins de cinq chevaux avec historique exploitable"
-    },
-    {
-      "course_id": "2026-11-11-R12-C2",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-11-R12-C3",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-11-R14-C1",
-      "raison": "Decision existante"
     },
     {
       "course_id": "2026-11-11-R12-C4",
@@ -306,7 +306,7 @@
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-11T12:37:43.239684+01:00",
+    "date": "2026-11-11T13:39:04.153129+01:00",
     "version": "M1-6.0",
     "importees": 72,
     "rejetees": [],
