@@ -2,14 +2,14 @@
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
   "date": "2026-11-11",
-  "genere_a": "2026-11-11T16:28:58.656738+01:00",
+  "genere_a": "2026-11-11T17:27:45.245905+01:00",
   "statut": "AUCUNE_NOUVELLE_DECISION",
   "source": "PMU",
-  "collecte_a": "2026-11-11T16:28:34.753084+01:00",
+  "collecte_a": "2026-11-11T17:27:19.063964+01:00",
   "courses_collectees": 72,
   "courses_importees": 72,
   "courses_en_base": 484,
-  "propositions_sportives": 9,
+  "propositions_sportives": 4,
   "decisions_nouvelles": 0,
   "decisions_total": 231,
   "figes_total": 0,
@@ -249,8 +249,28 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-11-R4-C2",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-11-R13-C7",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-11-R14-C8",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-11-R1-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-11-R4-C3",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-11-R13-C8",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-11-R1-C7",
@@ -267,26 +287,6 @@
     {
       "course_id": "2026-11-11-R4-C6",
       "raison": "Moins de cinq chevaux avec historique exploitable"
-    },
-    {
-      "course_id": "2026-11-11-R4-C2",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-11-R13-C7",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-11-R14-C8",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-11-R4-C3",
-      "raison": "Decision existante"
-    },
-    {
-      "course_id": "2026-11-11-R13-C8",
-      "raison": "Decision existante"
     },
     {
       "course_id": "2026-11-11-R4-C4",
@@ -306,7 +306,7 @@
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-11T16:28:58.626667+01:00",
+    "date": "2026-11-11T17:27:45.221834+01:00",
     "version": "M1-6.0",
     "importees": 72,
     "rejetees": [],
