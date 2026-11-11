@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-11T08:56:05.986732+01:00",
+  "genere_a": "2026-11-11T09:53:43.306467+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -2024,8 +2024,8 @@
         1,
         7,
         8,
-        3,
-        9
+        9,
+        10
       ],
       "details": [
         {
@@ -2086,25 +2086,6 @@
           ]
         },
         {
-          "numero": 3,
-          "nom": "MISTER DRY",
-          "score_heuristique": 6.4064,
-          "forme_recente": 6.579,
-          "regularite_podium": 0.571,
-          "performances_lisibles": 7,
-          "gains_declares": null,
-          "jockey_driver": "A. GENDROT",
-          "entraineur": "M. SASSIER",
-          "musique": "6a2a6a2a(25)1aDa3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
           "numero": 9,
           "nom": "MAGNUM TEK",
           "score_heuristique": 6.195,
@@ -2122,10 +2103,31 @@
             "Aptitude au parcours non évaluée",
             "Forme de l'entourage non évaluée"
           ]
+        },
+        {
+          "numero": 10,
+          "nom": "MIKA RENARDIERE",
+          "score_heuristique": 5.4435,
+          "forme_recente": 5.867,
+          "regularite_podium": 0.375,
+          "performances_lisibles": 8,
+          "gains_declares": null,
+          "jockey_driver": "F. LAGADEUC",
+          "entraineur": "R. LAGADEUC",
+          "musique": "2a3a3aDa4a4aDaDaDa(25)",
+          "limites": [
+            "Distance non évaluée",
+            "Terrain non évalué",
+            "Opposition non évaluée",
+            "Aptitude au parcours non évaluée",
+            "Forme de l'entourage non évaluée"
+          ]
         }
       ],
-      "chevaux_evalues": 14,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 13,
+      "non_partants_exclus": [
+        3
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,

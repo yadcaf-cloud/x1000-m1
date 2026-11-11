@@ -2,10 +2,10 @@
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
   "date": "2026-11-11",
-  "genere_a": "2026-11-11T08:56:06.078561+01:00",
+  "genere_a": "2026-11-11T09:53:43.441205+01:00",
   "statut": "AUCUNE_NOUVELLE_DECISION",
   "source": "PMU",
-  "collecte_a": "2026-11-11T08:55:31.966536+01:00",
+  "collecte_a": "2026-11-11T09:53:14.841664+01:00",
   "courses_collectees": 72,
   "courses_importees": 72,
   "courses_en_base": 484,
@@ -306,7 +306,7 @@
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-11T08:56:06.060664+01:00",
+    "date": "2026-11-11T09:53:43.415934+01:00",
     "version": "M1-6.0",
     "importees": 72,
     "rejetees": [],
