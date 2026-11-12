@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-12T09:45:41.604625+01:00",
+  "genere_a": "2026-11-12T10:43:11.524407+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -1557,7 +1557,7 @@
         14,
         4,
         3,
-        8
+        12
       ],
       "details": [
         {
@@ -1637,16 +1637,16 @@
           ]
         },
         {
-          "numero": 8,
-          "nom": "LUCKY FIX",
-          "score_heuristique": 4.4654,
-          "forme_recente": 4.957,
-          "regularite_podium": 0.25,
+          "numero": 12,
+          "nom": "LUCKY BELLAY",
+          "score_heuristique": 4.0974,
+          "forme_recente": 4.809,
+          "regularite_podium": 0.125,
           "performances_lisibles": 8,
           "gains_declares": null,
-          "jockey_driver": "A. REBECHE",
-          "entraineur": "H. LE BEC",
-          "musique": "2aDa6aDa4a4a8a2a8a(25)",
+          "jockey_driver": "F. OUVRIE",
+          "entraineur": "Vitale CIOTOLA",
+          "musique": "6a5a4aDa8a7a3a6a(25)9a",
           "limites": [
             "Distance non évaluée",
             "Terrain non évalué",
@@ -1656,9 +1656,11 @@
           ]
         }
       ],
-      "chevaux_evalues": 12,
+      "chevaux_evalues": 10,
       "non_partants_exclus": [
-        1
+        1,
+        5,
+        8
       ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
