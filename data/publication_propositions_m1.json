@@ -1,246 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-12T18:34:22.260468+01:00",
+  "genere_a": "2026-11-12T19:25:46.290372+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-12-R4-C4",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-12T18:51:00+01:00",
-      "hippodrome": "HIPPODROME D'AMIENS",
-      "classement": [
-        9,
-        1,
-        6,
-        12,
-        11
-      ],
-      "details": [
-        {
-          "numero": 9,
-          "nom": "JUGEMENT D'AVE",
-          "score_heuristique": 7.2879,
-          "forme_recente": 7.547,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. VERVA",
-          "entraineur": "P.A. RYNWALT-BOULARD",
-          "musique": "1a5a1aDa1a3a6a1a5a8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "JAMAIS",
-          "score_heuristique": 6.009,
-          "forme_recente": 6.574,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "CEDRIC TERRY",
-          "entraineur": "F. TERRY",
-          "musique": "6a1a2a6a1aDa4a7a2aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "JUNKIES MINDS",
-          "score_heuristique": 5.7842,
-          "forme_recente": 6.293,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. ERNAULT",
-          "entraineur": "S. ERNAULT",
-          "musique": "4a3a9a1a4aDa1a6a2a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "IROKO DU CAIEU",
-          "score_heuristique": 5.3983,
-          "forme_recente": 5.185,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "K. DEPUYDT",
-          "entraineur": "Mme C. DE SOETE",
-          "musique": "0a2a3a2a0a(25)Da2a1a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "IDAO NAY",
-          "score_heuristique": 5.3028,
-          "forme_recente": 5.379,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. OUVRIE",
-          "entraineur": "G. COGNE",
-          "musique": "0a9a1a4a5a1a3a2a0a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 10,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-12-R4-C5",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-12T19:23:00+01:00",
-      "hippodrome": "HIPPODROME D'AMIENS",
-      "classement": [
-        7,
-        10,
-        4,
-        5,
-        12
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "KING PRESTIGE",
-          "score_heuristique": 6.4765,
-          "forme_recente": 6.846,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "CEDRIC TERRY",
-          "entraineur": "F. TERRY",
-          "musique": "1a1a1a1aDa0aDa7aDa(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "KOUIDITCH D'ABOMEY",
-          "score_heuristique": 6.2407,
-          "forme_recente": 6.238,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. ANDRE",
-          "entraineur": "M. HELBERT",
-          "musique": "9a3a2a2a2aDa1a6a(25)6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "KOOPER",
-          "score_heuristique": 6.0435,
-          "forme_recente": 6.617,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J.CH. PITON",
-          "entraineur": "M. BEZIER",
-          "musique": "3a5a5a4a1a3a9a8a8a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "KING DE L'ORMERIE",
-          "score_heuristique": 5.4643,
-          "forme_recente": 5.268,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. GELU",
-          "entraineur": "Mme E. LE BELLER",
-          "musique": "0a0a2a2a1a4a3a2a7a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "KIWI CHARENTAIS",
-          "score_heuristique": 4.276,
-          "forme_recente": 4.72,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme LANA HENRY",
-          "entraineur": "E. VARIN",
-          "musique": "5a3a3aDa6a7a0a0aDa9a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 9,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-12-R4-C6",
       "moteur": "M1",
@@ -680,9 +444,17 @@
     {
       "course_id": "2026-11-12-R1-C9",
       "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-12-R4-C4",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-12-R4-C5",
+      "raison": "Départ passé ou trop proche"
     }
   ],
-  "nombre_propositions": 5,
+  "nombre_propositions": 3,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
