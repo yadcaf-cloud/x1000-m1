@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-12T15:45:26.096624+01:00",
+  "genere_a": "2026-11-12T16:42:08.905359+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -1012,7 +1012,7 @@
           "regularite_podium": 0.375,
           "performances_lisibles": 8,
           "gains_declares": null,
-          "jockey_driver": "M. BEZIER",
+          "jockey_driver": "J.CH. PITON",
           "entraineur": "M. BEZIER",
           "musique": "3a5a5a4a1a3a9a8a8a(25)",
           "limites": [
@@ -1471,15 +1471,15 @@
     },
     {
       "course_id": "2026-11-12-R3-C7",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-12-R1-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-12-R3-C8",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     }
   ],
   "nombre_propositions": 12,
