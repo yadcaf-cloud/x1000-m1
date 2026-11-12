@@ -1,129 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-12T20:28:23.548610+01:00",
+  "genere_a": "2026-11-12T21:22:20.818796+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
-  "propositions": [
-    {
-      "course_id": "2026-11-12-R4-C8",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-12T20:59:00+01:00",
-      "hippodrome": "HIPPODROME D'AMIENS",
-      "classement": [
-        3,
-        6,
-        7,
-        9,
-        11
-      ],
-      "details": [
-        {
-          "numero": 3,
-          "nom": "IPSY DJOB",
-          "score_heuristique": 7.2059,
-          "forme_recente": 7.757,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "L. RIVENET",
-          "entraineur": "F. HEUDIARD",
-          "musique": "1a1a4a1aDa5a2a6a3a0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "J'AIME EN VRAI",
-          "score_heuristique": 6.9393,
-          "forme_recente": 7.737,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "R. CAREL",
-          "entraineur": "B. VALLETTE",
-          "musique": "4a2a1a4a5a4a4a3aDa9a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "KISS ME DU RABUTIN",
-          "score_heuristique": 6.8585,
-          "forme_recente": 6.698,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "D. LEPERE",
-          "entraineur": "J.R. DELLIAUX",
-          "musique": "2a3aDa3aDa1a1a2a(25)6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "HICONE DOREE",
-          "score_heuristique": 5.883,
-          "forme_recente": 6.104,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme M. CHAZAL",
-          "entraineur": "W. VAN DER ZWAAN",
-          "musique": "6a2a3a6a3a1a0a0a4a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "ISARD DE PLAY",
-          "score_heuristique": 5.8781,
-          "forme_recente": 6.41,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme B. GUENET",
-          "entraineur": "B. MARIE",
-          "musique": "2a6a6a3a1a5a7aDa8a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 13,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    }
-  ],
+  "propositions": [],
   "courses_ecartees": [
     {
       "course_id": "2026-11-12-R3-C1",
@@ -220,9 +101,13 @@
     {
       "course_id": "2026-11-12-R4-C7",
       "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-12-R4-C8",
+      "raison": "Départ passé ou trop proche"
     }
   ],
-  "nombre_propositions": 1,
+  "nombre_propositions": 0,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
