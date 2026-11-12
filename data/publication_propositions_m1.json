@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-12T07:33:27.769255+01:00",
+  "genere_a": "2026-11-12T08:51:49.673004+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -1555,7 +1555,7 @@
         14,
         4,
         3,
-        1
+        8
       ],
       "details": [
         {
@@ -1635,16 +1635,16 @@
           ]
         },
         {
-          "numero": 1,
-          "nom": "LE BIBI DAIRPET",
-          "score_heuristique": 4.4961,
-          "forme_recente": 4.995,
+          "numero": 8,
+          "nom": "LUCKY FIX",
+          "score_heuristique": 4.4654,
+          "forme_recente": 4.957,
           "regularite_podium": 0.25,
           "performances_lisibles": 8,
           "gains_declares": null,
-          "jockey_driver": "J.B. LELIEVRE",
-          "entraineur": "J.B. LELIEVRE",
-          "musique": "7aDa1a4a7a1a4aAa4a6a",
+          "jockey_driver": "A. REBECHE",
+          "entraineur": "H. LE BEC",
+          "musique": "2aDa6aDa4a4a8a2a8a(25)",
           "limites": [
             "Distance non évaluée",
             "Terrain non évalué",
@@ -1654,8 +1654,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 13,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 12,
+      "non_partants_exclus": [
+        1
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
