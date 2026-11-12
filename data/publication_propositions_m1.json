@@ -1,248 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-12T14:55:15.701969+01:00",
+  "genere_a": "2026-11-12T15:45:26.096624+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-12-R1-C3",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-12T15:05:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        1,
-        4,
-        8,
-        7,
-        9
-      ],
-      "details": [
-        {
-          "numero": 1,
-          "nom": "UNDER PRESSURE",
-          "score_heuristique": 7.4057,
-          "forme_recente": 7.59,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "A. PRAT",
-          "entraineur": "FREDERIC PRAT",
-          "musique": "1a6a3a1a1aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "NINA TIME",
-          "score_heuristique": 7.0505,
-          "forme_recente": 6.938,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. NIVARD",
-          "entraineur": "Sté. Ent. Christophe JARIEL",
-          "musique": "1aDa1a1aDa2a(25)2a3aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "NAFI DE REVE D'OR",
-          "score_heuristique": 5.6262,
-          "forme_recente": 6.095,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. BARRIER",
-          "entraineur": "S. GUARATO",
-          "musique": "4a5a2a2a6aDaDa2a1a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "NEW WAVE",
-          "score_heuristique": 5.5424,
-          "forme_recente": 5.99,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. DUBOIS",
-          "entraineur": "J.PH. DUBOIS",
-          "musique": "7a4a5a7a8a1a3a1a4a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NOIRE INTENSE",
-          "score_heuristique": 5.4576,
-          "forme_recente": 5.572,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "W. BIGEON",
-          "entraineur": "W. BIGEON",
-          "musique": "1a4aDaDaDa1a3a(25)3aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 10,
-      "non_partants_exclus": [
-        2
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-12-R1-C4",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-12T15:40:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        7,
-        12,
-        14,
-        1,
-        4
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "GRAND RESTAURANT",
-          "score_heuristique": 7.115,
-          "forme_recente": 7.331,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. JULIEN",
-          "entraineur": "F. JULIEN",
-          "musique": "5a1a3a8a2a1a8a(25)1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "KARA DE PIERREPONT",
-          "score_heuristique": 7.0513,
-          "forme_recente": 7.564,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mlle EMILIE DUPERCHE",
-          "entraineur": "J.G. VAN EECKHAUTE",
-          "musique": "1a2a1a6a7a1a7a9a0a8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 14,
-          "nom": "JAB KISS",
-          "score_heuristique": 6.6128,
-          "forme_recente": 7.016,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. DEWULF",
-          "entraineur": "L. GABORIT",
-          "musique": "1a4a5a1a0a1a3a0a0a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "IDUNN",
-          "score_heuristique": 5.8791,
-          "forme_recente": 6.099,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.M. ALLAIS",
-          "entraineur": "Mme G. MASSCHAELE",
-          "musique": "6a4a9a1a2a2aDa3a4a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "HILKA DE BERTRANGE",
-          "score_heuristique": 5.4707,
-          "forme_recente": 5.901,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. CHARRIAUD",
-          "entraineur": "J.J. BEAUSSE",
-          "musique": "Da1a2a5a2a6a6a5aDaAa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 14,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-12-R1-C6",
       "moteur": "M1",
@@ -1696,8 +1458,16 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-12-R1-C3",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-12-R3-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-12-R1-C4",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-12-R3-C7",
@@ -1712,7 +1482,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 14,
+  "nombre_propositions": 12,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
