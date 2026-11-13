@@ -1,246 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-13T13:37:54.701763+01:00",
+  "genere_a": "2026-11-13T14:53:11.087778+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-13-R3-C7",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T14:00:00+01:00",
-      "hippodrome": "HIPPODROME DE LYON-PARILLY",
-      "classement": [
-        15,
-        13,
-        1,
-        14,
-        12
-      ],
-      "details": [
-        {
-          "numero": 15,
-          "nom": "KASHMIR DU GERS",
-          "score_heuristique": 6.7389,
-          "forme_recente": 7.174,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "TH. BRIAND",
-          "entraineur": "Bastien CLAIRET",
-          "musique": "5a3a5a5a1a3a2a5a(25)5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "KENJY DE LA VALLEE",
-          "score_heuristique": 6.5252,
-          "forme_recente": 6.907,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "N. CORMY",
-          "entraineur": "MICKAEL CORMY",
-          "musique": "5a6a3a(25)5a2a3a2a4a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "KATY DU CHERISAY",
-          "score_heuristique": 5.6491,
-          "forme_recente": 6.124,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "G. TUGEND",
-          "entraineur": "R. MOURICE",
-          "musique": "2a6a2a0a2a6a7a7a(25)0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 14,
-          "nom": "KEROZEN",
-          "score_heuristique": 5.4372,
-          "forme_recente": 5.859,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "MICKAEL CORMY",
-          "entraineur": "MICKAEL CORMY",
-          "musique": "2a3a6a6a1aDa0a(25)9a0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "KERRO DE HOUELLE",
-          "score_heuristique": 5.1014,
-          "forme_recente": 5.752,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "K. LEBLANC",
-          "musique": "2a5a0a4a5a3a7a8a(25)3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-13-R3-C8",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T14:35:00+01:00",
-      "hippodrome": "HIPPODROME DE LYON-PARILLY",
-      "classement": [
-        8,
-        9,
-        3,
-        1,
-        4
-      ],
-      "details": [
-        {
-          "numero": 8,
-          "nom": "KOUREAS D'ELA",
-          "score_heuristique": 8.6007,
-          "forme_recente": 8.563,
-          "regularite_podium": 0.875,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. GENDROT",
-          "entraineur": "M. SASSIER",
-          "musique": "7a1a1a1a1a2a1a1a1a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "HENRIQUE",
-          "score_heuristique": 7.496,
-          "forme_recente": 7.495,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "L. DURANTET",
-          "entraineur": "L. DURANTET",
-          "musique": "1a1a0a2a1a3a2aDaDa(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "JAKABINO",
-          "score_heuristique": 7.1823,
-          "forme_recente": 7.415,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P. CALLIER",
-          "entraineur": "P. CALLIER",
-          "musique": "5a1a2a1a3a8a9a2a4a8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "LORD DE LOIRON",
-          "score_heuristique": 4.48,
-          "forme_recente": 4.975,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "TH. BRIAND",
-          "entraineur": "J.R. DELLIAUX",
-          "musique": "6a2a5aDa7a2a8aDa(25)6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "KANDIE D'ORCO",
-          "score_heuristique": 4.3737,
-          "forme_recente": 5.155,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "L. LAMAZIERE",
-          "entraineur": "R. DESPRES",
-          "musique": "5a4a6aDa5a0a4a1a7a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 8,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-13-R5-C1",
       "moteur": "M1",
@@ -1061,7 +825,9 @@
         }
       ],
       "chevaux_evalues": 16,
-      "non_partants_exclus": [],
+      "non_partants_exclus": [
+        1
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -1298,8 +1064,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 14,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 13,
+      "non_partants_exclus": [
+        5
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -1701,15 +1469,23 @@
     },
     {
       "course_id": "2026-11-13-R4-C4",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-13-R3-C7",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-13-R4-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-13-R3-C8",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-13-R4-C6",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-13-R4-C7",
@@ -1740,7 +1516,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 14,
+  "nombre_propositions": 12,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
