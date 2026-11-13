@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-13T11:45:03.843412+01:00",
+  "genere_a": "2026-11-13T12:38:41.380794+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-13-R3-C4",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T12:15:00+01:00",
-      "hippodrome": "HIPPODROME DE LYON-PARILLY",
-      "classement": [
-        7,
-        5,
-        12,
-        6,
-        9
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "JACKASS LATIN",
-          "score_heuristique": 5.3639,
-          "forme_recente": 5.767,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "C. TOUSSAINT",
-          "entraineur": "J.M. ROUBAUD",
-          "musique": "1a5a1a0a0aDa2a6aDa0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "JOKER DE BELLOU",
-          "score_heuristique": 4.0909,
-          "forme_recente": 4.801,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. SAMSON",
-          "entraineur": "A.PH. GRIMAULT",
-          "musique": "3a4a8a9a0a6a6a7a6a0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "INDY VET",
-          "score_heuristique": 3.6918,
-          "forme_recente": 3.99,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "B. THIENNE",
-          "entraineur": "Mlle J. TRIOMPHE",
-          "musique": "9a6a6aDa3a9a6a3a3a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "JUST BEAUTIFUL",
-          "score_heuristique": 2.2383,
-          "forme_recente": 2.798,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mlle E. DUMAS",
-          "entraineur": "S. PELTIER",
-          "musique": "Da7a7a7a4a7aDaDa0a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "JOSE DU CHERISAY",
-          "score_heuristique": 2.1403,
-          "forme_recente": 2.675,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "G. TUGEND",
-          "entraineur": "R. MOURICE",
-          "musique": "8a4aDa7a0aDa7a0a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 5,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-13-R3-C5",
       "moteur": "M1",
@@ -2029,11 +1911,15 @@
     },
     {
       "course_id": "2026-11-13-R4-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-13-R3-C4",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-13-R4-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-13-R4-C3",
@@ -2080,7 +1966,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 17,
+  "nombre_propositions": 16,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
