@@ -1,246 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-13T10:46:15.411634+01:00",
+  "genere_a": "2026-11-13T11:45:03.843412+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-13-R3-C2",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T11:11:00+01:00",
-      "hippodrome": "HIPPODROME DE LYON-PARILLY",
-      "classement": [
-        16,
-        12,
-        4,
-        1,
-        5
-      ],
-      "details": [
-        {
-          "numero": 16,
-          "nom": "NEWTON CASTELETS",
-          "score_heuristique": 6.9453,
-          "forme_recente": 7.182,
-          "regularite_podium": 0.6,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "L. LAMAZIERE",
-          "entraineur": "R. DESPRES",
-          "musique": "3a6a3a(25)3a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "NINJA LANDIA",
-          "score_heuristique": 6.943,
-          "forme_recente": 7.012,
-          "regularite_podium": 0.667,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "LILIAN BERTIN",
-          "entraineur": "A.PH. GRIMAULT",
-          "musique": "2a9a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "NOBILUS BAR",
-          "score_heuristique": 6.838,
-          "forme_recente": 6.985,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "E. LOCCISANO",
-          "entraineur": "Edoardo LOCCISANO",
-          "musique": "3a4aDa1a1a3a5a3aDa5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "NOUBA DU CABARET",
-          "score_heuristique": 6.6607,
-          "forme_recente": 7.076,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "B. RUET",
-          "entraineur": "D.J. HENRY",
-          "musique": "2a7a1a3a7a4a6a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "NORFOLK DE TILLARD",
-          "score_heuristique": 6.4618,
-          "forme_recente": 6.827,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "X. BOVAY",
-          "entraineur": "M.A. BOVAY",
-          "musique": "3a3a6a3a4a2a5aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 15,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-13-R3-C3",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T11:43:00+01:00",
-      "hippodrome": "HIPPODROME DE LYON-PARILLY",
-      "classement": [
-        1,
-        13,
-        9,
-        6,
-        3
-      ],
-      "details": [
-        {
-          "numero": 1,
-          "nom": "MUSTANG VENESI",
-          "score_heuristique": 6.7086,
-          "forme_recente": 7.136,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "TH. BUSSET",
-          "entraineur": "TH. BUSSET",
-          "musique": "2a1a3a7a1a4aDa9a(25)6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "MY BEAUTIFUL",
-          "score_heuristique": 6.6987,
-          "forme_recente": 7.123,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "MARTIN CORMY",
-          "entraineur": "MICKAEL CORMY",
-          "musique": "6a1a4a7a2a1a3a6a4a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "MINOS DE VANDEL",
-          "score_heuristique": 6.2394,
-          "forme_recente": 6.237,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. STEFANO",
-          "entraineur": "J.M. ROUBAUD",
-          "musique": "0a3a1a1a2a4a(25)Da1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "MANDARINE",
-          "score_heuristique": 5.9138,
-          "forme_recente": 5.83,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "TH. BRIAND",
-          "entraineur": "M. BARBINI",
-          "musique": "Da7a1a5a2a2a2a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "MALDINI ELLIS",
-          "score_heuristique": 4.2516,
-          "forme_recente": 4.377,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "LILIAN BERTIN",
-          "entraineur": "J.R. DELLIAUX",
-          "musique": "Da9a2a1aDa7a(25)2a4aAa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-13-R3-C4",
       "moteur": "M1",
@@ -2256,6 +2020,14 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-13-R3-C2",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-13-R3-C3",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-13-R4-C1",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     },
@@ -2308,7 +2080,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 19,
+  "nombre_propositions": 17,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
