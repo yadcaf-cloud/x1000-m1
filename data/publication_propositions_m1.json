@@ -1,250 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-13T17:26:10.671908+01:00",
+  "genere_a": "2026-11-13T18:25:27.995596+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-13-R5-C6",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T18:05:00+01:00",
-      "hippodrome": "HIPPODROME DE TOULOUSE LA CEPIERE",
-      "classement": [
-        8,
-        7,
-        3,
-        6,
-        13
-      ],
-      "details": [
-        {
-          "numero": 8,
-          "nom": "KASTEL LOVE",
-          "score_heuristique": 6.9549,
-          "forme_recente": 7.444,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme LANA HENRY",
-          "entraineur": "Y. HENRY",
-          "musique": "3a1a4a1aDa6a1a4aDa1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "KELROC",
-          "score_heuristique": 6.0208,
-          "forme_recente": 6.589,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. GUINHUT",
-          "entraineur": "F. GUINHUT",
-          "musique": "6a2a6a4a3a4a2a8a3a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "KATCHINA DUEM",
-          "score_heuristique": 5.7613,
-          "forme_recente": 5.952,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "D. LAISIS",
-          "entraineur": "C. HERSERANT",
-          "musique": "2aDa1aDa3a4a2a6a5a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "KEEPSAKE",
-          "score_heuristique": 4.8374,
-          "forme_recente": 5.109,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. CRIADO",
-          "entraineur": "J. FOIN",
-          "musique": "9a4a1a0a1a6aDa3a8a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "KAISER STAR",
-          "score_heuristique": 4.423,
-          "forme_recente": 4.904,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "J. CHAVATTE",
-          "entraineur": "A. WISSOCQ",
-          "musique": "7a7a0a5a5a4a3a1a5a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 10,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-13-R1-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T18:23:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        13,
-        3,
-        9,
-        8,
-        7
-      ],
-      "details": [
-        {
-          "numero": 13,
-          "nom": "LITCHI BAM",
-          "score_heuristique": 6.967,
-          "forme_recente": 7.146,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "GUILLAUME MARTIN",
-          "entraineur": "Mlle O. TOUILLET",
-          "musique": "3a3a9a4a6a1a(25)1a2a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "LOU PANTAIL",
-          "score_heuristique": 6.8049,
-          "forme_recente": 6.944,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. IONESCU",
-          "entraineur": "R. DERIEUX",
-          "musique": "1a2a1aDa(25)1a0a2aDa(24)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "LONGWOOD D'HERIPRE",
-          "score_heuristique": 6.6772,
-          "forme_recente": 6.784,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "R. DERIEUX",
-          "entraineur": "R. DERIEUX",
-          "musique": "2a5a0a1a1a(25)0a1a1a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "LEADER BOURBON",
-          "score_heuristique": 6.5785,
-          "forme_recente": 6.973,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "J.PH. MONCLIN",
-          "musique": "1a4a1aDaDa2a1a4a(25)Da",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "LIEGO",
-          "score_heuristique": 5.3998,
-          "forme_recente": 5.812,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "D. BONNE",
-          "entraineur": "B. CARPENTIER",
-          "musique": "4a1aDa3a8a5a0a1a6a9a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 15,
-      "non_partants_exclus": [
-        1,
-        4,
-        15
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-13-R1-C2",
       "moteur": "M1",
@@ -932,6 +692,14 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-13-R5-C6",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-13-R1-C1",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-13-R5-C7",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     },
@@ -948,7 +716,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 7,
+  "nombre_propositions": 5,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
