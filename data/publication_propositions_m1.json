@@ -1,246 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-13T16:27:20.111823+01:00",
+  "genere_a": "2026-11-13T17:26:10.671908+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-13-R5-C4",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T16:55:00+01:00",
-      "hippodrome": "HIPPODROME DE TOULOUSE LA CEPIERE",
-      "classement": [
-        8,
-        11,
-        10,
-        6,
-        3
-      ],
-      "details": [
-        {
-          "numero": 8,
-          "nom": "LIBERTY DU RIF",
-          "score_heuristique": 5.8168,
-          "forme_recente": 6.334,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. DAOUGABEL",
-          "entraineur": "M. DAOUGABEL",
-          "musique": "5a5a4a3a9a2a2a7a(25)4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "LIBERTY NOIRE",
-          "score_heuristique": 5.7499,
-          "forme_recente": 6.25,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. BARRE",
-          "entraineur": "M. BARRE",
-          "musique": "3a7a2aDa4a3a4a4a5aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "LITTERATURE",
-          "score_heuristique": 5.1939,
-          "forme_recente": 5.555,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "D. LAISIS",
-          "entraineur": "D. LAISIS",
-          "musique": "9a2a2a4a8a0a2a5a6a6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "LINSKAYA D'ART",
-          "score_heuristique": 4.6292,
-          "forme_recente": 4.849,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "PIERRICK LE MOEL",
-          "entraineur": "C. HERSERANT",
-          "musique": "2a0a6a0a2a2a6aDaDa6a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "LANA DE BEAUMEE",
-          "score_heuristique": 4.5477,
-          "forme_recente": 5.06,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. LEGROS",
-          "entraineur": "B. MARIE",
-          "musique": "6aDa2a2a4a7a7a8a9aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 9,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-13-R5-C5",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T17:30:00+01:00",
-      "hippodrome": "HIPPODROME DE TOULOUSE LA CEPIERE",
-      "classement": [
-        10,
-        7,
-        8,
-        3,
-        6
-      ],
-      "details": [
-        {
-          "numero": 10,
-          "nom": "LOBSTER CLUB",
-          "score_heuristique": 5.87,
-          "forme_recente": 6.4,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. MARTY",
-          "entraineur": "F. MARTY",
-          "musique": "5a2a6a2aAa6a4a1a2a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "LUCKY LUKE SMILE",
-          "score_heuristique": 5.5982,
-          "forme_recente": 6.06,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. GRASSET",
-          "entraineur": "Sté. Ent. Bernard GRASSET",
-          "musique": "2a7a6a1a7a1a9a0a8a0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 8,
-          "nom": "LYCAON DES VENTS",
-          "score_heuristique": 4.9306,
-          "forme_recente": 5.226,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. GERGOUIL",
-          "entraineur": "J. FOIN",
-          "musique": "1aDa3a9a0a5a(25)2a6a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "LOUJYO VITA",
-          "score_heuristique": 4.3752,
-          "forme_recente": 4.531,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. CLOZIER",
-          "entraineur": "F. GUINHUT",
-          "musique": "3a0a0a6a9a2a5a2a(25)7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "LEVYLAND",
-          "score_heuristique": 4.0156,
-          "forme_recente": 4.394,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M.X. CHARLOT",
-          "entraineur": "M.X. CHARLOT",
-          "musique": "8aDa4a8a6a3a2a5aDa1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 9,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-13-R5-C6",
       "moteur": "M1",
@@ -1157,7 +921,15 @@
     },
     {
       "course_id": "2026-11-13-R4-C9",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-13-R5-C4",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-13-R5-C5",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-13-R5-C7",
@@ -1176,7 +948,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 9,
+  "nombre_propositions": 7,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
