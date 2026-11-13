@@ -1,128 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-13T15:40:16.477586+01:00",
+  "genere_a": "2026-11-13T16:27:20.111823+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-13-R5-C3",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T16:20:00+01:00",
-      "hippodrome": "HIPPODROME DE TOULOUSE LA CEPIERE",
-      "classement": [
-        16,
-        15,
-        14,
-        10,
-        1
-      ],
-      "details": [
-        {
-          "numero": 16,
-          "nom": "JEFF DE MONPAZ",
-          "score_heuristique": 7.9594,
-          "forme_recente": 8.074,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "L. LALANDE",
-          "entraineur": "L. LALANDE",
-          "musique": "1a6a1a3a2a1a1aDaDa1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 15,
-          "nom": "JAZZ PAT",
-          "score_heuristique": 6.8816,
-          "forme_recente": 7.352,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. GERGOUIL",
-          "entraineur": "J. FOIN",
-          "musique": "2a3a3a5a4a1a0a4a1a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 14,
-          "nom": "KLASSE DE BRUZEAU",
-          "score_heuristique": 5.7358,
-          "forme_recente": 5.92,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. LEGROS",
-          "entraineur": "B. MARIE",
-          "musique": "Da2a1a5a2a9a2a5a3a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "JONQUILLE DE MEAT",
-          "score_heuristique": 5.2288,
-          "forme_recente": 5.598,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. GUINHUT",
-          "entraineur": "F. GUINHUT",
-          "musique": "5a8a9a4a3a3a1a7a3a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "KABYLIE DES EDEL",
-          "score_heuristique": 4.2149,
-          "forme_recente": 4.644,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P. REPICHET",
-          "entraineur": "P. REPICHET",
-          "musique": "4a9a0a1a4a9aDa2a8a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 13,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-13-R5-C4",
       "moteur": "M1",
@@ -591,7 +473,8 @@
       "chevaux_evalues": 15,
       "non_partants_exclus": [
         1,
-        4
+        4,
+        15
       ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
@@ -1266,7 +1149,11 @@
     },
     {
       "course_id": "2026-11-13-R4-C8",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-13-R5-C3",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-13-R4-C9",
@@ -1289,7 +1176,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 10,
+  "nombre_propositions": 9,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
