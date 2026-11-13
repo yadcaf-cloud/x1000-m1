@@ -1,246 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-13T14:53:11.087778+01:00",
+  "genere_a": "2026-11-13T15:40:16.477586+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-13-R5-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T15:10:00+01:00",
-      "hippodrome": "HIPPODROME DE TOULOUSE LA CEPIERE",
-      "classement": [
-        14,
-        13,
-        16,
-        17,
-        3
-      ],
-      "details": [
-        {
-          "numero": 14,
-          "nom": "MONA DES APRES",
-          "score_heuristique": 6.1603,
-          "forme_recente": 6.138,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. JEANNEAU",
-          "entraineur": "F. JEANNEAU",
-          "musique": "Da1a3a2a1aDa5a1aDaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "MARIE D'ATTAQUE",
-          "score_heuristique": 5.9743,
-          "forme_recente": 6.218,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme LANA HENRY",
-          "entraineur": "O. PICARD",
-          "musique": "3a3a7aDa1a1a4a(25)DaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 16,
-          "nom": "MUTINE DE FRECA",
-          "score_heuristique": 5.5997,
-          "forme_recente": 6.062,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "N.R. BROSSARD",
-          "entraineur": "Nicolas Richard BROSSARD",
-          "musique": "6a3a5a3a9a4a2a8a7a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 17,
-          "nom": "MATARIKI",
-          "score_heuristique": 4.5504,
-          "forme_recente": 4.751,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. GERGOUIL",
-          "entraineur": "J. FOIN",
-          "musique": "Da6a3a6a4a2aDa2a1a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "MISS DE NARMONT",
-          "score_heuristique": 4.1231,
-          "forme_recente": 4.529,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "D. LAISIS",
-          "entraineur": "J.M. LOURTET",
-          "musique": "8a6a5aAa5a3a8a3a7a4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 15,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-13-R5-C2",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-13T15:45:00+01:00",
-      "hippodrome": "HIPPODROME DE TOULOUSE LA CEPIERE",
-      "classement": [
-        4,
-        12,
-        16,
-        18,
-        17
-      ],
-      "details": [
-        {
-          "numero": 4,
-          "nom": "MAYFLOWER",
-          "score_heuristique": 6.5373,
-          "forme_recente": 6.672,
-          "regularite_podium": 0.6,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "Mme LANA HENRY",
-          "entraineur": "Y. HENRY",
-          "musique": "1a3a3a0a8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "MAITRE D'ATTAQUE",
-          "score_heuristique": 6.0795,
-          "forme_recente": 6.349,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. CLOZIER",
-          "entraineur": "O. PICARD",
-          "musique": "4a2a3aDa4a2aDa3a(25)4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 16,
-          "nom": "MECENE SAUTONNE",
-          "score_heuristique": 4.6757,
-          "forme_recente": 4.907,
-          "regularite_podium": 0.375,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. MARTY",
-          "entraineur": "M.X. CHARLOT",
-          "musique": "Da5a1a2aDa1aDa4aDaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 18,
-          "nom": "MALVERN DE GUEZ",
-          "score_heuristique": 4.5125,
-          "forme_recente": 5.016,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. GRASSET",
-          "entraineur": "Sté. Ent. Bernard GRASSET",
-          "musique": "1a8a4aDa8a0a8a1a1aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 17,
-          "nom": "MAGIC DU VALLON",
-          "score_heuristique": 3.6475,
-          "forme_recente": 3.934,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "N.R. BROSSARD",
-          "entraineur": "Nicolas Richard BROSSARD",
-          "musique": "Da5a2a0aDa2a7a4a6a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 15,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-13-R5-C3",
       "moteur": "M1",
@@ -824,9 +588,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 16,
+      "chevaux_evalues": 15,
       "non_partants_exclus": [
-        1
+        1,
+        4
       ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
@@ -1488,8 +1253,16 @@
       "raison": "Départ passé ou trop proche"
     },
     {
+      "course_id": "2026-11-13-R5-C1",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-13-R4-C7",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-13-R5-C2",
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-13-R4-C8",
@@ -1516,7 +1289,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 12,
+  "nombre_propositions": 10,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
