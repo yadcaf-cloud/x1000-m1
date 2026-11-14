@@ -1,7 +1,7 @@
 {
   "version": "M1-PMU-COLLECTE-2.0",
   "date": "2026-11-14",
-  "collecte_a": "2026-11-14T09:09:09.233846+01:00",
+  "collecte_a": "2026-11-14T16:01:51.351910+01:00",
   "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026",
   "statut": "OK",
   "courses": [
@@ -12,11 +12,11 @@
       "course": 1,
       "hippodrome": "HIPPODROME DE MARSEILLE BORELY",
       "nom": "PRIX ROLAND JAFFRELOT",
-      "depart": "2026-11-14T10:34:00+01:00",
+      "depart": "2026-11-14T10:37:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R3/C1/participants",
-      "source_verifiee_a": "2026-11-14T09:09:14.340353+01:00",
-      "collecte_a": "2026-11-14T09:09:14.340353+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:55.748095+01:00",
+      "collecte_a": "2026-11-14T16:01:55.748095+01:00",
       "partants": [
         {
           "numero": 1,
@@ -141,11 +141,11 @@
       "course": 2,
       "hippodrome": "HIPPODROME DE MARSEILLE BORELY",
       "nom": "PRIX D'APT",
-      "depart": "2026-11-14T11:06:00+01:00",
+      "depart": "2026-11-14T11:09:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R3/C2/participants",
-      "source_verifiee_a": "2026-11-14T09:09:14.953423+01:00",
-      "collecte_a": "2026-11-14T09:09:14.953423+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:56.104685+01:00",
+      "collecte_a": "2026-11-14T16:01:56.104685+01:00",
       "partants": [
         {
           "numero": 1,
@@ -280,11 +280,11 @@
       "course": 3,
       "hippodrome": "HIPPODROME DE MARSEILLE BORELY",
       "nom": "PRIX JEAN BOILLEREAU",
-      "depart": "2026-11-14T11:38:00+01:00",
+      "depart": "2026-11-14T11:40:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R3/C3/participants",
-      "source_verifiee_a": "2026-11-14T09:09:15.287100+01:00",
-      "collecte_a": "2026-11-14T09:09:15.287100+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:56.380464+01:00",
+      "collecte_a": "2026-11-14T16:01:56.380464+01:00",
       "partants": [
         {
           "numero": 1,
@@ -395,11 +395,11 @@
       "course": 1,
       "hippodrome": "HIPPODROME D'AUTEUIL",
       "nom": "PRIX NUPSALA",
-      "depart": "2026-11-14T11:54:00+01:00",
+      "depart": "2026-11-14T11:56:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R5/C1/participants",
-      "source_verifiee_a": "2026-11-14T09:09:17.563273+01:00",
-      "collecte_a": "2026-11-14T09:09:17.563273+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:58.147266+01:00",
+      "collecte_a": "2026-11-14T16:01:58.147266+01:00",
       "partants": [
         {
           "numero": 1,
@@ -537,8 +537,8 @@
       "depart": "2026-11-14T12:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R8/C1/participants",
-      "source_verifiee_a": "2026-11-14T09:09:23.560838+01:00",
-      "collecte_a": "2026-11-14T09:09:23.560838+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:03.362111+01:00",
+      "collecte_a": "2026-11-14T16:02:03.362111+01:00",
       "partants": [
         {
           "numero": 1,
@@ -771,11 +771,11 @@
       "course": 4,
       "hippodrome": "HIPPODROME DE MARSEILLE BORELY",
       "nom": "PRIX DU CERCLE DES PHOCEENS",
-      "depart": "2026-11-14T12:10:00+01:00",
+      "depart": "2026-11-14T12:12:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R3/C4/participants",
-      "source_verifiee_a": "2026-11-14T09:09:15.605499+01:00",
-      "collecte_a": "2026-11-14T09:09:15.605499+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:56.658985+01:00",
+      "collecte_a": "2026-11-14T16:01:56.658985+01:00",
       "partants": [
         {
           "numero": 1,
@@ -864,8 +864,8 @@
         {
           "numero": 8,
           "nom": "KALLISTEE",
-          "non_partant": false,
-          "statut": "PARTANT",
+          "non_partant": true,
+          "statut": "NON_PARTANT",
           "musique": "9aDaDa2a2a6a4a0a2a3a",
           "jockey": null,
           "driver": "N. CORMY",
@@ -971,9 +971,10 @@
         }
       ],
       "nombre_participants": 16,
-      "nombre_partants": 15,
+      "nombre_partants": 14,
       "non_partants": [
-        7
+        7,
+        8
       ],
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
@@ -984,11 +985,11 @@
       "course": 2,
       "hippodrome": "HIPPODROME D'AUTEUIL",
       "nom": "PRIX ROBERT ET JEAN-CLAUDE WEILL",
-      "depart": "2026-11-14T12:28:00+01:00",
+      "depart": "2026-11-14T12:29:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R5/C2/participants",
-      "source_verifiee_a": "2026-11-14T09:09:17.876667+01:00",
-      "collecte_a": "2026-11-14T09:09:17.876667+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:58.417509+01:00",
+      "collecte_a": "2026-11-14T16:01:58.417509+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1174,8 +1175,8 @@
       "depart": "2026-11-14T12:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R8/C2/participants",
-      "source_verifiee_a": "2026-11-14T09:09:24.049058+01:00",
-      "collecte_a": "2026-11-14T09:09:24.049058+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:03.712170+01:00",
+      "collecte_a": "2026-11-14T16:02:03.712170+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1358,11 +1359,11 @@
       "course": 5,
       "hippodrome": "HIPPODROME DE MARSEILLE BORELY",
       "nom": "PRIX CANTINI",
-      "depart": "2026-11-14T12:45:00+01:00",
+      "depart": "2026-11-14T12:46:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R3/C5/participants",
-      "source_verifiee_a": "2026-11-14T09:09:16.197789+01:00",
-      "collecte_a": "2026-11-14T09:09:16.197789+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:56.930712+01:00",
+      "collecte_a": "2026-11-14T16:01:56.930712+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1560,8 +1561,8 @@
       "depart": "2026-11-14T13:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R8/C3/participants",
-      "source_verifiee_a": "2026-11-14T09:09:24.352108+01:00",
-      "collecte_a": "2026-11-14T09:09:24.352108+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:03.985182+01:00",
+      "collecte_a": "2026-11-14T16:02:03.985182+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1744,11 +1745,11 @@
       "course": 3,
       "hippodrome": "HIPPODROME D'AUTEUIL",
       "nom": "126EME PRIX DE FRANCE - CHALLENGE DE L'OBSTACLE EQUINAXY",
-      "depart": "2026-11-14T13:03:00+01:00",
+      "depart": "2026-11-14T13:04:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R5/C3/participants",
-      "source_verifiee_a": "2026-11-14T09:09:18.301691+01:00",
-      "collecte_a": "2026-11-14T09:09:18.301691+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:58.765722+01:00",
+      "collecte_a": "2026-11-14T16:01:58.765722+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1922,8 +1923,8 @@
       "depart": "2026-11-14T13:17:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R3/C6/participants",
-      "source_verifiee_a": "2026-11-14T09:09:16.493663+01:00",
-      "collecte_a": "2026-11-14T09:09:16.493663+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:57.202718+01:00",
+      "collecte_a": "2026-11-14T16:01:57.202718+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2012,8 +2013,8 @@
         {
           "numero": 8,
           "nom": "LARRE",
-          "non_partant": false,
-          "statut": "PARTANT",
+          "non_partant": true,
+          "statut": "NON_PARTANT",
           "musique": "0aDa1aDa2a2aDa5aDaDa",
           "jockey": null,
           "driver": "CH. BOUTEILLER",
@@ -2119,8 +2120,10 @@
         }
       ],
       "nombre_participants": 16,
-      "nombre_partants": 16,
-      "non_partants": [],
+      "nombre_partants": 15,
+      "non_partants": [
+        8
+      ],
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
     {
@@ -2130,11 +2133,11 @@
       "course": 1,
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "nom": "PRIX JEAN MAURICE BETEAU",
-      "depart": "2026-11-14T13:23:00+01:00",
+      "depart": "2026-11-14T13:27:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R1/C1/participants",
-      "source_verifiee_a": "2026-11-14T09:09:10.582608+01:00",
-      "collecte_a": "2026-11-14T09:09:10.582608+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:52.435916+01:00",
+      "collecte_a": "2026-11-14T16:01:52.435916+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2293,11 +2296,11 @@
       "course": 4,
       "hippodrome": "HIPPODROME DE CAEN",
       "nom": "PRIX DES VERMICULAIRES (GR A)",
-      "depart": "2026-11-14T13:30:00+01:00",
+      "depart": "2026-11-14T13:35:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R8/C4/participants",
-      "source_verifiee_a": "2026-11-14T09:09:24.695422+01:00",
-      "collecte_a": "2026-11-14T09:09:24.695422+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:04.289238+01:00",
+      "collecte_a": "2026-11-14T16:02:04.289238+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2458,11 +2461,11 @@
       "course": 4,
       "hippodrome": "HIPPODROME D'AUTEUIL",
       "nom": "PRIX MAGALEN BRYANT",
-      "depart": "2026-11-14T13:40:00+01:00",
+      "depart": "2026-11-14T13:43:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R5/C4/participants",
-      "source_verifiee_a": "2026-11-14T09:09:18.916295+01:00",
-      "collecte_a": "2026-11-14T09:09:18.916295+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:59.038084+01:00",
+      "collecte_a": "2026-11-14T16:01:59.038084+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2588,8 +2591,8 @@
       "depart": "2026-11-14T13:49:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R3/C7/participants",
-      "source_verifiee_a": "2026-11-14T09:09:16.834550+01:00",
-      "collecte_a": "2026-11-14T09:09:16.834550+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:57.564438+01:00",
+      "collecte_a": "2026-11-14T16:01:57.564438+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2724,11 +2727,11 @@
       "course": 2,
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "nom": "PRIX DE BELLERIVE",
-      "depart": "2026-11-14T13:58:00+01:00",
+      "depart": "2026-11-14T14:01:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R1/C2/participants",
-      "source_verifiee_a": "2026-11-14T09:09:10.924547+01:00",
-      "collecte_a": "2026-11-14T09:09:10.924547+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:52.800321+01:00",
+      "collecte_a": "2026-11-14T16:01:52.800321+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2911,11 +2914,11 @@
       "course": 5,
       "hippodrome": "HIPPODROME DE CAEN",
       "nom": "PRIX DES VERMICULAIRES (GR B)",
-      "depart": "2026-11-14T14:00:00+01:00",
+      "depart": "2026-11-14T14:03:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R8/C5/participants",
-      "source_verifiee_a": "2026-11-14T09:09:25.092429+01:00",
-      "collecte_a": "2026-11-14T09:09:25.092429+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:04.697914+01:00",
+      "collecte_a": "2026-11-14T16:02:04.697914+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3074,11 +3077,11 @@
       "course": 5,
       "hippodrome": "HIPPODROME D'AUTEUIL",
       "nom": "PRIX LE BOUIF",
-      "depart": "2026-11-14T14:15:00+01:00",
+      "depart": "2026-11-14T14:17:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R5/C5/participants",
-      "source_verifiee_a": "2026-11-14T09:09:19.221702+01:00",
-      "collecte_a": "2026-11-14T09:09:19.221702+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:59.317719+01:00",
+      "collecte_a": "2026-11-14T16:01:59.317719+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3276,8 +3279,8 @@
       "depart": "2026-11-14T14:19:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R3/C8/participants",
-      "source_verifiee_a": "2026-11-14T09:09:17.211351+01:00",
-      "collecte_a": "2026-11-14T09:09:17.211351+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:57.874236+01:00",
+      "collecte_a": "2026-11-14T16:01:57.874236+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3448,17 +3451,17 @@
       "course": 6,
       "hippodrome": "HIPPODROME DE CAEN",
       "nom": "PRIX DES CELOSIES",
-      "depart": "2026-11-14T14:30:00+01:00",
+      "depart": "2026-11-14T14:33:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R8/C6/participants",
-      "source_verifiee_a": "2026-11-14T09:09:25.387523+01:00",
-      "collecte_a": "2026-11-14T09:09:25.387523+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:05.142907+01:00",
+      "collecte_a": "2026-11-14T16:02:05.142907+01:00",
       "partants": [
         {
           "numero": 1,
           "nom": "LIOR DE SASSY",
-          "non_partant": false,
-          "statut": "PARTANT",
+          "non_partant": true,
+          "statut": "NON_PARTANT",
           "musique": "4aDm0aDa(25)0aDa7a7aDa",
           "jockey": null,
           "driver": "S. ERNAULT",
@@ -3648,8 +3651,9 @@
         }
       ],
       "nombre_participants": 16,
-      "nombre_partants": 15,
+      "nombre_partants": 14,
       "non_partants": [
+        1,
         2
       ],
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
@@ -3661,11 +3665,11 @@
       "course": 3,
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "nom": "PRIX DE LA BRESSE",
-      "depart": "2026-11-14T14:33:00+01:00",
+      "depart": "2026-11-14T14:35:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R1/C3/participants",
-      "source_verifiee_a": "2026-11-14T09:09:11.370717+01:00",
-      "collecte_a": "2026-11-14T09:09:11.370717+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:53.357793+01:00",
+      "collecte_a": "2026-11-14T16:01:53.357793+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3860,11 +3864,11 @@
       "course": 6,
       "hippodrome": "HIPPODROME D'AUTEUIL",
       "nom": "PRIX CONGRESS",
-      "depart": "2026-11-14T14:50:00+01:00",
+      "depart": "2026-11-14T14:52:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R5/C6/participants",
-      "source_verifiee_a": "2026-11-14T09:09:19.535181+01:00",
-      "collecte_a": "2026-11-14T09:09:19.535181+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:59.587041+01:00",
+      "collecte_a": "2026-11-14T16:01:59.587041+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4047,11 +4051,11 @@
       "course": 7,
       "hippodrome": "HIPPODROME DE CAEN",
       "nom": "PRIX DES BERGENIES",
-      "depart": "2026-11-14T15:00:00+01:00",
+      "depart": "2026-11-14T15:05:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R8/C7/participants",
-      "source_verifiee_a": "2026-11-14T09:09:25.690171+01:00",
-      "collecte_a": "2026-11-14T09:09:25.690171+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:05.510650+01:00",
+      "collecte_a": "2026-11-14T16:02:05.510650+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4237,8 +4241,8 @@
       "depart": "2026-11-14T15:15:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R1/C4/participants",
-      "source_verifiee_a": "2026-11-14T09:09:11.710940+01:00",
-      "collecte_a": "2026-11-14T09:09:11.710940+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:53.639927+01:00",
+      "collecte_a": "2026-11-14T16:01:53.639927+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4465,241 +4469,6 @@
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
     {
-      "id": "2026-11-14-R8-C8",
-      "course_id": "2026-11-14-R8-C8",
-      "reunion": 8,
-      "course": 8,
-      "hippodrome": "HIPPODROME DE CAEN",
-      "nom": "PRIX DES AIRELLES",
-      "depart": "2026-11-14T15:30:00+01:00",
-      "localisation_france_verifiee": true,
-      "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R8/C8/participants",
-      "source_verifiee_a": "2026-11-14T09:09:25.986227+01:00",
-      "collecte_a": "2026-11-14T09:09:25.986227+01:00",
-      "partants": [
-        {
-          "numero": 1,
-          "nom": "LASCAUX DU NOYER",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "8m7m6m1m6m5m8m6m7m7m",
-          "jockey": null,
-          "driver": "Mlle L. HERARD",
-          "entraineur": "G. HERARD",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 2,
-          "nom": "LEAMOA",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "0a9a6a6aDa8aDa5a5a5a",
-          "jockey": null,
-          "driver": "Mlle E. BIZOUX",
-          "entraineur": "Mlle CH. LE COZ",
-          "age": 5,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 3,
-          "nom": "LORD DE JAFA",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Dm8aDaDaDa6aDmDaDa6a",
-          "jockey": null,
-          "driver": "M. DELORME",
-          "entraineur": "D. JAVELLE",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 4,
-          "nom": "LORD DU PONT",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "0a5a3a5a9a6aDa8aDa6a",
-          "jockey": null,
-          "driver": "Mme L. THORAVAL",
-          "entraineur": "William SOUCHET",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 5,
-          "nom": "LIVIA DES LANDES",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "8a7mDaDmDa2mDmDm0a(25)",
-          "jockey": null,
-          "driver": "Mme L. PREEL",
-          "entraineur": "S. HARDY",
-          "age": 5,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 6,
-          "nom": "LE DIABLE BLANC",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "DaDmDm3m1mDm8a(25)Dm1m",
-          "jockey": null,
-          "driver": "M. POTIER",
-          "entraineur": "Mlle V.M. GOETZ",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 7,
-          "nom": "LYPSIE THONIC",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "0a0aDa5aDa4a6a8a9a7a",
-          "jockey": null,
-          "driver": "E. ALRON",
-          "entraineur": "M. DABOUIS",
-          "age": 5,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 8,
-          "nom": "LATINA DE TILOU",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Dm1m1mDa0a0a9a8m5mDm",
-          "jockey": null,
-          "driver": "Mlle A. POULAIN",
-          "entraineur": "L.CL. ABRIVARD",
-          "age": 5,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 9,
-          "nom": "LATINO BOY",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "9mAm6m4m7m3m5mDm5m4m",
-          "jockey": null,
-          "driver": "P. MAUGENDRE-LE MEUR",
-          "entraineur": "L. JUBLOT",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 10,
-          "nom": "LUMINOSO JYL",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "5aDa9a(25)3a1a2m1m1m2a",
-          "jockey": null,
-          "driver": "LOUIS FORTIN",
-          "entraineur": "J.B. LEMOINE",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 11,
-          "nom": "LITTLEKING FOXGLEN",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "5aDaDa4a3a5a5a8aDa4a",
-          "jockey": null,
-          "driver": "Mlle L.A. LECOQ",
-          "entraineur": "PH. DAUGEARD",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 12,
-          "nom": "LOVELY BRUYERE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Da7a0a7a5a2a4aDa1aDa",
-          "jockey": null,
-          "driver": "Mme R. HAGHIGHAT",
-          "entraineur": "PH. DAUGEARD",
-          "age": 5,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 13,
-          "nom": "LAGON D'ORIENT",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Dm5m3mDm5m1m(25)8mDmDm",
-          "jockey": null,
-          "driver": "L. PITON",
-          "entraineur": "F. LAMARE",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 14,
-          "nom": "LO IKA FOSSAVIE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Da1m4a3a2aDa2a4a(25)0a",
-          "jockey": null,
-          "driver": "J. MAILLARD",
-          "entraineur": "M. LECOURT",
-          "age": 5,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 15,
-          "nom": "LA FLECHE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "9m0m0a5m8a3a8a8a6m1m",
-          "jockey": null,
-          "driver": "Mlle A. GERVAIS",
-          "entraineur": "F. BLANDIN",
-          "age": 5,
-          "sexe": "FEMELLES"
-        },
-        {
-          "numero": 16,
-          "nom": "LOUPIO MENUET",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "DmDm1m1m5m1m4mDa(25)2m",
-          "jockey": null,
-          "driver": "Mlle M. MENDIBOURE",
-          "entraineur": "A. DUPERCHE",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 17,
-          "nom": "LORD OF WIND",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "3m4mDm3m0aDmDm4m6a(25)",
-          "jockey": null,
-          "driver": "Mlle E. BOUCLET",
-          "entraineur": "V. RENAULT",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 18,
-          "nom": "LARABELLO DE LOU",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "6m1m0aDaDaDaDaDaDa4a",
-          "jockey": null,
-          "driver": "R. VILAULT",
-          "entraineur": "L. ROELENS",
-          "age": 5,
-          "sexe": "HONGRES"
-        }
-      ],
-      "nombre_participants": 18,
-      "nombre_partants": 18,
-      "non_partants": [],
-      "statut": "COLLECTE_REELLE_NON_IMPORTEE"
-    },
-    {
       "id": "2026-11-14-R5-C7",
       "course_id": "2026-11-14-R5-C7",
       "reunion": 5,
@@ -4709,8 +4478,8 @@
       "depart": "2026-11-14T15:32:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R5/C7/participants",
-      "source_verifiee_a": "2026-11-14T09:09:19.838275+01:00",
-      "collecte_a": "2026-11-14T09:09:19.838275+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:59.913420+01:00",
+      "collecte_a": "2026-11-14T16:01:59.913420+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4877,17 +4646,252 @@
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
     {
+      "id": "2026-11-14-R8-C8",
+      "course_id": "2026-11-14-R8-C8",
+      "reunion": 8,
+      "course": 8,
+      "hippodrome": "HIPPODROME DE CAEN",
+      "nom": "PRIX DES AIRELLES",
+      "depart": "2026-11-14T15:40:00+01:00",
+      "localisation_france_verifiee": true,
+      "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R8/C8/participants",
+      "source_verifiee_a": "2026-11-14T16:02:05.862503+01:00",
+      "collecte_a": "2026-11-14T16:02:05.862503+01:00",
+      "partants": [
+        {
+          "numero": 1,
+          "nom": "LASCAUX DU NOYER",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "8m7m6m1m6m5m8m6m7m7m",
+          "jockey": null,
+          "driver": "Mlle L. HERARD",
+          "entraineur": "G. HERARD",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 2,
+          "nom": "LEAMOA",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "0a9a6a6aDa8aDa5a5a5a",
+          "jockey": null,
+          "driver": "Mlle E. BIZOUX",
+          "entraineur": "Mlle CH. LE COZ",
+          "age": 5,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 3,
+          "nom": "LORD DE JAFA",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Dm8aDaDaDa6aDmDaDa6a",
+          "jockey": null,
+          "driver": "M. DELORME",
+          "entraineur": "D. JAVELLE",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 4,
+          "nom": "LORD DU PONT",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "0a5a3a5a9a6aDa8aDa6a",
+          "jockey": null,
+          "driver": "Mme L. THORAVAL",
+          "entraineur": "William SOUCHET",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 5,
+          "nom": "LIVIA DES LANDES",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "8a7mDaDmDa2mDmDm0a(25)",
+          "jockey": null,
+          "driver": "Mme L. PREEL",
+          "entraineur": "S. HARDY",
+          "age": 5,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 6,
+          "nom": "LE DIABLE BLANC",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "DaDmDm3m1mDm8a(25)Dm1m",
+          "jockey": null,
+          "driver": "M. POTIER",
+          "entraineur": "Mlle V.M. GOETZ",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 7,
+          "nom": "LYPSIE THONIC",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "0a0aDa5aDa4a6a8a9a7a",
+          "jockey": null,
+          "driver": "E. ALRON",
+          "entraineur": "M. DABOUIS",
+          "age": 5,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 8,
+          "nom": "LATINA DE TILOU",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Dm1m1mDa0a0a9a8m5mDm",
+          "jockey": null,
+          "driver": "V. HERARD",
+          "entraineur": "L.CL. ABRIVARD",
+          "age": 5,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 9,
+          "nom": "LATINO BOY",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "9mAm6m4m7m3m5mDm5m4m",
+          "jockey": null,
+          "driver": "P. MAUGENDRE-LE MEUR",
+          "entraineur": "L. JUBLOT",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 10,
+          "nom": "LUMINOSO JYL",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "5aDa9a(25)3a1a2m1m1m2a",
+          "jockey": null,
+          "driver": "LOUIS FORTIN",
+          "entraineur": "J.B. LEMOINE",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 11,
+          "nom": "LITTLEKING FOXGLEN",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "5aDaDa4a3a5a5a8aDa4a",
+          "jockey": null,
+          "driver": "M.K. DUVAL",
+          "entraineur": "PH. DAUGEARD",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 12,
+          "nom": "LOVELY BRUYERE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Da7a0a7a5a2a4aDa1aDa",
+          "jockey": null,
+          "driver": "Mme R. HAGHIGHAT",
+          "entraineur": "PH. DAUGEARD",
+          "age": 5,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 13,
+          "nom": "LAGON D'ORIENT",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Dm5m3mDm5m1m(25)8mDmDm",
+          "jockey": null,
+          "driver": "L. PITON",
+          "entraineur": "F. LAMARE",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 14,
+          "nom": "LO IKA FOSSAVIE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Da1m4a3a2aDa2a4a(25)0a",
+          "jockey": null,
+          "driver": "J. MAILLARD",
+          "entraineur": "M. LECOURT",
+          "age": 5,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 15,
+          "nom": "LA FLECHE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "9m0m0a5m8a3a8a8a6m1m",
+          "jockey": null,
+          "driver": "Mlle A. GERVAIS",
+          "entraineur": "F. BLANDIN",
+          "age": 5,
+          "sexe": "FEMELLES"
+        },
+        {
+          "numero": 16,
+          "nom": "LOUPIO MENUET",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "DmDm1m1m5m1m4mDa(25)2m",
+          "jockey": null,
+          "driver": "Mlle M. MENDIBOURE",
+          "entraineur": "A. DUPERCHE",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 17,
+          "nom": "LORD OF WIND",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "3m4mDm3m0aDmDm4m6a(25)",
+          "jockey": null,
+          "driver": "Mlle E. BOUCLET",
+          "entraineur": "V. RENAULT",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 18,
+          "nom": "LARABELLO DE LOU",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "6m1m0aDaDaDaDaDaDa4a",
+          "jockey": null,
+          "driver": "R. VILAULT",
+          "entraineur": "L. ROELENS",
+          "age": 5,
+          "sexe": "HONGRES"
+        }
+      ],
+      "nombre_participants": 18,
+      "nombre_partants": 18,
+      "non_partants": [],
+      "statut": "COLLECTE_REELLE_NON_IMPORTEE"
+    },
+    {
       "id": "2026-11-14-R1-C5",
       "course_id": "2026-11-14-R1-C5",
       "reunion": 1,
       "course": 5,
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "nom": "PRIX DE DUNKERQUE",
-      "depart": "2026-11-14T15:50:00+01:00",
+      "depart": "2026-11-14T15:52:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R1/C5/participants",
-      "source_verifiee_a": "2026-11-14T09:09:12.141568+01:00",
-      "collecte_a": "2026-11-14T09:09:12.141568+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:54.008467+01:00",
+      "collecte_a": "2026-11-14T16:01:54.008467+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4916,8 +4920,8 @@
         {
           "numero": 3,
           "nom": "MY DREAM DU GRAIS",
-          "non_partant": false,
-          "statut": "PARTANT",
+          "non_partant": true,
+          "statut": "NON_PARTANT",
           "musique": "2a4a9a5a6a7a2a9a2a4a",
           "jockey": null,
           "driver": "M. ABRIVARD",
@@ -5023,7 +5027,136 @@
         }
       ],
       "nombre_participants": 11,
-      "nombre_partants": 11,
+      "nombre_partants": 10,
+      "non_partants": [
+        3
+      ],
+      "statut": "COLLECTE_REELLE_NON_IMPORTEE"
+    },
+    {
+      "id": "2026-11-14-R5-C8",
+      "course_id": "2026-11-14-R5-C8",
+      "reunion": 5,
+      "course": 8,
+      "hippodrome": "HIPPODROME D'AUTEUIL",
+      "nom": "PRIX SERGE LANDON - GRAND PRIX D'AUTOMNE",
+      "depart": "2026-11-14T16:09:00+01:00",
+      "localisation_france_verifiee": true,
+      "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R5/C8/participants",
+      "source_verifiee_a": "2026-11-14T16:02:00.180846+01:00",
+      "collecte_a": "2026-11-14T16:02:00.180846+01:00",
+      "partants": [
+        {
+          "numero": 1,
+          "nom": "KIRIKOU DES MERS",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Ah4h7h3h1h(25)5h3h4s6s",
+          "jockey": null,
+          "driver": "B.LE CLERC",
+          "entraineur": "MME G.MENATO",
+          "age": 6,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 2,
+          "nom": "STYLE D'EMIRS",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "6h8h2h4h2h3h(25)1h1h1p",
+          "jockey": null,
+          "driver": "A.CHESNEAU",
+          "entraineur": "Y.FOUIN (S)",
+          "age": 6,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 3,
+          "nom": "GARDIEN DE MUSEE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "2h5h5h2h2h(25)4h(24)4h2h",
+          "jockey": null,
+          "driver": "G.MEUNIER",
+          "entraineur": "Y.FOUIN (S)",
+          "age": 6,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 4,
+          "nom": "THELEME",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "2h2h3h1h(23)1h1h1h2h1h",
+          "jockey": null,
+          "driver": "G.MASURE",
+          "entraineur": "CHAILLE-CHAILLE & PAMART",
+          "age": 9,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 5,
+          "nom": "KINGLAND",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "1h1h(24)1h1h1h2h1hAh",
+          "jockey": null,
+          "driver": "K.NABET",
+          "entraineur": "F.NICOLLE",
+          "age": 6,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 6,
+          "nom": "ZARAKHAN",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "4h1h2h1h1h(25)Ah1p(24)1h",
+          "jockey": null,
+          "driver": "A.ZULIANI",
+          "entraineur": "E.ANDIGNE D'",
+          "age": 7,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 7,
+          "nom": "JET BLUE",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "3h3h3h(25)Ah2h4h9h(24)1h",
+          "jockey": null,
+          "driver": "L.PHILIPPERON",
+          "entraineur": "M.SEROR (S)",
+          "age": 7,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 8,
+          "nom": "COEUR D'AMOUR",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "Th2hJh3h1s(25)2hThAs3s",
+          "jockey": null,
+          "driver": "G.RICHARD",
+          "entraineur": "CHAILLE-CHAILLE & PAMART",
+          "age": 5,
+          "sexe": "HONGRES"
+        },
+        {
+          "numero": 9,
+          "nom": "LEADER SPORT",
+          "non_partant": false,
+          "statut": "PARTANT",
+          "musique": "1h(25)1s1s2s7h1h1h",
+          "jockey": null,
+          "driver": "J. CHARRON",
+          "entraineur": "D.MELE (S)",
+          "age": 5,
+          "sexe": "HONGRES"
+        }
+      ],
+      "nombre_participants": 9,
+      "nombre_partants": 9,
       "non_partants": [],
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
@@ -5034,11 +5167,11 @@
       "course": 9,
       "hippodrome": "HIPPODROME DE CAEN",
       "nom": "PRIX DES LIATRIS",
-      "depart": "2026-11-14T16:00:00+01:00",
+      "depart": "2026-11-14T16:10:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R8/C9/participants",
-      "source_verifiee_a": "2026-11-14T09:09:26.290620+01:00",
-      "collecte_a": "2026-11-14T09:09:26.290620+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:06.131992+01:00",
+      "collecte_a": "2026-11-14T16:02:06.131992+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5218,133 +5351,6 @@
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
     {
-      "id": "2026-11-14-R5-C8",
-      "course_id": "2026-11-14-R5-C8",
-      "reunion": 5,
-      "course": 8,
-      "hippodrome": "HIPPODROME D'AUTEUIL",
-      "nom": "PRIX SERGE LANDON - GRAND PRIX D'AUTOMNE",
-      "depart": "2026-11-14T16:07:00+01:00",
-      "localisation_france_verifiee": true,
-      "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R5/C8/participants",
-      "source_verifiee_a": "2026-11-14T09:09:20.143924+01:00",
-      "collecte_a": "2026-11-14T09:09:20.143924+01:00",
-      "partants": [
-        {
-          "numero": 1,
-          "nom": "KIRIKOU DES MERS",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Ah4h7h3h1h(25)5h3h4s6s",
-          "jockey": null,
-          "driver": "B.LE CLERC",
-          "entraineur": "MME G.MENATO",
-          "age": 6,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 2,
-          "nom": "STYLE D'EMIRS",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "6h8h2h4h2h3h(25)1h1h1p",
-          "jockey": null,
-          "driver": "A.CHESNEAU",
-          "entraineur": "Y.FOUIN (S)",
-          "age": 6,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 3,
-          "nom": "GARDIEN DE MUSEE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "2h5h5h2h2h(25)4h(24)4h2h",
-          "jockey": null,
-          "driver": "G.MEUNIER",
-          "entraineur": "Y.FOUIN (S)",
-          "age": 6,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 4,
-          "nom": "THELEME",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "2h2h3h1h(23)1h1h1h2h1h",
-          "jockey": null,
-          "driver": "G.MASURE",
-          "entraineur": "CHAILLE-CHAILLE & PAMART",
-          "age": 9,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 5,
-          "nom": "KINGLAND",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "1h1h(24)1h1h1h2h1hAh",
-          "jockey": null,
-          "driver": "K.NABET",
-          "entraineur": "F.NICOLLE",
-          "age": 6,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 6,
-          "nom": "ZARAKHAN",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "4h1h2h1h1h(25)Ah1p(24)1h",
-          "jockey": null,
-          "driver": "A.ZULIANI",
-          "entraineur": "E.ANDIGNE D'",
-          "age": 7,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 7,
-          "nom": "JET BLUE",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "3h3h3h(25)Ah2h4h9h(24)1h",
-          "jockey": null,
-          "driver": "L.PHILIPPERON",
-          "entraineur": "M.SEROR (S)",
-          "age": 7,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 8,
-          "nom": "COEUR D'AMOUR",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "Th2hJh3h1s(25)2hThAs3s",
-          "jockey": null,
-          "driver": "G.RICHARD",
-          "entraineur": "CHAILLE-CHAILLE & PAMART",
-          "age": 5,
-          "sexe": "HONGRES"
-        },
-        {
-          "numero": 9,
-          "nom": "LEADER SPORT",
-          "non_partant": false,
-          "statut": "PARTANT",
-          "musique": "1h(25)1s1s2s7h1h1h",
-          "jockey": null,
-          "driver": "L.BRECHET",
-          "entraineur": "D.MELE (S)",
-          "age": 5,
-          "sexe": "HONGRES"
-        }
-      ],
-      "nombre_participants": 9,
-      "nombre_partants": 9,
-      "non_partants": [],
-      "statut": "COLLECTE_REELLE_NON_IMPORTEE"
-    },
-    {
       "id": "2026-11-14-R1-C6",
       "course_id": "2026-11-14-R1-C6",
       "reunion": 1,
@@ -5354,8 +5360,8 @@
       "depart": "2026-11-14T16:25:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R1/C6/participants",
-      "source_verifiee_a": "2026-11-14T09:09:12.564026+01:00",
-      "collecte_a": "2026-11-14T09:09:12.564026+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:54.277984+01:00",
+      "collecte_a": "2026-11-14T16:01:54.277984+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5529,8 +5535,8 @@
       "depart": "2026-11-14T16:42:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R5/C9/participants",
-      "source_verifiee_a": "2026-11-14T09:09:20.481391+01:00",
-      "collecte_a": "2026-11-14T09:09:20.481391+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:00.697684+01:00",
+      "collecte_a": "2026-11-14T16:02:00.697684+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5692,8 +5698,8 @@
       "depart": "2026-11-14T17:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R1/C7/participants",
-      "source_verifiee_a": "2026-11-14T09:09:12.874958+01:00",
-      "collecte_a": "2026-11-14T09:09:12.874958+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:54.627367+01:00",
+      "collecte_a": "2026-11-14T16:01:54.627367+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5867,8 +5873,8 @@
       "depart": "2026-11-14T17:17:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R6/C1/participants",
-      "source_verifiee_a": "2026-11-14T09:09:20.776113+01:00",
-      "collecte_a": "2026-11-14T09:09:20.776113+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:00.969489+01:00",
+      "collecte_a": "2026-11-14T16:02:00.969489+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6078,8 +6084,8 @@
       "depart": "2026-11-14T17:35:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R1/C8/participants",
-      "source_verifiee_a": "2026-11-14T09:09:13.298511+01:00",
-      "collecte_a": "2026-11-14T09:09:13.298511+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:55.021352+01:00",
+      "collecte_a": "2026-11-14T16:01:55.021352+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6253,8 +6259,8 @@
       "depart": "2026-11-14T17:52:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R6/C2/participants",
-      "source_verifiee_a": "2026-11-14T09:09:21.071216+01:00",
-      "collecte_a": "2026-11-14T09:09:21.071216+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:01.333600+01:00",
+      "collecte_a": "2026-11-14T16:02:01.333600+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6467,8 +6473,8 @@
       "depart": "2026-11-14T18:10:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R1/C9/participants",
-      "source_verifiee_a": "2026-11-14T09:09:13.742835+01:00",
-      "collecte_a": "2026-11-14T09:09:13.742835+01:00",
+      "source_verifiee_a": "2026-11-14T16:01:55.381311+01:00",
+      "collecte_a": "2026-11-14T16:01:55.381311+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6582,8 +6588,8 @@
       "depart": "2026-11-14T18:27:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R6/C3/participants",
-      "source_verifiee_a": "2026-11-14T09:09:21.394628+01:00",
-      "collecte_a": "2026-11-14T09:09:21.394628+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:01.605806+01:00",
+      "collecte_a": "2026-11-14T16:02:01.605806+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6757,8 +6763,8 @@
       "depart": "2026-11-14T19:01:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R6/C4/participants",
-      "source_verifiee_a": "2026-11-14T09:09:21.696343+01:00",
-      "collecte_a": "2026-11-14T09:09:21.696343+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:01.962316+01:00",
+      "collecte_a": "2026-11-14T16:02:01.962316+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6847,8 +6853,8 @@
         {
           "numero": 8,
           "nom": "LUCKY D'ID",
-          "non_partant": false,
-          "statut": "PARTANT",
+          "non_partant": true,
+          "statut": "NON_PARTANT",
           "musique": "5p1p2p8p8p8p0p0p3p7p",
           "jockey": null,
           "driver": "M.ROMARY",
@@ -6954,8 +6960,10 @@
         }
       ],
       "nombre_participants": 16,
-      "nombre_partants": 16,
-      "non_partants": [],
+      "nombre_partants": 15,
+      "non_partants": [
+        8
+      ],
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
     {
@@ -6968,8 +6976,8 @@
       "depart": "2026-11-14T19:33:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R6/C5/participants",
-      "source_verifiee_a": "2026-11-14T09:09:22.083734+01:00",
-      "collecte_a": "2026-11-14T09:09:22.083734+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:02.232814+01:00",
+      "collecte_a": "2026-11-14T16:02:02.232814+01:00",
       "partants": [
         {
           "numero": 1,
@@ -7119,8 +7127,8 @@
       "depart": "2026-11-14T20:05:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R6/C6/participants",
-      "source_verifiee_a": "2026-11-14T09:09:22.651652+01:00",
-      "collecte_a": "2026-11-14T09:09:22.651652+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:02.502848+01:00",
+      "collecte_a": "2026-11-14T16:02:02.502848+01:00",
       "partants": [
         {
           "numero": 1,
@@ -7284,8 +7292,8 @@
       "depart": "2026-11-14T20:37:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R6/C7/participants",
-      "source_verifiee_a": "2026-11-14T09:09:22.946157+01:00",
-      "collecte_a": "2026-11-14T09:09:22.946157+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:02.804530+01:00",
+      "collecte_a": "2026-11-14T16:02:02.804530+01:00",
       "partants": [
         {
           "numero": 1,
@@ -7459,8 +7467,8 @@
       "depart": "2026-11-14T21:09:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/14112026/R6/C8/participants",
-      "source_verifiee_a": "2026-11-14T09:09:23.240105+01:00",
-      "collecte_a": "2026-11-14T09:09:23.240105+01:00",
+      "source_verifiee_a": "2026-11-14T16:02:03.088018+01:00",
+      "collecte_a": "2026-11-14T16:02:03.088018+01:00",
       "partants": [
         {
           "numero": 1,
@@ -7581,8 +7589,8 @@
     "courses_prevues": 43,
     "courses": 43,
     "chevaux": 560,
-    "partants": 548,
-    "non_partants": 12,
+    "partants": 543,
+    "non_partants": 17,
     "erreurs": 0
   }
 }
