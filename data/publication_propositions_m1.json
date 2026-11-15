@@ -1,366 +1,10 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-15T04:00:03.477390+01:00",
+  "genere_a": "2026-11-15T11:39:37.456394+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
-    {
-      "course_id": "2026-11-15-R3-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-15T10:51:00+01:00",
-      "hippodrome": "HIPPODROME DE BEAUMONT DE LOMAGNE",
-      "classement": [
-        11,
-        7,
-        12,
-        5,
-        6
-      ],
-      "details": [
-        {
-          "numero": 11,
-          "nom": "MISTER DU CHOQUEL",
-          "score_heuristique": 8.4952,
-          "forme_recente": 8.744,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. GERGOUIL",
-          "entraineur": "J. FOIN",
-          "musique": "4a1a2a1a1a1a2a6a3a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 7,
-          "nom": "MISTER SOLO",
-          "score_heuristique": 8.2414,
-          "forme_recente": 8.427,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "F. MARTY",
-          "entraineur": "F. MARTY",
-          "musique": "4a1a(25)6a2a1a1a2a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 12,
-          "nom": "MANHATTAN EMGE",
-          "score_heuristique": 7.4488,
-          "forme_recente": 7.436,
-          "regularite_podium": 0.75,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme LANA HENRY",
-          "entraineur": "Y. HENRY",
-          "musique": "Da1a1a1a2a1a1a(25)4a3a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "MIRABEAU",
-          "score_heuristique": 7.2779,
-          "forme_recente": 7.535,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. GRASSET",
-          "entraineur": "Y. HENRY",
-          "musique": "2a2a1a6a1aDa1a9a2a7a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 6,
-          "nom": "MARAVILLA DU METZ",
-          "score_heuristique": 6.9093,
-          "forme_recente": 7.387,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "N. LANGLOIS",
-          "entraineur": "N. LANGLOIS",
-          "musique": "2a2a3a9a5a4a4a2a5a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-15-R3-C2",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-15T11:23:00+01:00",
-      "hippodrome": "HIPPODROME DE BEAUMONT DE LOMAGNE",
-      "classement": [
-        7,
-        4,
-        3,
-        5,
-        9
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "NUIT A LA GRAVE",
-          "score_heuristique": 8.656,
-          "forme_recente": 8.737,
-          "regularite_podium": 0.833,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "P. GERAY",
-          "entraineur": "N. LANGLOIS",
-          "musique": "5a2a1a1a1a1a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 4,
-          "nom": "NIGHT DE JANEIRO",
-          "score_heuristique": 6.5353,
-          "forme_recente": 6.607,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "N. LANGLOIS",
-          "entraineur": "N. LANGLOIS",
-          "musique": "3a2a2aDaDa4a3a1a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "NOUMEA D'AMOUR",
-          "score_heuristique": 6.0299,
-          "forme_recente": 6.287,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "S. LALOUM",
-          "entraineur": "S. LALOUM",
-          "musique": "1a3a5aDa2a9a2aDa2aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "NOUBA D'ATOUT",
-          "score_heuristique": 5.8782,
-          "forme_recente": 6.098,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "CH. FEYTE",
-          "entraineur": "CH. FEYTE",
-          "musique": "Da1a1a3a4aDa1a4a6a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "NANO UP STAR",
-          "score_heuristique": 5.7754,
-          "forme_recente": 5.969,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "V. CABOS",
-          "entraineur": "R. WESTERINK",
-          "musique": "1a1aDa1a3a0aDaDa1aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 9,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-15-R14-C1",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-15T11:30:00+01:00",
-      "hippodrome": "HIPPODROME DE NANCY-BRABOIS",
-      "classement": [
-        7,
-        5,
-        10,
-        11,
-        1
-      ],
-      "details": [
-        {
-          "numero": 7,
-          "nom": "NEVELE STAR",
-          "score_heuristique": 3.0728,
-          "forme_recente": 3.424,
-          "regularite_podium": 0.167,
-          "performances_lisibles": 6,
-          "gains_declares": null,
-          "jockey_driver": "K. DEPUYDT",
-          "entraineur": "B.J. CREBAS",
-          "musique": "2aDaDaDa5a8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 5,
-          "nom": "NEZIRO JOSSELYN",
-          "score_heuristique": 2.7759,
-          "forme_recente": 3.47,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 3,
-          "gains_declares": null,
-          "jockey_driver": "P.Y. VERVA",
-          "entraineur": "Pavel TAMSIN",
-          "musique": "5a8aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 10,
-          "nom": "NINA DE JUPILLES",
-          "score_heuristique": 1.6083,
-          "forme_recente": 1.698,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "CH. GUERANGER",
-          "entraineur": "J. GIROUARD",
-          "musique": "8aDaDaDa8a3aDaDa7a8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 11,
-          "nom": "NINA DE MALAC",
-          "score_heuristique": 1.4289,
-          "forme_recente": 1.786,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "TH. DROMIGNY",
-          "entraineur": "A. GOUGEON",
-          "musique": "Da8a7aDa8aDa6aDaDa8a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "NACAST DU MANOIR",
-          "score_heuristique": 0.4444,
-          "forme_recente": 0.556,
-          "regularite_podium": 0.0,
-          "performances_lisibles": 5,
-          "gains_declares": null,
-          "jockey_driver": "M. BOUCHEZ",
-          "entraineur": "M. BOUCHEZ",
-          "musique": "0aDa8aDaDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 5,
-      "non_partants_exclus": [
-        3
-      ],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
     {
       "course_id": "2026-11-15-R3-C3",
       "moteur": "M1",
@@ -591,7 +235,10 @@
         }
       ],
       "chevaux_evalues": 6,
-      "non_partants_exclus": [],
+      "non_partants_exclus": [
+        2,
+        12
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -944,8 +591,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 13,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 12,
+      "non_partants_exclus": [
+        15
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -1196,10 +845,10 @@
       "hippodrome": "HIPPODROME DE BEAUMONT DE LOMAGNE",
       "classement": [
         8,
-        13,
         9,
         11,
-        6
+        6,
+        1
       ],
       "details": [
         {
@@ -1213,25 +862,6 @@
           "jockey_driver": "TH. DUCOS",
           "entraineur": "F. TERRY",
           "musique": "3a3a8a6aDa2a4a5a2aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 13,
-          "nom": "GALOPIN DES CHAMPS",
-          "score_heuristique": 5.1928,
-          "forme_recente": 5.866,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "ED. COUBARD-MEUNIER",
-          "entraineur": "E. OHANESSIAN",
-          "musique": "5a2a0a6a2a4a7a(25)4a9a",
           "limites": [
             "Distance non évaluée",
             "Terrain non évalué",
@@ -1296,10 +926,31 @@
             "Aptitude au parcours non évaluée",
             "Forme de l'entourage non évaluée"
           ]
+        },
+        {
+          "numero": 1,
+          "nom": "IBIS QUICK",
+          "score_heuristique": 4.0043,
+          "forme_recente": 4.38,
+          "regularite_podium": 0.25,
+          "performances_lisibles": 8,
+          "gains_declares": null,
+          "jockey_driver": "S. LALOUM",
+          "entraineur": "Nils PACHA",
+          "musique": "9a9a5a2a1a9a5a0a6a4a",
+          "limites": [
+            "Distance non évaluée",
+            "Terrain non évalué",
+            "Opposition non évaluée",
+            "Aptitude au parcours non évaluée",
+            "Forme de l'entourage non évaluée"
+          ]
         }
       ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 11,
+      "non_partants_exclus": [
+        13
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -2124,8 +1775,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 13,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 12,
+      "non_partants_exclus": [
+        14
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -3547,7 +3200,9 @@
         }
       ],
       "chevaux_evalues": 6,
-      "non_partants_exclus": [],
+      "non_partants_exclus": [
+        7
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -3916,10 +3571,10 @@
       "hippodrome": "HIPPODROME DE NANCY-BRABOIS",
       "classement": [
         13,
-        3,
         2,
         10,
-        11
+        11,
+        14
       ],
       "details": [
         {
@@ -3933,25 +3588,6 @@
           "jockey_driver": "F. DESMIGNEUX",
           "entraineur": "B.J. CREBAS",
           "musique": "1a2a1a1a1a1a1aDa1a5a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "JAZZ OPERA",
-          "score_heuristique": 6.3838,
-          "forme_recente": 6.417,
-          "regularite_podium": 0.625,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.Y. VERVA",
-          "entraineur": "Pavel TAMSIN",
-          "musique": "1a6aDa3a2aDa2a1a1a1a",
           "limites": [
             "Distance non évaluée",
             "Terrain non évalué",
@@ -4016,10 +3652,30 @@
             "Aptitude au parcours non évaluée",
             "Forme de l'entourage non évaluée"
           ]
+        },
+        {
+          "numero": 14,
+          "nom": "ICLO",
+          "score_heuristique": 3.9314,
+          "forme_recente": 3.977,
+          "regularite_podium": 0.375,
+          "performances_lisibles": 8,
+          "gains_declares": null,
+          "jockey_driver": "Mlle CL. LELIEVRE",
+          "entraineur": "Louis PEJUS",
+          "musique": "0a3aDa1a5aDa1aDaDaDa",
+          "limites": [
+            "Distance non évaluée",
+            "Terrain non évalué",
+            "Opposition non évaluée",
+            "Aptitude au parcours non évaluée",
+            "Forme de l'entourage non évaluée"
+          ]
         }
       ],
-      "chevaux_evalues": 11,
+      "chevaux_evalues": 10,
       "non_partants_exclus": [
+        3,
         8
       ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
@@ -4257,7 +3913,9 @@
         }
       ],
       "chevaux_evalues": 8,
-      "non_partants_exclus": [],
+      "non_partants_exclus": [
+        1
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -5220,8 +4878,8 @@
         14,
         10,
         11,
-        6,
-        1
+        1,
+        4
       ],
       "details": [
         {
@@ -5282,25 +4940,6 @@
           ]
         },
         {
-          "numero": 6,
-          "nom": "KIMBILA",
-          "score_heuristique": 3.1161,
-          "forme_recente": 3.27,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "G. SELLIER",
-          "entraineur": "C. DEFFAUX",
-          "musique": "Da8a5a8a3a0a9a3aDa4a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
           "numero": 1,
           "nom": "KOLORADO BELLO",
           "score_heuristique": 3.0742,
@@ -5318,10 +4957,31 @@
             "Aptitude au parcours non évaluée",
             "Forme de l'entourage non évaluée"
           ]
+        },
+        {
+          "numero": 4,
+          "nom": "JACOTTE DU GUELIER",
+          "score_heuristique": 2.3095,
+          "forme_recente": 2.887,
+          "regularite_podium": 0.0,
+          "performances_lisibles": 8,
+          "gains_declares": null,
+          "jockey_driver": "G.B. BADIN",
+          "entraineur": "G.B. BADIN",
+          "musique": "6a8a7a9a0a6a0a0aDa7a",
+          "limites": [
+            "Distance non évaluée",
+            "Terrain non évalué",
+            "Opposition non évaluée",
+            "Aptitude au parcours non évaluée",
+            "Forme de l'entourage non évaluée"
+          ]
         }
       ],
-      "chevaux_evalues": 12,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 11,
+      "non_partants_exclus": [
+        6
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -5802,6 +5462,18 @@
   ],
   "courses_ecartees": [
     {
+      "course_id": "2026-11-15-R3-C1",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-15-R3-C2",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
+      "course_id": "2026-11-15-R14-C1",
+      "raison": "Départ passé ou trop proche"
+    },
+    {
       "course_id": "2026-11-15-R1-C1",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     },
@@ -5946,7 +5618,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 49,
+  "nombre_propositions": 46,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
