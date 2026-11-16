@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-16T02:47:55.374361+01:00",
+  "genere_a": "2026-11-16T09:39:23.739324+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -249,32 +249,13 @@
       "depart": "2026-11-16T13:10:00+01:00",
       "hippodrome": "HIPPODROME D'AGEN LA GARENNE",
       "classement": [
-        2,
         7,
         8,
         3,
-        6
+        6,
+        1
       ],
       "details": [
-        {
-          "numero": 2,
-          "nom": "NUAGE DES LUCAS",
-          "score_heuristique": 5.6988,
-          "forme_recente": 5.874,
-          "regularite_podium": 0.5,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "J. CHAVATTE",
-          "entraineur": "F. MARTY",
-          "musique": "5a3a3aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
         {
           "numero": 7,
           "nom": "NACREE DES ARRIS",
@@ -350,10 +331,31 @@
             "Aptitude au parcours non évaluée",
             "Forme de l'entourage non évaluée"
           ]
+        },
+        {
+          "numero": 1,
+          "nom": "NINO MOUROTAIS",
+          "score_heuristique": 3.3525,
+          "forme_recente": 3.691,
+          "regularite_podium": 0.2,
+          "performances_lisibles": 5,
+          "gains_declares": null,
+          "jockey_driver": "M. GRASSET",
+          "entraineur": "Sté. Ent. Bernard GRASSET",
+          "musique": "Da5a5aDa2a",
+          "limites": [
+            "Distance non évaluée",
+            "Terrain non évalué",
+            "Opposition non évaluée",
+            "Aptitude au parcours non évaluée",
+            "Forme de l'entourage non évaluée"
+          ]
         }
       ],
-      "chevaux_evalues": 8,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 7,
+      "non_partants_exclus": [
+        2
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
