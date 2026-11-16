@@ -1,20 +1,7 @@
 {
-  "date": "2026-11-15T22:56:28.227789+01:00",
+  "date": "2026-11-16T02:47:55.538966+01:00",
   "version": "M1-6.0",
-  "importees": 82,
-  "rejetees": [
-    {
-      "id": "2026-11-15-R7-C2",
-      "erreur": "Moins de cinq partants actifs"
-    },
-    {
-      "id": "2026-11-15-R7-C3",
-      "erreur": "Moins de cinq partants actifs"
-    },
-    {
-      "id": "2026-11-15-R7-C6",
-      "erreur": "Moins de cinq partants actifs"
-    }
-  ],
-  "total_courses": 668
+  "importees": 48,
+  "rejetees": [],
+  "total_courses": 716
 }
