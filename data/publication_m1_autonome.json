@@ -2,100 +2,27 @@
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
   "date": "2026-11-17",
-  "genere_a": "2026-11-17T03:25:22.500737+01:00",
-  "statut": "DECISIONS_PROVISOIRES_PUBLIEES",
+  "genere_a": "2026-11-17T11:56:12.124290+01:00",
+  "statut": "AUCUNE_NOUVELLE_DECISION",
   "source": "PMU",
-  "collecte_a": "2026-11-17T03:25:08.364424+01:00",
+  "collecte_a": "2026-11-17T11:55:56.470628+01:00",
   "courses_collectees": 32,
   "courses_importees": 32,
   "courses_en_base": 748,
   "propositions_sportives": 6,
-  "decisions_nouvelles": 6,
+  "decisions_nouvelles": 0,
   "decisions_total": 374,
   "figes_total": 0,
   "audits_total": 0,
-  "decisions_publiees": [
-    {
-      "course_id": "2026-11-17-R3-C1",
-      "selection_id": "c8db87a959934a07b7a30986bbfc040d",
-      "classement": [
-        1,
-        7,
-        2,
-        9,
-        3
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-17-R3-C3",
-      "selection_id": "d43e61ed9fd94c40b366d30b8bae3d71",
-      "classement": [
-        4,
-        7,
-        1,
-        13,
-        5
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-17-R3-C4",
-      "selection_id": "18ef8563f23040ee8cae6c3e37a039ed",
-      "classement": [
-        2,
-        1,
-        9,
-        6,
-        4
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-17-R3-C5",
-      "selection_id": "b310020e87f44711bbb17c9f2f4a87e0",
-      "classement": [
-        14,
-        12,
-        10,
-        6,
-        7
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-17-R3-C6",
-      "selection_id": "cca0f9ee14cc4d179c904d239f8164b9",
-      "classement": [
-        11,
-        1,
-        10,
-        3,
-        5
-      ],
-      "statut": "PROVISOIRE"
-    },
-    {
-      "course_id": "2026-11-17-R3-C8",
-      "selection_id": "dc10055acd3543e6ab8de0299c8d5daa",
-      "classement": [
-        8,
-        11,
-        3,
-        15,
-        9
-      ],
-      "statut": "PROVISOIRE"
-    }
-  ],
+  "decisions_publiees": [],
   "courses_ecartees": [
     {
       "course_id": "2026-11-17-R2-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-17-R2-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-17-R1-C1",
@@ -192,10 +119,34 @@
     {
       "course_id": "2026-11-17-R4-C7",
       "raison": "Moins de cinq chevaux avec historique exploitable"
+    },
+    {
+      "course_id": "2026-11-17-R3-C1",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-17-R3-C3",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-17-R3-C4",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-17-R3-C5",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-17-R3-C6",
+      "raison": "Decision existante"
+    },
+    {
+      "course_id": "2026-11-17-R3-C8",
+      "raison": "Decision existante"
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-17T03:25:22.146248+01:00",
+    "date": "2026-11-17T11:56:12.093618+01:00",
     "version": "M1-6.0",
     "importees": 32,
     "rejetees": [],

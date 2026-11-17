@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-17T03:25:21.985125+01:00",
+  "genere_a": "2026-11-17T11:56:11.994445+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -234,8 +234,11 @@
           ]
         }
       ],
-      "chevaux_evalues": 15,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 13,
+      "non_partants_exclus": [
+        8,
+        9
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -470,8 +473,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 11,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 10,
+      "non_partants_exclus": [
+        1
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -717,11 +722,11 @@
   "courses_ecartees": [
     {
       "course_id": "2026-11-17-R2-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-17-R2-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-17-R1-C1",
