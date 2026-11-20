@@ -2,10 +2,10 @@
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
   "date": "2026-11-20",
-  "genere_a": "2026-11-20T05:04:04.043784+01:00",
+  "genere_a": "2026-11-20T13:45:06.918901+01:00",
   "statut": "AUCUNE_NOUVELLE_DECISION",
   "source": "PMU",
-  "collecte_a": "2026-11-20T05:03:52.089660+01:00",
+  "collecte_a": "2026-11-20T13:44:56.094445+01:00",
   "courses_collectees": 32,
   "courses_importees": 32,
   "courses_en_base": 844,
@@ -18,35 +18,35 @@
   "courses_ecartees": [
     {
       "course_id": "2026-11-20-R2-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-20-R2-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-20-R2-C3",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-20-R3-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-20-R2-C4",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-20-R3-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-20-R2-C5",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-20-R3-C3",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-20-R2-C6",
@@ -146,7 +146,7 @@
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-20T05:04:03.990141+01:00",
+    "date": "2026-11-20T13:45:06.870793+01:00",
     "version": "M1-6.0",
     "importees": 32,
     "rejetees": [],
