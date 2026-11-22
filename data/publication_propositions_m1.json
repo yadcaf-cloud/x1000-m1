@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-22T02:42:32.649204+01:00",
+  "genere_a": "2026-11-22T09:51:52.565897+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -371,9 +371,9 @@
       "classement": [
         14,
         11,
-        15,
         16,
-        9
+        9,
+        5
       ],
       "details": [
         {
@@ -406,25 +406,6 @@
           "jockey_driver": "P. PLOQUIN",
           "entraineur": "P. PLOQUIN",
           "musique": "8a7a4a2a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 15,
-          "nom": "NADO PRIOR",
-          "score_heuristique": 4.6352,
-          "forme_recente": 5.169,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 4,
-          "gains_declares": null,
-          "jockey_driver": "S. DESMARRES",
-          "entraineur": "Aurélien DESMARRES",
-          "musique": "6a6a1aDa",
           "limites": [
             "Distance non évaluée",
             "Terrain non évalué",
@@ -470,10 +451,32 @@
             "Aptitude au parcours non évaluée",
             "Forme de l'entourage non évaluée"
           ]
+        },
+        {
+          "numero": 5,
+          "nom": "NOORA DE CHENU",
+          "score_heuristique": 3.4506,
+          "forme_recente": 4.313,
+          "regularite_podium": 0.0,
+          "performances_lisibles": 3,
+          "gains_declares": null,
+          "jockey_driver": "H. MARIE",
+          "entraineur": "H. MARIE",
+          "musique": "5a7a9a",
+          "limites": [
+            "Distance non évaluée",
+            "Terrain non évalué",
+            "Opposition non évaluée",
+            "Aptitude au parcours non évaluée",
+            "Forme de l'entourage non évaluée"
+          ]
         }
       ],
-      "chevaux_evalues": 9,
-      "non_partants_exclus": [],
+      "chevaux_evalues": 8,
+      "non_partants_exclus": [
+        13,
+        15
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -2007,7 +2010,9 @@
         }
       ],
       "chevaux_evalues": 13,
-      "non_partants_exclus": [],
+      "non_partants_exclus": [
+        5
+      ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
       "fige": false,
@@ -2124,9 +2129,10 @@
           ]
         }
       ],
-      "chevaux_evalues": 12,
+      "chevaux_evalues": 11,
       "non_partants_exclus": [
-        1
+        1,
+        4
       ],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
