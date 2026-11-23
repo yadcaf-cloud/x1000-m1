@@ -1,7 +1,7 @@
 {
   "version": "M1-ANALYSE-1.1",
   "moteur": "M1",
-  "genere_a": "2026-11-23T03:44:13.681092+01:00",
+  "genere_a": "2026-11-23T12:18:26.665699+01:00",
   "source_collecte": "data/collecte_m1_pmu.json",
   "statut": "PREPUBLICATION",
   "propositions": [
@@ -117,124 +117,6 @@
         }
       ],
       "chevaux_evalues": 14,
-      "non_partants_exclus": [],
-      "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
-      "pari_envisage": null,
-      "fige": false,
-      "publication_officielle": false
-    },
-    {
-      "course_id": "2026-11-23-R1-C2",
-      "moteur": "M1",
-      "methode": "M1-ANALYSE-1.1",
-      "statut": "PROPOSITION_NON_VALIDEE",
-      "depart": "2026-11-23T14:30:00+01:00",
-      "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
-      "classement": [
-        6,
-        3,
-        2,
-        9,
-        1
-      ],
-      "details": [
-        {
-          "numero": 6,
-          "nom": "LADY AURELIA",
-          "score_heuristique": 4.188,
-          "forme_recente": 4.61,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "E. RAFFIN",
-          "entraineur": "J.PH. DUBOIS",
-          "musique": "4a1aDaDa6aDa1aDa1aDa",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 3,
-          "nom": "LIBERTY HEROLD",
-          "score_heuristique": 4.0815,
-          "forme_recente": 4.477,
-          "regularite_podium": 0.25,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "M. CHAMPENOIS",
-          "entraineur": "G. HOUEL",
-          "musique": "2aDa4aDa0a8a5a1a8a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 2,
-          "nom": "LIBERTY CASH",
-          "score_heuristique": 3.9369,
-          "forme_recente": 4.609,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "Mme T. MATHIAS-MAISONNETTE",
-          "entraineur": "TH. RAFFEGEAU",
-          "musique": "6m6m6m9mAm6m1m5m6m4m",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 9,
-          "nom": "LUNA DOMA",
-          "score_heuristique": 2.8712,
-          "forme_recente": 3.277,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "A. COLLETTE",
-          "entraineur": "F. TERRY",
-          "musique": "8a3aDa8a8aDa4aDa0a0a",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        },
-        {
-          "numero": 1,
-          "nom": "LUNE DE L'EMION",
-          "score_heuristique": 2.841,
-          "forme_recente": 3.239,
-          "regularite_podium": 0.125,
-          "performances_lisibles": 8,
-          "gains_declares": null,
-          "jockey_driver": "P.PH. PLOQUIN",
-          "entraineur": "Y. DOCQUIN",
-          "musique": "9a0a7a8a2a6aDa4a8a(25)",
-          "limites": [
-            "Distance non évaluée",
-            "Terrain non évalué",
-            "Opposition non évaluée",
-            "Aptitude au parcours non évaluée",
-            "Forme de l'entourage non évaluée"
-          ]
-        }
-      ],
-      "chevaux_evalues": 5,
       "non_partants_exclus": [],
       "analyse": "Préclassement heuristique sur musique lisible et régularité ; les facteurs de distance, terrain, opposition et entourage ne sont pas évalués. Ce score n'est pas une probabilité de victoire.",
       "pari_envisage": null,
@@ -719,19 +601,19 @@
   "courses_ecartees": [
     {
       "course_id": "2026-11-23-R2-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-23-R2-C2",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-23-R2-C3",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-23-R3-C1",
-      "raison": "Moins de cinq chevaux avec historique exploitable"
+      "raison": "Départ passé ou trop proche"
     },
     {
       "course_id": "2026-11-23-R2-C4",
@@ -767,6 +649,10 @@
     },
     {
       "course_id": "2026-11-23-R2-C7",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
+    },
+    {
+      "course_id": "2026-11-23-R1-C2",
       "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
@@ -838,7 +724,7 @@
       "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
-  "nombre_propositions": 6,
+  "nombre_propositions": 5,
   "aucune_modification_figes": true,
   "validation_sportive_humaine": false,
   "avertissement": "Scores heuristiques non validés ; aucun FIGÉ, pari ou pronostic officiel publié."
