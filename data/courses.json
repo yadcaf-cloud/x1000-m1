@@ -204983,8 +204983,8 @@
     "discipline": null,
     "depart": "2026-11-24T12:17:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R3/C1/participants",
-    "source_verifiee_a": "2026-11-24T07:28:29.107778+01:00",
-    "collecte_a": "2026-11-24T07:28:29.107778+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:30.679182+01:00",
+    "collecte_a": "2026-11-24T19:10:30.679182+01:00",
     "formules": [],
     "partants": [
       {
@@ -205148,8 +205148,8 @@
     "discipline": null,
     "depart": "2026-11-24T12:52:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R3/C2/participants",
-    "source_verifiee_a": "2026-11-24T07:28:29.413080+01:00",
-    "collecte_a": "2026-11-24T07:28:29.413080+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:31.013540+01:00",
+    "collecte_a": "2026-11-24T19:10:31.013540+01:00",
     "formules": [],
     "partants": [
       {
@@ -205260,8 +205260,8 @@
       {
         "numero": 8,
         "nom": "LORENZO BERRY",
-        "non_partant": false,
-        "statut": "PARTANT",
+        "non_partant": true,
+        "statut": "NON_PARTANT",
         "musique": "0a0a4a9a0a0a6aDa0a8m",
         "jockey": null,
         "driver": "K. ACHARD",
@@ -205373,8 +205373,8 @@
     "discipline": null,
     "depart": "2026-11-24T13:27:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R3/C3/participants",
-    "source_verifiee_a": "2026-11-24T07:28:29.720654+01:00",
-    "collecte_a": "2026-11-24T07:28:29.720654+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:31.367541+01:00",
+    "collecte_a": "2026-11-24T19:10:31.367541+01:00",
     "formules": [],
     "partants": [
       {
@@ -205500,8 +205500,8 @@
       {
         "numero": 9,
         "nom": "NOBI BAROSSO",
-        "non_partant": false,
-        "statut": "PARTANT",
+        "non_partant": true,
+        "statut": "NON_PARTANT",
         "musique": "1mDm2mDmDm3mDa",
         "jockey": null,
         "driver": "P.PH. PLOQUIN",
@@ -205523,8 +205523,8 @@
     "discipline": null,
     "depart": "2026-11-24T13:55:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R1/C1/participants",
-    "source_verifiee_a": "2026-11-24T07:28:26.277025+01:00",
-    "collecte_a": "2026-11-24T07:28:26.277025+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:27.475096+01:00",
+    "collecte_a": "2026-11-24T19:10:27.475096+01:00",
     "formules": [],
     "partants": [
       {
@@ -205575,8 +205575,8 @@
       {
         "numero": 4,
         "nom": "RAM SEA",
-        "non_partant": false,
-        "statut": "PARTANT",
+        "non_partant": true,
+        "statut": "NON_PARTANT",
         "musique": "0p3p0p0p1p3p5p8p2p",
         "jockey": null,
         "driver": "S.PASQUIER",
@@ -205778,8 +205778,8 @@
     "discipline": null,
     "depart": "2026-11-24T14:12:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R3/C4/participants",
-    "source_verifiee_a": "2026-11-24T07:28:29.995702+01:00",
-    "collecte_a": "2026-11-24T07:28:29.995702+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:31.934025+01:00",
+    "collecte_a": "2026-11-24T19:10:31.934025+01:00",
     "formules": [],
     "partants": [
       {
@@ -205973,8 +205973,8 @@
     "discipline": null,
     "depart": "2026-11-24T14:30:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R1/C2/participants",
-    "source_verifiee_a": "2026-11-24T07:28:26.553858+01:00",
-    "collecte_a": "2026-11-24T07:28:26.553858+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:27.842249+01:00",
+    "collecte_a": "2026-11-24T19:10:27.842249+01:00",
     "formules": [],
     "partants": [
       {
@@ -206123,8 +206123,8 @@
     "discipline": null,
     "depart": "2026-11-24T14:47:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R3/C5/participants",
-    "source_verifiee_a": "2026-11-24T07:28:30.547737+01:00",
-    "collecte_a": "2026-11-24T07:28:30.547737+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:32.403011+01:00",
+    "collecte_a": "2026-11-24T19:10:32.403011+01:00",
     "formules": [],
     "partants": [
       {
@@ -206346,10 +206346,10 @@
     "hippodrome": "HIPPODROME DE DEAUVILLE",
     "nom": "PRIX DE PREAUX",
     "discipline": null,
-    "depart": "2026-11-24T15:05:00+01:00",
+    "depart": "2026-11-24T15:07:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R1/C3/participants",
-    "source_verifiee_a": "2026-11-24T07:28:26.929673+01:00",
-    "collecte_a": "2026-11-24T07:28:26.929673+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:28.262560+01:00",
+    "collecte_a": "2026-11-24T19:10:28.262560+01:00",
     "formules": [],
     "partants": [
       {
@@ -206526,10 +206526,10 @@
     "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
     "nom": "PRIX DE RICHELIEU",
     "discipline": null,
-    "depart": "2026-11-24T15:22:00+01:00",
+    "depart": "2026-11-24T15:24:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R3/C6/participants",
-    "source_verifiee_a": "2026-11-24T07:28:30.817875+01:00",
-    "collecte_a": "2026-11-24T07:28:30.817875+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:32.807734+01:00",
+    "collecte_a": "2026-11-24T19:10:32.807734+01:00",
     "formules": [],
     "partants": [
       {
@@ -206721,10 +206721,10 @@
     "hippodrome": "HIPPODROME DE DEAUVILLE",
     "nom": "PRIX DE MONTFORT",
     "discipline": null,
-    "depart": "2026-11-24T15:40:00+01:00",
+    "depart": "2026-11-24T15:43:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R1/C4/participants",
-    "source_verifiee_a": "2026-11-24T07:28:27.445990+01:00",
-    "collecte_a": "2026-11-24T07:28:27.445990+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:28.626824+01:00",
+    "collecte_a": "2026-11-24T19:10:28.626824+01:00",
     "formules": [],
     "partants": [
       {
@@ -206916,10 +206916,10 @@
     "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
     "nom": "PRIX DE PLOUBALAY",
     "discipline": null,
-    "depart": "2026-11-24T15:57:00+01:00",
+    "depart": "2026-11-24T16:00:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R3/C7/participants",
-    "source_verifiee_a": "2026-11-24T07:28:31.421190+01:00",
-    "collecte_a": "2026-11-24T07:28:31.421190+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:33.239761+01:00",
+    "collecte_a": "2026-11-24T19:10:33.239761+01:00",
     "formules": [],
     "partants": [
       {
@@ -207111,10 +207111,10 @@
     "hippodrome": "HIPPODROME DE DEAUVILLE",
     "nom": "PRIX DE L'HOTEL DU CROISSANT",
     "discipline": null,
-    "depart": "2026-11-24T16:15:00+01:00",
+    "depart": "2026-11-24T16:19:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R1/C5/participants",
-    "source_verifiee_a": "2026-11-24T07:28:27.800541+01:00",
-    "collecte_a": "2026-11-24T07:28:27.800541+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:29.091452+01:00",
+    "collecte_a": "2026-11-24T19:10:29.091452+01:00",
     "formules": [],
     "partants": [
       {
@@ -207336,10 +207336,10 @@
     "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
     "nom": "PRIX DE BAUGE",
     "discipline": null,
-    "depart": "2026-11-24T16:32:00+01:00",
+    "depart": "2026-11-24T16:36:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R3/C8/participants",
-    "source_verifiee_a": "2026-11-24T07:28:31.939945+01:00",
-    "collecte_a": "2026-11-24T07:28:31.939945+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:33.572298+01:00",
+    "collecte_a": "2026-11-24T19:10:33.572298+01:00",
     "formules": [],
     "partants": [
       {
@@ -207546,10 +207546,10 @@
     "hippodrome": "HIPPODROME DE DEAUVILLE",
     "nom": "PRIX DU GRAND HOTEL D'ARGOUGES",
     "discipline": null,
-    "depart": "2026-11-24T16:50:00+01:00",
+    "depart": "2026-11-24T16:57:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R1/C6/participants",
-    "source_verifiee_a": "2026-11-24T07:28:28.076724+01:00",
-    "collecte_a": "2026-11-24T07:28:28.076724+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:29.563182+01:00",
+    "collecte_a": "2026-11-24T19:10:29.563182+01:00",
     "formules": [],
     "partants": [
       {
@@ -207765,8 +207765,8 @@
       {
         "numero": 15,
         "nom": "EASY ON ME",
-        "non_partant": false,
-        "statut": "PARTANT",
+        "non_partant": true,
+        "statut": "NON_PARTANT",
         "musique": "2p2p4p6p3p5p0p1p4p7p",
         "jockey": null,
         "driver": "F.LEFEBVRE",
@@ -207786,10 +207786,10 @@
     "hippodrome": "HIPPODROME D'AMIENS",
     "nom": "PRIX DU COLISEUM",
     "discipline": null,
-    "depart": "2026-11-24T17:07:00+01:00",
+    "depart": "2026-11-24T17:10:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R4/C1/participants",
-    "source_verifiee_a": "2026-11-24T07:28:32.211214+01:00",
-    "collecte_a": "2026-11-24T07:28:32.211214+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:33.909474+01:00",
+    "collecte_a": "2026-11-24T19:10:33.909474+01:00",
     "formules": [],
     "partants": [
       {
@@ -208011,10 +208011,10 @@
     "hippodrome": "HIPPODROME DE DEAUVILLE",
     "nom": "PRIX DU MANOIR DE LA CAILLERIE",
     "discipline": null,
-    "depart": "2026-11-24T17:25:00+01:00",
+    "depart": "2026-11-24T17:29:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R1/C7/participants",
-    "source_verifiee_a": "2026-11-24T07:28:28.368968+01:00",
-    "collecte_a": "2026-11-24T07:28:28.368968+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:29.981939+01:00",
+    "collecte_a": "2026-11-24T19:10:29.981939+01:00",
     "formules": [],
     "partants": [
       {
@@ -208080,8 +208080,8 @@
       {
         "numero": 5,
         "nom": "LE GAST",
-        "non_partant": false,
-        "statut": "PARTANT",
+        "non_partant": true,
+        "statut": "NON_PARTANT",
         "musique": "9p3p5p0p4p0p5p(25)2p8p",
         "jockey": null,
         "driver": "T.BACHELOT",
@@ -208253,8 +208253,8 @@
     "discipline": null,
     "depart": "2026-11-24T17:42:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R4/C2/participants",
-    "source_verifiee_a": "2026-11-24T07:28:32.483272+01:00",
-    "collecte_a": "2026-11-24T07:28:32.483272+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:34.241480+01:00",
+    "collecte_a": "2026-11-24T19:10:34.241480+01:00",
     "formules": [],
     "partants": [
       {
@@ -208365,8 +208365,8 @@
       {
         "numero": 8,
         "nom": "JAGUAR DE DALINE",
-        "non_partant": false,
-        "statut": "PARTANT",
+        "non_partant": true,
+        "statut": "NON_PARTANT",
         "musique": "3a2a5a8a3a2a2a3a3a(25)",
         "jockey": null,
         "driver": "GUILLAUME MARTIN",
@@ -208380,8 +208380,8 @@
       {
         "numero": 9,
         "nom": "KAYNE RICHER",
-        "non_partant": false,
-        "statut": "PARTANT",
+        "non_partant": true,
+        "statut": "NON_PARTANT",
         "musique": "7a2a1aDaTa1aDa1a1a1a",
         "jockey": null,
         "driver": "F. JOSEPH",
@@ -208476,10 +208476,10 @@
     "hippodrome": "HIPPODROME DE DEAUVILLE",
     "nom": "PRIX DU CONSERVATOIRE DE LA DENTELLE",
     "discipline": null,
-    "depart": "2026-11-24T18:00:00+01:00",
+    "depart": "2026-11-24T18:01:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R1/C8/participants",
-    "source_verifiee_a": "2026-11-24T07:28:28.677323+01:00",
-    "collecte_a": "2026-11-24T07:28:28.677323+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:30.340668+01:00",
+    "collecte_a": "2026-11-24T19:10:30.340668+01:00",
     "formules": [],
     "partants": [
       {
@@ -208650,8 +208650,8 @@
       {
         "numero": 12,
         "nom": "LOOK OF CECCA",
-        "non_partant": false,
-        "statut": "PARTANT",
+        "non_partant": true,
+        "statut": "NON_PARTANT",
         "musique": "0p3p5p1p7p0p2p0p0p0p",
         "jockey": null,
         "driver": "F.VALLE SKAR",
@@ -208716,10 +208716,10 @@
     "hippodrome": "HIPPODROME D'AMIENS",
     "nom": "PRIX DU TROPHY TOUR",
     "discipline": null,
-    "depart": "2026-11-24T18:15:00+01:00",
+    "depart": "2026-11-24T18:19:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R4/C3/participants",
-    "source_verifiee_a": "2026-11-24T07:28:32.761842+01:00",
-    "collecte_a": "2026-11-24T07:28:32.761842+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:34.601705+01:00",
+    "collecte_a": "2026-11-24T19:10:34.601705+01:00",
     "formules": [],
     "partants": [
       {
@@ -208943,8 +208943,8 @@
     "discipline": null,
     "depart": "2026-11-24T18:45:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R4/C4/participants",
-    "source_verifiee_a": "2026-11-24T07:28:33.032004+01:00",
-    "collecte_a": "2026-11-24T07:28:33.032004+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:34.934687+01:00",
+    "collecte_a": "2026-11-24T19:10:34.934687+01:00",
     "formules": [],
     "partants": [
       {
@@ -209168,8 +209168,8 @@
     "discipline": null,
     "depart": "2026-11-24T19:15:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R4/C5/participants",
-    "source_verifiee_a": "2026-11-24T07:28:33.386886+01:00",
-    "collecte_a": "2026-11-24T07:28:33.386886+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:35.266381+01:00",
+    "collecte_a": "2026-11-24T19:10:35.266381+01:00",
     "formules": [],
     "partants": [
       {
@@ -209393,8 +209393,8 @@
     "discipline": null,
     "depart": "2026-11-24T19:45:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R4/C6/participants",
-    "source_verifiee_a": "2026-11-24T07:28:33.653855+01:00",
-    "collecte_a": "2026-11-24T07:28:33.653855+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:35.780206+01:00",
+    "collecte_a": "2026-11-24T19:10:35.780206+01:00",
     "formules": [],
     "partants": [
       {
@@ -209573,8 +209573,8 @@
     "discipline": null,
     "depart": "2026-11-24T20:15:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R4/C7/participants",
-    "source_verifiee_a": "2026-11-24T07:28:33.927385+01:00",
-    "collecte_a": "2026-11-24T07:28:33.927385+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:36.111842+01:00",
+    "collecte_a": "2026-11-24T19:10:36.111842+01:00",
     "formules": [],
     "partants": [
       {
@@ -209610,8 +209610,8 @@
       {
         "numero": 3,
         "nom": "OKINAWA VET",
-        "non_partant": false,
-        "statut": "PARTANT",
+        "non_partant": true,
+        "statut": "NON_PARTANT",
         "musique": null,
         "jockey": null,
         "driver": "B. LE BELLER",
@@ -209768,8 +209768,8 @@
     "discipline": null,
     "depart": "2026-11-24T20:45:00+01:00",
     "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/24112026/R4/C8/participants",
-    "source_verifiee_a": "2026-11-24T07:28:34.198228+01:00",
-    "collecte_a": "2026-11-24T07:28:34.198228+01:00",
+    "source_verifiee_a": "2026-11-24T19:10:36.441193+01:00",
+    "collecte_a": "2026-11-24T19:10:36.441193+01:00",
     "formules": [],
     "partants": [
       {
