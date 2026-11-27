@@ -1,7 +1,7 @@
 {
   "version": "M1-PMU-COLLECTE-2.0",
   "date": "2026-11-27",
-  "collecte_a": "2026-11-27T14:12:30.283002+01:00",
+  "collecte_a": "2026-11-27T21:13:55.209411+01:00",
   "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026",
   "statut": "OK",
   "courses": [
@@ -15,8 +15,8 @@
       "depart": "2026-11-27T12:50:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R2/C1/participants",
-      "source_verifiee_a": "2026-11-27T14:12:34.220682+01:00",
-      "collecte_a": "2026-11-27T14:12:34.220682+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:00.886210+01:00",
+      "collecte_a": "2026-11-27T21:14:00.886210+01:00",
       "partants": [
         {
           "numero": 1,
@@ -130,8 +130,8 @@
       "depart": "2026-11-27T13:17:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R4/C1/participants",
-      "source_verifiee_a": "2026-11-27T14:12:36.742750+01:00",
-      "collecte_a": "2026-11-27T14:12:36.742750+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:03.746765+01:00",
+      "collecte_a": "2026-11-27T21:14:03.746765+01:00",
       "partants": [
         {
           "numero": 1,
@@ -341,8 +341,8 @@
       "depart": "2026-11-27T13:33:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R2/C2/participants",
-      "source_verifiee_a": "2026-11-27T14:12:34.503370+01:00",
-      "collecte_a": "2026-11-27T14:12:34.503370+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:01.267345+01:00",
+      "collecte_a": "2026-11-27T21:14:01.267345+01:00",
       "partants": [
         {
           "numero": 1,
@@ -444,8 +444,8 @@
       "depart": "2026-11-27T13:53:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R4/C2/participants",
-      "source_verifiee_a": "2026-11-27T14:12:37.027443+01:00",
-      "collecte_a": "2026-11-27T14:12:37.027443+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:04.088796+01:00",
+      "collecte_a": "2026-11-27T21:14:04.088796+01:00",
       "partants": [
         {
           "numero": 1,
@@ -633,8 +633,8 @@
       "depart": "2026-11-27T14:05:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R2/C3/participants",
-      "source_verifiee_a": "2026-11-27T14:12:34.884412+01:00",
-      "collecte_a": "2026-11-27T14:12:34.884412+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:01.604286+01:00",
+      "collecte_a": "2026-11-27T21:14:01.604286+01:00",
       "partants": [
         {
           "numero": 1,
@@ -724,8 +724,8 @@
       "depart": "2026-11-27T14:24:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R4/C3/participants",
-      "source_verifiee_a": "2026-11-27T14:12:37.293209+01:00",
-      "collecte_a": "2026-11-27T14:12:37.293209+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:04.510552+01:00",
+      "collecte_a": "2026-11-27T21:14:04.510552+01:00",
       "partants": [
         {
           "numero": 1,
@@ -924,11 +924,11 @@
       "course": 4,
       "hippodrome": "HIPPODROME DE COMPIEGNE",
       "nom": "PRIX DE CRAON",
-      "depart": "2026-11-27T14:35:00+01:00",
+      "depart": "2026-11-27T14:39:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R2/C4/participants",
-      "source_verifiee_a": "2026-11-27T14:12:35.475127+01:00",
-      "collecte_a": "2026-11-27T14:12:35.475127+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:02.081179+01:00",
+      "collecte_a": "2026-11-27T21:14:02.081179+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1039,11 +1039,11 @@
       "course": 4,
       "hippodrome": "HIPPODROME DE PORNICHET",
       "nom": "PRIX DE GUERANDE",
-      "depart": "2026-11-27T14:53:00+01:00",
+      "depart": "2026-11-27T14:57:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R4/C4/participants",
-      "source_verifiee_a": "2026-11-27T14:12:37.560947+01:00",
-      "collecte_a": "2026-11-27T14:12:37.560947+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:04.845615+01:00",
+      "collecte_a": "2026-11-27T21:14:04.845615+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1190,11 +1190,11 @@
       "course": 5,
       "hippodrome": "HIPPODROME DE COMPIEGNE",
       "nom": "PRIX ROGER SAINT",
-      "depart": "2026-11-27T15:10:00+01:00",
+      "depart": "2026-11-27T15:12:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R2/C5/participants",
-      "source_verifiee_a": "2026-11-27T14:12:35.758290+01:00",
-      "collecte_a": "2026-11-27T14:12:35.758290+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:02.449731+01:00",
+      "collecte_a": "2026-11-27T21:14:02.449731+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1305,11 +1305,11 @@
       "course": 5,
       "hippodrome": "HIPPODROME DE PORNICHET",
       "nom": "PRIX DE CHATEAUBRIANT",
-      "depart": "2026-11-27T15:28:00+01:00",
+      "depart": "2026-11-27T15:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R4/C5/participants",
-      "source_verifiee_a": "2026-11-27T14:12:37.829475+01:00",
-      "collecte_a": "2026-11-27T14:12:37.829475+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:05.183905+01:00",
+      "collecte_a": "2026-11-27T21:14:05.183905+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1473,8 +1473,8 @@
       "depart": "2026-11-27T15:45:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R2/C6/participants",
-      "source_verifiee_a": "2026-11-27T14:12:36.111146+01:00",
-      "collecte_a": "2026-11-27T14:12:36.111146+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:03.015129+01:00",
+      "collecte_a": "2026-11-27T21:14:03.015129+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1588,8 +1588,8 @@
       "depart": "2026-11-27T16:03:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R4/C6/participants",
-      "source_verifiee_a": "2026-11-27T14:12:38.119300+01:00",
-      "collecte_a": "2026-11-27T14:12:38.119300+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:05.719522+01:00",
+      "collecte_a": "2026-11-27T21:14:05.719522+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1801,8 +1801,8 @@
       "depart": "2026-11-27T16:20:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R2/C7/participants",
-      "source_verifiee_a": "2026-11-27T14:12:36.393500+01:00",
-      "collecte_a": "2026-11-27T14:12:36.393500+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:03.380583+01:00",
+      "collecte_a": "2026-11-27T21:14:03.380583+01:00",
       "partants": [
         {
           "numero": 1,
@@ -1928,8 +1928,8 @@
       "depart": "2026-11-27T16:38:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R4/C7/participants",
-      "source_verifiee_a": "2026-11-27T14:12:38.491024+01:00",
-      "collecte_a": "2026-11-27T14:12:38.491024+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:06.382617+01:00",
+      "collecte_a": "2026-11-27T21:14:06.382617+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2136,11 +2136,11 @@
       "course": 1,
       "hippodrome": "HIPPODROME MARSEILLE PONT DE VIVAUX",
       "nom": "PRIX DE SAINT-LOUP",
-      "depart": "2026-11-27T16:55:00+01:00",
+      "depart": "2026-11-27T17:05:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R5/C1/participants",
-      "source_verifiee_a": "2026-11-27T14:12:39.298411+01:00",
-      "collecte_a": "2026-11-27T14:12:39.298411+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:07.496996+01:00",
+      "collecte_a": "2026-11-27T21:14:07.496996+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2299,11 +2299,11 @@
       "course": 8,
       "hippodrome": "HIPPODROME DE PORNICHET",
       "nom": "PRIX DE VERTOU",
-      "depart": "2026-11-27T17:13:00+01:00",
+      "depart": "2026-11-27T17:20:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R4/C8/participants",
-      "source_verifiee_a": "2026-11-27T14:12:38.760722+01:00",
-      "collecte_a": "2026-11-27T14:12:38.760722+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:06.723022+01:00",
+      "collecte_a": "2026-11-27T21:14:06.723022+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2510,11 +2510,11 @@
       "course": 2,
       "hippodrome": "HIPPODROME MARSEILLE PONT DE VIVAUX",
       "nom": "PRIX DE LA ROSE",
-      "depart": "2026-11-27T17:30:00+01:00",
+      "depart": "2026-11-27T17:37:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R5/C2/participants",
-      "source_verifiee_a": "2026-11-27T14:12:39.566378+01:00",
-      "collecte_a": "2026-11-27T14:12:39.566378+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:07.846780+01:00",
+      "collecte_a": "2026-11-27T21:14:07.846780+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2685,11 +2685,11 @@
       "course": 9,
       "hippodrome": "HIPPODROME DE PORNICHET",
       "nom": "PRIX DE NANTES",
-      "depart": "2026-11-27T17:48:00+01:00",
+      "depart": "2026-11-27T17:55:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R4/C9/participants",
-      "source_verifiee_a": "2026-11-27T14:12:39.030602+01:00",
-      "collecte_a": "2026-11-27T14:12:39.030602+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:07.067384+01:00",
+      "collecte_a": "2026-11-27T21:14:07.067384+01:00",
       "partants": [
         {
           "numero": 1,
@@ -2898,11 +2898,11 @@
       "course": 3,
       "hippodrome": "HIPPODROME MARSEILLE PONT DE VIVAUX",
       "nom": "PRIX GENERAL BONNAFE",
-      "depart": "2026-11-27T18:05:00+01:00",
+      "depart": "2026-11-27T18:10:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R5/C3/participants",
-      "source_verifiee_a": "2026-11-27T14:12:39.845057+01:00",
-      "collecte_a": "2026-11-27T14:12:39.845057+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:08.229052+01:00",
+      "collecte_a": "2026-11-27T21:14:08.229052+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3073,11 +3073,11 @@
       "course": 1,
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "nom": "PRIX LES AMI.E.S DE FONTENAY (PRIX ELMA)",
-      "depart": "2026-11-27T18:23:00+01:00",
+      "depart": "2026-11-27T18:27:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R1/C1/participants",
-      "source_verifiee_a": "2026-11-27T14:12:31.534146+01:00",
-      "collecte_a": "2026-11-27T14:12:31.534146+01:00",
+      "source_verifiee_a": "2026-11-27T21:13:57.008367+01:00",
+      "collecte_a": "2026-11-27T21:13:57.008367+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3263,8 +3263,8 @@
       "depart": "2026-11-27T18:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R6/C1/participants",
-      "source_verifiee_a": "2026-11-27T14:12:41.273808+01:00",
-      "collecte_a": "2026-11-27T14:12:41.273808+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:10.221459+01:00",
+      "collecte_a": "2026-11-27T21:14:10.221459+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3353,8 +3353,8 @@
         {
           "numero": 8,
           "nom": "LIPTON DE CLERCE",
-          "non_partant": false,
-          "statut": "PARTANT",
+          "non_partant": true,
+          "statut": "NON_PARTANT",
           "musique": "4aDa1a6m4a1m3aDaDa4a",
           "jockey": null,
           "driver": "M. CATHERINE-PEZET",
@@ -3460,8 +3460,9 @@
         }
       ],
       "nombre_participants": 16,
-      "nombre_partants": 15,
+      "nombre_partants": 14,
       "non_partants": [
+        8,
         13
       ],
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
@@ -3473,11 +3474,11 @@
       "course": 4,
       "hippodrome": "HIPPODROME MARSEILLE PONT DE VIVAUX",
       "nom": "PRIX FRANCOIS-REGIS LE VEXIER",
-      "depart": "2026-11-27T18:40:00+01:00",
+      "depart": "2026-11-27T18:43:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R5/C4/participants",
-      "source_verifiee_a": "2026-11-27T14:12:40.196652+01:00",
-      "collecte_a": "2026-11-27T14:12:40.196652+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:08.593053+01:00",
+      "collecte_a": "2026-11-27T21:14:08.593053+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3648,11 +3649,11 @@
       "course": 2,
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "nom": "PRIX FONTENAYTHON (PRIX HERMANTARIA)",
-      "depart": "2026-11-27T18:58:00+01:00",
+      "depart": "2026-11-27T19:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R1/C2/participants",
-      "source_verifiee_a": "2026-11-27T14:12:31.845694+01:00",
-      "collecte_a": "2026-11-27T14:12:31.845694+01:00",
+      "source_verifiee_a": "2026-11-27T21:13:57.781267+01:00",
+      "collecte_a": "2026-11-27T21:13:57.781267+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3802,8 +3803,8 @@
       "depart": "2026-11-27T19:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R6/C2/participants",
-      "source_verifiee_a": "2026-11-27T14:12:41.545880+01:00",
-      "collecte_a": "2026-11-27T14:12:41.545880+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:10.561954+01:00",
+      "collecte_a": "2026-11-27T21:14:10.561954+01:00",
       "partants": [
         {
           "numero": 1,
@@ -3962,11 +3963,11 @@
       "course": 5,
       "hippodrome": "HIPPODROME MARSEILLE PONT DE VIVAUX",
       "nom": "PRIX DU PRADO",
-      "depart": "2026-11-27T19:15:00+01:00",
+      "depart": "2026-11-27T19:17:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R5/C5/participants",
-      "source_verifiee_a": "2026-11-27T14:12:40.467284+01:00",
-      "collecte_a": "2026-11-27T14:12:40.467284+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:08.931540+01:00",
+      "collecte_a": "2026-11-27T21:14:08.931540+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4140,8 +4141,8 @@
       "depart": "2026-11-27T19:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R6/C3/participants",
-      "source_verifiee_a": "2026-11-27T14:12:41.845527+01:00",
-      "collecte_a": "2026-11-27T14:12:41.845527+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:11.055236+01:00",
+      "collecte_a": "2026-11-27T21:14:11.055236+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4336,11 +4337,11 @@
       "course": 3,
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "nom": "PRIX LE SOUVENIR FRANCAIS (PRIX BRASILIA)",
-      "depart": "2026-11-27T19:33:00+01:00",
+      "depart": "2026-11-27T19:35:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R1/C3/participants",
-      "source_verifiee_a": "2026-11-27T14:12:32.469681+01:00",
-      "collecte_a": "2026-11-27T14:12:32.469681+01:00",
+      "source_verifiee_a": "2026-11-27T21:13:58.212225+01:00",
+      "collecte_a": "2026-11-27T21:13:58.212225+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4535,11 +4536,11 @@
       "course": 6,
       "hippodrome": "HIPPODROME MARSEILLE PONT DE VIVAUX",
       "nom": "PRIX DES CAMOINS",
-      "depart": "2026-11-27T19:50:00+01:00",
+      "depart": "2026-11-27T19:52:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R5/C6/participants",
-      "source_verifiee_a": "2026-11-27T14:12:40.735389+01:00",
-      "collecte_a": "2026-11-27T14:12:40.735389+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:09.454152+01:00",
+      "collecte_a": "2026-11-27T21:14:09.454152+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4749,8 +4750,8 @@
       "depart": "2026-11-27T20:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R6/C4/participants",
-      "source_verifiee_a": "2026-11-27T14:12:42.127334+01:00",
-      "collecte_a": "2026-11-27T14:12:42.127334+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:11.655975+01:00",
+      "collecte_a": "2026-11-27T21:14:11.655975+01:00",
       "partants": [
         {
           "numero": 1,
@@ -4960,8 +4961,8 @@
       "depart": "2026-11-27T20:15:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R1/C4/participants",
-      "source_verifiee_a": "2026-11-27T14:12:32.776602+01:00",
-      "collecte_a": "2026-11-27T14:12:32.776602+01:00",
+      "source_verifiee_a": "2026-11-27T21:13:58.995803+01:00",
+      "collecte_a": "2026-11-27T21:13:58.995803+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5086,8 +5087,8 @@
         {
           "numero": 11,
           "nom": "KELLY JANE",
-          "non_partant": false,
-          "statut": "PARTANT",
+          "non_partant": true,
+          "statut": "NON_PARTANT",
           "musique": "0a0a0a0a8a4m4a1a(25)4a",
           "jockey": null,
           "driver": "J. DUBOIS",
@@ -5133,8 +5134,10 @@
         }
       ],
       "nombre_participants": 14,
-      "nombre_partants": 14,
-      "non_partants": [],
+      "nombre_partants": 13,
+      "non_partants": [
+        11
+      ],
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
     {
@@ -5147,8 +5150,8 @@
       "depart": "2026-11-27T20:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R6/C5/participants",
-      "source_verifiee_a": "2026-11-27T14:12:42.396523+01:00",
-      "collecte_a": "2026-11-27T14:12:42.396523+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:12.002762+01:00",
+      "collecte_a": "2026-11-27T21:14:12.002762+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5348,8 +5351,8 @@
       "depart": "2026-11-27T20:32:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R5/C7/participants",
-      "source_verifiee_a": "2026-11-27T14:12:41.002771+01:00",
-      "collecte_a": "2026-11-27T14:12:41.002771+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:09.877416+01:00",
+      "collecte_a": "2026-11-27T21:14:09.877416+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5460,11 +5463,11 @@
       "course": 5,
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "nom": "PRIX USF (PRIX FEMINA)",
-      "depart": "2026-11-27T20:48:00+01:00",
+      "depart": "2026-11-27T20:49:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R1/C5/participants",
-      "source_verifiee_a": "2026-11-27T14:12:33.054702+01:00",
-      "collecte_a": "2026-11-27T14:12:33.054702+01:00",
+      "source_verifiee_a": "2026-11-27T21:13:59.360840+01:00",
+      "collecte_a": "2026-11-27T21:13:59.360840+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5626,8 +5629,8 @@
       "depart": "2026-11-27T21:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R6/C6/participants",
-      "source_verifiee_a": "2026-11-27T14:12:42.912551+01:00",
-      "collecte_a": "2026-11-27T14:12:42.912551+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:12.340311+01:00",
+      "collecte_a": "2026-11-27T21:14:12.340311+01:00",
       "partants": [
         {
           "numero": 1,
@@ -5740,8 +5743,8 @@
         {
           "numero": 10,
           "nom": "MERLOT GALIUS",
-          "non_partant": false,
-          "statut": "PARTANT",
+          "non_partant": true,
+          "statut": "NON_PARTANT",
           "musique": "1a1aDm1aDaDa3a6a7aDa",
           "jockey": null,
           "driver": "M. CATHERINE-PEZET",
@@ -5799,8 +5802,10 @@
         }
       ],
       "nombre_participants": 14,
-      "nombre_partants": 14,
-      "non_partants": [],
+      "nombre_partants": 13,
+      "non_partants": [
+        10
+      ],
       "statut": "COLLECTE_REELLE_NON_IMPORTEE"
     },
     {
@@ -5810,11 +5815,11 @@
       "course": 6,
       "hippodrome": "HIPPODROME DE PARIS-VINCENNES",
       "nom": "PRIX DON DU SANG (PRIX CERES)",
-      "depart": "2026-11-27T21:18:00+01:00",
+      "depart": "2026-11-27T21:19:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R1/C6/participants",
-      "source_verifiee_a": "2026-11-27T14:12:33.339419+01:00",
-      "collecte_a": "2026-11-27T14:12:33.339419+01:00",
+      "source_verifiee_a": "2026-11-27T21:13:59.780924+01:00",
+      "collecte_a": "2026-11-27T21:13:59.780924+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6039,8 +6044,8 @@
       "depart": "2026-11-27T21:30:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R6/C7/participants",
-      "source_verifiee_a": "2026-11-27T14:12:43.182562+01:00",
-      "collecte_a": "2026-11-27T14:12:43.182562+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:12.677811+01:00",
+      "collecte_a": "2026-11-27T21:14:12.677811+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6250,8 +6255,8 @@
       "depart": "2026-11-27T21:48:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R1/C7/participants",
-      "source_verifiee_a": "2026-11-27T14:12:33.682070+01:00",
-      "collecte_a": "2026-11-27T14:12:33.682070+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:00.122289+01:00",
+      "collecte_a": "2026-11-27T21:14:00.122289+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6365,8 +6370,8 @@
       "depart": "2026-11-27T22:00:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R6/C8/participants",
-      "source_verifiee_a": "2026-11-27T14:12:43.456583+01:00",
-      "collecte_a": "2026-11-27T14:12:43.456583+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:13.018213+01:00",
+      "collecte_a": "2026-11-27T21:14:13.018213+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6576,8 +6581,8 @@
       "depart": "2026-11-27T22:13:00+01:00",
       "localisation_france_verifiee": true,
       "source": "https://online.turfinfo.api.pmu.fr/rest/client/7/programme/27112026/R1/C8/participants",
-      "source_verifiee_a": "2026-11-27T14:12:33.950963+01:00",
-      "collecte_a": "2026-11-27T14:12:33.950963+01:00",
+      "source_verifiee_a": "2026-11-27T21:14:00.547366+01:00",
+      "collecte_a": "2026-11-27T21:14:00.547366+01:00",
       "partants": [
         {
           "numero": 1,
@@ -6776,8 +6781,8 @@
     "courses_prevues": 39,
     "courses": 39,
     "chevaux": 500,
-    "partants": 489,
-    "non_partants": 11,
+    "partants": 486,
+    "non_partants": 14,
     "erreurs": 0
   }
 }
