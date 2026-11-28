@@ -1,184 +1,317 @@
 {
   "version": "M1-AUTONOMIE-1.7",
   "moteur": "M1",
-  "date": "2026-11-27",
-  "genere_a": "2026-11-27T22:58:45.083561+01:00",
-  "statut": "AUCUNE_NOUVELLE_DECISION",
+  "date": "2026-11-28",
+  "genere_a": "2026-11-28T04:49:49.517200+01:00",
+  "statut": "DECISIONS_PROVISOIRES_PUBLIEES",
   "source": "PMU",
-  "collecte_a": "2026-11-27T22:58:26.022975+01:00",
-  "courses_collectees": 39,
-  "courses_importees": 39,
-  "courses_en_base": 1145,
-  "propositions_sportives": 0,
-  "decisions_nouvelles": 0,
-  "decisions_total": 559,
+  "collecte_a": "2026-11-28T04:49:29.452037+01:00",
+  "courses_collectees": 42,
+  "courses_importees": 42,
+  "courses_en_base": 1187,
+  "propositions_sportives": 15,
+  "decisions_nouvelles": 15,
+  "decisions_total": 574,
   "figes_total": 0,
   "audits_total": 0,
-  "decisions_publiees": [],
+  "decisions_publiees": [
+    {
+      "course_id": "2026-11-28-R1-C1",
+      "selection_id": "af3a3460ca334f2589438cab76d69657",
+      "classement": [
+        9,
+        7,
+        5,
+        8,
+        1
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R1-C2",
+      "selection_id": "81389321e7fc47d2947b32f759a4aa03",
+      "classement": [
+        7,
+        9,
+        6,
+        3,
+        4
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R6-C2",
+      "selection_id": "00e695546908487284f283921c51a460",
+      "classement": [
+        9,
+        10,
+        11,
+        7,
+        8
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R1-C3",
+      "selection_id": "5f62e18c20cf41c083f9f3bff0b2bb83",
+      "classement": [
+        6,
+        9,
+        14,
+        13,
+        11
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R6-C3",
+      "selection_id": "d598dfe7995949e7b4d59c887c910ed9",
+      "classement": [
+        13,
+        4,
+        2,
+        16,
+        15
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R1-C4",
+      "selection_id": "dd72c921ad344821b6ea7ad963aeea68",
+      "classement": [
+        9,
+        3,
+        1,
+        10,
+        6
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R6-C4",
+      "selection_id": "a961c0c75da24cfe9632dde8b619bec4",
+      "classement": [
+        16,
+        9,
+        4,
+        14,
+        8
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R1-C5",
+      "selection_id": "4f6978ea11e1497abba9f63e8e6830dc",
+      "classement": [
+        4,
+        6,
+        13,
+        2,
+        1
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R6-C5",
+      "selection_id": "457c4f2ce7da43eea2aeb933a736335b",
+      "classement": [
+        10,
+        6,
+        9,
+        3,
+        11
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R6-C6",
+      "selection_id": "8d69beed032641a68ea80743725d26dd",
+      "classement": [
+        10,
+        3,
+        8,
+        4,
+        5
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R1-C7",
+      "selection_id": "777ac84f68034c4aa06a92edab746b9b",
+      "classement": [
+        1,
+        9,
+        7,
+        6,
+        8
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R6-C7",
+      "selection_id": "71bae8642f3c4afdb5cbc29639a03bc9",
+      "classement": [
+        6,
+        10,
+        2,
+        9,
+        4
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R6-C8",
+      "selection_id": "79d0d570332144879dcb4320379ce764",
+      "classement": [
+        13,
+        1,
+        5,
+        3,
+        7
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R6-C9",
+      "selection_id": "537e6bcfcc854c52949dd60ce6d97afc",
+      "classement": [
+        1,
+        5,
+        2,
+        7,
+        4
+      ],
+      "statut": "PROVISOIRE"
+    },
+    {
+      "course_id": "2026-11-28-R1-C9",
+      "selection_id": "20dcd589046440f79a57a49aae620079",
+      "classement": [
+        4,
+        13,
+        1,
+        7,
+        3
+      ],
+      "statut": "PROVISOIRE"
+    }
+  ],
   "courses_ecartees": [
     {
-      "course_id": "2026-11-27-R2-C1",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R2-C1",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R4-C1",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R3-C1",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R2-C2",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R2-C2",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R4-C2",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R3-C2",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R2-C3",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R2-C3",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R4-C3",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R3-C3",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R2-C4",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R2-C4",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R4-C4",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R3-C4",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R2-C5",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R2-C5",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R4-C5",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R3-C5",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R2-C6",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R2-C6",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R4-C6",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R3-C6",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R2-C7",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R2-C7",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R4-C7",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R6-C1",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R5-C1",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R3-C7",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R4-C8",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R2-C8",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R5-C2",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R3-C8",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R4-C9",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R4-C1",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R5-C3",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R4-C2",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R1-C1",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R1-C6",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R6-C1",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R4-C3",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R5-C4",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R4-C4",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R1-C2",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R1-C8",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R6-C2",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R4-C5",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R5-C5",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R4-C6",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R6-C3",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R4-C7",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     },
     {
-      "course_id": "2026-11-27-R1-C3",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R5-C6",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R6-C4",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R1-C4",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R6-C5",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R5-C7",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R1-C5",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R6-C6",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R1-C6",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R6-C7",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R1-C7",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R6-C8",
-      "raison": "Départ passé ou trop proche"
-    },
-    {
-      "course_id": "2026-11-27-R1-C8",
-      "raison": "Départ passé ou trop proche"
+      "course_id": "2026-11-28-R4-C8",
+      "raison": "Moins de cinq chevaux avec historique exploitable"
     }
   ],
   "import_diagnostic": {
-    "date": "2026-11-27T22:58:45.015839+01:00",
+    "date": "2026-11-28T04:49:48.181665+01:00",
     "version": "M1-6.0",
-    "importees": 39,
+    "importees": 42,
     "rejetees": [],
-    "total_courses": 1145
+    "total_courses": 1187
   },
   "note": "Decisions provisoires heuristiques non validees. Aucun FIGE ni audit automatique."
 }
